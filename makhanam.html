@@ -193,6 +193,227 @@
             transform: translateY(-2px);
         }
 
+        /* ==========================================================================
+           WHY US - ICON EFFECTS & ANIMATIONS
+           ========================================================================== */
+        .why-icon-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-icon-halo {
+            position: absolute;
+            inset: -6px;
+            border-radius: 1.25rem;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.4) 0%, rgba(201, 169, 97, 0.1) 50%, transparent 75%);
+            opacity: 0.55;
+            animation: whyIconBreathe 3.5s ease-in-out infinite;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        @keyframes whyIconBreathe {
+            0%, 100% {
+                transform: scale(0.95);
+                opacity: 0.35;
+            }
+            50% {
+                transform: scale(1.18);
+                opacity: 0.8;
+            }
+        }
+
+        .why-icon-box {
+            position: relative;
+            width: 3.75rem;
+            height: 3.75rem;
+            border-radius: 1.125rem;
+            background: radial-gradient(circle at 35% 30%, #1E382B, #12241B 75%);
+            border: 1px solid rgba(201, 169, 97, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8CD84;
+            box-shadow: 0 4px 16px rgba(18, 36, 27, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Light sweep shimmer effect across icon container */
+        .why-icon-box::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -160%;
+            width: 220%;
+            height: 220%;
+            background: linear-gradient(
+                115deg,
+                transparent 20%,
+                rgba(232, 205, 132, 0.25) 45%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(232, 205, 132, 0.25) 55%,
+                transparent 80%
+            );
+            transform: rotate(25deg);
+            transition: left 0.75s ease;
+            pointer-events: none;
+        }
+
+        .group:hover .why-icon-box,
+        .why-icon-box:hover {
+            transform: translateY(-5px) scale(1.1);
+            border-color: #E8CD84;
+            box-shadow: 0 14px 28px -4px rgba(201, 169, 97, 0.48), 0 0 0 1px rgba(232, 205, 132, 0.4), inset 0 0 16px rgba(232, 205, 132, 0.3);
+            color: #FFFFFF;
+        }
+
+        .group:hover .why-icon-box::after,
+        .why-icon-box:hover::after {
+            left: 160%;
+        }
+
+        .group:hover .why-icon-halo,
+        .why-icon-box:hover ~ .why-icon-halo {
+            opacity: 1;
+            transform: scale(1.3);
+            background: radial-gradient(circle, rgba(232, 205, 132, 0.7) 0%, rgba(201, 169, 97, 0.3) 50%, transparent 80%);
+            animation-duration: 1.8s;
+        }
+
+        /* 01. Gem Sparkle Animation */
+        .why-icon-gem {
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+        }
+        .group:hover .why-icon-gem,
+        .why-icon-box:hover .why-icon-gem {
+            animation: gemSparkle 1.4s ease-in-out infinite alternate;
+            color: #FFF6D6;
+            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
+        }
+        @keyframes gemSparkle {
+            0% {
+                transform: scale(1.15) rotate(0deg);
+            }
+            33% {
+                transform: scale(1.28) rotate(-12deg);
+            }
+            66% {
+                transform: scale(1.22) rotate(8deg);
+            }
+            100% {
+                transform: scale(1.32) rotate(-4deg);
+            }
+        }
+
+        /* 02. Handshake Clasp Animation */
+        .why-icon-handshake {
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+        }
+        .group:hover .why-icon-handshake,
+        .why-icon-box:hover .why-icon-handshake {
+            animation: handshakeTrust 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+            color: #FFF6D6;
+            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
+        }
+        @keyframes handshakeTrust {
+            0%, 100% {
+                transform: scale(1.15) rotate(0deg);
+            }
+            20% {
+                transform: scale(1.3) rotate(-10deg);
+            }
+            45% {
+                transform: scale(1.2) rotate(8deg);
+            }
+            70% {
+                transform: scale(1.28) rotate(-4deg);
+            }
+        }
+
+        /* 03. Truck Dispatch Animation */
+        .why-icon-truck {
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+        }
+        .group:hover .why-icon-truck,
+        .why-icon-box:hover .why-icon-truck {
+            animation: truckDispatch 0.9s ease-in-out infinite alternate;
+            color: #FFF6D6;
+            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
+        }
+        @keyframes truckDispatch {
+            0% {
+                transform: translateX(-2px) scale(1.15) skewX(0deg);
+            }
+            100% {
+                transform: translateX(5px) scale(1.24) skewX(-8deg);
+            }
+        }
+
+        /* Speed line trails */
+        .speed-lines {
+            position: absolute;
+            left: 7px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .speed-line {
+            height: 2px;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, transparent, rgba(232, 205, 132, 0.85));
+            animation: speedLinePulse 0.6s infinite alternate;
+        }
+        .speed-line:nth-child(1) { width: 14px; animation-delay: 0.1s; }
+        .speed-line:nth-child(2) { width: 20px; animation-delay: 0.25s; }
+        .speed-line:nth-child(3) { width: 12px; animation-delay: 0.05s; }
+        @keyframes speedLinePulse {
+            0% { opacity: 0.4; transform: scaleX(0.7); }
+            100% { opacity: 1; transform: scaleX(1.1); }
+        }
+        .group:hover .speed-lines,
+        .why-icon-box:hover .speed-lines {
+            opacity: 1;
+        }
+
+        /* Checkmark Interactive Pill Badge */
+        .check-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 9999px;
+            background: rgba(18, 36, 27, 0.08);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            color: #A68740;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .group:hover .check-pill {
+            background: #12241B;
+            border-color: #E8CD84;
+            color: #E8CD84;
+            transform: scale(1.18);
+            box-shadow: 0 3px 10px rgba(201, 169, 97, 0.35);
+        }
+        .group:hover .check-pill i {
+            transform: scale(1.15) rotate(6deg);
+        }
+
         /* Horizontal Journey Scrollbar */
         .journey-scroll::-webkit-scrollbar {
             height: 6px;
@@ -585,31 +806,31 @@
 
                 <!-- 3 Visual Pillars -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 max-w-4xl mx-auto">
-                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 backdrop-blur-md text-left transition-transform hover:-translate-y-1">
-                        <div class="w-10 h-10 rounded-full border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328]">
-                            <i class="fa-solid fa-gem text-sm"></i>
+                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 hover:border-[#C9A961]/70 backdrop-blur-md text-left transition-all duration-300 hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-2xl border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328] group-hover:scale-110 group-hover:border-[#E8CD84] group-hover:text-[#FFF2C6] group-hover:shadow-[0_0_20px_rgba(201,169,97,0.45)] transition-all duration-300">
+                            <i class="fa-solid fa-gem text-base group-hover:rotate-12 transition-transform duration-300"></i>
                         </div>
-                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2">Quality</h3>
+                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2 group-hover:text-[#E8CD84] transition-colors">Quality</h3>
                         <p class="text-xs text-[#F1F6F2]/75 font-light leading-relaxed">
                             Consistent, premium raw material.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 backdrop-blur-md text-left transition-transform hover:-translate-y-1">
-                        <div class="w-10 h-10 rounded-full border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328]">
-                            <i class="fa-solid fa-water text-sm"></i>
+                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 hover:border-[#C9A961]/70 backdrop-blur-md text-left transition-all duration-300 hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-2xl border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328] group-hover:scale-110 group-hover:border-[#E8CD84] group-hover:text-[#FFF2C6] group-hover:shadow-[0_0_20px_rgba(201,169,97,0.45)] transition-all duration-300">
+                            <i class="fa-solid fa-water text-base group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
-                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2">Origin</h3>
+                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2 group-hover:text-[#E8CD84] transition-colors">Origin</h3>
                         <p class="text-xs text-[#F1F6F2]/75 font-light leading-relaxed">
                             Authentic Mithila sourcing.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 backdrop-blur-md text-left transition-transform hover:-translate-y-1">
-                        <div class="w-10 h-10 rounded-full border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328]">
-                            <i class="fa-solid fa-earth-americas text-sm"></i>
+                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 hover:border-[#C9A961]/70 backdrop-blur-md text-left transition-all duration-300 hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-2xl border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328] group-hover:scale-110 group-hover:border-[#E8CD84] group-hover:text-[#FFF2C6] group-hover:shadow-[0_0_20px_rgba(201,169,97,0.45)] transition-all duration-300">
+                            <i class="fa-solid fa-earth-americas text-base group-hover:rotate-45 transition-transform duration-500"></i>
                         </div>
-                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2">Global</h3>
+                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2 group-hover:text-[#E8CD84] transition-colors">Global</h3>
                         <p class="text-xs text-[#F1F6F2]/75 font-light leading-relaxed">
                             Built for international markets.
                         </p>
@@ -925,17 +1146,20 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
                     <!-- 1. Premium Quality, Better Rate -->
-                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
                         <div class="space-y-5">
                             <div class="flex items-center justify-between">
-                                <div class="w-14 h-14 rounded-2xl bg-[#12241B] border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] shadow-md group-hover:scale-105 transition-transform">
-                                    <i class="fa-solid fa-gem text-xl"></i>
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Premium Quality, Better Rate">
+                                        <i class="fa-solid fa-gem text-xl why-icon-gem"></i>
+                                    </div>
                                 </div>
-                                <span class="text-xs font-mono font-bold text-[#A68740] tracking-widest uppercase">01</span>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">01</span>
                             </div>
 
                             <div class="space-y-2">
-                                <h3 class="font-serif text-2xl text-[#12241B] font-bold tracking-tight">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
                                     Premium Quality, Better Rate.
                                 </h3>
                                 <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
@@ -944,24 +1168,30 @@
                             </div>
                         </div>
 
-                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center gap-2 text-xs font-mono text-[#A68740] font-semibold">
-                            <i class="fa-solid fa-check text-[11px]"></i>
-                            <span>Direct Source Pricing</span>
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>Direct Source Pricing</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">15–20% Advantage</span>
                         </div>
                     </div>
 
                     <!-- 2. We Deliver What We Promise -->
-                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
                         <div class="space-y-5">
                             <div class="flex items-center justify-between">
-                                <div class="w-14 h-14 rounded-2xl bg-[#12241B] border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] shadow-md group-hover:scale-105 transition-transform">
-                                    <i class="fa-solid fa-handshake-simple text-xl"></i>
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="We Deliver What We Promise">
+                                        <i class="fa-solid fa-handshake-simple text-xl why-icon-handshake"></i>
+                                    </div>
                                 </div>
-                                <span class="text-xs font-mono font-bold text-[#A68740] tracking-widest uppercase">02</span>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">02</span>
                             </div>
 
                             <div class="space-y-2">
-                                <h3 class="font-serif text-2xl text-[#12241B] font-bold tracking-tight">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
                                     We Deliver What We Promise.
                                 </h3>
                                 <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
@@ -970,24 +1200,35 @@
                             </div>
                         </div>
 
-                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center gap-2 text-xs font-mono text-[#A68740] font-semibold">
-                            <i class="fa-solid fa-check text-[11px]"></i>
-                            <span>100% Caliper Verified</span>
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>100% Caliper Verified</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Contract Fidelity</span>
                         </div>
                     </div>
 
                     <!-- 3. Guaranteed Timely Delivery -->
-                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
                         <div class="space-y-5">
                             <div class="flex items-center justify-between">
-                                <div class="w-14 h-14 rounded-2xl bg-[#12241B] border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] shadow-md group-hover:scale-105 transition-transform">
-                                    <i class="fa-solid fa-truck-fast text-xl"></i>
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Guaranteed Timely Delivery">
+                                        <div class="speed-lines">
+                                            <span class="speed-line"></span>
+                                            <span class="speed-line"></span>
+                                            <span class="speed-line"></span>
+                                        </div>
+                                        <i class="fa-solid fa-truck-fast text-xl why-icon-truck"></i>
+                                    </div>
                                 </div>
-                                <span class="text-xs font-mono font-bold text-[#A68740] tracking-widest uppercase">03</span>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">03</span>
                             </div>
 
                             <div class="space-y-2">
-                                <h3 class="font-serif text-2xl text-[#12241B] font-bold tracking-tight">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
                                     Guaranteed Timely Delivery.
                                 </h3>
                                 <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
@@ -996,9 +1237,12 @@
                             </div>
                         </div>
 
-                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center gap-2 text-xs font-mono text-[#A68740] font-semibold">
-                            <i class="fa-solid fa-check text-[11px]"></i>
-                            <span>On-Schedule Dispatch</span>
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>On-Schedule Dispatch</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Zero Downtime</span>
                         </div>
                     </div>
 
