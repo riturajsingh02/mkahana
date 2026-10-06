@@ -546,79 +546,36 @@ img {
     margin-top: 1px;
 }
 
-@media (max-width: 768px) {
-    /* Brighter, vibrant, clear hero background on mobile - removes dull dark filter */
-    .hero-video {
-        filter: brightness(1.16) contrast(1.06) saturate(1.12) !important;
-    }
+@media (max-width: 640px) {
     .hero-overlay {
-        background: linear-gradient(180deg,
-            rgba(11, 22, 16, 0.32) 0%,
-            rgba(18, 36, 27, 0.05) 25%,
-            rgba(18, 36, 27, 0.0) 55%,
-            rgba(11, 22, 16, 0.50) 100%) !important;
+        background:
+            linear-gradient(180deg,
+                rgba(11, 22, 16, 0.65) 0%,
+                rgba(18, 36, 27, 0.20) 30%,
+                rgba(18, 36, 27, 0.05) 55%,
+                rgba(11, 22, 16, 0.70) 100%);
     }
-    .hero-vignette {
-        display: none !important;
-    }
-
-    /* Brighter, high-contrast, glowing mobile feature cards */
     .hero-feature-card {
-        padding: 10px 5px !important;
-        gap: 6px !important;
-        border-radius: 14px !important;
-        background: rgba(14, 30, 22, 0.88) !important;
-        border: 1.5px solid rgba(232, 205, 132, 0.6) !important;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 0 14px rgba(201, 169, 97, 0.3) !important;
-        backdrop-filter: blur(14px) !important;
-        -webkit-backdrop-filter: blur(14px) !important;
+        padding: 9px 4px;
+        gap: 5px;
+        border-radius: 14px;
+        background: rgba(14, 28, 20, 0.88);
+        border: 1px solid rgba(201, 169, 97, 0.35);
     }
-
-    /* Vibrant, luminous icon container */
     .hero-feature-icon-wrap {
-        width: 40px !important;
-        height: 40px !important;
-        border: 1.5px solid #FFDF78 !important;
-        background: radial-gradient(circle at 35% 30%, rgba(44, 82, 60, 0.95), rgba(15, 32, 23, 0.98)) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 14px rgba(255, 223, 120, 0.55), inset 0 0 8px rgba(232, 205, 132, 0.35) !important;
+        width: 36px;
+        height: 36px;
     }
-
-    /* Crisp radiant golden icon - clearly visible */
     .hero-feature-icon-wrap i {
-        font-size: 18px !important;
-        color: #FFE699 !important;
-        filter: drop-shadow(0 0 6px rgba(255, 223, 120, 0.95)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7)) !important;
+        font-size: 15px;
     }
-
-    /* Clear, readable high-contrast label */
     .hero-feature-label {
-        font-size: 9px !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.08em !important;
-        line-height: 1.2 !important;
-        color: #FFFFFF !important;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85) !important;
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        line-height: 1.18;
     }
-
     .hero-feature-sub {
         display: none !important;
-    }
-}
-
-@media (max-width: 380px) {
-    .hero-feature-card {
-        padding: 9px 3px !important;
-    }
-    .hero-feature-icon-wrap {
-        width: 37px !important;
-        height: 37px !important;
-    }
-    .hero-feature-icon-wrap i {
-        font-size: 16px !important;
-    }
-    .hero-feature-label {
-        font-size: 8px !important;
-        letter-spacing: 0.04em !important;
     }
 }
 
@@ -841,15 +798,15 @@ img {
         <div class="relative z-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:py-20 lg:py-28 flex flex-col items-center text-center sm:items-start sm:text-left w-full justify-between min-h-[88vh] sm:min-h-0">
             <!-- Top Header & Hero Text -->
             <div class="w-full flex flex-col items-center text-center sm:items-start sm:text-left">
-                <div class="mb-2 sm:mb-3 text-[#FFDF78] sm:text-brand-gold tracking-[0.24em] sm:tracking-[0.3em] uppercase text-[11px] sm:text-xs font-bold sm:font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                <div class="mb-2 sm:mb-3 text-brand-gold tracking-[0.24em] sm:tracking-[0.3em] uppercase text-[10px] sm:text-xs font-semibold">
                     Purveyors of Mithila Heritage
                 </div>
 
-                <h1 class="font-serif text-[54px] xs:text-[62px] sm:text-6xl lg:text-7xl xl:text-8xl font-medium sm:font-light leading-[1.02] tracking-tight text-white sm:text-gold-gradient drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] mb-2.5 sm:mb-5 max-w-4xl">
+                <h1 class="font-serif text-[44px] xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-normal sm:font-light leading-[1.04] tracking-tight text-white sm:text-gold-gradient mb-2.5 sm:mb-5 max-w-4xl">
                     Makhanam
                 </h1>
 
-                <p class="font-sans text-[11.5px] xs:text-[12.5px] sm:text-sm lg:text-base text-white sm:text-brand-cream/95 font-extrabold sm:font-semibold tracking-[0.18em] sm:tracking-[0.25em] uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] mb-6 sm:mb-8 max-w-xl">
+                <p class="font-sans text-[10.5px] xs:text-[11.5px] sm:text-sm lg:text-base text-brand-cream/95 font-bold sm:font-semibold tracking-[0.18em] sm:tracking-[0.25em] uppercase mb-6 sm:mb-8 max-w-xl">
                     Premium Raw Makhana For Wholesalers
                 </p>
 
