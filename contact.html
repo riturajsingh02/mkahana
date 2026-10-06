@@ -72,13 +72,22 @@
             color: var(--dark);
         }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--charcoal); }
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 10px;
+        /* Unified Luxury Brand Scrollbar */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #C9A961 #0B1610;
         }
-        ::-webkit-scrollbar-thumb:hover { background: var(--terracotta); }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1610; }
+        ::-webkit-scrollbar-thumb {
+            background: #C9A961;
+            border-radius: 10px;
+            border: 1px solid rgba(11, 22, 16, 0.4);
+            transition: background-color 0.2s ease;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: #E8CD84; }
+        ::-webkit-scrollbar-thumb:active { background: #C37A58; }
+        ::-webkit-scrollbar-corner { background: #0B1610; }
 
         .hero-overlay {
             background: linear-gradient(
@@ -627,10 +636,10 @@
     <main>
 
         <!-- CONTACT HERO BANNER (contact.jpeg) - FULL WIDTH EDGE-TO-EDGE -->
-        <section class="relative w-full p-0 m-0 overflow-hidden bg-[#0B1610] border-b border-[#C9A961]/30">
+        <section class="relative w-full p-0 m-0 overflow-hidden bg-[#0B1610] border-b border-[#C9A961]/30 flex items-center justify-center">
             <img src="contact.jpeg" 
                  alt="MAKHANAM मखानाम् — Mithila Heritage & Premium Raw Makhana" 
-                 class="w-full h-auto block m-0 p-0"
+                 class="w-full h-auto min-w-full block m-0 p-0 object-cover object-center"
                  loading="eager">
         </section>
 

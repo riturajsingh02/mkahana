@@ -151,24 +151,39 @@ h3 {
 
 
 /* =========================================================
-   CUSTOM SCROLLBAR
+   UNIFIED LUXURY BRAND SCROLLBAR (Cross-Browser & All Pages)
    ========================================================= */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #C9A961 #0B1610;
+}
 
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--brand-charcoal);
+    background: #0B1610;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--brand-gold);
-    border-radius: 4px;
+    background: #C9A961;
+    border-radius: 10px;
+    border: 1px solid rgba(11, 22, 16, 0.4);
+    transition: background-color 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--brand-terracotta);
+    background: #E8CD84;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #C37A58;
+}
+
+::-webkit-scrollbar-corner {
+    background: #0B1610;
 }
 
 

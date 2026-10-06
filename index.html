@@ -72,14 +72,22 @@
     --brand-ivory:     #FAFCFA;  /* clean forest ivory */
 }
 
-/* ---------- Custom Scrollbar ---------- */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--brand-charcoal); }
-::-webkit-scrollbar-thumb {
-    background: var(--brand-gold);
-    border-radius: 4px;
+/* ---------- Unified Luxury Brand Scrollbar ---------- */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #C9A961 #0B1610;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--brand-terracotta); }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0B1610; }
+::-webkit-scrollbar-thumb {
+    background: #C9A961;
+    border-radius: 10px;
+    border: 1px solid rgba(11, 22, 16, 0.4);
+    transition: background-color 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover { background: #E8CD84; }
+::-webkit-scrollbar-thumb:active { background: #C37A58; }
+::-webkit-scrollbar-corner { background: #0B1610; }
 
 /* ---------- Glassmorphism (rgba synced to tokens) ---------- */
 .glass-dark {
@@ -297,17 +305,17 @@ img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1.5px solid rgba(201, 169, 97, 0.6);
+    border: 1.5px solid rgba(201, 169, 97, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #E8CD84;
-    background: radial-gradient(circle at 35% 30%, rgba(30, 56, 43, 0.9), rgba(18, 36, 27, 0.95));
+    color: #E8CD84 !important;
+    background: radial-gradient(circle at 35% 30%, rgba(30, 56, 43, 0.92), rgba(18, 36, 27, 0.98));
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3), inset 0 0 8px rgba(201, 169, 97, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(201, 169, 97, 0.25);
 }
 
 /* Light sweep shimmer effect across icon container */
@@ -321,7 +329,7 @@ img {
     background: linear-gradient(
         115deg,
         transparent 30%,
-        rgba(255, 239, 186, 0.4) 50%,
+        rgba(255, 239, 186, 0.45) 50%,
         transparent 70%
     );
     transform: rotate(25deg);
@@ -337,11 +345,11 @@ img {
 .hero-feature-card.is-active .hero-feature-icon-wrap,
 .hero-feature-icon-wrap:hover,
 .hero-feature-icon-wrap:active {
-    transform: scale(1.2);
-    border-color: #FFDF78;
-    background: radial-gradient(circle at 40% 30%, rgba(38, 70, 54, 0.95), rgba(14, 28, 21, 0.98));
-    color: #FFDF78;
-    box-shadow: 0 0 22px rgba(255, 223, 120, 0.7), 0 0 38px rgba(201, 169, 97, 0.45), inset 0 0 14px rgba(232, 205, 132, 0.35);
+    transform: scale(1.22);
+    border-color: #FFDF78 !important;
+    background: radial-gradient(circle at 40% 30%, rgba(44, 80, 60, 0.98), rgba(14, 28, 21, 0.98)) !important;
+    color: #FFDF78 !important;
+    box-shadow: 0 0 24px rgba(255, 223, 120, 0.85), 0 0 42px rgba(201, 169, 97, 0.55), inset 0 0 16px rgba(232, 205, 132, 0.45) !important;
 }
 
 .hero-feature-card:hover .hero-feature-icon-wrap::after,
@@ -354,14 +362,14 @@ img {
     left: 150%;
 }
 
-/* Base icon styles - Golden color */
+/* Base icon styles - Pure Radiant Gold */
 .hero-feature-icon-wrap i {
-    color: #E8CD84;
+    color: #E8CD84 !important;
     font-size: 19px;
     line-height: 1;
     transform-origin: center center;
     transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 4px rgba(201, 169, 97, 0.4)) !important;
     display: inline-block;
     will-change: transform, filter, color;
 }
@@ -373,8 +381,8 @@ img {
 .hero-feature-card.is-active .hero-feature-icon-wrap i,
 .hero-feature-icon-wrap:hover i,
 .hero-feature-icon-wrap:active i {
-    color: #FFDF78;
-    filter: drop-shadow(0 0 6px rgba(255, 223, 120, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.8));
+    color: #FFDF78 !important;
+    filter: drop-shadow(0 0 8px rgba(255, 223, 120, 1)) drop-shadow(0 0 18px rgba(201, 169, 97, 0.9)) !important;
 }
 
 /* Micro-animations per icon on hover or touch */
@@ -411,12 +419,19 @@ img {
 }
 
 .hero-feature-card:hover .hero-icon-shield,
+.hero-feature-card:hover .hero-icon-flask,
 .hero-feature-card:focus-visible .hero-icon-shield,
+.hero-feature-card:focus-visible .hero-icon-flask,
 .hero-feature-card:active .hero-icon-shield,
+.hero-feature-card:active .hero-icon-flask,
 .hero-feature-card.touch-active .hero-icon-shield,
+.hero-feature-card.touch-active .hero-icon-flask,
 .hero-feature-card.is-active .hero-icon-shield,
+.hero-feature-card.is-active .hero-icon-flask,
 .hero-feature-icon-wrap:hover .hero-icon-shield,
-.hero-feature-icon-wrap:active .hero-icon-shield {
+.hero-feature-icon-wrap:hover .hero-icon-flask,
+.hero-feature-icon-wrap:active .hero-icon-shield,
+.hero-feature-icon-wrap:active .hero-icon-flask {
     animation: heroShieldGleam 1s ease-in-out infinite alternate;
 }
 @keyframes heroShieldGleam {
@@ -442,12 +457,19 @@ img {
 }
 
 .hero-feature-card:hover .hero-icon-heart,
+.hero-feature-card:hover .hero-icon-globe,
 .hero-feature-card:focus-visible .hero-icon-heart,
+.hero-feature-card:focus-visible .hero-icon-globe,
 .hero-feature-card:active .hero-icon-heart,
+.hero-feature-card:active .hero-icon-globe,
 .hero-feature-card.touch-active .hero-icon-heart,
+.hero-feature-card.touch-active .hero-icon-globe,
 .hero-feature-card.is-active .hero-icon-heart,
+.hero-feature-card.is-active .hero-icon-globe,
 .hero-feature-icon-wrap:hover .hero-icon-heart,
-.hero-feature-icon-wrap:active .hero-icon-heart {
+.hero-feature-icon-wrap:hover .hero-icon-globe,
+.hero-feature-icon-wrap:active .hero-icon-heart,
+.hero-feature-icon-wrap:active .hero-icon-globe {
     animation: heroHeartPulse 0.9s ease-in-out infinite;
 }
 @keyframes heroHeartPulse {
@@ -458,12 +480,19 @@ img {
 }
 
 .hero-feature-card:hover .hero-icon-feather,
+.hero-feature-card:hover .hero-icon-droplet,
 .hero-feature-card:focus-visible .hero-icon-feather,
+.hero-feature-card:focus-visible .hero-icon-droplet,
 .hero-feature-card:active .hero-icon-feather,
+.hero-feature-card:active .hero-icon-droplet,
 .hero-feature-card.touch-active .hero-icon-feather,
+.hero-feature-card.touch-active .hero-icon-droplet,
 .hero-feature-card.is-active .hero-icon-feather,
+.hero-feature-card.is-active .hero-icon-droplet,
 .hero-feature-icon-wrap:hover .hero-icon-feather,
-.hero-feature-icon-wrap:active .hero-icon-feather {
+.hero-feature-icon-wrap:hover .hero-icon-droplet,
+.hero-feature-icon-wrap:active .hero-icon-feather,
+.hero-feature-icon-wrap:active .hero-icon-droplet {
     animation: heroFeatherFloat 1.2s ease-in-out infinite alternate;
 }
 @keyframes heroFeatherFloat {
@@ -518,24 +547,35 @@ img {
 }
 
 @media (max-width: 640px) {
+    .hero-overlay {
+        background:
+            linear-gradient(180deg,
+                rgba(11, 22, 16, 0.65) 0%,
+                rgba(18, 36, 27, 0.20) 30%,
+                rgba(18, 36, 27, 0.05) 55%,
+                rgba(11, 22, 16, 0.70) 100%);
+    }
     .hero-feature-card {
-        padding: 12px 6px;
-        gap: 6px;
+        padding: 9px 4px;
+        gap: 5px;
+        border-radius: 14px;
+        background: rgba(14, 28, 20, 0.88);
+        border: 1px solid rgba(201, 169, 97, 0.35);
     }
     .hero-feature-icon-wrap {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
     }
     .hero-feature-icon-wrap i {
-        font-size: 16px;
+        font-size: 15px;
     }
     .hero-feature-label {
-        font-size: 9px;
-        letter-spacing: 0.1em;
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        line-height: 1.18;
     }
     .hero-feature-sub {
-        font-size: 7.5px;
-        letter-spacing: 0.08em;
+        display: none !important;
     }
 }
 
@@ -743,44 +783,55 @@ img {
     </div>
 
     <!-- HERO -->
-    <section class="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark text-brand-cream">
-        <img src="main.jpeg"
-            alt="Makhana Heritage background"
-            class="hero-video absolute inset-0 w-full h-full object-cover z-0 opacity-100">
-        <div class="hero-overlay absolute inset-0 z-10"></div>
-        <div class="hero-vignette absolute inset-0 z-10"></div>
+    <section class="relative min-h-[92vh] sm:min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark text-brand-cream">
+        <!-- Responsive Background: mobile-hero.jpeg on mobile, main.jpeg on desktop -->
+        <picture class="absolute inset-0 w-full h-full z-0 pointer-events-none">
+            <source media="(max-width: 768px)" srcset="mobile-hero.jpeg">
+            <img src="main.jpeg"
+                alt="Makhana Heritage background"
+                class="hero-video w-full h-full object-cover object-center opacity-100"
+                loading="eager">
+        </picture>
+        <div class="hero-overlay absolute inset-0 z-10 pointer-events-none"></div>
+        <div class="hero-vignette absolute inset-0 z-10 pointer-events-none"></div>
 
-        <div class="relative z-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-28 flex flex-col items-start text-left w-full">
-            <div class="mb-2.5 sm:mb-3 text-brand-gold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[9.5px] sm:text-xs font-semibold">
-                Purveyors of Mithila Heritage
+        <div class="relative z-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:py-20 lg:py-28 flex flex-col items-center text-center sm:items-start sm:text-left w-full justify-between min-h-[88vh] sm:min-h-0">
+            <!-- Top Header & Hero Text -->
+            <div class="w-full flex flex-col items-center text-center sm:items-start sm:text-left">
+                <div class="mb-2 sm:mb-3 text-brand-gold tracking-[0.24em] sm:tracking-[0.3em] uppercase text-[10px] sm:text-xs font-semibold">
+                    Purveyors of Mithila Heritage
+                </div>
+
+                <h1 class="font-serif text-[44px] xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-normal sm:font-light leading-[1.04] tracking-tight text-white sm:text-gold-gradient mb-2.5 sm:mb-5 max-w-4xl">
+                    Makhanam
+                </h1>
+
+                <p class="font-sans text-[10.5px] xs:text-[11.5px] sm:text-sm lg:text-base text-brand-cream/95 font-bold sm:font-semibold tracking-[0.18em] sm:tracking-[0.25em] uppercase mb-6 sm:mb-8 max-w-xl">
+                    Premium Raw Makhana For Wholesalers
+                </p>
+
+                <!-- Hero Action CTAs (Mobile Ergonomic & Centered) -->
+                <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto max-w-[275px] sm:max-w-none mx-auto sm:mx-0 mb-6 sm:mb-8">
+                    <a href="sizeguide.html" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#E5B869] text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
+                        <span>About Us</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="contactus.html#rfq" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-brand-gold/80 bg-brand-dark/50 backdrop-blur-sm text-brand-cream hover:bg-brand-gold/15 transition-all text-xs uppercase tracking-[0.18em] font-bold text-center active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
+                        <span>Wholesale Enquiry</span>
+                        <i class="fa-solid fa-envelope text-xs text-brand-gold"></i>
+                    </a>
+                </div>
             </div>
 
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-light leading-[1.08] tracking-tight text-brand-ivory mb-3 sm:mb-5 max-w-4xl text-gold-gradient">
-                Makhanam
-            </h1>
+            <!-- Visual Breathing Spacer on Mobile to showcase the Makhana Bowl in mobile-hero.jpeg -->
+            <div class="block sm:hidden h-28 xs:h-36 w-full pointer-events-none"></div>
 
-            <p class="font-sans text-xs sm:text-sm lg:text-base text-brand-cream/95 font-medium sm:font-semibold tracking-[0.18em] sm:tracking-[0.25em] uppercase mb-6 sm:mb-8 max-w-xl">
-                Premium Raw Makhana For Wholesalers
-            </p>
-
-            <!-- Hero Action CTAs (Mobile Ergonomic) -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-6 sm:mb-8">
-                <a href="sizeguide.html" class="px-7 py-3.5 rounded-full bg-brand-gold text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
-                    <span>About Us</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-                <a href="contactus.html#rfq" class="px-7 py-3.5 rounded-full border border-brand-gold/60 text-brand-cream hover:bg-brand-gold/15 transition-all text-xs uppercase tracking-[0.18em] font-bold text-center active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
-                    <span>Wholesale Enquiry</span>
-                    <i class="fa-solid fa-envelope text-xs text-brand-gold"></i>
-                </a>
-            </div>
-
-            <!-- 6 Key Features (Interactive on Hover & Mobile Touch, positioned lower with luxurious spacing) -->
-            <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4 lg:gap-5 mt-10 sm:mt-16 lg:mt-24 pt-6 sm:pt-8 border-t border-brand-gold/35 w-full max-w-5xl text-center">
+            <!-- 6 Key Features (Interactive on Hover & Mobile Touch, 3x2 on mobile matching image.png) -->
+            <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4 lg:gap-5 pt-5 sm:pt-8 border-t border-brand-gold/30 w-full max-w-5xl text-center">
                 <!-- Feature 1 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="100% Natural Makhana">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-leaf text-sm sm:text-base hero-icon-leaf"></i>
+                        <i class="fa-solid fa-leaf text-base hero-icon-leaf"></i>
                     </div>
                     <div class="hero-feature-label">100% Natural</div>
                     <div class="hero-feature-sub">Pure & Unpolished</div>
@@ -789,7 +840,7 @@ img {
                 <!-- Feature 2 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Rich Nutrition Makhana">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-seedling text-sm sm:text-base hero-icon-seedling"></i>
+                        <i class="fa-solid fa-seedling text-base hero-icon-seedling"></i>
                     </div>
                     <div class="hero-feature-label">Rich Nutrition</div>
                     <div class="hero-feature-sub">Protein & Calcium</div>
@@ -798,7 +849,7 @@ img {
                 <!-- Feature 3 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="No Additives in Makhanam">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-shield-halved text-sm sm:text-base hero-icon-shield"></i>
+                        <i class="fa-solid fa-shield-halved text-base hero-icon-shield"></i>
                     </div>
                     <div class="hero-feature-label">No Additives</div>
                     <div class="hero-feature-sub">Zero Preservatives</div>
@@ -807,7 +858,7 @@ img {
                 <!-- Feature 4 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Gluten Free Superfood">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-wheat-awn text-sm sm:text-base hero-icon-wheat"></i>
+                        <i class="fa-solid fa-wheat-awn text-base hero-icon-wheat"></i>
                     </div>
                     <div class="hero-feature-label">Gluten Free</div>
                     <div class="hero-feature-sub">Naturally Clean</div>
@@ -816,7 +867,7 @@ img {
                 <!-- Feature 5 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Export Grade Makhana">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-heart text-sm sm:text-base hero-icon-heart"></i>
+                        <i class="fa-solid fa-globe text-base hero-icon-globe"></i>
                     </div>
                     <div class="hero-feature-label">Export Grade</div>
                     <div class="hero-feature-sub">3–7 Suta Calibrated</div>
@@ -825,7 +876,7 @@ img {
                 <!-- Feature 6 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Low Calorie Healthy Snack">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-feather text-sm sm:text-base hero-icon-feather"></i>
+                        <i class="fa-solid fa-droplet text-base hero-icon-droplet"></i>
                     </div>
                     <div class="hero-feature-label">Low Calorie</div>
                     <div class="hero-feature-sub">Zero Trans Fat</div>

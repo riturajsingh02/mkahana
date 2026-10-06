@@ -73,6 +73,23 @@
             color: var(--dark);
         }
 
+        /* Unified Luxury Brand Scrollbar */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #C9A961 #0B1610;
+        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1610; }
+        ::-webkit-scrollbar-thumb {
+            background: #C9A961;
+            border-radius: 10px;
+            border: 1px solid rgba(11, 22, 16, 0.4);
+            transition: background-color 0.2s ease;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: #E8CD84; }
+        ::-webkit-scrollbar-thumb:active { background: #C37A58; }
+        ::-webkit-scrollbar-corner { background: #0B1610; }
+
         /* Glassmorphism Header */
         .glass-dark {
             background: rgba(18, 36, 27, 0.92);
