@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#241C17">
+    <title>Our Story | Makhanam — From Mithila to the World</title>
+    <meta name="description" content="Discover the story of MAKHANAM: rooted in Bihar's makhana-growing wetlands, connecting generational farming wisdom with dependable wholesale supply.">
+
+    <!-- OpenGraph & Twitter Meta Tags -->
+    <meta property="og:title" content="Our Story | Makhanam — From Mithila to the World">
+    <meta property="og:description" content="MAKHANAM is rooted in Bihar's makhana-growing regions, connecting traditional knowledge with modern standards of sourcing, grading and supply.">
+    <meta property="og:image" content="founder.jpeg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Cormorant Garamond & Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="story.css">
+    <script>
+        // Seamlessly forwards to the combined About & Story page
+        window.location.replace("about.html#journey");
+    </script>
+</head>
+
+<body>
+
+    <!-- Professional Announcement Bar -->
+    <div class="makhanam-announcement-bar">
+        <div class="announcement-slider-wrap">
+            <div class="announcement-slide-item active" data-index="0">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Free Shipping Above 100 kg</span>
+            </div>
+            <div class="announcement-slide-item" data-index="1">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Wholesale Makhanam Supplier</span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .makhanam-announcement-bar {
+            background: #0B1610;
+            color: #F1F6F2;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+            padding: 10px 16px;
+            text-align: center;
+            position: relative;
+            z-index: 50;
+            overflow: hidden;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .announcement-slider-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 20px;
+            margin: 0 auto;
+        }
+        .announcement-slide-item {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #E8CD84;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .announcement-slide-item.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .announcement-slide-item i {
+            color: #C9A961;
+            font-size: 13px;
+        }
+        @media (max-width: 640px) {
+            .makhanam-announcement-bar {
+                padding: 8px 12px;
+                height: 36px;
+            }
+            .announcement-slide-item {
+                font-size: 10px;
+                letter-spacing: 0.12em;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.announcement-slide-item');
+            if (slides.length > 1) {
+                let current = 0;
+                setInterval(() => {
+                    slides[current].classList.remove('active');
+                    current = (current + 1) % slides.length;
+                    slides[current].classList.add('active');
+                }, 3800);
+            }
+        });
+    </script>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header" id="siteHeader">
+        <div class="header-container">
+            <!-- Left Side: Mobile Menu Button + Brand Logo -->
+            <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
+                <button class="mobile-nav-btn" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+
+                <!-- Brand Logo -->
+                <a href="index.html" class="brand-logo" aria-label="Makhanam Home">
+                    <div class="brand-badge">
+                        <span>GA</span>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">Makhanam</span>
+                        <span class="brand-sub">Premium Raw Makhana</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="sizeguide.html" class="nav-item">About Makhana</a>
+                <a href="about.html" class="nav-item">About Us</a>
+                <a href="SizeCaliperGuide.html" class="nav-item">Grading</a>
+                <a href="ourstory.html" class="nav-item active">Journey</a>
+                <a href="contactus.html" class="nav-item">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Unified Mobile Navigation Drawer (Slides from LEFT) -->
+    <div id="mobileNavDrawer" class="mobile-drawer-backdrop" onclick="toggleMobileNav(event)">
+        <div class="mobile-drawer-content" onclick="event.stopPropagation()">
+            <div>
+                <!-- Drawer Top Header -->
+                <div class="drawer-header">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="brand-badge" style="width: 32px; height: 32px; font-size: 11px;">
+                            <span>GA</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <span class="drawer-brand" style="font-size: 20px; line-height: 1.1;">Makhanam</span>
+                            <span style="font-size: 8px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; font-weight: 600;">Premium Raw Makhana</span>
+                        </div>
+                    </div>
+                    <button class="drawer-close-btn" onclick="toggleMobileNav()" aria-label="Close Navigation Menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="drawer-links">
+                    <a href="index.html" style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                    </a>
+                    <a href="sizeguide.html" style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>About Makhana</span>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                    </a>
+                    <a href="about.html" style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>About Us</span>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                    </a>
+                    <a href="SizeCaliperGuide.html" style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>Grading Guide</span>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                    </a>
+                    <a href="ourstory.html" class="active" style="display: flex; align-items: center; justify-content: space-between; color: var(--gold-bright); font-weight: 600;">
+                        <span>Journey</span>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; color: var(--gold);"></i>
+                    </a>
+                    <a href="contactus.html" style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>Contact</span>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Drawer Bottom Actions & Compliance -->
+            <div class="drawer-bottom">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span class="gstin-label">GSTIN</span>
+                    <span style="font-size: 10px; color: rgba(201, 169, 97, 0.8); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600;">Mithila, Bihar</span>
+                </div>
+                <p class="gstin-value">10AZBPY2685B1ZL</p>
+                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px;">
+                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." class="drawer-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp Bulk Enquiry</span>
+                    </a>
+                    <a href="tel:+918340493639" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border: 1px solid rgba(201, 169, 97, 0.4); border-radius: 8px; color: var(--gold); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Call +91 83404 93639</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- 1. HERO — FROM MITHILA TO THE WORLD -->
+        <section class="story-hero">
+            <img src="wetland.jpeg" alt="Makhana wetland ecosystem in Bihar" class="story-hero-bg" onerror="this.style.display='none'">
+            <div class="story-hero-overlay"></div>
+
+            <div class="story-hero-container reveal">
+                <div class="hero-tag">
+                    <span class="tag-dot"></span>
+                    <span>OUR STORY</span>
+                </div>
+
+                <h1 class="story-hero-heading font-serif">
+                    From Mithila to the world.
+                </h1>
+
+                <p class="story-hero-copy">
+                    MAKHANAM is rooted in Bihar's makhana-growing regions, connecting traditional knowledge with modern standards of sourcing, grading and supply.
+                </p>
+
+                <div class="story-hero-badges">
+                    <div class="hero-pill">
+                        <i class="fa-solid fa-water"></i>
+                        <span>Freshwater Wetlands</span>
+                    </div>
+                    <div class="hero-pill">
+                        <i class="fa-solid fa-seedling"></i>
+                        <span>Generational Cultivation</span>
+                    </div>
+                    <div class="hero-pill">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Careful Size Sizing</span>
+                    </div>
+                    <div class="hero-pill">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Dependable B2B Supply</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. IT BEGINS IN MITHILA (Editorial Split) -->
+        <section class="origin-split-section">
+            <div class="site-container">
+                <div class="origin-split-grid">
+                    <!-- Left: Large Landscape Photograph -->
+                    <div class="origin-image-frame reveal">
+                        <img src="mukka_cultivation.jpg" alt="Calm makhana cultivation pond in Mithila, Bihar">
+                        <div class="origin-caption-badge">
+                            <div>
+                                <span class="badge-label">Origin Terroir</span>
+                                <div class="badge-location">Northern Bihar Wetlands</div>
+                            </div>
+                            <i class="fa-solid fa-feather text-gold" style="font-size: 18px;"></i>
+                        </div>
+                    </div>
+
+                    <!-- Right: Concise Editorial Story -->
+                    <div class="origin-copy-box reveal">
+                        <span class="section-eyebrow">THE ORIGIN</span>
+                        <h2 class="editorial-title">
+                            It begins in <span class="italic text-terracotta">Mithila.</span>
+                        </h2>
+
+                        <p class="origin-lead-p">
+                            Makhana has been cultivated for generations across the calm freshwater ponds and natural wetlands of northern Bihar.
+                        </p>
+
+                        <p class="origin-body-p">
+                            In Mithila, the harvest is rooted in deep generational knowledge—understanding the seasons, the water, and the precise moment seeds are ready. MAKHANAM was established directly in this landscape to respect and preserve this heritage while bringing dependable sourcing and consistent grading to businesses across India and global markets.
+                        </p>
+
+                        <div>
+                            <div class="origin-location-flow">
+                                <span>MITHILA</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                                <span>BIHAR</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                                <span>INDIA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. THE PEOPLE BEHIND MAKHANAM (Full Image Visibility) -->
+        <section class="leadership-section">
+            <div class="site-container">
+                <div class="section-head-center reveal">
+                    <span class="section-eyebrow">THE PEOPLE</span>
+                    <h2 class="editorial-title">
+                        The people behind <span class="italic text-terracotta">MAKHANAM.</span>
+                    </h2>
+                    <p style="color: var(--earth); font-size: 16px;">
+                        Committed to respectful partnerships with farming communities and dependable service for buyers.
+                    </p>
+                </div>
+
+                <div class="people-grid">
+                    <!-- Founder: Keshav Kumar Yadav -->
+                    <div class="person-card reveal">
+                        <div class="person-image-container">
+                            <img src="founder.jpeg" alt="Keshav Kumar Yadav — Founder of Makhanam">
+                        </div>
+                        <div class="person-info">
+                            <span class="person-role">FOUNDER</span>
+                            <h3 class="person-name">Keshav Kumar Yadav</h3>
+                            <p class="person-quote">
+                                “MAKHANAM began with a simple idea: create a stronger connection between Bihar's makhana-growing communities and the businesses that depend on consistent quality.”
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CEO: Anupam Kumari -->
+                    <div class="person-card reveal">
+                        <div class="person-image-container">
+                            <img src="ceo.jpeg" alt="Anupam Kumari — Chief Executive Officer of Makhanam">
+                        </div>
+                        <div class="person-info">
+                            <span class="person-role">CHIEF EXECUTIVE OFFICER</span>
+                            <h3 class="person-name">Anupam Kumari</h3>
+                            <p class="person-quote">
+                                “Anupam leads MAKHANAM's focus on operations, quality and building dependable relationships with buyers across India and international markets.”
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. INSIDE OUR SUPPLY CHAIN (Visual Editorial Collage) -->
+        <section class="supply-collage-section">
+            <div class="site-container">
+                <div class="section-head-center reveal">
+                    <span class="section-eyebrow">INSIDE OUR ECOSYSTEM</span>
+                    <h2 class="editorial-title">
+                        More than a product.<br>
+                        <span class="italic text-terracotta">A chain of people, places and processes.</span>
+                    </h2>
+                </div>
+
+                <div class="collage-container">
+                    <!-- Top Row: 2 Balanced Landscape Cards -->
+                    <div class="collage-row-top">
+                        <!-- Item 1: Sourcing -->
+                        <div class="collage-card reveal">
+                            <img src="mukka_cultivation.jpg" alt="Makhana wetland ecosystem in Bihar">
+                            <div class="collage-caption">
+                                <span class="collage-caption-tag">Sourcing</span>
+                                <p class="collage-caption-desc">Rooted in Bihar's makhana-growing ecosystem and natural freshwater ponds.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Harvesting -->
+                        <div class="collage-card reveal">
+                            <img src="harvest.jpeg" alt="Traditional hand-harvesting in pond waters">
+                            <div class="collage-caption">
+                                <span class="collage-caption-tag">Harvesting</span>
+                                <p class="collage-caption-desc">Generational harvesting from calm wetland beds.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Row: 3 Symmetrical Cards -->
+                    <div class="collage-row-bottom">
+                        <!-- Item 3: Processing -->
+                        <div class="collage-card reveal">
+                            <img src="popping.jpeg" alt="Artisan roasting and expansion">
+                            <div class="collage-caption">
+                                <span class="collage-caption-tag">Processing</span>
+                                <p class="collage-caption-desc">Careful handling from raw material to finished product.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Grading -->
+                        <div class="collage-card reveal">
+                            <img src="4 suta.jpeg" alt="Graded makhana lots">
+                            <div class="collage-caption">
+                                <span class="collage-caption-tag">Grading</span>
+                                <p class="collage-caption-desc">Consistent classification by size and quality specifications.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 5: Quality & Handling -->
+                        <div class="collage-card reveal">
+                            <img src="story.jpeg" alt="Inspection and packaging at Makhanam">
+                            <div class="collage-caption">
+                                <span class="collage-caption-tag">Quality &amp; Handling</span>
+                                <p class="collage-caption-desc">Systematic moisture control, visual inspection, and protective packing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. THE LAND BEHIND MAKHANAM (Full-width Immersive Section) -->
+        <section class="land-immersive-section">
+            <div class="land-bg-collage">
+                <img src="wetland.jpeg" alt="Wetland habitat">
+                <img src="mukka_cultivation.jpg" alt="Cultivation pond">
+                <img src="harvest.jpeg" alt="Harvesting in Bihar">
+            </div>
+            <div class="land-vignette-overlay"></div>
+
+            <div class="land-content-box reveal">
+                <span class="section-eyebrow text-gold">OUR ENVIRONMENT</span>
+                <h2 class="editorial-title text-cream">
+                    The land behind the <span class="italic text-gold-bright">product.</span>
+                </h2>
+                <p class="text-cream-muted" style="font-size: 17px; max-width: 660px; margin: 0 auto;">
+                    Northern Bihar's natural aquatic ecosystems provide the ideal balance of clean water, seasonal warmth, and fertile wetland soil required for authentic foxnut growth.
+                </p>
+
+                <div>
+                    <span class="land-banner-tag">
+                        ROOTED IN MITHILA • BUILT IN BIHAR • CONNECTED TO THE WORLD
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. OUR JOURNEY (Visual Editorial Timeline) -->
+        <section class="timeline-section">
+            <div class="site-container">
+                <div class="section-head-center reveal">
+                    <span class="section-eyebrow">EVOLUTION</span>
+                    <h2 class="editorial-title">
+                        The MAKHANAM <span class="italic text-terracotta">journey.</span>
+                    </h2>
+                </div>
+
+                <div class="timeline-row">
+                    <!-- Step 1 -->
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>The Beginning</h4>
+                        <p>The idea behind MAKHANAM: connecting Bihar's authentic makhana to wider markets.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Building Network</h4>
+                        <p>Developing close relationships within the local sourcing and harvesting ecosystem.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Establishing Standards</h4>
+                        <p>Creating consistent grading, size classification, and moisture practices.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Building Supply</h4>
+                        <p>Serving commercial food businesses, distributors, and institutional buyers.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Looking Ahead</h4>
+                        <p>Taking Bihar's makhana heritage to broader domestic and international markets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. OUR VISION (Dark Navy Full-Width Section) -->
+        <section class="vision-section">
+            <div class="site-container">
+                <div class="vision-box reveal">
+                    <span class="section-eyebrow text-gold">OUR VISION</span>
+                    <h2 class="editorial-title text-cream">
+                        From Mithila to the world.
+                    </h2>
+                    <p class="vision-quote">
+                        “Our ambition is to build MAKHANAM into a trusted name for authentic, consistently graded makhana while staying connected to the region and people behind it.”
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FINAL CTA (B2B Informational) -->
+        <section class="story-cta-section">
+            <div class="site-container">
+                <div class="cta-box reveal">
+                    <span class="section-eyebrow text-gold">DIRECT SOURCING DESK</span>
+                    <h2 class="editorial-title text-cream">
+                        Know where your <span class="italic text-gold-bright">makhana comes from.</span>
+                    </h2>
+                    <p class="cta-desc">
+                        Connect with MAKHANAM for sourcing information, grading specifications and wholesale enquiries.
+                    </p>
+
+                    <div class="cta-btn-group">
+                        <a href="contactus.html#rfq" class="btn-shimmer">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Request Wholesale Information</span>
+                        </a>
+                        <a href="contactus.html" class="btn-outline">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Contact Us</span>
+                        </a>
+                        <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20would%20like%20to%20inquire%20about%20makhana%20sourcing%20and%20grades." class="btn-outline" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp Desk</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer matching All Pages -->
+    <footer class="site-footer">
+        <div class="site-container">
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-brand-col">
+                    <div class="footer-logo-wrap">
+                        <div class="brand-badge">
+                            <span>GA</span>
+                        </div>
+                        <span class="footer-brand-name">Makhanam</span>
+                    </div>
+                    <p class="footer-desc">
+                        MAKHANAM is rooted in Bihar's makhana-growing regions, connecting traditional knowledge with modern standards of sourcing, grading and supply for commercial partners.
+                    </p>
+                    <div class="footer-origin-tag">
+                        PREMIUM RAW MAKHANA • BIHAR, INDIA
+                    </div>
+                </div>
+
+                <!-- Explore Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ourstory.html">Our Story</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#services">Our Services</a></li>
+                        <li><a href="index.html#partner">Why Partner</a></li>
+                        <li><a href="SizeCaliperGuide.html">Grading Specifications</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot"></i> Bihar, India</li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+918340493639">+91 83404 93639</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/918340493639" target="_blank" rel="noopener noreferrer">WhatsApp Bulk Enquiry</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:KeshavKaushikExports@gmail.com">KeshavKaushikExports@gmail.com</a>
+                        </li>
+                        <li>GSTIN: 10AZBPY2685B1ZL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sub Footer -->
+            <div class="footer-bottom-bar">
+                <div>&copy; 2026 Makhanam. All rights reserved.</div>
+                <div>Premium Raw Makhana Processing • Direct Manufacturer for Wholesalers</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Navigation & Smooth Reveal -->
+    <script>
+        function toggleMobileNav(event) {
+            const drawer = document.getElementById('mobileNavDrawer');
+            if (!drawer) return;
+            const isOpen = drawer.classList.contains('active') || drawer.classList.contains('open');
+            if (!isOpen) {
+                drawer.classList.add('active', 'open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.remove('active', 'open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close drawer on link click and Escape key
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('#mobileNavDrawer a, .drawer-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const drawer = document.getElementById('mobileNavDrawer');
+                    if (drawer && (drawer.classList.contains('active') || drawer.classList.contains('open'))) {
+                        drawer.classList.remove('active', 'open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const drawer = document.getElementById('mobileNavDrawer');
+                    if (drawer && (drawer.classList.contains('active') || drawer.classList.contains('open'))) {
+                        drawer.classList.remove('active', 'open');
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('siteHeader');
+            if (window.scrollY > 25) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+        });
+
+        // Scroll Reveal Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+
+    <!-- Floating WhatsApp Order Widget (Mobile Compact Circle / Desktop Luxury Pill) -->
+    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." target="_blank" rel="noopener noreferrer" class="whatsapp-float-widget" aria-label="Order on WhatsApp">
+        <div class="whatsapp-icon-wrap">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="whatsapp-text-wrap">
+            <span class="whatsapp-label">Order on WhatsApp</span>
+            <span class="whatsapp-phone">+91 83404 93639</span>
+        </div>
+    </a>
+</body>
+</html>
