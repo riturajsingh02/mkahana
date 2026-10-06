@@ -1950,9 +1950,9 @@ select:focus-visible {
         background:
             linear-gradient(
                 to top,
-                rgba(11, 22, 16, .70) 0%,
-                rgba(18, 36, 27, .35) 45%,
-                rgba(18, 36, 27, .15) 100%
+                rgba(11, 22, 16, .45) 0%,
+                rgba(18, 36, 27, .12) 45%,
+                rgba(18, 36, 27, .02) 100%
             );
     }
 
