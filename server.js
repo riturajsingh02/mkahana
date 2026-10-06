@@ -326,24 +326,28 @@ app.get('/sizecaliperguide', (req, res) => {
   res.redirect('/SizeCaliperGuide.html');
 });
 
-app.get('/sizeguide', (req, res) => {
-  res.redirect('/sizeguide.html');
+app.get(['/makhanam', '/makhanam.html', '/about-us'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'makhanam.html'));
 });
 
-app.get('/about', (req, res) => {
+app.get(['/about', '/about.html', '/about-makhana'], (req, res) => {
   res.sendFile(path.join(__dirname, 'about.html'));
 });
 
+app.get(['/sizeguide', '/sizeguide.html'], (req, res) => {
+  res.redirect('/about.html');
+});
+
 app.get('/ourstory', (req, res) => {
-  res.sendFile(path.join(__dirname, 'ourstory.html'));
+  res.redirect('/makhanam.html#journey');
 });
 
 app.get('/our-story', (req, res) => {
-  res.sendFile(path.join(__dirname, 'ourstory.html'));
+  res.redirect('/makhanam.html#journey');
 });
 
 app.get('/story', (req, res) => {
-  res.sendFile(path.join(__dirname, 'ourstory.html'));
+  res.redirect('/makhanam.html#journey');
 });
 
 app.get('/contact', (req, res) => {

@@ -30,7 +30,7 @@ html {
 body {
     background-color: var(--ivory);
     color: var(--dark);
-    font-family: 'Outfit', 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -122,65 +122,66 @@ a {
 }
 
 /* ==========================================================================
-   STICKY NAVBAR
+   MAKHANAM SIGNATURE NAVBAR (Matched to Mockup Screenshot)
    ========================================================================== */
 .main-header {
     position: sticky;
     top: 0;
     z-index: 40;
     width: 100%;
-    background: rgba(36, 28, 23, 0.94);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border-bottom: 1px solid rgba(201, 169, 97, 0.22);
+    background: #27372E !important;
+    border-top: 1px solid rgba(201, 169, 97, 0.45) !important;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.45) !important;
     color: var(--ivory);
     transition: all 0.3s ease;
 }
 
 .main-header.scrolled {
-    background: rgba(23, 17, 13, 0.98);
+    background: #1F2E26 !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .header-container {
-    max-width: 1280px;
+    max-width: 1360px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
     height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
 }
 
 .brand-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    text-decoration: none;
 }
 
 .brand-badge {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    border: 1px solid rgba(201, 169, 97, 0.4);
+    border: 1.2px solid #C9A961;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
-    transition: border-color 0.3s ease;
+    background: #1E2B24;
+    transition: all 0.3s ease;
     flex-shrink: 0;
 }
 
 .brand-badge span {
-    color: var(--gold);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 13px;
+    color: #C9A961;
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 15px;
     font-weight: 700;
+    letter-spacing: 0.05em;
 }
 
 .brand-logo:hover .brand-badge {
-    border-color: var(--gold);
+    border-color: #E8CD84;
+    box-shadow: 0 0 12px rgba(201, 169, 97, 0.3);
 }
 
 .brand-text {
@@ -189,33 +190,56 @@ a {
 }
 
 .brand-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 26px;
-    letter-spacing: 0.14em;
-    font-weight: 300;
-    color: var(--cream);
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 27px;
+    letter-spacing: 0.28em;
+    font-weight: 500;
+    color: #FFFFFF;
     text-transform: uppercase;
     line-height: 1;
     transition: color 0.3s ease;
 }
 
 .brand-logo:hover .brand-title {
-    color: var(--gold);
+    color: #E8CD84;
 }
 
 .brand-sub {
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 8.5px;
-    letter-spacing: 0.24em;
-    color: var(--gold);
+    letter-spacing: 0.32em;
+    color: #C9A961;
     text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 2px;
+    font-weight: 700;
+    margin-top: 5px;
 }
 
 .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 34px;
+    margin-left: auto;
+}
+
+.desktop-nav .nav-item {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F1F6F2;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    padding: 6px 0;
+}
+
+.desktop-nav .nav-item:hover {
+    color: #E8CD84;
+}
+
+.desktop-nav .nav-item.active,
+.desktop-nav .nav-item.text-brand-gold {
+    color: #C9A961;
 }
 
 .nav-item {
@@ -351,7 +375,7 @@ a {
 }
 
 .drawer-brand {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 24px;
     letter-spacing: 0.14em;
     color: var(--cream);
@@ -498,7 +522,7 @@ a {
 }
 
 .hero-heading {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: clamp(2.8rem, 6.2vw, 4.8rem);
     font-weight: 300;
     line-height: 1.1;
@@ -612,53 +636,141 @@ a {
    KEY STATS / INFOGRAPHIC BAR
    ========================================================================== */
 .stats-bar-section {
-    background: var(--dark);
-    border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+    background: linear-gradient(145deg, #12241B 0%, #0B1610 100%);
+    border: 1px solid rgba(201, 169, 97, 0.35);
     position: relative;
     z-index: 10;
     margin-top: -30px;
-    border-radius: 16px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    padding: 36px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 169, 97, 0.08);
+    padding: 36px 28px;
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+}
+
+.stats-bar-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.8), transparent);
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 20px;
 }
 
 .stat-item {
     text-align: center;
-    padding: 10px 16px;
-    border-right: 1px solid rgba(201, 169, 97, 0.2);
+    padding: 20px 16px;
+    border-radius: 14px;
+    background: rgba(18, 36, 27, 0.45);
+    border: 1px solid rgba(201, 169, 97, 0.18);
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.stat-item:last-child {
-    border-right: none;
+.stat-item:hover, .stat-item:active {
+    background: rgba(201, 169, 97, 0.12);
+    border-color: rgba(232, 205, 132, 0.6);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45), 0 0 24px rgba(201, 169, 97, 0.25);
+}
+
+.stat-icon-badge {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: rgba(201, 169, 97, 0.12);
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-bright);
+    font-size: 15px;
+    transition: all 0.35s ease;
+}
+
+.stat-item:hover .stat-icon-badge {
+    background: var(--gold);
+    color: var(--dark);
+    transform: scale(1.12) rotate(6deg);
+    box-shadow: 0 0 16px rgba(201, 169, 97, 0.5);
 }
 
 .stat-value {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
-    font-weight: 600;
+    font-family: 'Spectral', Georgia, serif;
+    font-size: clamp(2.3rem, 3.8vw, 3.3rem);
+    font-weight: 700;
     color: var(--gold-bright);
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 6px;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.stat-item:hover .stat-value {
+    color: #FFFFFF;
+    text-shadow: 0 0 16px rgba(232, 205, 132, 0.6);
 }
 
 .stat-title {
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     color: var(--cream);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 4px;
+    letter-spacing: 0.12em;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.stat-item:hover .stat-title {
+    color: var(--gold-bright);
 }
 
 .stat-sub {
-    font-size: 12px;
-    color: rgba(243, 233, 213, 0.65);
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: rgba(243, 233, 213, 0.7);
+    transition: color 0.3s ease;
+}
+
+.stat-item:hover .stat-sub {
+    color: rgba(250, 252, 250, 0.95);
+}
+
+.stat-counted-glow {
+    animation: statGlowPulse 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes statGlowPulse {
+    0% {
+        filter: drop-shadow(0 0 0px rgba(232, 205, 132, 0));
+        transform: scale(0.98);
+    }
+    50% {
+        filter: drop-shadow(0 0 14px rgba(232, 205, 132, 0.85));
+        transform: scale(1.04);
+        color: #FFFFFF;
+    }
+    100% {
+        filter: drop-shadow(0 0 0px rgba(232, 205, 132, 0));
+        transform: scale(1);
+    }
 }
 
 /* ==========================================================================
@@ -819,7 +931,7 @@ a {
 }
 
 .insight-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 19px;
     color: var(--cream);
     font-weight: 600;
@@ -859,7 +971,7 @@ a {
 }
 
 .insight-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 19px;
     color: var(--cream);
     font-weight: 600;
@@ -889,7 +1001,7 @@ a {
 }
 
 .editorial-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: clamp(2.2rem, 4vw, 3.4rem);
     font-weight: 300;
     line-height: 1.15;
@@ -919,7 +1031,7 @@ a {
 }
 
 .nutrition-main-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: clamp(2.4rem, 4.4vw, 3.8rem);
     font-weight: 400;
     color: #12241B;
@@ -1000,7 +1112,7 @@ a {
     text-transform: uppercase;
     padding: 5px 11px;
     border-radius: 6px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .nutrition-card-content {
@@ -1046,7 +1158,7 @@ a {
 }
 
 .nutrition-card-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 20px;
     font-weight: 600;
     color: #12241B;
@@ -1124,7 +1236,7 @@ a {
 }
 
 .nutrition-stat-val {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 26px;
     font-weight: 700;
     color: #12241B;
@@ -1310,7 +1422,7 @@ a {
     text-transform: uppercase;
     padding: 4px 10px;
     border-radius: 6px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .district-card-body {
@@ -1330,7 +1442,7 @@ a {
 }
 
 .district-card-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 23px;
     font-weight: 600;
     color: #12241B;
@@ -1439,7 +1551,7 @@ a {
 }
 
 .prep-main-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: clamp(34px, 4.5vw, 50px);
     font-weight: 500;
     color: #FAFCFA;
@@ -1518,7 +1630,7 @@ a {
 }
 
 .roadmap-node-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 24px;
     font-weight: 600;
     color: #FAFCFA;
@@ -1813,7 +1925,7 @@ a {
 }
 
 .pipeline-info h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 22px;
     color: var(--cream);
     margin-bottom: 8px;
@@ -1906,7 +2018,7 @@ a {
 }
 
 .grade-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 24px;
     color: var(--dark);
     margin-bottom: 12px;
@@ -1966,7 +2078,7 @@ a {
 }
 
 .stages-main-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: clamp(2.4rem, 4.5vw, 3.8rem);
     font-weight: 300;
     color: #F1F6F2;
@@ -2062,7 +2174,7 @@ a {
 }
 
 .stage-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: clamp(2rem, 3.2vw, 2.8rem);
     font-weight: 400;
     color: #F1F6F2;
@@ -2096,7 +2208,7 @@ a {
 }
 
 .stage-quote-text {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 16px;
     font-style: italic;
     color: #F1F6F2;
@@ -2282,7 +2394,7 @@ a {
 }
 
 .leader-details h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 26px;
     color: var(--dark);
     margin-bottom: 12px;
@@ -2350,7 +2462,7 @@ a {
 
 .trust-badge-text strong {
     display: block;
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 18px;
     color: var(--gold-bright);
 }
@@ -2437,7 +2549,7 @@ a {
 }
 
 .footer-brand-name {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 26px;
     letter-spacing: 0.14em;
     color: var(--cream);
@@ -2467,7 +2579,7 @@ a {
 }
 
 .footer-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-size: 18px;
     color: var(--gold-bright);
     letter-spacing: 0.12em;
@@ -2741,4 +2853,27 @@ a {
     font-weight: 600;
     color: #385A48;
     letter-spacing: 0.08em;
+}
+
+/* Spectral Typography Utilities */
+.spectral-extralight { font-family: "Spectral", serif; font-weight: 200; font-style: normal; }
+.spectral-light { font-family: "Spectral", serif; font-weight: 300; font-style: normal; }
+.spectral-regular { font-family: "Spectral", serif; font-weight: 400; font-style: normal; }
+.spectral-medium { font-family: "Spectral", serif; font-weight: 500; font-style: normal; }
+.spectral-semibold { font-family: "Spectral", serif; font-weight: 600; font-style: normal; }
+.spectral-bold { font-family: "Spectral", serif; font-weight: 700; font-style: normal; }
+.spectral-extrabold { font-family: "Spectral", serif; font-weight: 800; font-style: normal; }
+.spectral-extralight-italic { font-family: "Spectral", serif; font-weight: 200; font-style: italic; }
+.spectral-light-italic { font-family: "Spectral", serif; font-weight: 300; font-style: italic; }
+.spectral-regular-italic { font-family: "Spectral", serif; font-weight: 400; font-style: italic; }
+.spectral-medium-italic { font-family: "Spectral", serif; font-weight: 500; font-style: italic; }
+.spectral-semibold-italic { font-family: "Spectral", serif; font-weight: 600; font-style: italic; }
+.spectral-bold-italic { font-family: "Spectral", serif; font-weight: 700; font-style: italic; }
+.spectral-extrabold-italic { font-family: "Spectral", serif; font-weight: 800; font-style: italic; }
+
+.bricolage-grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }

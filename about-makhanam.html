@@ -3,112 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#12241B">
-    <title>About Makhanam | Premium Raw Makhana Processing & Global Wholesale Supply</title>
-    <meta name="description" content="Discover Makhanam — rooted in Mithila, Bihar, dedicated to authentic single-origin raw Makhana processing, 3 to 7 Suta electronic grading, and dependable B2B wholesale supply worldwide.">
+    <meta name="theme-color" content="#241C17">
+    <title>About Makhanam | Premium Raw Makhana Processing & Supply</title>
+    <meta name="description" content="Discover Makhanam — rooted in Bihar, dedicated to premium raw Makhana processing, precision grading, and dependable B2B wholesale supply worldwide.">
 
-    <!-- Brand Typography: Cormorant Garamond, Outfit, & Manrope -->
+    <!-- Brand Typography: Spectral & Bricolage Grotesque -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    brand: {
+                        charcoal:     '#0B1610',
+                        dark:         '#12241B',
+                        cocoa:        '#2A4234',
+                        earth:        '#385A48',
+                        terracotta:   '#C37A58',
+                        goldDeep:     '#A68740',
+                        gold:         '#C9A961',
+                        goldBright:   '#E8CD84',
+                        cream:        '#F1F6F2',
+                        ivory:        '#FAFCFA',
+                        overlay:      'rgba(18, 36, 27, 0.78)'
+                    }
+                },
+                fontFamily: {
+                    serif: ['Spectral', 'Georgia', 'serif'],
+                    sans:  ['Bricolage Grotesque', 'sans-serif']
+                }
+            }
+        }
+    }
+    </script>
 
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Shared Stylesheets -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="story.css">
-
-    <!-- Page Specific Premium Styling -->
-    <style>
-        .pillar-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(201, 169, 97, 0.35);
-            border-radius: 20px;
-            padding: 32px 28px;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(18, 36, 27, 0.04);
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--gold);
-            box-shadow: 0 16px 36px rgba(18, 36, 27, 0.12);
-        }
-
-        .pillar-icon-box {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: var(--dark);
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-        }
-
-        .pillar-num {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 32px;
-            color: var(--gold);
-            font-weight: 300;
-        }
-
-        .pillar-tag {
-            font-size: 10.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--dark);
-            background: rgba(201, 169, 97, 0.16);
-            border: 1px solid rgba(201, 169, 97, 0.4);
-            padding: 4px 12px;
-            border-radius: 999px;
-            display: inline-block;
-        }
-
-        .pillar-title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 26px;
-            color: var(--dark);
-            margin-bottom: 14px;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .pillar-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            font-size: 13.5px;
-            color: rgba(18, 36, 27, 0.85);
-            line-height: 1.55;
-        }
-
-        .pillar-list li {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        .pillar-list li i {
-            color: var(--gold);
-            margin-top: 3px;
-            flex-shrink: 0;
-        }
-    </style>
 </head>
 
-<body>
+<body class="bg-brand-ivory text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-brand-dark overflow-x-hidden">
 
     <!-- Professional Announcement Bar -->
     <div class="makhanam-announcement-bar">
@@ -119,7 +61,7 @@
             </div>
             <div class="announcement-slide-item" data-index="1">
                 <i class="fa-solid fa-seedling"></i>
-                <span>Wholesale Makhanam Supplier • Mithila, Bihar</span>
+                <span>Wholesale Makhanam Supplier</span>
             </div>
         </div>
     </div>
@@ -153,7 +95,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 11.5px;
             font-weight: 600;
             letter-spacing: 0.16em;
@@ -173,6 +115,12 @@
         .announcement-slide-item i {
             color: #C9A961;
             font-size: 13px;
+        }
+        .glass-dark {
+            background: rgba(18, 36, 27, 0.88);
+            backdrop-filter: blur(18px) saturate(140%);
+            -webkit-backdrop-filter: blur(18px) saturate(140%);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.25);
         }
         @media (max-width: 640px) {
             .makhanam-announcement-bar {
@@ -201,101 +149,107 @@
     </script>
 
     <!-- Main Navigation Header -->
-    <header class="main-header" id="mainHeader">
-        <div class="header-container">
+    <header class="main-header sticky top-0 z-40 w-full transition-all duration-300 glass-dark text-brand-ivory" id="siteHeader">
+        <div class="header-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
             <!-- Left Side: Mobile Menu Button + Brand Logo -->
-            <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
-                <button class="mobile-nav-btn" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
-                    <i class="fa-solid fa-bars-staggered"></i>
+            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+                <button onclick="toggleMobileNav()" aria-label="Open Navigation Menu" class="mobile-nav-btn lg:hidden p-2 text-brand-cream hover:text-brand-gold focus:outline-none flex items-center justify-center shrink-0" style="min-width: 44px; min-height: 44px;">
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
                 </button>
 
-                <!-- Brand Logo -->
-                <a href="index.html" class="brand-logo" aria-label="Makhanam Home">
-                    <div class="brand-badge">
-                        <span>GA</span>
+                <a href="index.html" class="brand-logo flex items-center gap-3 sm:gap-4 group min-w-0" aria-label="Makhanam Home">
+                    <div class="brand-badge w-10 h-10 rounded-full border border-[#C9A961] flex items-center justify-center bg-[#1E2B24] group-hover:border-[#E8CD84] transition-colors shrink-0">
+                        <span class="text-[#C9A961] text-sm font-serif font-bold">GA</span>
                     </div>
-                    <div class="brand-text">
-                        <span class="brand-title">Makhanam</span>
-                        <span class="brand-sub">Premium Raw Makhana</span>
+                    <div class="brand-text flex flex-col min-w-0">
+                        <span class="brand-title font-serif text-2xl sm:text-3xl tracking-[0.26em] font-light text-[#FFFFFF] uppercase group-hover:text-[#E8CD84] transition-colors leading-none">Makhanam</span>
+                        <span class="brand-sub text-[8.5px] sm:text-[9.5px] tracking-[0.32em] text-[#C9A961] uppercase font-sans font-bold mt-1.5">Premium Raw Makhana</span>
                     </div>
                 </a>
             </div>
 
             <!-- Desktop Nav Links -->
-            <nav class="desktop-nav">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="about.html" class="nav-item">About Us</a>
-                <a href="about-makhanam.html" class="nav-item active">About Makhanam</a>
-                <a href="about.html#journey" class="nav-item">Journey</a>
-                <a href="index.html#why-us" class="nav-item">Why Us</a>
-                <a href="contactus.html" class="nav-item">Contact</a>
+            <nav class="desktop-nav hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.18em] font-bold text-[#F1F6F2]">
+                <a href="index.html" class="nav-item hover:text-brand-gold transition-colors">Home</a>
+                <a href="sizeguide.html" class="nav-item hover:text-brand-gold transition-colors">About Us</a>
+                <a href="about.html" class="nav-item text-brand-gold font-semibold">About Makhana</a>
+                <a href="SizeCaliperGuide.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
+                <a href="journey.html" class="nav-item hover:text-brand-gold transition-colors">Journey</a>
+                <a href="contactus.html" class="nav-item hover:text-brand-gold transition-colors">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Unified Mobile Navigation Drawer (Slides from LEFT) -->
-    <div id="mobileNavDrawer" class="mobile-drawer-backdrop" onclick="toggleMobileNav(event)">
-        <div class="mobile-drawer-content" id="mobileDrawerContent" onclick="event.stopPropagation()">
+    <div id="mobile-nav-drawer" class="mobile-nav-backdrop fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0" aria-hidden="true">
+        <!-- Backdrop Blur Overlay -->
+        <div class="absolute inset-0 bg-[#0F0A07]/80 backdrop-blur-md" onclick="toggleMobileNav()"></div>
+
+        <!-- Left Slide Drawer Content -->
+        <div id="mobile-menu-content" class="mobile-nav-panel absolute top-0 left-0 bottom-0 w-[86%] max-w-[340px] bg-[#0B1610] text-[#F1F6F2] border-r border-[#C9A961]/25 p-6 flex flex-col justify-between transform -translate-x-full transition-transform duration-300 ease-out pointer-events-auto shadow-2xl overflow-y-auto">
             <div>
                 <!-- Drawer Top Header -->
-                <div class="drawer-header">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <div class="brand-badge" style="width: 32px; height: 32px; font-size: 11px;">
-                            <span>GA</span>
+                <div class="flex items-center justify-between pb-5 mb-6 border-b border-[#C9A961]/20">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full border border-[#C9A961]/45 flex items-center justify-center bg-[#12241B] shrink-0">
+                            <span class="text-[#C9A961] text-[11px] font-serif font-bold">GA</span>
                         </div>
-                        <div style="display: flex; flex-direction: column;">
-                            <span class="drawer-brand" style="font-size: 20px; line-height: 1.1;">Makhanam</span>
-                            <span style="font-size: 8px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; font-weight: 600;">Premium Raw Makhana</span>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-xl tracking-[0.14em] text-[#FAFCFA] uppercase leading-tight">Makhanam</span>
+                            <span class="text-[8px] tracking-[0.22em] text-[#C9A961] uppercase font-semibold">Premium Raw Makhana</span>
                         </div>
                     </div>
-                    <button class="drawer-close-btn" onclick="toggleMobileNav()" aria-label="Close Navigation Menu">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button onclick="toggleMobileNav()" class="p-2 text-[#C9A961] hover:text-[#E8CD84] focus:outline-none transition-colors flex items-center justify-center rounded-lg hover:bg-brand-gold/10" aria-label="Close Navigation Menu" style="min-width: 44px; min-height: 44px;">
+                        <i class="fa-solid fa-xmark text-xl"></i>
                     </button>
                 </div>
 
                 <!-- Navigation Links -->
-                <nav class="drawer-links">
-                    <a href="index.html" style="display: flex; align-items: center; justify-content: space-between;">
+                <nav class="flex flex-col space-y-3 text-xs uppercase tracking-[0.18em] font-medium" id="mobileNavLinks">
+                    <a href="index.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Home</span>
-                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                        <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
-                    <a href="about.html" style="display: flex; align-items: center; justify-content: space-between;">
+                    <a href="sizeguide.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>About Us</span>
-                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                        <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
-                    <a href="about-makhanam.html" class="active" style="display: flex; align-items: center; justify-content: space-between; color: var(--gold-bright); font-weight: 600;">
-                        <span>About Makhanam</span>
-                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; color: var(--gold);"></i>
+                    <a href="about.html" class="flex items-center justify-between py-2.5 text-[#E8CD84] font-semibold border-l-2 border-[#C9A961] pl-3 -ml-3 bg-brand-gold/10 rounded-r-lg">
+                        <span>About Makhana</span>
+                        <i class="fa-solid fa-chevron-right text-[9px] text-[#C9A961]"></i>
                     </a>
-                    <a href="about.html#journey" onclick="toggleMobileNav()" style="display: flex; align-items: center; justify-content: space-between;">
+                    <a href="SizeCaliperGuide.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
+                        <span>Grading Guide</span>
+                        <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
+                    </a>
+                    <a href="journey.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Journey</span>
-                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                        <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
-                    <a href="index.html#why-us" onclick="toggleMobileNav()" style="display: flex; align-items: center; justify-content: space-between;">
-                        <span>Why Us</span>
-                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
-                    </a>
-                    <a href="contactus.html" style="display: flex; align-items: center; justify-content: space-between;">
+                    <a href="contactus.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Contact</span>
-                        <i class="fa-solid fa-chevron-right" style="font-size: 9px; opacity: 0.4;"></i>
+                        <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
                 </nav>
             </div>
 
             <!-- Drawer Bottom Actions & Compliance -->
-            <div class="drawer-bottom">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span class="gstin-label">GSTIN REGISTERED</span>
-                    <span style="font-size: 10px; color: rgba(201, 169, 97, 0.8); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600;">Mithila, Bihar</span>
+            <div class="pt-6 mt-6 border-t border-[#C9A961]/20 space-y-4">
+                <div>
+                    <div class="flex items-center justify-between text-[10px] uppercase tracking-widest text-[#C9A961] font-semibold mb-1">
+                        <span>GSTIN Registered</span>
+                        <span>Mithila, Bihar</span>
+                    </div>
+                    <div class="font-mono text-xs text-[#FAFCFA] font-bold">10AZBPY2685B1ZL</div>
                 </div>
-                <p class="gstin-value">10AZBPY2685B1ZL</p>
-                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px;">
-                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." class="drawer-whatsapp-btn" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-whatsapp"></i>
+
+                <div class="flex flex-col gap-2 pt-1">
+                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] text-[#0A3018] font-bold text-xs uppercase tracking-wider transition-transform active:scale-[0.98] shadow-md min-h-[44px]">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
                         <span>WhatsApp Bulk Enquiry</span>
                     </a>
-                    <a href="tel:+918340493639" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border: 1px solid rgba(201, 169, 97, 0.4); border-radius: 8px; color: var(--gold); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none;">
-                        <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+918340493639" class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-[#C9A961]/40 text-[#C9A961] hover:bg-[#C9A961]/10 font-semibold text-xs uppercase tracking-wider transition-colors min-h-[44px]">
+                        <i class="fa-solid fa-phone text-xs"></i>
                         <span>Call +91 83404 93639</span>
                     </a>
                 </div>
@@ -304,9 +258,7 @@
     </div>
 
     <main>
-        <!-- ==========================================================================
-             HERO SECTION (ROOTED IN BIHAR. SUPPLIED WORLDWIDE.)
-             ========================================================================== -->
+        <!-- HERO SECTION -->
         <section class="about-hero">
             <img src="main.jpeg" alt="Makhana wetlands and processing in Bihar" class="about-hero-bg" onerror="this.style.display='none'">
             <div class="hero-bg-overlay"></div>
@@ -347,7 +299,6 @@
                     </div>
                 </div>
 
-                <!-- Action CTAs -->
                 <div class="hero-actions">
                     <a href="contactus.html#rfq" class="btn-shimmer">
                         <i class="fa-solid fa-file-invoice"></i>
@@ -361,29 +312,54 @@
             </div>
         </section>
 
-        <!-- ==========================================================================
-             STATS / INFOGRAPHIC BAR
-             ========================================================================== -->
+        <!-- STATS / INFOGRAPHIC BAR -->
         <div class="site-container">
-            <section class="stats-bar-section reveal">
+            <section class="stats-bar-section reveal" id="statsBarSection">
                 <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-value">85%+</div>
+                    <!-- Stat 1: 85%+ Global Origin -->
+                    <div class="stat-item group" data-counter-type="number" data-target="85" data-prefix="" data-suffix="%+">
+                        <div class="stat-icon-badge">
+                            <i class="fa-solid fa-earth-asia"></i>
+                        </div>
+                        <div class="stat-value">
+                            <span class="stat-count" id="statCount1">85%+</span>
+                        </div>
                         <div class="stat-title">Global Origin</div>
                         <div class="stat-sub">Sourced directly from native Bihar wetlands</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">3–7</div>
+
+                    <!-- Stat 2: 3–7 Suta Calipers -->
+                    <div class="stat-item group" data-counter-type="range" data-from="3" data-to="7">
+                        <div class="stat-icon-badge">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <div class="stat-value">
+                            <span class="stat-count" id="statCount2">3–7</span>
+                        </div>
                         <div class="stat-title">Suta Calipers</div>
                         <div class="stat-sub">Millimeter-precise electronic &amp; manual grading</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">&lt;10%</div>
+
+                    <!-- Stat 3: <10% Controlled Moisture -->
+                    <div class="stat-item group" data-counter-type="number" data-target="10" data-prefix="&lt;" data-suffix="%">
+                        <div class="stat-icon-badge">
+                            <i class="fa-solid fa-droplet-slash"></i>
+                        </div>
+                        <div class="stat-value">
+                            <span class="stat-count" id="statCount3">&lt;10%</span>
+                        </div>
                         <div class="stat-title">Controlled Moisture</div>
                         <div class="stat-sub">Superior crispness &amp; extended export shelf life</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">Direct</div>
+
+                    <!-- Stat 4: Direct Farmgate Trade -->
+                    <div class="stat-item group" data-counter-type="direct">
+                        <div class="stat-icon-badge">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div class="stat-value">
+                            <span class="stat-count text-brand-goldBright" id="statCount4">Direct</span>
+                        </div>
                         <div class="stat-title">Farmgate Trade</div>
                         <div class="stat-sub">Fair pricing &amp; generational Mallah partnerships</div>
                     </div>
@@ -391,309 +367,937 @@
             </section>
         </div>
 
-        <!-- ==========================================================================
-             VISUAL ORIGIN & STORY SECTION (EXACT IMAGE SECTION AS IN ABOUT US ONLY)
-             ========================================================================== -->
-        <section class="origin-showcase-section">
+        <!-- PURE ORIGIN. SUPERFOOD NUTRITION SECTION -->
+        <section class="nutrition-superfood-section" id="nutrition">
             <div class="site-container">
-                <div class="origin-layout">
-                    <!-- Left: Rich Visual Photo Gallery Stack (Identical to About Us) -->
-                    <div class="photo-stack-container reveal">
-                        <div class="photo-card-main">
-                            <img src="wetland.jpeg" alt="Makhana aquatic wetland harvesting in Mithila, Bihar">
-                            <div class="photo-overlay-tag">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Mithila Wetlands • Natural Terroir</span>
-                            </div>
-                        </div>
-                        <div class="photo-card-side">
-                            <div class="photo-card-sub">
-                                <img src="mukka_cultivation.jpg" alt="Traditional Makhana cultivation pond in Bihar">
-                                <div class="photo-overlay-tag">
-                                    <i class="fa-solid fa-water"></i>
-                                    <span>Aquatic Ecosystem</span>
-                                </div>
-                            </div>
-                            <div class="photo-card-sub">
-                                <img src="story.jpeg" alt="Generational harvesting and sun drying">
-                                <div class="photo-overlay-tag">
-                                    <i class="fa-solid fa-sun"></i>
-                                    <span>Sun Cured Quality</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Large, Scannable Concise Feature Cards -->
-                    <div class="origin-content-col reveal">
-                        <div>
-                            <span class="section-eyebrow">WHO WE ARE</span>
-                            <h2 class="editorial-title">
-                                Sourced at Origin. <span class="italic text-earth">Built for Scale.</span>
-                            </h2>
-                        </div>
-
-                        <div class="origin-feature-card">
-                            <div class="feature-icon-box">
-                                <i class="fa-solid fa-building-wheat"></i>
-                            </div>
-                            <div>
-                                <h3>Direct Origin Processing</h3>
-                                <p>Headquartered in Bihar to bypass unnecessary middlemen, guaranteeing authentic batch origin and peak crunch.</p>
-                            </div>
-                        </div>
-
-                        <div class="origin-feature-card">
-                            <div class="feature-icon-box">
-                                <i class="fa-solid fa-microscope"></i>
-                            </div>
-                            <div>
-                                <h3>Strict Caliper Sorting</h3>
-                                <p>Standardized millimeter sizing ensures uniform roast expansion for commercial snack brands and packers.</p>
-                            </div>
-                        </div>
-
-                        <div class="origin-feature-card">
-                            <div class="feature-icon-box">
-                                <i class="fa-solid fa-boxes-packing"></i>
-                            </div>
-                            <div>
-                                <h3>Export-Ready Packaging</h3>
-                                <p>Multi-layer moisture-barrier vacuum bags and corrugated master cartons engineered for global transit.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             THE ORIGIN — IT BEGINS IN MITHILA (HERITAGE SPLIT WITH LARGE IMAGE FRAME)
-             ========================================================================== -->
-        <section class="origin-split-section" id="origin-heritage">
-            <div class="site-container">
-                <div class="origin-split-grid">
-                    <!-- Left: Large Landscape Photograph -->
-                    <div class="origin-image-frame reveal">
-                        <img src="mukka_cultivation.jpg" alt="Calm makhana cultivation pond in Mithila, Bihar">
-                        <div class="origin-caption-badge">
-                            <div>
-                                <span class="badge-label">Origin Terroir</span>
-                                <div class="badge-location">Northern Bihar Wetlands</div>
-                            </div>
-                            <i class="fa-solid fa-feather text-gold" style="font-size: 18px;"></i>
-                        </div>
-                    </div>
-
-                    <!-- Right: Concise Editorial Story -->
-                    <div class="origin-copy-box reveal">
-                        <span class="section-eyebrow">THE ORIGIN</span>
-                        <h2 class="editorial-title">
-                            It begins in <span class="italic text-terracotta">Mithila.</span>
-                        </h2>
-
-                        <p class="origin-lead-p">
-                            Makhana has been cultivated for generations across the calm freshwater ponds and natural wetlands of northern Bihar.
-                        </p>
-
-                        <p class="origin-body-p">
-                            In Mithila, the harvest is rooted in deep generational knowledge—understanding the seasons, the water, and the precise moment seeds are ready. MAKHANAM was established directly in this landscape to respect and preserve this heritage while bringing dependable sourcing and consistent grading to businesses across India and global markets.
-                        </p>
-
-                        <div>
-                            <div class="origin-location-flow">
-                                <span>MITHILA</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <span>BIHAR</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <span>INDIA</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             THE 3 WHOLESALE PILLARS (QUALITY & RATE, CONTRACT PROMISE, TIMELY DELIVERY)
-             ========================================================================== -->
-        <section style="background: #F1F6F2; padding: 90px 0; border-top: 1px solid rgba(56, 90, 72, 0.12); border-bottom: 1px solid rgba(56, 90, 72, 0.12);">
-            <div class="site-container">
-                <div style="text-align: center; max-width: 680px; margin: 0 auto 50px;" class="reveal">
-                    <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--terracotta); font-weight: 700; display: block; margin-bottom: 10px;">The Makhanam Standard</span>
-                    <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 300; color: var(--dark); line-height: 1.15;">
-                        Three Uncompromised Commitments <br>
-                        <span style="font-style: italic; color: var(--terracotta);">To Wholesale Partners.</span>
+                <!-- Section Header -->
+                <div class="nutrition-header-center reveal">
+                    <h2 class="nutrition-main-title">
+                        Pure Origin. <span class="nutrition-title-highlight">Superfood Nutrition.</span>
                     </h2>
-                    <p style="font-size: 16px; color: rgba(18, 36, 27, 0.75); margin-top: 14px;">
-                        Reliability is everything in bulk food commodities. At Makhanam, signed contract specifications are our sacred word.
+                    <p class="nutrition-main-subtitle">
+                        Ancient Mithila Foxnut (Euryale Ferox) — 100% natural plant protein, low glycemic index, and essential minerals.
                     </p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px;">
-                    <!-- Pillar 1 -->
-                    <div class="pillar-card reveal">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid rgba(56, 90, 72, 0.12);">
-                                <span class="pillar-tag">15–20% Cost Advantage</span>
-                                <span class="pillar-num">01</span>
+                <!-- 3 Feature Cards Grid -->
+                <div class="nutrition-cards-grid">
+                    <!-- Card 1: Plant Protein & Energy -->
+                    <div class="nutrition-card reveal">
+                        <div class="nutrition-card-media">
+                            <img src="popping.jpeg" alt="Plant Protein and Energy Popping Makhana">
+                            <div class="nutrition-media-badge">9.7g PROTEIN / 100g</div>
+                        </div>
+                        <div class="nutrition-card-content">
+                            <div class="nutrition-card-head">
+                                <div class="nutrition-icon-square">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+                                <div class="nutrition-head-titles">
+                                    <h3 class="nutrition-card-title">Plant Protein &amp; Energy</h3>
+                                    <span class="nutrition-card-kicker">ACTIVE LIFESTYLE</span>
+                                </div>
                             </div>
-                            <div class="pillar-icon-box">
-                                <i class="fa-solid fa-gem"></i>
-                            </div>
-                            <h3 class="pillar-title">
-                                Premium Quality, <br><span style="color: var(--terracotta); font-style: italic;">Better Rate.</span>
-                            </h3>
-                            <ul class="pillar-list">
+                            <ul class="nutrition-points-list">
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Farmgate Direct:</strong> We operate directly in Mithila wetlands, eliminating speculative middle-men for 15–20% procurement savings.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>16 Essential Amino Acids</span>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>3 to 7 Suta Caliper Calibrated:</strong> Machine-graded for uniform sizing, zero dust, and minimal breakage.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>Sustained Energy Release</span>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Moisture Guaranteed &lt;10%:</strong> Low moisture curing delivers superior puff volume, maximum crunch, and extended shelf life.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>Clean Muscle Recovery</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Pillar 2 -->
-                    <div class="pillar-card reveal">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid rgba(56, 90, 72, 0.12);">
-                                <span class="pillar-tag">Zero Grade Dilution</span>
-                                <span class="pillar-num">02</span>
+                    <!-- Card 2: Cardiovascular Health -->
+                    <div class="nutrition-card reveal">
+                        <div class="nutrition-card-media">
+                            <img src="flower.jpeg" alt="Cardiovascular Health Natural Water Lily Wetland">
+                            <div class="nutrition-media-badge">LOW SODIUM : HIGH POTASSIUM</div>
+                        </div>
+                        <div class="nutrition-card-content">
+                            <div class="nutrition-card-head">
+                                <div class="nutrition-icon-square">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <div class="nutrition-head-titles">
+                                    <h3 class="nutrition-card-title">Cardiovascular Health</h3>
+                                    <span class="nutrition-card-kicker">HEART FRIENDLY</span>
+                                </div>
                             </div>
-                            <div class="pillar-icon-box">
-                                <i class="fa-solid fa-handshake-angle"></i>
-                            </div>
-                            <h3 class="pillar-title">
-                                We Deliver What <br><span style="color: var(--terracotta); font-style: italic;">We Promise.</span>
-                            </h3>
-                            <ul class="pillar-list">
+                            <ul class="nutrition-points-list">
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Sample-to-Shipment Matching:</strong> What you approved in pre-shipment sample is exactly what docks at your factory gate.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>Regulates Blood Pressure</span>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Certified Weight Transparency:</strong> Weighbridge slips and vacuum moisture barrier packaging prevent weight loss in transit.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>0% Trans Fat &amp; Zero Cholesterol</span>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Full Compliance:</strong> Strict FSSAI adherence, batch documentation, GST invoices, and APEDA export readiness.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>High Magnesium &amp; Folate</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Pillar 3 -->
-                    <div class="pillar-card reveal">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid rgba(56, 90, 72, 0.12);">
-                                <span class="pillar-tag">Reliable Logistics</span>
-                                <span class="pillar-num">03</span>
+                    <!-- Card 3: Metabolic Balance -->
+                    <div class="nutrition-card reveal">
+                        <div class="nutrition-card-media">
+                            <img src="growth.jpeg" alt="Metabolic Balance Organic Seed Pod">
+                            <div class="nutrition-media-badge">LOW GLYCEMIC INDEX</div>
+                        </div>
+                        <div class="nutrition-card-content">
+                            <div class="nutrition-card-head">
+                                <div class="nutrition-icon-square">
+                                    <i class="fa-solid fa-cubes-stacked"></i>
+                                </div>
+                                <div class="nutrition-head-titles">
+                                    <h3 class="nutrition-card-title">Metabolic Balance</h3>
+                                    <span class="nutrition-card-kicker">DIABETIC SAFE</span>
+                                </div>
                             </div>
-                            <div class="pillar-icon-box">
-                                <i class="fa-solid fa-truck-fast"></i>
-                            </div>
-                            <h3 class="pillar-title">
-                                Guaranteed <br><span style="color: var(--terracotta); font-style: italic;">Timely Delivery.</span>
-                            </h3>
-                            <ul class="pillar-list">
+                            <ul class="nutrition-points-list">
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Central Buffer Stock:</strong> Ready inventory maintained year-round for instant dispatch on recurring volume contracts.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>Prevents Insulin Spikes</span>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Pan-India Multi-Modal Freight:</strong> Express road, rail, and port logistics partnerships for on-time destination arrivals.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>Only 347 Kcal / 100g Puffed</span>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <span><strong>Dedicated Dispatch Desk:</strong> Active docket tracking, milestone alerts, and priority client coordination from loading to delivery.</span>
+                                    <i class="fa-solid fa-diamond nutrition-point-bullet"></i>
+                                    <span>High Satiety Dietary Fiber</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
+                <!-- 6-Column Bottom Key Metrics Strip -->
+                <div class="nutrition-stats-strip reveal">
+                    <!-- Metric 1 -->
+                    <div class="nutrition-stat-col">
+                        <i class="fa-solid fa-seedling nutrition-stat-icon"></i>
+                        <div class="nutrition-stat-val">9.7g</div>
+                        <div class="nutrition-stat-title">PLANT PROTEIN</div>
+                        <div class="nutrition-stat-desc">Per 100g Dry Weight</div>
+                    </div>
+
+                    <!-- Metric 2 -->
+                    <div class="nutrition-stat-col">
+                        <i class="fa-solid fa-bone nutrition-stat-icon"></i>
+                        <div class="nutrition-stat-val">60mg+</div>
+                        <div class="nutrition-stat-title">CALCIUM</div>
+                        <div class="nutrition-stat-desc">Bone &amp; Joint Strength</div>
+                    </div>
+
+                    <!-- Metric 3 -->
+                    <div class="nutrition-stat-col">
+                        <i class="fa-solid fa-chart-line nutrition-stat-icon"></i>
+                        <div class="nutrition-stat-val">Low GI</div>
+                        <div class="nutrition-stat-title">GLYCEMIC INDEX</div>
+                        <div class="nutrition-stat-desc">Diabetic Friendly</div>
+                    </div>
+
+                    <!-- Metric 4 -->
+                    <div class="nutrition-stat-col">
+                        <i class="fa-solid fa-shield-virus nutrition-stat-icon"></i>
+                        <div class="nutrition-stat-val">Kaempferol</div>
+                        <div class="nutrition-stat-title">ANTIOXIDANT</div>
+                        <div class="nutrition-stat-desc">Anti-Aging Flavonoids</div>
+                    </div>
+
+                    <!-- Metric 5 -->
+                    <div class="nutrition-stat-col">
+                        <i class="fa-solid fa-ban nutrition-stat-icon"></i>
+                        <div class="nutrition-stat-val">0.0g</div>
+                        <div class="nutrition-stat-title">TRANS FAT</div>
+                        <div class="nutrition-stat-desc">Zero Cholesterol</div>
+                    </div>
+
+                    <!-- Metric 6 -->
+                    <div class="nutrition-stat-col">
+                        <i class="fa-solid fa-award nutrition-stat-icon"></i>
+                        <div class="nutrition-stat-val">100%</div>
+                        <div class="nutrition-stat-title">GLUTEN-FREE</div>
+                        <div class="nutrition-stat-desc">Non-GMO Superfood</div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- ==========================================================================
-             4-STEP VISUAL QUALITY PIPELINE (REAL PHOTOS)
-             ========================================================================== -->
-        <section class="visual-pipeline-section">
+        <!-- WHERE IS IT GROWN? (DISTRICT TERROIR & CULTIVATION BELT) -->
+        <section class="district-terroir-section" id="origin-districts">
+            <div class="site-container">
+                <!-- Section Header -->
+                <div class="district-head-center reveal">
+                    <span class="section-eyebrow">GEOGRAPHIC TERROIR • 85%+ GLOBAL SUPPLY</span>
+                    <h2 class="editorial-title">
+                        Where is it grown? <span class="italic text-terracotta">The Bihar Wetland Belts.</span>
+                    </h2>
+                    <p style="color: var(--earth); font-size: 15.5px; line-height: 1.7; max-width: 760px; margin: 0 auto;">
+                        Over 85% of the world's raw Makhana flourishes across the tranquil freshwater wetlands, perennial floodplains (Chaurs), and traditional oxbow pond ecosystems of Northern Bihar.
+                    </p>
+                </div>
+
+                <!-- 4 Terroir Microclimate Factors -->
+                <div class="terroir-factors-bar reveal">
+                    <div class="terroir-factor-item">
+                        <div class="terroir-factor-icon">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <div class="terroir-factor-text">
+                            <strong>2–4 Ft Standing Water</strong>
+                            <span>Calm Oxbow Wetlands</span>
+                        </div>
+                    </div>
+
+                    <div class="terroir-factor-item">
+                        <div class="terroir-factor-icon">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <div class="terroir-factor-text">
+                            <strong>Himalayan Alluvial Silt</strong>
+                            <span>Mineral-Dense Mud Beds</span>
+                        </div>
+                    </div>
+
+                    <div class="terroir-factor-item">
+                        <div class="terroir-factor-icon">
+                            <i class="fa-solid fa-sun-plant-wilt"></i>
+                        </div>
+                        <div class="terroir-factor-text">
+                            <strong>Subtropical Climate</strong>
+                            <span>High Seasonal Humidity</span>
+                        </div>
+                    </div>
+
+                    <div class="terroir-factor-item">
+                        <div class="terroir-factor-icon">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <div class="terroir-factor-text">
+                            <strong>Zero Synthetic Fertilizers</strong>
+                            <span>100% Organic Ecosystem</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Region Selector Filter Tabs -->
+                <div class="district-filter-tabs reveal">
+                    <button class="district-tab-btn active" onclick="filterDistricts('all', this)">All Districts (85%+ Origin)</button>
+                    <button class="district-tab-btn" onclick="filterDistricts('mithila', this)">Mithila Belt</button>
+                    <button class="district-tab-btn" onclick="filterDistricts('seemanchal', this)">Seemanchal Belt</button>
+                    <button class="district-tab-btn" onclick="filterDistricts('kosi', this)">Kosi River Basin</button>
+                    <button class="district-tab-btn" onclick="filterDistricts('terai', this)">Terai &amp; Eastern Belt</button>
+                </div>
+
+                <!-- 6 Visual District Cards Grid -->
+                <div class="districts-showcase-grid" id="districtsGrid">
+                    <!-- District 1: Darbhanga -->
+                    <article class="district-card reveal" data-region="mithila">
+                        <div class="district-card-media">
+                            <img src="mukka_cultivation.jpg" alt="Darbhanga Makhana cultivation wetlands and ICAR Research Centre">
+                            <span class="district-badge-overlay">Mithila Hub</span>
+                        </div>
+                        <div class="district-card-body">
+                            <span class="district-region-kicker">MITHILA REGION</span>
+                            <h3 class="district-card-title">Darbhanga</h3>
+                            <p class="district-card-desc">
+                                Historical Makhana Capital &amp; home to the ICAR National Research Centre for Makhana, central mandis, and certified GI seed grading.
+                            </p>
+                            <div class="district-meta-pill">
+                                <i class="fa-solid fa-certificate"></i>
+                                <span>GI Epicentre &amp; Research Hub</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- District 2: Madhubani -->
+                    <article class="district-card reveal" data-region="mithila">
+                        <div class="district-card-media">
+                            <img src="harvest.jpeg" alt="Madhubani artisanal pond diving Mallah harvesters">
+                            <span class="district-badge-overlay">Artisanal Diving</span>
+                        </div>
+                        <div class="district-card-body">
+                            <span class="district-region-kicker">MITHILA REGION</span>
+                            <h3 class="district-card-title">Madhubani</h3>
+                            <p class="district-card-desc">
+                                Famous for ancient village water tanks and generation-trained Mallah harvester communities specialized in meticulous underwater hand-scavenging without shell damage.
+                            </p>
+                            <div class="district-meta-pill">
+                                <i class="fa-solid fa-person-swimming"></i>
+                                <span>Underwater Hand Foraging</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- District 3: Purnia -->
+                    <article class="district-card reveal" data-region="seemanchal">
+                        <div class="district-card-media">
+                            <img src="story.jpeg" alt="Purnia commercial Makhana production acreage">
+                            <span class="district-badge-overlay">Largest Volume</span>
+                        </div>
+                        <div class="district-card-body">
+                            <span class="district-region-kicker">SEEMANCHAL BELT</span>
+                            <h3 class="district-card-title">Purnia</h3>
+                            <p class="district-card-desc">
+                                The highest production volume district in modern times, driving commercial plantation expansion, modern processing clusters, and bulk export aggregation.
+                            </p>
+                            <div class="district-meta-pill">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>Largest Acreage &amp; Supply</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- District 4: Katihar -->
+                    <article class="district-card reveal" data-region="seemanchal">
+                        <div class="district-card-media">
+                            <img src="wetland.jpeg" alt="Katihar wetland logistics and trade corridor">
+                            <span class="district-badge-overlay">Trade Corridor</span>
+                        </div>
+                        <div class="district-card-body">
+                            <span class="district-region-kicker">SEEMANCHAL BELT</span>
+                            <h3 class="district-card-title">Katihar</h3>
+                            <p class="district-card-desc">
+                                Strategically positioned on the eastern trade axis, connecting vast floodplain wetlands with premier logistics rail routes for pan-India wholesale dispatches.
+                            </p>
+                            <div class="district-meta-pill">
+                                <i class="fa-solid fa-train-subway"></i>
+                                <span>Major Logistics Axis</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- District 5: Saharsa & Supaul -->
+                    <article class="district-card reveal" data-region="kosi">
+                        <div class="district-card-media">
+                            <img src="transplant.jpeg" alt="Saharsa and Supaul vast Kosi floodplain chaurs">
+                            <span class="district-badge-overlay">Floodplain Chaurs</span>
+                        </div>
+                        <div class="district-card-body">
+                            <span class="district-region-kicker">KOSI RIVER BASIN</span>
+                            <h3 class="district-card-title">Saharsa &amp; Supaul</h3>
+                            <p class="district-card-desc">
+                                Expansive natural wetland depressions created by the dynamic Kosi river basin yield high-density seeds known for superior roast expansion and clean crispness.
+                            </p>
+                            <div class="district-meta-pill">
+                                <i class="fa-solid fa-water-ladder"></i>
+                                <span>Dynamic Silt Deposition</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- District 6: Sitamarhi & Kishanganj -->
+                    <article class="district-card reveal" data-region="terai">
+                        <div class="district-card-media">
+                            <img src="flower.jpeg" alt="Sitamarhi and Kishanganj sub-Himalayan alluvial ponds">
+                            <span class="district-badge-overlay">Alluvial Ponds</span>
+                        </div>
+                        <div class="district-card-body">
+                            <span class="district-region-kicker">TERAI &amp; EASTERN BELT</span>
+                            <h3 class="district-card-title">Sitamarhi &amp; Kishanganj</h3>
+                            <p class="district-card-desc">
+                                Bordering the sub-Himalayan foothills with perennial high precipitation, nurturing mineral-rich organic aquatic pools with year-round freshwater recharge.
+                            </p>
+                            <div class="district-meta-pill">
+                                <i class="fa-solid fa-cloud-showers-heavy"></i>
+                                <span>Sub-Himalayan Rainfall Ponds</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function filterDistricts(region, btn) {
+                const buttons = document.querySelectorAll('.district-tab-btn');
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const cards = document.querySelectorAll('.district-card');
+                cards.forEach(card => {
+                    const cardRegion = card.getAttribute('data-region');
+                    if (region === 'all' || cardRegion === region) {
+                        card.style.display = 'flex';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+
+        <!-- THE 7-STAGE MAKHANA JOURNEY SECTION -->
+        <section class="seven-stages-section" id="journey">
+            <div class="stages-glow-bg"></div>
+            <div class="site-container">
+                <!-- Section Header -->
+                <div class="stages-header-center reveal">
+                    <span class="stages-eyebrow">FROM WATER TO WONDER</span>
+                    <h2 class="stages-main-title">The 7-Stage Makhana Journey</h2>
+                    <p class="stages-main-subtitle">
+                        From the quiet wetlands of Bihar to the delicate white bloom in your bowl, every Makhana passes through a patient journey shaped by water, season, skilled hands and generations of farming knowledge.
+                    </p>
+                </div>
+
+                <!-- 7 Stages Tab Navigation -->
+                <div class="stages-tabs-nav reveal">
+                    <button class="stage-tab-btn active" onclick="setAboutJourneyStep(1)" id="about-step-btn-1">01. WETLAND</button>
+                    <button class="stage-tab-btn" onclick="setAboutJourneyStep(2)" id="about-step-btn-2">02. SOWING</button>
+                    <button class="stage-tab-btn" onclick="setAboutJourneyStep(3)" id="about-step-btn-3">03. GROWTH</button>
+                    <button class="stage-tab-btn" onclick="setAboutJourneyStep(4)" id="about-step-btn-4">04. TRANSPLANT</button>
+                    <button class="stage-tab-btn" onclick="setAboutJourneyStep(5)" id="about-step-btn-5">05. FLOWER</button>
+                    <button class="stage-tab-btn" onclick="setAboutJourneyStep(6)" id="about-step-btn-6">06. HARVEST</button>
+                    <button class="stage-tab-btn" onclick="setAboutJourneyStep(7)" id="about-step-btn-7">07. POPPING</button>
+                </div>
+
+                <!-- Active Stage Showcase Card -->
+                <div class="stage-card-box reveal">
+                    <!-- Text / Info Column -->
+                    <div class="stage-info-col">
+                        <div class="stage-number-row">
+                            <span id="about-journey-step-num">STAGE 01 / 07</span>
+                            <span class="hairline"></span>
+                        </div>
+
+                        <h3 class="stage-title" id="about-journey-title">The Living Wetland</h3>
+
+                        <p class="stage-desc" id="about-journey-desc">
+                            The journey begins in the water bodies of Bihar. Traditional Makhana is cultivated in ponds and wetlands where the crop grows in standing water, rooted in the aquatic environment.
+                        </p>
+
+                        <!-- Quote Subcard -->
+                        <div class="stage-quote-subcard">
+                            <i class="fa-solid fa-leaf"></i>
+                            <div>
+                                <p class="stage-quote-text" id="about-journey-quote">
+                                    “Before the first seed is sown, the water must be ready to receive it.”
+                                </p>
+                                <span class="stage-quote-author" id="about-journey-source">
+                                    — TRADITIONAL MAKHANA CULTIVATION
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Prev / Next Interactive Controls -->
+                        <div class="stage-controls-row">
+                            <button onclick="prevAboutJourneyStep()" class="stage-ctrl-btn">
+                                <i class="fa-solid fa-arrow-left"></i> <span>Previous</span>
+                            </button>
+                            <span class="stage-counter-txt" id="about-journey-counter">Stage 1 of 7</span>
+                            <button onclick="nextAboutJourneyStep()" class="stage-ctrl-btn">
+                                <span>Next Stage</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Image Visual Column -->
+                    <div class="stage-image-col">
+                        <img id="about-journey-img" src="wetland.jpeg" alt="Makhana wetland ecosystem in Bihar" loading="lazy">
+                        <span class="stage-image-badge-top" id="about-journey-badge">BIHAR WETLANDS</span>
+                        <span class="stage-image-badge-bottom" id="about-journey-image-stage">STAGE 01</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const ABOUT_JOURNEY_DATA = {
+                1: {
+                    num: 'STAGE 01 / 07',
+                    title: 'The Living Wetland',
+                    desc: 'The journey begins in the water bodies of Bihar. Traditional Makhana is cultivated in ponds and wetlands where the crop grows in standing water, rooted in the aquatic environment.',
+                    quote: 'Before the first seed is sown, the water must be ready to receive it.',
+                    source: '— TRADITIONAL MAKHANA CULTIVATION',
+                    badge: 'BIHAR WETLANDS',
+                    img: 'wetland.jpeg'
+                },
+                2: {
+                    num: 'STAGE 02 / 07',
+                    title: 'The First Seed',
+                    desc: 'The journey begins with the Makhana seed. In traditional pond cultivation, seeds from the previous crop can provide planting material, while improved systems raise young seedlings before transplanting them into the main field.',
+                    quote: 'Every harvest begins with something small, placed carefully beneath the water.',
+                    source: '— MAKHANA CULTIVATION',
+                    badge: 'SEED SOWING',
+                    img: 'sowing.jpeg'
+                },
+                3: {
+                    num: 'STAGE 03 / 07',
+                    title: 'Life Beneath the Surface',
+                    desc: 'After germination, young Makhana plants begin developing beneath and around the water surface. Gradually, their distinctive round leaves emerge and begin spreading across the pond.',
+                    quote: 'Much of the journey happens where the eye cannot see.',
+                    source: '— MAKHANA GROWTH CYCLE',
+                    badge: 'EARLY GROWTH',
+                    img: 'growth.jpeg'
+                },
+                4: {
+                    num: 'STAGE 04 / 07',
+                    title: 'The Floating Canopy',
+                    desc: 'As the plants mature, large floating leaves spread across the water. In field-based cultivation, young seedlings are transplanted and carefully managed until the growing Makhana plants create a dense green canopy.',
+                    quote: 'Slowly, one leaf becomes many — until the water turns into a living green landscape.',
+                    source: '— MAKHANA FIELD CULTIVATION',
+                    badge: 'FIELD TRANSPLANT',
+                    img: 'transplant.jpeg'
+                },
+                5: {
+                    num: 'STAGE 05 / 07',
+                    title: 'The Flower Beneath',
+                    desc: 'Once the plant matures, its distinctive flower appears among the floating leaves. After flowering and fruit development, the Makhana seeds mature inside the prickly fruit beneath the water.',
+                    quote: 'A beautiful flower above the water hides the beginning of the harvest below.',
+                    source: '— MAKHANA FLOWER & FRUIT',
+                    badge: 'FLOWER & FRUIT',
+                    img: 'flower.jpeg'
+                },
+                6: {
+                    num: 'STAGE 06 / 07',
+                    title: 'The Underwater Harvest',
+                    desc: 'When the fruits mature, the seeds settle beneath the water. Farmers enter the ponds and collect the seeds from the bottom by hand — a physically demanding process requiring patience, experience and skill.',
+                    quote: 'The harvest is hidden beneath the water — and human hands bring it back to the surface.',
+                    source: '— TRADITIONAL MAKHANA HARVESTING',
+                    badge: 'UNDERWATER HARVEST',
+                    img: 'harvest.jpeg'
+                },
+                7: {
+                    num: 'STAGE 07 / 07',
+                    title: 'The Art of Popping',
+                    desc: 'After harvesting, the seeds are cleaned and dried before processing. Traditional processing involves roasting the seeds at high temperature and carefully popping them, transforming the hard dark seed into the light, crisp Phool Makhana.',
+                    quote: 'From a dark seed gathered beneath the water comes the delicate white Makhana we know.',
+                    source: '— TRADITIONAL MAKHANA PROCESSING',
+                    badge: 'PHOOL MAKHANA',
+                    img: 'popping.jpeg'
+                }
+            };
+
+            let currentAboutJourneyStep = 1;
+
+            function setAboutJourneyStep(stepNum) {
+                const data = ABOUT_JOURNEY_DATA[stepNum];
+                if (!data) return;
+
+                currentAboutJourneyStep = stepNum;
+
+                // Update buttons
+                for (let i = 1; i <= 7; i++) {
+                    const btn = document.getElementById(`about-step-btn-${i}`);
+                    if (btn) {
+                        if (i === stepNum) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    }
+                }
+
+                // Update text
+                const stepNumber = document.getElementById('about-journey-step-num');
+                const title = document.getElementById('about-journey-title');
+                const description = document.getElementById('about-journey-desc');
+                const quote = document.getElementById('about-journey-quote');
+                const source = document.getElementById('about-journey-source');
+                const badge = document.getElementById('about-journey-badge');
+                const imageStage = document.getElementById('about-journey-image-stage');
+                const counter = document.getElementById('about-journey-counter');
+                const image = document.getElementById('about-journey-img');
+
+                if (stepNumber) stepNumber.textContent = data.num;
+                if (title) title.textContent = data.title;
+                if (description) description.textContent = data.desc;
+                if (quote) quote.textContent = `“${data.quote}”`;
+                if (source) source.textContent = data.source;
+                if (badge) badge.textContent = data.badge;
+                if (imageStage) imageStage.textContent = `STAGE ${String(stepNum).padStart(2, '0')}`;
+                if (counter) counter.textContent = `Stage ${stepNum} of 7`;
+
+                if (image) {
+                    image.style.opacity = '0';
+                    image.style.transform = 'scale(1.04)';
+                    setTimeout(() => {
+                        image.src = data.img;
+                        image.onload = () => {
+                            image.style.opacity = '1';
+                            image.style.transform = 'scale(1)';
+                        };
+                    }, 180);
+                }
+            }
+
+            function prevAboutJourneyStep() {
+                const prev = currentAboutJourneyStep <= 1 ? 7 : currentAboutJourneyStep - 1;
+                setAboutJourneyStep(prev);
+            }
+
+            function nextAboutJourneyStep() {
+                const next = currentAboutJourneyStep >= 7 ? 1 : currentAboutJourneyStep + 1;
+                setAboutJourneyStep(next);
+            }
+        </script>
+
+        <!-- THE PREPARATION OF MAKHANA (Roadmap Visual Workflow with Circle Frames & Animated Arrows) -->
+        <section class="makhana-prep-section" id="preparation">
+            <div class="site-container">
+                <!-- Section Header -->
+                <div class="prep-header-center reveal">
+                    <span class="prep-eyebrow"><i class="fa-solid fa-route"></i> SEQUENTIAL ARTISANAL ROADMAP</span>
+                    <h2 class="prep-main-title">
+                        The Preparation of <span class="italic text-terracotta">Makhana.</span>
+                    </h2>
+                    <p class="prep-main-subtitle">
+                        From muddy pond beds to pure white puffed blooms — follow the step-by-step roadmap of how authentic Bihar Makhana is crafted.
+                    </p>
+                </div>
+
+                <!-- 6-Stage Roadmap Grid with Circle Frames & Directional Arrows -->
+                <div class="prep-roadmap-grid">
+                    <!-- Stage 01 -->
+                    <article class="roadmap-node reveal">
+                        <!-- Top Phase Header -->
+                        <div class="roadmap-phase-header">
+                            <span class="roadmap-phase-pill"><i class="fa-solid fa-water"></i> PHASE 01 · GATHERING</span>
+                            <h3 class="roadmap-node-title">Pond Bed Harvesting</h3>
+                        </div>
+
+                        <!-- Circular Framed Image -->
+                        <div class="roadmap-circle-wrap">
+                            <div class="roadmap-circle-halo"></div>
+                            <div class="roadmap-circle-frame">
+                                <img src="harvest.jpeg" alt="Phase 1: Underwater Pond Bed Harvesting of raw Makhana seeds" loading="lazy">
+                            </div>
+                            <span class="roadmap-circle-tag">STEP 01 · RAW GURI</span>
+                        </div>
+
+                        <!-- One Line Description -->
+                        <p class="roadmap-oneline-desc">
+                            Mallah divers forage muddy wetland beds by hand to collect fresh black seeds (*Guri*) without cracking the outer shell.
+                        </p>
+
+                        <!-- Meta Footer -->
+                        <div class="roadmap-meta-footer">
+                            <span><i class="fa-solid fa-person-swimming"></i> Traditional Diving</span>
+                            <span>01 / 06</span>
+                        </div>
+
+                        <!-- Animated Connecting Arrow to Next Phase -->
+                        <div class="roadmap-flow-arrow" title="Proceed to Phase 02">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </article>
+
+                    <!-- Stage 02 -->
+                    <article class="roadmap-node reveal">
+                        <!-- Top Phase Header -->
+                        <div class="roadmap-phase-header">
+                            <span class="roadmap-phase-pill"><i class="fa-solid fa-sun"></i> PHASE 02 · DRYING</span>
+                            <h3 class="roadmap-node-title">Sun-Drying &amp; Conditioning</h3>
+                        </div>
+
+                        <!-- Circular Framed Image -->
+                        <div class="roadmap-circle-wrap">
+                            <div class="roadmap-circle-halo"></div>
+                            <div class="roadmap-circle-frame">
+                                <img src="sowing.jpeg" alt="Phase 2: Natural Sun-Drying and Moisture Conditioning of Makhana" loading="lazy">
+                            </div>
+                            <span class="roadmap-circle-tag">STEP 02 · SUN CURED</span>
+                        </div>
+
+                        <!-- One Line Description -->
+                        <p class="roadmap-oneline-desc">
+                            Freshly washed seeds are spread across open bamboo mats under natural sunshine to stabilize moisture down to 31–33%.
+                        </p>
+
+                        <!-- Meta Footer -->
+                        <div class="roadmap-meta-footer">
+                            <span><i class="fa-solid fa-clock"></i> 2–3 Days Sunning</span>
+                            <span>02 / 06</span>
+                        </div>
+
+                        <!-- Animated Connecting Arrow to Next Phase -->
+                        <div class="roadmap-flow-arrow" title="Proceed to Phase 03">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </article>
+
+                    <!-- Stage 03 -->
+                    <article class="roadmap-node reveal">
+                        <!-- Top Phase Header -->
+                        <div class="roadmap-phase-header">
+                            <span class="roadmap-phase-pill"><i class="fa-solid fa-layer-group"></i> PHASE 03 · GRADING</span>
+                            <h3 class="roadmap-node-title">Pre-Roast Size Sorting</h3>
+                        </div>
+
+                        <!-- Circular Framed Image -->
+                        <div class="roadmap-circle-wrap">
+                            <div class="roadmap-circle-halo"></div>
+                            <div class="roadmap-circle-frame">
+                                <img src="story.jpeg" alt="Phase 3: Pre-roast size grading through traditional sieves" loading="lazy">
+                            </div>
+                            <span class="roadmap-circle-tag">STEP 03 · JHARNI SIEVE</span>
+                        </div>
+
+                        <!-- One Line Description -->
+                        <p class="roadmap-oneline-desc">
+                            Dry seeds are sieved through multi-mesh iron sieves (*Jharni*) into 5 uniform sizes to guarantee identical heat absorption.
+                        </p>
+
+                        <!-- Meta Footer -->
+                        <div class="roadmap-meta-footer">
+                            <span><i class="fa-solid fa-filter"></i> 5 Size Calibers</span>
+                            <span>03 / 06</span>
+                        </div>
+
+                        <!-- Animated Connecting Arrow to Next Phase (Downwards on desktop row end) -->
+                        <div class="roadmap-flow-arrow" title="Proceed to Phase 04">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+                    </article>
+
+                    <!-- Stage 04 -->
+                    <article class="roadmap-node reveal">
+                        <!-- Top Phase Header -->
+                        <div class="roadmap-phase-header">
+                            <span class="roadmap-phase-pill"><i class="fa-solid fa-fire-burner"></i> PHASE 04 · ROASTING</span>
+                            <h3 class="roadmap-node-title">Wood-Fired Pan Roasting</h3>
+                        </div>
+
+                        <!-- Circular Framed Image -->
+                        <div class="roadmap-circle-wrap">
+                            <div class="roadmap-circle-halo"></div>
+                            <div class="roadmap-circle-frame">
+                                <img src="popping.jpeg" alt="Phase 4: High heat wood-fired sand roasting in cast iron wok" loading="lazy">
+                            </div>
+                            <span class="roadmap-circle-tag">STEP 04 · 250°C–300°C</span>
+                        </div>
+
+                        <!-- One Line Description -->
+                        <p class="roadmap-oneline-desc">
+                            Constant high-heat stirring in cast-iron pans loosens the delicate inner white kernel from the rock-hard exterior coat.
+                        </p>
+
+                        <!-- Meta Footer -->
+                        <div class="roadmap-meta-footer">
+                            <span><i class="fa-solid fa-temperature-arrow-up"></i> High Thermal Shock</span>
+                            <span>04 / 06</span>
+                        </div>
+
+                        <!-- Animated Connecting Arrow to Next Phase -->
+                        <div class="roadmap-flow-arrow" title="Proceed to Phase 05">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </article>
+
+                    <!-- Stage 05 -->
+                    <article class="roadmap-node reveal">
+                        <!-- Top Phase Header -->
+                        <div class="roadmap-phase-header">
+                            <span class="roadmap-phase-pill"><i class="fa-solid fa-hammer"></i> PHASE 05 · EXPANSION</span>
+                            <h3 class="roadmap-node-title">Wooden Mallet Popping</h3>
+                        </div>
+
+                        <!-- Circular Framed Image -->
+                        <div class="roadmap-circle-wrap">
+                            <div class="roadmap-circle-halo"></div>
+                            <div class="roadmap-circle-frame">
+                                <img src="mukka_cultivation.jpg" alt="Phase 5: Artisanal wooden mallet manual popping of Makhana" loading="lazy">
+                            </div>
+                            <span class="roadmap-circle-tag">STEP 05 · THAPI POPPING</span>
+                        </div>
+
+                        <!-- One Line Description -->
+                        <p class="roadmap-oneline-desc">
+                            A swift, precise manual strike with a hardwood mallet (*Thapi*) instantly pops the red-hot kernel into a crisp white puff.
+                        </p>
+
+                        <!-- Meta Footer -->
+                        <div class="roadmap-meta-footer">
+                            <span><i class="fa-solid fa-hand"></i> Artisanal Precision</span>
+                            <span>05 / 06</span>
+                        </div>
+
+                        <!-- Animated Connecting Arrow to Next Phase -->
+                        <div class="roadmap-flow-arrow" title="Proceed to Phase 06">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </article>
+
+                    <!-- Stage 06 -->
+                    <article class="roadmap-node reveal">
+                        <!-- Top Phase Header -->
+                        <div class="roadmap-phase-header">
+                            <span class="roadmap-phase-pill"><i class="fa-solid fa-box-archive"></i> PHASE 06 · PACKAGING</span>
+                            <h3 class="roadmap-node-title">Caliper Sorting &amp; Pack</h3>
+                        </div>
+
+                        <!-- Circular Framed Image -->
+                        <div class="roadmap-circle-wrap">
+                            <div class="roadmap-circle-halo"></div>
+                            <div class="roadmap-circle-frame">
+                                <img src="6+.jpeg" alt="Phase 6: Suta caliper grading and export packing of premium Makhanam" loading="lazy">
+                            </div>
+                            <span class="roadmap-circle-tag">STEP 06 · EXPORT READY</span>
+                        </div>
+
+                        <!-- One Line Description -->
+                        <p class="roadmap-oneline-desc">
+                            Popped grains are calibrated into 3 to 7 Suta grades, dedusted, and hermetically sealed in moisture-barrier master packaging.
+                        </p>
+
+                        <!-- Meta Footer -->
+                        <div class="roadmap-meta-footer">
+                            <span><i class="fa-solid fa-shield-halved"></i> Moisture Barrier</span>
+                            <span>06 / 06</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR JOURNEY (Visual Editorial Timeline) -->
+        <section class="timeline-section" id="milestones">
             <div class="site-container">
                 <div class="section-head-center reveal">
-                    <span class="section-eyebrow text-gold">SEED TO SHIPMENT</span>
-                    <h2 class="editorial-title text-cream">
-                        The 4-Stage <span class="italic text-gold-bright">Quality Lifecycle</span>
+                    <span class="section-eyebrow">OUR JOURNEY &amp; EVOLUTION</span>
+                    <h2 class="editorial-title">
+                        The MAKHANAM <span class="italic text-terracotta">journey.</span>
                     </h2>
-                    <p class="text-cream-muted" style="font-size: 16px;">
-                        Visualizing how every single Foxnut is cultivated, harvested, expanded, and calibrated under strict standards.
+                    <p style="color: var(--earth); font-size: 16px;">
+                        Tracing our path from local Mithila wetland harvests to trusted global B2B wholesale distribution.
                     </p>
                 </div>
 
-                <div class="pipeline-grid">
+                <div class="timeline-row">
                     <!-- Step 1 -->
-                    <article class="pipeline-card reveal">
-                        <div class="pipeline-img-wrap">
-                            <img src="wetland.jpeg" alt="Stage 1: Aquatic Wetland Cultivation">
-                            <span class="pipeline-step-badge">Stage 01</span>
-                        </div>
-                        <div class="pipeline-info">
-                            <h3>Wetland Cultivation</h3>
-                            <p>Naturally grown in mineral-rich standing waters of northern Bihar without synthetic growth agents.</p>
-                        </div>
-                    </article>
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>The Beginning</h4>
+                        <p>The idea behind MAKHANAM: connecting Bihar's authentic makhana directly to wider commercial markets.</p>
+                    </div>
 
                     <!-- Step 2 -->
-                    <article class="pipeline-card reveal">
-                        <div class="pipeline-img-wrap">
-                            <img src="harvest.jpeg" alt="Stage 2: Underwater Diver Harvest">
-                            <span class="pipeline-step-badge">Stage 02</span>
-                        </div>
-                        <div class="pipeline-info">
-                            <h3>Underwater Harvest</h3>
-                            <p>Hand-gathered from muddy pond beds by skilled generational Mallah divers, then thoroughly water-cleaned.</p>
-                        </div>
-                    </article>
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Building Network</h4>
+                        <p>Developing close partnerships within the local Mallah harvesting communities and wetland growers.</p>
+                    </div>
 
                     <!-- Step 3 -->
-                    <article class="pipeline-card reveal">
-                        <div class="pipeline-img-wrap">
-                            <img src="popping.jpeg" alt="Stage 3: Wood-Fired Roasting & Popping">
-                            <span class="pipeline-step-badge">Stage 03</span>
-                        </div>
-                        <div class="pipeline-info">
-                            <h3>Artisanal Popping</h3>
-                            <p>High-heat roasting and precise manual striking expand the dark shell into delicate, snow-white Makhana.</p>
-                        </div>
-                    </article>
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Establishing Standards</h4>
+                        <p>Creating standardized 3 to 7 Suta grading, calibrated sieving, and moisture-controlled packaging.</p>
+                    </div>
 
                     <!-- Step 4 -->
-                    <article class="pipeline-card reveal">
-                        <div class="pipeline-img-wrap">
-                            <img src="6+.jpeg" alt="Stage 4: Suta Caliper Grading & Pack">
-                            <span class="pipeline-step-badge">Stage 04</span>
-                        </div>
-                        <div class="pipeline-info">
-                            <h3>Caliper Grading</h3>
-                            <p>Multi-deck mechanical sieving categorizes lots from 3 Suta Pearl to 7 Suta Super Jumbo before sealed pack.</p>
-                        </div>
-                    </article>
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Building Supply</h4>
+                        <p>Supplying commercial food enterprises, FMCG snack brands, distributors, and institutional buyers.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="timeline-step reveal">
+                        <div class="timeline-step-dot"></div>
+                        <h4>Looking Ahead</h4>
+                        <p>Taking Bihar's GI-tagged makhana heritage to broader domestic and international export destinations.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================================================
-             VISUAL GRADING & CALIPER SHOWCASE (REAL PHOTOS)
-             ========================================================================== -->
+        <!-- CINEMATIC VIDEO DOCUMENTARY SECTION (VERTICAL 9:16 PORTRAIT THEATER) -->
+        <section class="cinematic-video-section" id="harvest-film">
+            <div class="video-ambient-glow"></div>
+            <div class="site-container">
+                <div class="video-vertical-layout">
+                    <!-- Left: Vertical 9:16 Phone/Reel Cinema Frame (Crisp, zero blur) -->
+                    <div class="video-player-frame reveal" id="videoFrame">
+                        <!-- Top Metadata Overlay -->
+                        <div class="video-top-bar">
+                            <div class="video-top-badge">
+                                <span class="pulse-dot"></span>
+                                <span>Wetland Footage</span>
+                            </div>
+                            <div class="video-top-location">
+                                <i class="fa-solid fa-location-dot" style="color: var(--gold);"></i>
+                                <span>Bihar, India</span>
+                            </div>
+                        </div>
+
+                        <!-- Vertical Video Element (Continuous Autoplay, No Play/Pause Options) -->
+                        <video id="aboutDocVideo" class="cinematic-video-el" playsinline loop poster="main.jpeg" preload="auto" muted autoplay>
+                            <source src="images/mk.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+
+                    <!-- Right: Editorial Narrative & Process Breakdown -->
+                    <div class="video-editorial-col reveal">
+                        <div>
+                            <span class="section-eyebrow text-gold"><i class="fa-solid fa-film"></i> LIVING MITHILA HERITAGE</span>
+                            <h2 class="editorial-title text-cream">
+                                Sacred Waters to <span class="italic text-gold-bright">Pristine Bloom</span>
+                            </h2>
+                            <p class="text-cream-muted" style="font-size: 15.5px; line-height: 1.7; margin-bottom: 24px;">
+                                Authentic raw field recording from our Bihar harvest. Experience the generational Mallah divers foraging organic seeds from mineral-rich wetland beds, curing under the sun, and wood-fire popping with rhythmic precision.
+                            </p>
+                        </div>
+
+                        <div class="video-insights-vertical-list">
+                            <div class="video-insight-card">
+                                <div class="insight-header">
+                                    <div class="insight-icon">
+                                        <i class="fa-solid fa-water"></i>
+                                    </div>
+                                    <h3 class="insight-title">01. Underwater Hand Foraging</h3>
+                                </div>
+                                <p class="insight-desc">
+                                    Mallah artisans dive into natural aquatic wetlands to hand-gather spiny lotus seeds without mechanized disruption.
+                                </p>
+                            </div>
+
+                            <div class="video-insight-card">
+                                <div class="insight-header">
+                                    <div class="insight-icon">
+                                        <i class="fa-solid fa-fire-burner"></i>
+                                    </div>
+                                    <h3 class="insight-title">02. Wood-Fired Clay Popping</h3>
+                                </div>
+                                <p class="insight-desc">
+                                    High-temperature roasting in earthen pots and rhythmic wooden mallet strikes instantly expand the seed into a crisp white bloom.
+                                </p>
+                            </div>
+
+                            <div class="video-insight-card">
+                                <div class="insight-header">
+                                    <div class="insight-icon">
+                                        <i class="fa-solid fa-ruler-combined"></i>
+                                    </div>
+                                    <h3 class="insight-title">03. Standardized Suta Calipers</h3>
+                                </div>
+                                <p class="insight-desc">
+                                    Mechanical sieving calibrates lots from 3 Suta Pearl to 7 Suta Super Jumbo for dependable global wholesale distribution.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- VISUAL GRADING & CALIPER SHOWCASE -->
         <section class="grading-showcase-section">
             <div class="site-container">
                 <div class="section-head-center reveal">
@@ -769,138 +1373,7 @@
             </div>
         </section>
 
-        <!-- ==========================================================================
-             CINEMATIC VIDEO DOCUMENTARY SECTION (VERTICAL 9:16 PORTRAIT THEATER)
-             ========================================================================== -->
-        <section class="cinematic-video-section" id="harvest-film">
-            <div class="video-ambient-glow"></div>
-            <div class="site-container">
-                <div class="video-vertical-layout">
-                    <!-- Left: Vertical 9:16 Phone/Reel Cinema Frame -->
-                    <div class="video-player-frame reveal" id="videoFrame">
-                        <!-- Top Metadata Overlay -->
-                        <div class="video-top-bar">
-                            <div class="video-top-badge">
-                                <span class="pulse-dot"></span>
-                                <span>Wetland Footage</span>
-                            </div>
-                            <div class="video-top-location">
-                                <i class="fa-solid fa-location-dot" style="color: var(--gold);"></i>
-                                <span>Bihar, India</span>
-                            </div>
-                        </div>
-
-                        <!-- Vertical Video Element -->
-                        <video id="aboutDocVideo" class="cinematic-video-el" playsinline loop poster="main.jpeg" preload="auto" muted autoplay>
-                            <source src="images/mk.mp4" type="video/mp4">
-                            Your browser does not support HTML5 video.
-                        </video>
-                    </div>
-
-                    <!-- Right: Editorial Narrative & Process Breakdown -->
-                    <div class="video-editorial-col reveal">
-                        <div>
-                            <span class="section-eyebrow text-gold"><i class="fa-solid fa-film"></i> LIVING MITHILA HERITAGE</span>
-                            <h2 class="editorial-title text-cream">
-                                Sacred Waters to <span class="italic text-gold-bright">Pristine Bloom</span>
-                            </h2>
-                            <p class="text-cream-muted" style="font-size: 15.5px; line-height: 1.7; margin-bottom: 24px;">
-                                Authentic raw field recording from our Bihar harvest. Experience the generational Mallah divers foraging organic seeds from mineral-rich wetland beds, curing under the sun, and wood-fire popping with rhythmic precision.
-                            </p>
-                        </div>
-
-                        <div class="video-insights-vertical-list">
-                            <div class="video-insight-card">
-                                <div class="insight-header">
-                                    <div class="insight-icon">
-                                        <i class="fa-solid fa-water"></i>
-                                    </div>
-                                    <h3 class="insight-title">01. Underwater Hand Foraging</h3>
-                                </div>
-                                <p class="insight-desc">
-                                    Mallah artisans dive into natural aquatic wetlands to hand-gather spiny lotus seeds without mechanized disruption.
-                                </p>
-                            </div>
-
-                            <div class="video-insight-card">
-                                <div class="insight-header">
-                                    <div class="insight-icon">
-                                        <i class="fa-solid fa-fire-burner"></i>
-                                    </div>
-                                    <h3 class="insight-title">02. Wood-Fired Clay Popping</h3>
-                                </div>
-                                <p class="insight-desc">
-                                    High-temperature roasting in earthen pots and rhythmic wooden mallet strikes instantly expand the seed into a crisp white bloom.
-                                </p>
-                            </div>
-
-                            <div class="video-insight-card">
-                                <div class="insight-header">
-                                    <div class="insight-icon">
-                                        <i class="fa-solid fa-ruler-combined"></i>
-                                    </div>
-                                    <h3 class="insight-title">03. Standardized Suta Calipers</h3>
-                                </div>
-                                <p class="insight-desc">
-                                    Mechanical sieving calibrates lots from 3 Suta Pearl to 7 Suta Super Jumbo for dependable global wholesale distribution.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             THE PEOPLE BEHIND MAKHANAM (LEADERSHIP)
-             ========================================================================== -->
-        <section class="leadership-section" id="leadership">
-            <div class="site-container">
-                <div class="section-head-center reveal">
-                    <span class="section-eyebrow">THE LEADERSHIP</span>
-                    <h2 class="editorial-title">
-                        The people behind <span class="italic text-terracotta">MAKHANAM.</span>
-                    </h2>
-                    <p style="color: var(--earth); font-size: 16px;">
-                        Committed to respectful partnerships with farming communities and dependable service for buyers worldwide.
-                    </p>
-                </div>
-
-                <div class="people-grid">
-                    <!-- Founder: Keshav Kumar Yadav -->
-                    <div class="person-card reveal">
-                        <div class="person-image-container">
-                            <img src="founder.jpeg" alt="Keshav Kumar Yadav — Founder of Makhanam">
-                        </div>
-                        <div class="person-info">
-                            <span class="person-role">FOUNDER</span>
-                            <h3 class="person-name">Keshav Kumar Yadav</h3>
-                            <p class="person-quote">
-                                “MAKHANAM began with a simple idea: create a stronger connection between Bihar's makhana-growing communities and the businesses that depend on consistent quality.”
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- CEO: Anupam Kumari -->
-                    <div class="person-card reveal">
-                        <div class="person-image-container">
-                            <img src="ceo.jpeg" alt="Anupam Kumari — Chief Executive Officer of Makhanam">
-                        </div>
-                        <div class="person-info">
-                            <span class="person-role">CHIEF EXECUTIVE OFFICER</span>
-                            <h3 class="person-name">Anupam Kumari</h3>
-                            <p class="person-quote">
-                                “Anupam leads MAKHANAM's focus on operations, quality and building dependable relationships with buyers across India and international markets.”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             TRUST BADGES & CERTIFICATIONS BANNER
-             ========================================================================== -->
+        <!-- TRUST BADGES & CERTIFICATIONS BANNER -->
         <section class="trust-banner-section">
             <div class="site-container">
                 <div class="trust-badges-row reveal">
@@ -916,193 +1389,384 @@
 
                     <div class="trust-badge">
                         <div class="trust-badge-icon">
-                            <i class="fa-solid fa-shield-check"></i>
+                            <i class="fa-solid fa-leaf"></i>
                         </div>
                         <div class="trust-badge-text">
-                            <strong>FSSAI &amp; APEDA</strong>
-                            <span>Export Compliant Facilities</span>
+                            <strong>100% Natural</strong>
+                            <span>Zero Artificial Additives</span>
                         </div>
                     </div>
 
                     <div class="trust-badge">
                         <div class="trust-badge-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
+                            <i class="fa-solid fa-vial-circle-check"></i>
                         </div>
                         <div class="trust-badge-text">
-                            <strong>Weighbridge Certified</strong>
-                            <span>100% Weight Transparency</span>
+                            <strong>Lab-Tested Purity</strong>
+                            <span>Strict Moisture &amp; Caliper Control</span>
                         </div>
                     </div>
 
                     <div class="trust-badge">
                         <div class="trust-badge-icon">
-                            <i class="fa-solid fa-droplet-slash"></i>
+                            <i class="fa-solid fa-plane-departure"></i>
                         </div>
                         <div class="trust-badge-text">
-                            <strong>&lt;10% Moisture</strong>
-                            <span>High Puff &amp; Crisp Shelf Life</span>
+                            <strong>APEDA Export Ready</strong>
+                            <span>Global B2B Wholesale Logistics</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================================================
-             CALL TO ACTION (WHOLESALE RATE CARD & DISPATCH)
-             ========================================================================== -->
+        <!-- ABOUT CTA -->
         <section class="about-cta-section">
             <div class="cta-glow"></div>
             <div class="site-container cta-box reveal">
-                <span class="section-eyebrow text-gold">READY TO SCALE YOUR PROCUREMENT?</span>
+                <span class="section-eyebrow text-gold">DIRECT WHOLESALE SUPPLY</span>
                 <h2 class="editorial-title text-cream">
-                    Partner directly with Bihar's <br>
-                    <span class="gold-gradient-text italic">dedicated Makhana processor.</span>
+                    Ready to scale your <span class="italic text-gold-bright">Makhana procurement?</span>
                 </h2>
                 <p class="cta-desc">
-                    Whether you require 100 kg test volume or multi-container FOB/CIF recurring monthly supply, our team provides signed contract specs, certified weighbridge slips, and timely dispatch.
+                    Partner directly with our Bihar processing facility for container loads, grade samples, and dependable export supply.
                 </p>
 
                 <div class="cta-btn-group">
                     <a href="contactus.html#rfq" class="btn-shimmer">
-                        <i class="fa-solid fa-file-invoice"></i>
-                        <span>Request Wholesale Rate Card</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Request Bulk Quotation</span>
                     </a>
-                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%20Desk%2C%20I%20would%20like%20to%20discuss%20bulk%20supply%20contracts." class="btn-outline" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
-                        <span>WhatsApp Dispatch Desk</span>
+                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." class="btn-outline" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Chat on WhatsApp</span>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ==========================================================================
-         FOOTER
-         ========================================================================== -->
+    <!-- Footer matching All Pages -->
     <footer class="site-footer">
         <div class="site-container">
             <div class="footer-grid">
-                <!-- Col 1: Brand & Origin -->
+                <!-- Brand Info -->
                 <div class="footer-brand-col">
                     <div class="footer-logo-wrap">
                         <div class="brand-badge">
                             <span>GA</span>
                         </div>
-                        <div class="brand-text">
-                            <span class="brand-title">Makhanam</span>
-                            <span class="brand-sub">Premium Raw Makhana</span>
-                        </div>
+                        <span class="footer-brand-name">Makhanam</span>
                     </div>
-                    <p style="font-size: 13.5px; color: rgba(243, 233, 213, 0.75); line-height: 1.7; max-width: 340px;">
-                        Direct processor and wholesale exporter of premium raw Makhana (Foxnuts), connecting the wetlands of Mithila, Bihar to businesses across India and international markets.
+                    <p class="footer-desc">
+                        Makhanam is a direct processor and exporter of premium raw Makhana (Foxnut), operating at the source in Bihar to serve global brands, distributors, and wholesalers.
                     </p>
-                    <div style="font-family: monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase;">
-                        MITHILA, BIHAR • PAN-INDIA &amp; EXPORT
+                    <div class="footer-origin-tag">
+                        PREMIUM RAW MAKHANA • BIHAR, INDIA
                     </div>
                 </div>
 
-                <!-- Col 2: Navigation -->
-                <div>
-                    <h4 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; color: var(--gold-bright); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px;">Quick Links</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px;">
-                        <li><a href="index.html" style="color: rgba(243, 233, 213, 0.8);">Home</a></li>
-                        <li><a href="about.html" style="color: rgba(243, 233, 213, 0.8);">About Us</a></li>
-                        <li><a href="about-makhanam.html" style="color: var(--gold-bright); font-weight: 600;">About Makhanam</a></li>
-                        <li><a href="about.html#journey" style="color: rgba(243, 233, 213, 0.8);">Journey</a></li>
-                        <li><a href="SizeCaliperGuide.html" style="color: rgba(243, 233, 213, 0.8);">Suta Caliper Guide</a></li>
-                        <li><a href="index.html#why-us" style="color: rgba(243, 233, 213, 0.8);">Why Us</a></li>
-                        <li><a href="contactus.html" style="color: rgba(243, 233, 213, 0.8);">Contact</a></li>
+                <!-- Explore Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sizeguide.html">About Us</a></li>
+                        <li><a href="about.html">About Makhana</a></li>
+                        <li><a href="journey.html">Journey</a></li>
+                        <li><a href="SizeCaliperGuide.html">Grading Specifications</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
                     </ul>
                 </div>
 
-                <!-- Col 3: Direct Contact -->
-                <div>
-                    <h4 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; color: var(--gold-bright); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px;">Wholesale Desk</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; color: rgba(243, 233, 213, 0.8);">
-                        <li style="display: flex; gap: 10px; align-items: center;">
-                            <i class="fa-solid fa-phone" style="color: var(--gold);"></i>
-                            <a href="tel:+918340493639" style="color: inherit;">+91 83404 93639</a>
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot"></i> Bihar, India</li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+918340493639">+91 83404 93639</a>
                         </li>
-                        <li style="display: flex; gap: 10px; align-items: center;">
-                            <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
-                            <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." target="_blank" rel="noopener noreferrer" style="color: inherit;">Chat on WhatsApp</a>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/918340493639" target="_blank" rel="noopener noreferrer">WhatsApp Bulk Enquiry</a>
                         </li>
-                        <li style="display: flex; gap: 10px; align-items: center;">
-                            <i class="fa-solid fa-envelope" style="color: var(--gold);"></i>
-                            <a href="mailto:contact@makhanam.com" style="color: inherit;">contact@makhanam.com</a>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:KeshavKaushikExports@gmail.com">KeshavKaushikExports@gmail.com</a>
                         </li>
-                        <li style="display: flex; gap: 10px; align-items: flex-start;">
-                            <i class="fa-solid fa-location-dot" style="color: var(--gold); margin-top: 3px;"></i>
-                            <span>Northern Bihar Wetlands, Mithila, India</span>
-                        </li>
-                        <li style="padding-top: 6px; font-family: monospace; font-size: 11.5px; color: var(--gold);">
-                            GSTIN: 10AZBPY2685B1ZL
-                        </li>
+                        <li>GSTIN: 10AZBPY2685B1ZL</li>
                     </ul>
                 </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 28px; font-size: 12px; color: rgba(243, 233, 213, 0.5);">
-                <p>&copy; 2026 Makhanam. All rights reserved. Single-Origin Raw Makhana.</p>
-                <div style="display: flex; gap: 20px;">
-                    <a href="index.html" style="color: inherit;">Home</a>
-                    <a href="about.html" style="color: inherit;">About Us</a>
-                    <a href="about-makhanam.html" style="color: inherit;">About Makhanam</a>
-                    <a href="contactus.html" style="color: inherit;">Contact</a>
-                </div>
+            <!-- Sub Footer -->
+            <div class="footer-bottom-bar">
+                <div>&copy; 2026 Makhanam. All rights reserved.</div>
+                <div>Premium Raw Makhana Processing • Direct Manufacturer for Wholesalers</div>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Order Widget (Mobile Compact Circle / Desktop Luxury Pill) -->
-    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." target="_blank" rel="noopener noreferrer" class="whatsapp-float-widget" aria-label="Order Makhana on WhatsApp">
-        <div class="whatsapp-float-icon-box">
-            <i class="fa-brands fa-whatsapp"></i>
-        </div>
-        <div class="whatsapp-float-text">
-            <span class="whatsapp-float-title">WhatsApp Order Desk</span>
-            <span class="whatsapp-float-sub"><span class="whatsapp-float-dot"></span> Direct Mithila Wholesale</span>
-        </div>
-    </a>
-
-    <!-- Unified Mobile Drawer JavaScript -->
+    <!-- Script for Navigation & Smooth Reveal -->
     <script>
-        function toggleMobileNav(e) {
-            if (e && e.target && e.target.id === 'mobileDrawerContent') {
-                return;
-            }
-            const drawer = document.getElementById('mobileNavDrawer');
-            if (drawer) {
-                drawer.classList.toggle('active');
-                if (drawer.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
+        function toggleMobileNav() {
+            const drawer = document.getElementById('mobile-nav-drawer');
+            const content = document.getElementById('mobile-menu-content');
+            if (!drawer || !content) return;
+            const isOpen = drawer.classList.contains('opacity-100');
+            if (!isOpen) {
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+                drawer.classList.add('opacity-100');
+                content.classList.remove('-translate-x-full');
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.remove('opacity-100');
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                content.classList.add('-translate-x-full');
+                document.body.style.overflow = '';
             }
         }
 
-        // Scroll Reveal Animations
+        // Close drawer on link click and Escape key
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.12
-            };
-
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+            document.querySelectorAll('#mobile-nav-drawer a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const drawer = document.getElementById('mobile-nav-drawer');
+                    const content = document.getElementById('mobile-menu-content');
+                    if (drawer && drawer.classList.contains('opacity-100')) {
+                        drawer.classList.remove('opacity-100');
+                        drawer.classList.add('opacity-0', 'pointer-events-none');
+                        if (content) content.classList.add('-translate-x-full');
+                        document.body.style.overflow = '';
                     }
                 });
-            }, observerOptions);
+            });
 
-            document.querySelectorAll('.reveal').forEach(el => {
-                revealObserver.observe(el);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const drawer = document.getElementById('mobile-nav-drawer');
+                    const content = document.getElementById('mobile-menu-content');
+                    if (drawer && drawer.classList.contains('opacity-100')) {
+                        drawer.classList.remove('opacity-100');
+                        drawer.classList.add('opacity-0', 'pointer-events-none');
+                        if (content) content.classList.add('-translate-x-full');
+                        document.body.style.overflow = '';
+                    }
+                }
             });
         });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 25) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ======================================================================
+        // CINEMATIC VERTICAL VIDEO CONTINUOUS AUTOPLAY
+        // ======================================================================
+        const docVideo = document.getElementById('aboutDocVideo');
+        const videoFrame = document.getElementById('videoFrame');
+
+        if (docVideo) {
+            const playVideoMuted = () => {
+                docVideo.muted = true;
+                const promise = docVideo.play();
+                if (promise !== undefined) {
+                    promise.catch(() => {
+                        // If browser blocks immediate autoplay, start upon first interaction anywhere
+                        const startOnGesture = () => {
+                            docVideo.play().catch(() => {});
+                            document.removeEventListener('touchstart', startOnGesture);
+                            document.removeEventListener('click', startOnGesture);
+                        };
+                        document.addEventListener('touchstart', startOnGesture, { passive: true });
+                        document.addEventListener('click', startOnGesture, { passive: true });
+                    });
+                }
+            };
+
+            playVideoMuted();
+
+            // Auto-play muted video smoothly when section scrolls into viewport
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && docVideo.paused) {
+                        docVideo.play().catch(() => {});
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            videoObserver.observe(videoFrame || docVideo);
+        }
+
+        // ======================================================================
+        // SMOOTH INCREASING NUMBER COUNTER ANIMATION EFFECT
+        // ======================================================================
+        function easeOutExpo(t) {
+            return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
+
+        function animateNumberCount(el, target, prefix = '', suffix = '', duration = 1800) {
+            if (!el) return;
+            const startTime = performance.now();
+            el.style.transform = 'scale(0.96)';
+            el.style.transition = 'transform 0.3s ease';
+
+            function update(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easedProgress = easeOutExpo(progress);
+                const currentVal = Math.floor(easedProgress * target);
+
+                el.textContent = `${prefix}${currentVal}${suffix}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = `${prefix}${target}${suffix}`;
+                    el.style.transform = 'scale(1)';
+                    el.classList.add('stat-counted-glow');
+                    setTimeout(() => el.classList.remove('stat-counted-glow'), 600);
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        function animateRangeCount(el, fromVal, toVal, duration = 1600) {
+            if (!el) return;
+            const startTime = performance.now();
+            function update(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutExpo(progress);
+                
+                const curFrom = Math.min(Math.floor(1 + eased * (fromVal - 1)), fromVal);
+                const curTo = Math.min(Math.floor(curFrom + eased * (toVal - curFrom)), toVal);
+
+                el.textContent = `${curFrom}–${curTo}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = `${fromVal}–${toVal}`;
+                    el.classList.add('stat-counted-glow');
+                    setTimeout(() => el.classList.remove('stat-counted-glow'), 600);
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        function animateDirectBadge(el) {
+            if (!el) return;
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(6px) scale(0.92)';
+            el.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0) scale(1)';
+                el.classList.add('stat-counted-glow');
+                setTimeout(() => el.classList.remove('stat-counted-glow'), 600);
+            }, 300);
+        }
+
+        function runAllStatsAnimation() {
+            const stat1 = document.getElementById('statCount1');
+            const stat2 = document.getElementById('statCount2');
+            const stat3 = document.getElementById('statCount3');
+            const stat4 = document.getElementById('statCount4');
+
+            if (stat1) animateNumberCount(stat1, 85, '', '%+', 1800);
+            if (stat2) animateRangeCount(stat2, 3, 7, 1600);
+            if (stat3) animateNumberCount(stat3, 10, '<', '%', 1500);
+            if (stat4) animateDirectBadge(stat4);
+        }
+
+        // Trigger stats animation upon viewport entry
+        const statsSection = document.getElementById('statsBarSection');
+        if (statsSection) {
+            let hasAnimated = false;
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        runAllStatsAnimation();
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            statsObserver.observe(statsSection);
+
+            // Make cards interactive on click or hover to replay smoothly
+            document.querySelectorAll('.stat-item').forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const type = item.getAttribute('data-counter-type');
+                    const span = item.querySelector('.stat-count');
+                    if (!span) return;
+                    if (type === 'number') {
+                        const target = parseInt(item.getAttribute('data-target') || '0', 10);
+                        const prefix = item.getAttribute('data-prefix') || '';
+                        const suffix = item.getAttribute('data-suffix') || '';
+                        animateNumberCount(span, target, prefix, suffix, 1000);
+                    } else if (type === 'range') {
+                        const from = parseInt(item.getAttribute('data-from') || '3', 10);
+                        const to = parseInt(item.getAttribute('data-to') || '7', 10);
+                        animateRangeCount(span, from, to, 1000);
+                    } else if (type === 'direct') {
+                        animateDirectBadge(span);
+                    }
+                });
+
+                item.addEventListener('click', () => {
+                    const type = item.getAttribute('data-counter-type');
+                    const span = item.querySelector('.stat-count');
+                    if (!span) return;
+                    if (type === 'number') {
+                        const target = parseInt(item.getAttribute('data-target') || '0', 10);
+                        const prefix = item.getAttribute('data-prefix') || '';
+                        const suffix = item.getAttribute('data-suffix') || '';
+                        animateNumberCount(span, target, prefix, suffix, 1000);
+                    } else if (type === 'range') {
+                        const from = parseInt(item.getAttribute('data-from') || '3', 10);
+                        const to = parseInt(item.getAttribute('data-to') || '7', 10);
+                        animateRangeCount(span, from, to, 1000);
+                    } else if (type === 'direct') {
+                        animateDirectBadge(span);
+                    }
+                });
+            });
+        }
     </script>
+
+    <!-- Floating WhatsApp Order Widget (Mobile Compact Circle / Desktop Luxury Pill) -->
+    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20am%20interested%20in%20bulk%20Makhana%20wholesale%20supply." target="_blank" rel="noopener noreferrer" class="whatsapp-float-widget" aria-label="Order on WhatsApp">
+        <div class="whatsapp-icon-wrap">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="whatsapp-text-wrap">
+            <span class="whatsapp-label">Order on WhatsApp</span>
+            <span class="whatsapp-phone">+91 83404 93639</span>
+        </div>
+    </a>
 </body>
 </html>

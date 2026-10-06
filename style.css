@@ -68,7 +68,7 @@ html {
 }
 
 body {
-    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     color: var(--ink);
     background: var(--brand-ivory);
     line-height: 1.6;
@@ -91,8 +91,31 @@ ul {
 h1,
 h2,
 h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Spectral', Georgia, serif;
     line-height: 1.2;
+}
+
+/* Spectral Typography Utilities */
+.spectral-extralight { font-family: "Spectral", serif; font-weight: 200; font-style: normal; }
+.spectral-light { font-family: "Spectral", serif; font-weight: 300; font-style: normal; }
+.spectral-regular { font-family: "Spectral", serif; font-weight: 400; font-style: normal; }
+.spectral-medium { font-family: "Spectral", serif; font-weight: 500; font-style: normal; }
+.spectral-semibold { font-family: "Spectral", serif; font-weight: 600; font-style: normal; }
+.spectral-bold { font-family: "Spectral", serif; font-weight: 700; font-style: normal; }
+.spectral-extrabold { font-family: "Spectral", serif; font-weight: 800; font-style: normal; }
+.spectral-extralight-italic { font-family: "Spectral", serif; font-weight: 200; font-style: italic; }
+.spectral-light-italic { font-family: "Spectral", serif; font-weight: 300; font-style: italic; }
+.spectral-regular-italic { font-family: "Spectral", serif; font-weight: 400; font-style: italic; }
+.spectral-medium-italic { font-family: "Spectral", serif; font-weight: 500; font-style: italic; }
+.spectral-semibold-italic { font-family: "Spectral", serif; font-weight: 600; font-style: italic; }
+.spectral-bold-italic { font-family: "Spectral", serif; font-weight: 700; font-style: italic; }
+.spectral-extrabold-italic { font-family: "Spectral", serif; font-weight: 800; font-style: italic; }
+
+.bricolage-grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 .text-gold {
@@ -255,14 +278,137 @@ h3 {
 
 
 /* =========================================================
-   GLASSMORPHISM
+   GLASSMORPHISM & SIGNATURE NAVBAR (RESPONSIVE & FLUID)
    ========================================================= */
 
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    width: 100%;
+    background: #12241B !important;
+    border-top: 1px solid rgba(201, 169, 97, 0.35) !important;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.35) !important;
+    transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+    background: #0B1610 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.header-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 clamp(14px, 3vw, 32px);
+    height: clamp(62px, 7vw, 76px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.8vw, 16px);
+    text-decoration: none;
+    min-width: 0;
+}
+
+.brand-badge {
+    width: clamp(34px, 4.5vw, 44px);
+    height: clamp(34px, 4.5vw, 44px);
+    border-radius: 50%;
+    border: 1.2px solid #C9A961;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1E2B24;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.brand-badge span {
+    color: #C9A961;
+    font-family: 'Spectral', Georgia, serif;
+    font-size: clamp(12px, 1.8vw, 15px);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.brand-logo:hover .brand-badge {
+    border-color: #E8CD84;
+    box-shadow: 0 0 12px rgba(201, 169, 97, 0.3);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.brand-title {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: clamp(18px, 3.5vw, 27px);
+    letter-spacing: clamp(0.16em, 2.5vw, 0.28em);
+    font-weight: 500;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    line-height: 1;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.brand-logo:hover .brand-title {
+    color: #E8CD84;
+}
+
+.brand-sub {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(7.5px, 1.4vw, 8.8px);
+    letter-spacing: clamp(0.20em, 2vw, 0.32em);
+    color: #C9A961;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.2vw, 34px);
+    margin-left: auto;
+}
+
+.desktop-nav .nav-item {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(10.5px, 1.1vw, 12px);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #F1F6F2;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    padding: 6px 0;
+    white-space: nowrap;
+}
+
+.desktop-nav .nav-item:hover {
+    color: #E8CD84;
+}
+
+.desktop-nav .nav-item.active,
+.desktop-nav .nav-item.text-brand-gold {
+    color: #C9A961;
+}
+
 .glass-dark {
-    background: rgba(36, 28, 23, .82);
+    background: rgba(18, 36, 27, 0.92) !important;
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border: 1px solid rgba(201, 169, 97, .22);
+    border-top: 1px solid rgba(201, 169, 97, 0.35) !important;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.35) !important;
 }
 
 .glass-light {
@@ -1983,6 +2129,71 @@ select:focus-visible {
     letter-spacing: 0.06em;
     line-height: 1.2;
 }
+
+/* =========================================================
+   ADVANCED RESPONSIVE & MOBILE UX OPTIMIZATIONS
+   ========================================================= */
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Responsive Table Scroll Container */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 16px;
+    position: relative;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+.table-responsive-wrapper::-webkit-scrollbar-track {
+    background: rgba(18, 36, 27, 0.08);
+    border-radius: 999px;
+}
+.table-responsive-wrapper::-webkit-scrollbar-thumb {
+    background: #C9A961;
+    border-radius: 999px;
+}
+
+/* Form Inputs Mobile Friendly (Prevent Auto Zoom on iOS) */
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+    
+    .btn, button, .tap-target, .nav-item {
+        min-height: 44px;
+    }
+}
+
+/* Fluid responsive section padding */
+.section-fluid-py {
+    padding-top: clamp(48px, 8vw, 112px);
+    padding-bottom: clamp(48px, 8vw, 112px);
+}
+
+.container-fluid-px {
+    padding-left: clamp(16px, 4vw, 32px);
+    padding-right: clamp(16px, 4vw, 32px);
+}
+
+/* Interactive touch feedback */
+@media (hover: none) and (pointer: coarse) {
+    .btn, a, button {
+        -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active, button:active {
+        transform: scale(0.98);
+    }
+}
+
 .whatsapp-phone {
     font-size: 10px;
     font-family: monospace;

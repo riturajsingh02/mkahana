@@ -33,13 +33,13 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     color: var(--text-dark);
     background-color: var(--bg-cream);
 }
 
 h1, h2, h3, h4, .logo-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Spectral', Georgia, serif;
 }
 
 .container {
@@ -943,4 +943,27 @@ h1, h2, h3, h4, .logo-title {
     .form-row, .spec-grid, .comparison-selectors, .comparison-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Typography Utilities */
+.spectral-extralight { font-family: "Spectral", serif; font-weight: 200; font-style: normal; }
+.spectral-light { font-family: "Spectral", serif; font-weight: 300; font-style: normal; }
+.spectral-regular { font-family: "Spectral", serif; font-weight: 400; font-style: normal; }
+.spectral-medium { font-family: "Spectral", serif; font-weight: 500; font-style: normal; }
+.spectral-semibold { font-family: "Spectral", serif; font-weight: 600; font-style: normal; }
+.spectral-bold { font-family: "Spectral", serif; font-weight: 700; font-style: normal; }
+.spectral-extrabold { font-family: "Spectral", serif; font-weight: 800; font-style: normal; }
+.spectral-extralight-italic { font-family: "Spectral", serif; font-weight: 200; font-style: italic; }
+.spectral-light-italic { font-family: "Spectral", serif; font-weight: 300; font-style: italic; }
+.spectral-regular-italic { font-family: "Spectral", serif; font-weight: 400; font-style: italic; }
+.spectral-medium-italic { font-family: "Spectral", serif; font-weight: 500; font-style: italic; }
+.spectral-semibold-italic { font-family: "Spectral", serif; font-weight: 600; font-style: italic; }
+.spectral-bold-italic { font-family: "Spectral", serif; font-weight: 700; font-style: italic; }
+.spectral-extrabold-italic { font-family: "Spectral", serif; font-weight: 800; font-style: italic; }
+
+.bricolage-grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }

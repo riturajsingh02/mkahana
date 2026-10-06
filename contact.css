@@ -20,7 +20,7 @@ body {
     margin: 0;
     background: var(--ivory);
     color: var(--dark);
-    font-family: 'Outfit', 'Manrope', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     overflow-x: hidden;
 }
 
@@ -201,4 +201,27 @@ textarea.contact-input {
         min-height: 50px;
         font-size: 14px;
     }
+}
+
+/* Spectral Typography Utilities */
+.spectral-extralight { font-family: "Spectral", serif; font-weight: 200; font-style: normal; }
+.spectral-light { font-family: "Spectral", serif; font-weight: 300; font-style: normal; }
+.spectral-regular { font-family: "Spectral", serif; font-weight: 400; font-style: normal; }
+.spectral-medium { font-family: "Spectral", serif; font-weight: 500; font-style: normal; }
+.spectral-semibold { font-family: "Spectral", serif; font-weight: 600; font-style: normal; }
+.spectral-bold { font-family: "Spectral", serif; font-weight: 700; font-style: normal; }
+.spectral-extrabold { font-family: "Spectral", serif; font-weight: 800; font-style: normal; }
+.spectral-extralight-italic { font-family: "Spectral", serif; font-weight: 200; font-style: italic; }
+.spectral-light-italic { font-family: "Spectral", serif; font-weight: 300; font-style: italic; }
+.spectral-regular-italic { font-family: "Spectral", serif; font-weight: 400; font-style: italic; }
+.spectral-medium-italic { font-family: "Spectral", serif; font-weight: 500; font-style: italic; }
+.spectral-semibold-italic { font-family: "Spectral", serif; font-weight: 600; font-style: italic; }
+.spectral-bold-italic { font-family: "Spectral", serif; font-weight: 700; font-style: italic; }
+.spectral-extrabold-italic { font-family: "Spectral", serif; font-weight: 800; font-style: italic; }
+
+.bricolage-grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }

@@ -7,10 +7,10 @@
     <title>MAKHANAM — Purveyors of Mithila Lotus Seed Heritage</title>
     <meta name="description" content="MAKHANAM brings single-origin, hand-harvested GI-tagged makhana from the sacred wetlands of Bihar, elevated with artisanal botanicals and ancient roasting techniques.">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Spectral (Serif) & Bricolage Grotesque (Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,8 +34,8 @@
                     }
                 },
                 fontFamily: {
-                    serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-                    sans:  ['Outfit', 'Manrope', 'sans-serif']
+                    serif: ['Spectral', 'Georgia', 'serif'],
+                    sans:  ['Bricolage Grotesque', 'sans-serif']
                 },
                 animation: {
                     'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -238,6 +238,142 @@ img {
     }
 }
 
+/* ---------- Interactive Hero Feature Cards ---------- */
+.hero-feature-card {
+    background: rgba(18, 36, 27, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(201, 169, 97, 0.40);
+    border-radius: 16px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.hero-feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(232, 205, 132, 0.25), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.hero-feature-card:hover,
+.hero-feature-card:focus-visible,
+.hero-feature-card.touch-active {
+    transform: translateY(-8px) scale(1.04);
+    border-color: #E8CD84;
+    background: rgba(26, 50, 38, 0.96);
+    box-shadow: 0 18px 36px -8px rgba(0, 0, 0, 0.6), 0 0 22px rgba(201, 169, 97, 0.45);
+}
+
+.hero-feature-card:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.hero-feature-card:hover::before,
+.hero-feature-card:focus-visible::before,
+.hero-feature-card.touch-active::before {
+    opacity: 1;
+}
+
+.hero-feature-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.2px solid rgba(201, 169, 97, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C9A961;
+    background: rgba(201, 169, 97, 0.14);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.hero-feature-card:hover .hero-feature-icon-wrap,
+.hero-feature-card:focus-visible .hero-feature-icon-wrap,
+.hero-feature-card.touch-active .hero-feature-icon-wrap {
+    transform: scale(1.2) rotate(8deg);
+    background: #C9A961;
+    color: #0B1610;
+    border-color: #E8CD84;
+    box-shadow: 0 0 18px rgba(232, 205, 132, 0.8);
+}
+
+.hero-feature-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #F1F6F2;
+    transition: color 0.3s ease;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.hero-feature-card:hover .hero-feature-label,
+.hero-feature-card:focus-visible .hero-feature-label,
+.hero-feature-card.touch-active .hero-feature-label {
+    color: #E8CD84;
+    text-shadow: 0 0 12px rgba(201, 169, 97, 0.5);
+}
+
+.hero-feature-sub {
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    color: rgba(201, 169, 97, 0.9);
+    text-transform: uppercase;
+    font-weight: 600;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.hero-feature-card:hover .hero-feature-sub,
+.hero-feature-card:focus-visible .hero-feature-sub,
+.hero-feature-card.touch-active .hero-feature-sub {
+    max-height: 20px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 1px;
+}
+
+@media (max-width: 640px) {
+    .hero-feature-card {
+        padding: 12px 6px;
+        gap: 6px;
+    }
+    .hero-feature-icon-wrap {
+        width: 34px;
+        height: 34px;
+    }
+    .hero-feature-label {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+    }
+    .hero-feature-sub {
+        font-size: 7.5px;
+        letter-spacing: 0.08em;
+    }
+}
+
 /* ---------- Professional Announcement Bar Slider ---------- */
 .makhanam-announcement-bar {
     background: #0B1610;
@@ -267,7 +403,7 @@ img {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 11.5px;
     font-weight: 600;
     letter-spacing: 0.16em;
@@ -341,24 +477,24 @@ img {
                     <i class="fa-solid fa-bars-staggered text-xl"></i>
                 </button>
 
-                <a href="index.html" class="brand-logo flex items-center gap-2 sm:gap-3 group min-w-0" aria-label="Makhanam Home">
-                    <div class="brand-badge w-9 h-9 rounded-full border border-brand-gold/45 flex items-center justify-center bg-brand-dark group-hover:border-brand-gold transition-colors shrink-0">
-                        <span class="text-brand-gold text-xs font-serif font-bold">GA</span>
+                <a href="index.html" class="brand-logo flex items-center gap-3 sm:gap-4 group min-w-0" aria-label="Makhanam Home">
+                    <div class="brand-badge w-10 h-10 rounded-full border border-[#C9A961] flex items-center justify-center bg-[#1E2B24] group-hover:border-[#E8CD84] transition-colors shrink-0">
+                        <span class="text-[#C9A961] text-sm font-serif font-bold">GA</span>
                     </div>
                     <div class="brand-text flex flex-col min-w-0">
-                        <span class="brand-title font-serif text-xl sm:text-2xl lg:text-3xl tracking-[0.14em] font-light text-brand-cream uppercase group-hover:text-brand-gold transition-colors leading-none">Makhanam</span>
-                        <span class="brand-sub text-[8px] sm:text-[9px] tracking-[0.22em] text-brand-gold uppercase font-sans font-semibold mt-1">Premium Raw Makhana</span>
+                        <span class="brand-title font-serif text-2xl sm:text-3xl tracking-[0.26em] font-light text-[#FFFFFF] uppercase group-hover:text-[#E8CD84] transition-colors leading-none">Makhanam</span>
+                        <span class="brand-sub text-[8.5px] sm:text-[9.5px] tracking-[0.32em] text-[#C9A961] uppercase font-sans font-bold mt-1.5">Premium Raw Makhana</span>
                     </div>
                 </a>
             </div>
 
             <!-- Desktop Nav Links -->
-            <nav class="desktop-nav hidden lg:flex items-center space-x-7 text-xs uppercase tracking-[0.16em] font-medium text-brand-cream/90">
+            <nav class="desktop-nav hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.18em] font-bold text-[#F1F6F2]">
                 <a href="index.html" class="nav-item text-brand-gold font-semibold">Home</a>
-                <a href="sizeguide.html" class="nav-item hover:text-brand-gold transition-colors">About Makhana</a>
-                <a href="about.html" class="nav-item hover:text-brand-gold transition-colors">About Us</a>
+                <a href="sizeguide.html" class="nav-item hover:text-brand-gold transition-colors">About Us</a>
+                <a href="about.html" class="nav-item hover:text-brand-gold transition-colors">About Makhana</a>
                 <a href="SizeCaliperGuide.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
-                <a href="about.html#journey" class="nav-item hover:text-brand-gold transition-colors">Journey</a>
+                <a href="journey.html" class="nav-item hover:text-brand-gold transition-colors">Journey</a>
                 <a href="contactus.html" class="nav-item hover:text-brand-gold transition-colors">Contact</a>
             </nav>
         </div>
@@ -395,18 +531,18 @@ img {
                         <i class="fa-solid fa-chevron-right text-[9px] text-[#C9A961]"></i>
                     </a>
                     <a href="sizeguide.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
-                        <span>About Makhana</span>
+                        <span>About Us</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
                     <a href="about.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
-                        <span>About Us</span>
+                        <span>About Makhana</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
                     <a href="SizeCaliperGuide.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Grading Guide</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
-                    <a href="about.html#journey" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
+                    <a href="journey.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Journey</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
@@ -463,739 +599,71 @@ img {
             </p>
 
             <!-- Hero Action CTAs (Mobile Ergonomic) -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-8 sm:mb-10">
-                <a href="about.html" class="px-7 py-3.5 rounded-full bg-brand-gold text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-6 sm:mb-8">
+                <a href="sizeguide.html" class="px-7 py-3.5 rounded-full bg-brand-gold text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
                     <span>About Us</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
+                <a href="contactus.html#rfq" class="px-7 py-3.5 rounded-full border border-brand-gold/60 text-brand-cream hover:bg-brand-gold/15 transition-all text-xs uppercase tracking-[0.18em] font-bold text-center active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
+                    <span>Wholesale Enquiry</span>
+                    <i class="fa-solid fa-envelope text-xs text-brand-gold"></i>
+                </a>
             </div>
 
-            <!-- 6 Key Features (3x2 on mobile, 6x1 on desktop) -->
-            <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3.5 lg:gap-4 pt-4 sm:pt-6 border-t border-brand-gold/25 w-full max-w-5xl text-center">
-                <div class="group flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-xl bg-brand-dark/85 backdrop-blur-md border border-brand-gold/40 transition-all duration-300 hover:border-brand-gold hover:-translate-y-0.5 shadow-md">
-                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold bg-brand-gold/15 transition-transform duration-300 group-hover:scale-105 shrink-0">
-                        <i class="fa-solid fa-leaf text-xs"></i>
+            <!-- 6 Key Features (Interactive on Hover & Mobile Touch, positioned lower with luxurious spacing) -->
+            <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4 lg:gap-5 mt-10 sm:mt-16 lg:mt-24 pt-6 sm:pt-8 border-t border-brand-gold/35 w-full max-w-5xl text-center">
+                <!-- Feature 1 -->
+                <div class="hero-feature-card group" tabindex="0" role="button" aria-label="100% Natural Makhana">
+                    <div class="hero-feature-icon-wrap">
+                        <i class="fa-solid fa-leaf text-sm sm:text-base"></i>
                     </div>
-                    <div class="text-[9px] sm:text-xs tracking-wider text-brand-cream uppercase font-bold leading-tight">100% Natural</div>
+                    <div class="hero-feature-label">100% Natural</div>
+                    <div class="hero-feature-sub">Pure & Unpolished</div>
                 </div>
 
-                <div class="group flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-xl bg-brand-dark/85 backdrop-blur-md border border-brand-gold/40 transition-all duration-300 hover:border-brand-gold hover:-translate-y-0.5 shadow-md">
-                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold bg-brand-gold/15 transition-transform duration-300 group-hover:scale-105 shrink-0">
-                        <i class="fa-solid fa-seedling text-xs"></i>
+                <!-- Feature 2 -->
+                <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Rich Nutrition Makhana">
+                    <div class="hero-feature-icon-wrap">
+                        <i class="fa-solid fa-seedling text-sm sm:text-base"></i>
                     </div>
-                    <div class="text-[9px] sm:text-xs tracking-wider text-brand-cream uppercase font-bold leading-tight">Rich Nutrition</div>
+                    <div class="hero-feature-label">Rich Nutrition</div>
+                    <div class="hero-feature-sub">Protein & Calcium</div>
                 </div>
 
-                <div class="group flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-xl bg-brand-dark/85 backdrop-blur-md border border-brand-gold/40 transition-all duration-300 hover:border-brand-gold hover:-translate-y-0.5 shadow-md">
-                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold bg-brand-gold/15 transition-transform duration-300 group-hover:scale-105 shrink-0">
-                        <i class="fa-solid fa-shield-halved text-xs"></i>
+                <!-- Feature 3 -->
+                <div class="hero-feature-card group" tabindex="0" role="button" aria-label="No Additives in Makhanam">
+                    <div class="hero-feature-icon-wrap">
+                        <i class="fa-solid fa-shield-halved text-sm sm:text-base"></i>
                     </div>
-                    <div class="text-[9px] sm:text-xs tracking-wider text-brand-cream uppercase font-bold leading-tight">No Additives</div>
+                    <div class="hero-feature-label">No Additives</div>
+                    <div class="hero-feature-sub">Zero Preservatives</div>
                 </div>
 
-                <div class="group flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-xl bg-brand-dark/85 backdrop-blur-md border border-brand-gold/40 transition-all duration-300 hover:border-brand-gold hover:-translate-y-0.5 shadow-md">
-                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold bg-brand-gold/15 transition-transform duration-300 group-hover:scale-105 shrink-0">
-                        <i class="fa-solid fa-wheat-awn text-xs"></i>
+                <!-- Feature 4 -->
+                <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Gluten Free Superfood">
+                    <div class="hero-feature-icon-wrap">
+                        <i class="fa-solid fa-wheat-awn text-sm sm:text-base"></i>
                     </div>
-                    <div class="text-[9px] sm:text-xs tracking-wider text-brand-cream uppercase font-bold leading-tight">Gluten Free</div>
+                    <div class="hero-feature-label">Gluten Free</div>
+                    <div class="hero-feature-sub">Naturally Clean</div>
                 </div>
 
-                <div class="group flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-xl bg-brand-dark/85 backdrop-blur-md border border-brand-gold/40 transition-all duration-300 hover:border-brand-gold hover:-translate-y-0.5 shadow-md">
-                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold bg-brand-gold/15 transition-transform duration-300 group-hover:scale-105 shrink-0">
-                        <i class="fa-solid fa-heart text-xs"></i>
+                <!-- Feature 5 -->
+                <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Export Grade Makhana">
+                    <div class="hero-feature-icon-wrap">
+                        <i class="fa-solid fa-heart text-sm sm:text-base"></i>
                     </div>
-                    <div class="text-[9px] sm:text-xs tracking-wider text-brand-cream uppercase font-bold leading-tight">Export Grade</div>
+                    <div class="hero-feature-label">Export Grade</div>
+                    <div class="hero-feature-sub">3–7 Suta Calibrated</div>
                 </div>
 
-                <div class="group flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-xl bg-brand-dark/85 backdrop-blur-md border border-brand-gold/40 transition-all duration-300 hover:border-brand-gold hover:-translate-y-0.5 shadow-md">
-                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold bg-brand-gold/15 transition-transform duration-300 group-hover:scale-105 shrink-0">
-                        <i class="fa-solid fa-feather text-xs"></i>
+                <!-- Feature 6 -->
+                <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Low Calorie Healthy Snack">
+                    <div class="hero-feature-icon-wrap">
+                        <i class="fa-solid fa-feather text-sm sm:text-base"></i>
                     </div>
-                    <div class="text-[9px] sm:text-xs tracking-wider text-brand-cream uppercase font-bold leading-tight">Low Calorie</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY US SECTION -->
-    <section id="why-us" class="relative py-14 sm:py-20 lg:py-28 bg-[#FAFCFA] text-[#12241B] overflow-hidden border-b border-brand-earth/15">
-        <!-- Background subtle accent glow -->
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none -z-0"></div>
-        <div class="absolute bottom-0 left-10 w-80 h-80 bg-brand-terracotta/5 rounded-full blur-3xl pointer-events-none -z-0"></div>
-
-        <span id="partner" class="sr-only">Why Partner With Makhanam</span>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-dark/5 border border-brand-gold/40 text-brand-dark text-[10px] sm:text-[11px] font-bold uppercase tracking-wider sm:tracking-[0.2em] mb-3 sm:mb-4">
-                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                    <span>The Direct Wholesale Advantage</span>
-                </div>
-
-                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#12241B] tracking-tight mb-3 sm:mb-5 leading-[1.15]">
-                    Why <span class="italic text-brand-terracotta font-normal">Us?</span>
-                </h2>
-
-                <p class="text-sm sm:text-base lg:text-lg text-brand-charcoal/80 font-normal leading-relaxed px-2">
-                    Built on uncompromising quality, proven by absolute contract integrity, and powered by punctual pan-India logistics. Here is why leading snack brands, repackers, and B2B distributors trust Makhanam.
-                </p>
-            </div>
-
-            <!-- 3 Core Improvised Pillars Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 items-stretch">
-                <!-- Pillar 1: Premium Quality, Better Rate -->
-                <div class="group relative rounded-2xl bg-white border border-brand-gold/35 p-5 sm:p-7 lg:p-8 shadow-sm hover:shadow-xl hover:border-brand-gold hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <!-- Header & Numbering -->
-                        <div class="flex items-center justify-between mb-4 sm:mb-5 pb-3 sm:pb-4 border-b border-brand-earth/10">
-                            <span class="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-brand-gold/15 text-brand-dark border border-brand-gold/40">
-                                15–20% Cost Advantage
-                            </span>
-                            <span class="font-serif text-2xl sm:text-3xl font-light text-brand-gold">01</span>
-                        </div>
-
-                        <!-- Icon & Headline -->
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-dark text-brand-gold flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                            <i class="fa-solid fa-gem"></i>
-                        </div>
-
-                        <h3 class="font-serif text-xl sm:text-2xl font-medium text-[#12241B] mb-3 sm:mb-4 leading-snug">
-                            Premium Quality, <br class="hidden sm:inline">
-                            <span class="text-brand-terracotta italic font-normal">Better Rate.</span>
-                        </h3>
-
-                        <!-- Key Proof Points (Concise & Clear) -->
-                        <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-[13px] text-brand-charcoal/90">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Direct Mithila Sourcing:</strong> Sourced at farmgate with zero broker markups.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>3 to 7 Suta Calibrated:</strong> Machine-sorted for uniform size &amp; high puff volume.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Moisture &lt; 10%:</strong> High crunch, extended shelf life &amp; zero transit spoilage.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-brand-earth/10 flex items-center justify-between text-[11px] sm:text-xs font-bold text-brand-gold uppercase tracking-wider">
-                        <span>Direct Sourcing Advantage</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                    </div>
-                </div>
-
-                <!-- Pillar 2: We Deliver What We Promise -->
-                <div class="group relative rounded-2xl bg-white border border-brand-gold/35 p-5 sm:p-7 lg:p-8 shadow-sm hover:shadow-xl hover:border-brand-gold hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <!-- Header & Numbering -->
-                        <div class="flex items-center justify-between mb-4 sm:mb-5 pb-3 sm:pb-4 border-b border-brand-earth/10">
-                            <span class="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-brand-gold/15 text-brand-dark border border-brand-gold/40">
-                                100% Contract Fidelity
-                            </span>
-                            <span class="font-serif text-2xl sm:text-3xl font-light text-brand-gold">02</span>
-                        </div>
-
-                        <!-- Icon & Headline -->
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-dark text-brand-gold flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                            <i class="fa-solid fa-handshake-angle"></i>
-                        </div>
-
-                        <h3 class="font-serif text-xl sm:text-2xl font-medium text-[#12241B] mb-3 sm:mb-4 leading-snug">
-                            We Deliver What <br class="hidden sm:inline">
-                            <span class="text-brand-terracotta italic font-normal">We Promise.</span>
-                        </h3>
-
-                        <!-- Key Proof Points (Concise & Clear) -->
-                        <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-[13px] text-brand-charcoal/90">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Exact Sample Matching:</strong> The bulk lot matches approved samples grain-for-grain.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Certified Weighment:</strong> Weighbridge slips &amp; sealed barrier packaging prevent weight loss.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Full Compliance:</strong> FSSAI certified, APEDA registered &amp; batch GST invoices.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-brand-earth/10 flex items-center justify-between text-[11px] sm:text-xs font-bold text-brand-gold uppercase tracking-wider">
-                        <span>Contractual Guarantee</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                    </div>
-                </div>
-
-                <!-- Pillar 3: Timely Delivery -->
-                <div class="group relative rounded-2xl bg-white border border-brand-gold/35 p-5 sm:p-7 lg:p-8 shadow-sm hover:shadow-xl hover:border-brand-gold hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-1">
-                    <div>
-                        <!-- Header & Numbering -->
-                        <div class="flex items-center justify-between mb-4 sm:mb-5 pb-3 sm:pb-4 border-b border-brand-earth/10">
-                            <span class="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-brand-gold/15 text-brand-dark border border-brand-gold/40">
-                                Zero Downtime
-                            </span>
-                            <span class="font-serif text-2xl sm:text-3xl font-light text-brand-gold">03</span>
-                        </div>
-
-                        <!-- Icon & Headline -->
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-dark text-brand-gold flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                            <i class="fa-solid fa-truck-fast"></i>
-                        </div>
-
-                        <h3 class="font-serif text-xl sm:text-2xl font-medium text-[#12241B] mb-3 sm:mb-4 leading-snug">
-                            Guaranteed <br class="hidden sm:inline">
-                            <span class="text-brand-terracotta italic font-normal">Timely Delivery.</span>
-                        </h3>
-
-                        <!-- Key Proof Points (Concise & Clear) -->
-                        <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-[13px] text-brand-charcoal/90">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Central Buffer Stock:</strong> Year-round warehouse reserves enable 24–48 hr dispatches.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Express Multi-Modal Freight:</strong> Reliable pan-India road, rail &amp; container delivery.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-brand-gold text-sm mt-0.5 shrink-0"></i>
-                                <span><strong>Active Dispatch Desk:</strong> Real-time tracking alerts &amp; dedicated delivery support.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-brand-earth/10 flex items-center justify-between text-[11px] sm:text-xs font-bold text-brand-gold uppercase tracking-wider">
-                        <span>Reliable Supply Chain</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Action Banner (Mobile Optimized) -->
-            <div class="mt-10 sm:mt-14 p-5 sm:p-7 rounded-2xl bg-brand-dark text-brand-cream border border-brand-gold/30 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 shadow-xl">
-                <div class="flex items-center gap-3.5">
-                    <div class="w-11 h-11 rounded-full bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-lg shrink-0">
-                        <i class="fa-solid fa-boxes-packing"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-serif text-base sm:text-lg text-brand-cream font-medium leading-tight">Ready to experience the Makhanam standard?</h4>
-                        <p class="text-xs sm:text-sm text-brand-cream/80 mt-0.5">Request wholesale rate cards, custom caliper samples, or scheduled dispatches.</p>
-                    </div>
-                </div>
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
-                    <a href="contactus.html" class="w-full sm:w-auto px-5 py-3 rounded-full bg-brand-gold text-brand-dark hover:bg-brand-gold-bright transition-colors text-xs font-bold uppercase tracking-wider shadow-md text-center">
-                        Request Rate Card
-                    </a>
-                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20would%20like%20to%20know%20more%20about%20your%20wholesale%20rates%20and%20timely%20delivery." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-4 py-3 rounded-full border border-brand-gold/40 text-brand-gold hover:bg-brand-gold/10 transition-colors text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-sm text-[#25D366]"></i>
-                        <span>WhatsApp Desk</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <section id="about" class="py-14 sm:py-24 lg:py-32 bg-brand-ivory text-brand-dark relative overflow-hidden border-y border-brand-earth/15">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-                <!-- LEFT CONTENT COLUMN -->
-                <div class="lg:col-span-6 space-y-6 sm:space-y-8 reveal">
-                    <div class="inline-flex items-center gap-3 text-brand-terracotta text-xs sm:text-sm uppercase tracking-[0.25em] font-bold">
-                        <span class="w-12 h-0.5 bg-brand-terracotta"></span>
-                        <span>Mithila Heritage • 85%+ Global Origin</span>
-                    </div>
-
-                    <h2 class="font-serif text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-light leading-[1.18] text-brand-dark tracking-tight">
-                        Rooted at the Origin of <br class="hidden sm:inline">
-                        <span class="italic text-brand-terracotta font-normal">True Foxnut Heritage</span>
-                    </h2>
-
-                    <p class="text-brand-charcoal/90 text-base sm:text-xl lg:text-2xl leading-relaxed font-light">
-                        Over 85% of the world’s Makhana originates in the sacred wetlands of northern Bihar. Makhanam operates at the direct source in Mithila, bridging ancestral hand-harvesting wisdom with precision electronic calibration and moisture-controlled packaging for global commerce.
-                    </p>
-
-                    <!-- Key Proof Points (Aligned & Crisp) -->
-                    <div class="space-y-3.5 pt-1">
-                        <div class="flex items-start gap-3.5 sm:gap-5 p-3.5 sm:p-5 rounded-2xl bg-brand-cream/80 border border-brand-earth/15 shadow-sm transition-all hover:border-brand-gold hover:shadow-md">
-                            <span class="font-mono text-xs sm:text-sm font-bold text-brand-terracotta bg-brand-terracotta/10 px-2.5 py-1 rounded-lg shrink-0 mt-0.5">
-                                01
-                            </span>
-                            <div class="space-y-1">
-                                <h3 class="text-base sm:text-lg font-bold text-brand-dark tracking-tight">
-                                    Single-Origin Bihar Terroir
-                                </h3>
-                                <p class="text-xs sm:text-sm text-brand-charcoal/85 leading-relaxed font-normal">
-                                    Native wetland ecosystems producing superior natural puff volume, purity, and crisp density.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3.5 sm:gap-5 p-3.5 sm:p-5 rounded-2xl bg-brand-cream/80 border border-brand-earth/15 shadow-sm transition-all hover:border-brand-gold hover:shadow-md">
-                            <span class="font-mono text-xs sm:text-sm font-bold text-brand-terracotta bg-brand-terracotta/10 px-2.5 py-1 rounded-lg shrink-0 mt-0.5">
-                                02
-                            </span>
-                            <div class="space-y-1">
-                                <h3 class="text-base sm:text-lg font-bold text-brand-dark tracking-tight">
-                                    Direct Farmgate Transparency
-                                </h3>
-                                <p class="text-xs sm:text-sm text-brand-charcoal/85 leading-relaxed font-normal">
-                                    Direct trade with generational Mallah harvesting communities ensures unadulterated origin authenticity.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3.5 sm:gap-5 p-3.5 sm:p-5 rounded-2xl bg-brand-cream/80 border border-brand-earth/15 shadow-sm transition-all hover:border-brand-gold hover:shadow-md">
-                            <span class="font-mono text-xs sm:text-sm font-bold text-brand-terracotta bg-brand-terracotta/10 px-2.5 py-1 rounded-lg shrink-0 mt-0.5">
-                                03
-                            </span>
-                            <div class="space-y-1">
-                                <h3 class="text-base sm:text-lg font-bold text-brand-dark tracking-tight">
-                                    Standardized Suta Calipers
-                                </h3>
-                                <p class="text-xs sm:text-sm text-brand-charcoal/85 leading-relaxed font-normal">
-                                    Rigorous millimeter grading from 3 Suta (Pearl) to 7 Suta (Super Jumbo) for consistent export standards.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Origin & GSTIN Metas -->
-                    <div class="grid grid-cols-2 gap-4 sm:gap-6 pt-5 border-t border-brand-earth/20">
-                        <div>
-                            <div class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-terracotta font-bold mb-1">Direct Origin</div>
-                            <div class="font-serif text-xl sm:text-2xl text-brand-dark font-medium">Mithila, Bihar</div>
-                        </div>
-                        <div>
-                            <div class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-terracotta font-bold mb-1">GSTIN Registered</div>
-                            <div class="font-mono text-sm sm:text-base font-bold text-brand-dark">10AZBPY2685B1ZL</div>
-                        </div>
-                    </div>
-
-                    <!-- Callout link to Our Story -->
-                    <div class="pt-2">
-                        <a href="ourstory.html" class="inline-flex items-center gap-3 text-xs sm:text-sm uppercase tracking-[0.2em] font-bold text-brand-dark hover:text-brand-terracotta transition-all border-b-2 border-brand-gold hover:border-brand-terracotta pb-2 group">
-                            <span>Read The Full Mithila Story</span>
-                            <i class="fa-solid fa-arrow-right-long text-brand-gold group-hover:translate-x-2 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- RIGHT IMAGE COMPOSITION -->
-                <div class="lg:col-span-6 relative reveal">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-brand-earth/20 bg-brand-cream aspect-[4/3] sm:aspect-[16/11]">
-                        <img src="story.jpeg" alt="Makhana wetland farming in Bihar" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-brand-dark/20 to-transparent"></div>
-                        <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-brand-cream">
-                            <div>
-                                <span class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-brand-gold block">Protected Origin</span>
-                                <strong class="font-serif text-lg sm:text-2xl lg:text-3xl text-brand-ivory font-light">Mithila Makhana Wetlands</strong>
-                            </div>
-                            <span class="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-brand-dark/90 border border-brand-gold/40 text-[9px] sm:text-xs font-mono text-brand-gold uppercase tracking-wider shrink-0">
-                                85%+ Global Share
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Floating mini badge -->
-                    <div class="hidden sm:flex absolute -bottom-6 -left-6 bg-brand-dark text-brand-cream border border-brand-gold/40 rounded-2xl p-4 sm:p-5 shadow-2xl items-center gap-4 max-w-sm">
-                        <div class="w-12 h-12 rounded-xl bg-brand-gold/20 text-brand-gold flex items-center justify-center shrink-0 text-xl border border-brand-gold/30">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <div>
-                            <div class="text-xs font-mono uppercase tracking-wider text-brand-gold font-bold">FSSAI Certified Supply</div>
-                            <div class="text-xs text-brand-cream/80 font-light mt-0.5">Laboratory-grade moisture &amp; purity compliance</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR SERVICES -->
- <!-- ============================================
-     7-STAGE MAKHANA JOURNEY
-     From Bihar's Wetlands to Phool Makhana
-============================================= -->
-
-<section id="services" class="py-16 sm:py-20 lg:py-24 bg-brand-dark text-brand-cream relative">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- SECTION INTRO -->
-        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4 reveal">
-
-            <span class="text-brand-gold text-[11px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.25em] font-semibold">
-                From Water to Wonder
-            </span>
-
-            <h2 class="font-serif text-2xl sm:text-3xl lg:text-5xl font-light tracking-tight">
-                The 7-Stage Makhana Journey
-            </h2>
-
-            <p class="text-brand-cream/70 text-sm sm:text-base font-light leading-relaxed">
-                From the quiet wetlands of Bihar to the delicate white bloom in your bowl,
-                every Makhana passes through a patient journey shaped by water, season,
-                skilled hands and generations of farming knowledge.
-            </p>
-
-        </div>
-
-
-        <!-- JOURNEY NAVIGATION -->
-
-        <div class="-mx-4 sm:mx-0 px-4 sm:px-0 flex items-center justify-start lg:justify-center
-                    space-x-2 sm:space-x-3 lg:space-x-4 overflow-x-auto pb-4 no-scrollbar
-                    border-b border-brand-gold/20 mb-8 sm:mb-10 lg:mb-12">
-
-            <button
-                onclick="setJourneyStep(1)"
-                id="step-btn-1"
-                class="journey-step-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-t-xl
-                       font-mono text-[10px] sm:text-xs tracking-wider uppercase
-                       transition-all whitespace-nowrap bg-brand-gold text-brand-dark font-bold">
-                01. Wetland
-            </button>
-
-            <button
-                onclick="setJourneyStep(2)"
-                id="step-btn-2"
-                class="journey-step-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-t-xl
-                       font-mono text-[10px] sm:text-xs tracking-wider uppercase
-                       transition-all whitespace-nowrap text-brand-cream/60 hover:text-brand-gold">
-                02. Sowing
-            </button>
-
-            <button
-                onclick="setJourneyStep(3)"
-                id="step-btn-3"
-                class="journey-step-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-t-xl
-                       font-mono text-[10px] sm:text-xs tracking-wider uppercase
-                       transition-all whitespace-nowrap text-brand-cream/60 hover:text-brand-gold">
-                03. Growth
-            </button>
-
-            <button
-                onclick="setJourneyStep(4)"
-                id="step-btn-4"
-                class="journey-step-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-t-xl
-                       font-mono text-[10px] sm:text-xs tracking-wider uppercase
-                       transition-all whitespace-nowrap text-brand-cream/60 hover:text-brand-gold">
-                04. Transplant
-            </button>
-
-            <button
-                onclick="setJourneyStep(5)"
-                id="step-btn-5"
-                class="journey-step-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-t-xl
-                       font-mono text-[10px] sm:text-xs tracking-wider uppercase
-                       transition-all whitespace-nowrap text-brand-cream/60 hover:text-brand-gold">
-                05. Flower
-            </button>
-
-            <button
-                onclick="setJourneyStep(6)"
-                id="step-btn-6"
-                class="journey-step-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-t-xl
-                       font-mono text-[10px] sm:text-xs tracking-wider uppercase
-                       transition-all whitespace-nowrap text-brand-cream/60 hover:text-brand-gold">
-                06. Harvest
-            </button>
-
-            <button
-                onclick="setJourneyStep(7)"
-                id="step-btn-7"
-                class="journey-step-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-t-xl
-                       font-mono text-[10px] sm:text-xs tracking-wider uppercase
-                       transition-all whitespace-nowrap text-brand-cream/60 hover:text-brand-gold">
-                07. Popping
-            </button>
-
-        </div>
-
-
-        <!-- JOURNEY CONTENT CARD -->
-
-        <div class="glass-dark rounded-2xl p-5 sm:p-8 lg:p-10
-                    border border-brand-gold/20
-                    grid grid-cols-1 lg:grid-cols-12
-                    gap-6 sm:gap-8 items-center reveal">
-
-
-            <!-- TEXT -->
-
-            <div class="lg:col-span-6 space-y-5 sm:space-y-6 order-2 lg:order-1">
-
-                <div class="inline-flex items-center gap-2 font-mono text-[10px] sm:text-xs
-                            text-brand-gold uppercase tracking-widest">
-
-                    <span id="journey-step-num">
-                        STAGE 01 / 07
-                    </span>
-
-                    <span class="w-10 sm:w-12 h-px bg-brand-gold/40"></span>
-
-                </div>
-
-
-                <h3
-                    id="journey-title"
-                    class="font-serif text-xl sm:text-2xl lg:text-4xl
-                           font-light text-brand-cream">
-                    The Living Wetland
-                </h3>
-
-
-                <p
-                    id="journey-desc"
-                    class="text-brand-cream/80 text-sm sm:text-base
-                           leading-relaxed font-light">
-                    The journey begins in the water bodies of Bihar. Traditional Makhana is cultivated in ponds and wetlands where the crop grows in standing water, rooted in the aquatic environment.
-                </p>
-
-
-                <!-- QUOTE / FACT CARD -->
-
-                <div class="p-3.5 sm:p-4 rounded-xl bg-brand-dark/80
-                            border border-brand-gold/15
-                            flex items-start gap-3">
-
-                    <i class="fa-solid fa-leaf text-brand-gold
-                              text-lg sm:text-xl shrink-0"></i>
-
-                    <div>
-
-                        <span
-                            id="journey-quote"
-                            class="text-xs sm:text-sm font-serif italic
-                                   text-brand-cream/90 block">
-                            “Before the first seed is sown, the water must be ready to receive it.”
-                        </span>
-
-                        <span
-                            id="journey-source"
-                            class="text-[10px] font-mono text-brand-gold
-                                   uppercase mt-1 block">
-                            — Traditional Makhana Cultivation
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <!-- PREV / NEXT JOURNEY CONTROLS -->
-                <div class="flex items-center justify-between pt-2 border-t border-brand-gold/15">
-                    <button onclick="prevJourneyStep()" class="inline-flex items-center gap-2 text-[11px] font-mono text-brand-gold hover:text-brand-goldBright transition-colors uppercase tracking-wider py-1.5 px-3 rounded-lg bg-brand-gold/10 hover:bg-brand-gold/20">
-                        <i class="fa-solid fa-arrow-left"></i> <span>Previous</span>
-                    </button>
-                    <span class="text-[11px] font-mono text-brand-cream/60" id="journey-counter">Stage 1 of 7</span>
-                    <button onclick="nextJourneyStep()" class="inline-flex items-center gap-2 text-[11px] font-mono text-brand-gold hover:text-brand-goldBright transition-colors uppercase tracking-wider py-1.5 px-3 rounded-lg bg-brand-gold/10 hover:bg-brand-gold/20">
-                        <span>Next Stage</span> <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-
-            </div>
-
-
-            <!-- IMAGE -->
-
-            <div class="lg:col-span-6 order-1 lg:order-2">
-
-                <div class="relative rounded-xl overflow-hidden
-                            shadow-2xl aspect-[4/3]">
-
-                    <img
-                        id="journey-img"
-                        src="./wetland.jpeg"
-                        alt="Makhana cultivation in Bihar"
-                        class="w-full h-full object-cover
-                               transition-all duration-500">
-
-                    <div class="absolute inset-0
-                                bg-gradient-to-t
-                                from-brand-dark/60
-                                via-transparent
-                                to-transparent">
-                    </div>
-
-
-                    <!-- LOCATION BADGE -->
-
-                    <div class="absolute top-3 sm:top-4 right-3 sm:right-4
-                                bg-brand-dark/80 backdrop-blur-md
-                                border border-brand-gold/30
-                                px-2.5 sm:px-3 py-1 rounded-full
-                                text-[9px] sm:text-[10px]
-                                font-mono text-brand-gold
-                                uppercase tracking-wider">
-
-                        <span id="journey-badge">
-                            BIHAR WETLANDS
-                        </span>
-
-                    </div>
-
-
-                    <!-- STAGE NUMBER -->
-
-                    <div class="absolute bottom-4 left-4">
-
-                        <span
-                            id="journey-image-stage"
-                            class="font-mono text-xs tracking-[0.2em]
-                                   text-brand-cream/80 uppercase">
-                            STAGE 01
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-    <!-- WHY PARTNER -->
-    <section id="partner" class="py-16 sm:py-20 lg:py-24 bg-brand-cream text-brand-dark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-                <div class="lg:col-span-5 reveal">
-                    <span class="text-brand-terracotta text-[11px] sm:text-xs uppercase tracking-[0.22em] font-semibold">Why Partner with Makhanam?</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mt-3">
-                        Built Around <span class="italic text-brand-earth">Wholesale Requirements</span>
-                    </h2>
-                    <p class="text-brand-charcoal/80 text-sm sm:text-base leading-relaxed font-light mt-5">
-                        Makhanam supports wholesalers, exporters and white labelers with reliable raw Makhana supply, grading and packaging options tailored to distribution requirements.
-                    </p>
-                </div>
-
-                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 reveal">
-                    <div class="bg-brand-ivory rounded-2xl p-6 sm:p-7 border border-brand-earth/15 shadow-sm">
-                        <div class="w-11 h-11 rounded-full bg-brand-dark text-brand-gold flex items-center justify-center mb-5">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl text-brand-dark">Our Clients</h3>
-                        <p class="text-sm text-brand-charcoal/75 leading-relaxed mt-3">
-                            Our client portfolio includes well-known brands such as “Big Basket” among various exporters and white labelers.
-                        </p>
-                    </div>
-
-                    <div class="bg-brand-ivory rounded-2xl p-6 sm:p-7 border border-brand-earth/15 shadow-sm">
-                        <div class="w-11 h-11 rounded-full bg-brand-dark text-brand-gold flex items-center justify-center mb-5">
-                            <i class="fa-solid fa-boxes-stacked"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl text-brand-dark">Our Products</h3>
-                        <p class="text-sm text-brand-charcoal/75 leading-relaxed mt-3">
-                            We accommodate all wholesale needs, offering reliable bulk supply in large-capacity gunny bags and standard packaging options tailored precisely to retail or distribution requirements.
-                        </p>
-                    </div>
-
-                    <div class="bg-brand-dark rounded-2xl p-6 sm:p-7 text-brand-cream border border-brand-gold/20 md:col-span-2">
-                        <div class="flex flex-col sm:flex-row gap-5 sm:gap-7 items-start">
-                            <div class="w-11 h-11 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-certificate"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-serif text-2xl">Compliance & Certifications</h3>
-                                <p class="text-sm text-brand-cream/75 leading-relaxed mt-3 max-w-3xl">
-                                    We maintain comprehensive compliance measures & industry-recognized certifications like FSSAI that ensure product quality & trust for customers PAN India.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GRADING SPECIFICATIONS -->
-    <section id="grading" class="py-16 sm:py-20 lg:py-24 bg-brand-ivory text-brand-dark relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 reveal">
-                <span class="text-brand-terracotta text-[11px] sm:text-xs uppercase tracking-[0.22em] font-semibold">Traditional Suta System</span>
-                <h2 class="font-serif text-2xl sm:text-3xl lg:text-5xl font-light mt-2">Makhana Grades &amp; Sizes</h2>
-                <p class="text-brand-charcoal/75 text-sm sm:text-base mt-3">
-                    Makhana grades are measured using the traditional Suta system. Each grade is standardized by millimeter caliber and tailored for specific industry applications.
-                </p>
-            </div>
-
-            <!-- Responsive Container: Horizontal swipe on mobile, 5-column grid on desktop -->
-            <div class="relative">
-                <div id="grading-grid" class="flex lg:grid lg:grid-cols-5 overflow-x-auto no-scrollbar pb-4 pt-1 gap-4 sm:gap-5 snap-x snap-mandatory -mx-4 sm:mx-0 px-4 sm:px-0 items-stretch">
-                    <!-- Grading cards injected by JavaScript -->
-                </div>
-
-                <!-- Mobile swipe indicator -->
-                <div class="flex lg:hidden items-center justify-center gap-2 mt-3 text-[11px] text-brand-cocoa/70 font-medium">
-                    <i class="fa-solid fa-arrow-left-long text-[10px]"></i>
-                    <span>Swipe horizontally to view all 5 grades</span>
-                    <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHOLESALE / CONTACT -->
-    <section id="contact" class="py-16 sm:py-20 lg:py-24 bg-brand-dark text-brand-cream relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-                <div class="lg:col-span-7 reveal">
-                    <span class="text-brand-gold text-[11px] sm:text-xs uppercase tracking-[0.22em] font-semibold">Wholesale Enquiries</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-6xl font-light leading-tight mt-3">
-                        Let’s Build a Reliable <span class="italic text-gold-gradient">Makhana Supply</span>
-                    </h2>
-                    <p class="text-brand-cream/70 text-sm sm:text-base leading-relaxed max-w-2xl mt-5">
-                        Connect with Makhanam for premium raw Makhana, bulk supply, grading requirements and packaging options for retail or distribution.
-                    </p>
-                </div>
-
-                <div class="lg:col-span-5 reveal">
-                    <div class="glass-dark rounded-2xl p-6 sm:p-8 border border-brand-gold/20 space-y-5">
-                        <div>
-                            <div class="text-[10px] uppercase tracking-widest text-brand-gold mb-1">Company</div>
-                            <div class="font-serif text-2xl">Makhanam</div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-location-dot text-brand-gold mt-1"></i>
-                            <div>
-                                <div class="text-[10px] uppercase tracking-widest text-brand-gold">Location</div>
-                                <p class="text-sm text-brand-cream/75">Bihar</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-phone text-brand-gold mt-1"></i>
-                            <div>
-                                <div class="text-[10px] uppercase tracking-widest text-brand-gold">Phone &amp; Direct Desk</div>
-                                <a href="tel:+918340493639" class="text-sm text-brand-cream/90 hover:text-brand-gold">+91 83404 93639</a>
-                                 <a href="https://wa.me/918340493639" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-2 text-xs text-brand-gold hover:text-brand-gold-bright" aria-label="WhatsApp bulk enquiry">
-                                     <i class="fa-brands fa-whatsapp text-sm"></i>
-                                     <span>WhatsApp for Bulk Enquiry</span>
-                                 </a>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-envelope text-brand-gold mt-1"></i>
-                            <div class="min-w-0">
-                                <div class="text-[10px] uppercase tracking-widest text-brand-gold">Email</div>
-                                <a href="mailto:KeshavKaushikExports@gmail.com" class="text-sm text-brand-cream/90 hover:text-brand-gold break-all">KeshavKaushikExports@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="pt-3 border-t border-brand-gold/15">
-                            <div class="text-[10px] uppercase tracking-widest text-brand-gold mb-1">GSTIN</div>
-                            <div class="font-mono text-sm">10AZBPY2685B1ZL</div>
-                        </div>
-                        <a href="mailto:KeshavKaushikExports@gmail.com?subject=Wholesale%20Makhana%20Enquiry" class="block w-full py-3.5 rounded-full btn-shimmer text-brand-dark text-xs uppercase tracking-[0.2em] font-bold text-center">
-                            Send Wholesale Enquiry
-                        </a>
-                    </div>
+                    <div class="hero-feature-label">Low Calorie</div>
+                    <div class="hero-feature-sub">Zero Trans Fat</div>
                 </div>
             </div>
         </div>
@@ -1224,12 +692,11 @@ img {
                     <h4 class="font-serif text-sm tracking-widest text-brand-gold uppercase">Explore</h4>
                     <ul class="space-y-2 text-xs text-brand-cream/70 font-light">
                         <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
-                        <li><a href="ourstory.html" class="hover:text-brand-gold transition-colors">Our Story</a></li>
-                        <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
-                        <li><a href="#services" class="hover:text-brand-gold transition-colors">Our Services</a></li>
-                        <li><a href="#partner" class="hover:text-brand-gold transition-colors">Why Partner</a></li>
+                        <li><a href="sizeguide.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                        <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Makhana</a></li>
                         <li><a href="SizeCaliperGuide.html" class="hover:text-brand-gold transition-colors">Grading Specifications</a></li>
-                        <li><a href="contactus.html" class="hover:text-brand-gold transition-colors">Wholesale Contact</a></li>
+                        <li><a href="journey.html" class="hover:text-brand-gold transition-colors">Journey</a></li>
+                        <li><a href="contactus.html" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -2262,6 +1729,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal, .reveal-fade, section > div').forEach(el => {
         el.classList.add('reveal-fade');
         observer.observe(el);
+    });
+
+    // Touch and click interaction for Hero feature cards
+    const heroCards = document.querySelectorAll('.hero-feature-card');
+    heroCards.forEach(card => {
+        card.addEventListener('touchstart', function() {
+            heroCards.forEach(c => { if (c !== card) c.classList.remove('touch-active'); });
+            card.classList.toggle('touch-active');
+        }, { passive: true });
+
+        card.addEventListener('click', function() {
+            card.classList.add('touch-active');
+            setTimeout(() => {
+                card.classList.remove('touch-active');
+            }, 1800);
+        });
     });
 
     // Touch swipe support for the Journey section on mobile
