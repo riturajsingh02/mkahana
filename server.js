@@ -325,63 +325,29 @@ app.get('/api/config/maps', (req, res) => {
   });
 });
 
-// Case-insensitive / alias routing for HTML files
-app.get(['/grading', '/grading.html'], (req, res) => {
+// Consolidated clean routing for HTML pages
+app.get(['/grading', '/grading.html', '/SizeCaliperGuide.html', '/SizeCalliperGuide.html', '/sizecaliperguide.html', '/sizecaliperguide', '/sizecalliperguide'], (req, res) => {
   res.sendFile(path.join(__dirname, 'grading.html'));
 });
 
-app.get(['/SizeCalliperGuide.html', '/sizecalliperguide.html', '/sizecalliperguide'], (req, res) => {
-  res.redirect('/grading.html');
+app.get(['/aboutus', '/aboutus.html', '/about-us', '/about-us.html', '/makhanam', '/makhanam.html', '/sizeguide', '/sizeguide.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'aboutus.html'));
 });
 
-app.get('/sizecaliperguide.html', (req, res) => {
-  if (fs.existsSync(path.join(__dirname, 'SizeCaliperGuide.html'))) {
-    res.sendFile(path.join(__dirname, 'SizeCaliperGuide.html'));
-  } else if (fs.existsSync(path.join(__dirname, 'sizeguide.html'))) {
-    res.sendFile(path.join(__dirname, 'sizeguide.html'));
-  } else {
-    res.sendFile(path.join(__dirname, 'index.html'));
-  }
-});
-
-app.get('/sizecaliperguide', (req, res) => {
-  res.redirect('/SizeCaliperGuide.html');
-});
-
-app.get(['/makhanam', '/makhanam.html', '/about-us'], (req, res) => {
-  res.sendFile(path.join(__dirname, 'makhanam.html'));
-});
-
-app.get(['/about', '/about.html', '/about-makhana'], (req, res) => {
+app.get(['/about', '/about.html', '/about-makhana', '/about-makhanam', '/about-makhanam.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'about.html'));
 });
 
-app.get(['/sizeguide', '/sizeguide.html'], (req, res) => {
-  res.redirect('/about.html');
+app.get(['/journey', '/journey.html', '/ourstory', '/ourstory.html', '/our-story', '/story'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'journey.html'));
 });
 
-app.get('/ourstory', (req, res) => {
-  res.redirect('/makhanam.html#journey');
-});
-
-app.get('/our-story', (req, res) => {
-  res.redirect('/makhanam.html#journey');
-});
-
-app.get('/story', (req, res) => {
-  res.redirect('/makhanam.html#journey');
-});
-
-app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, 'contactus.html'));
-});
-
-app.get('/contactus', (req, res) => {
+app.get(['/contact', '/contact.html', '/contactus', '/contactus.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'contactus.html'));
 });
 
 // Fallback to index.html
-app.get('/', (req, res) => {
+app.get(['/', '/index', '/index.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 

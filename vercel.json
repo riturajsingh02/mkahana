@@ -8,6 +8,10 @@
       "destination": "/grading.html"
     },
     {
+      "source": "/grading.html",
+      "destination": "/grading.html"
+    },
+    {
       "source": "/sizecaliperguide.html",
       "destination": "/grading.html"
     },
@@ -16,23 +20,79 @@
       "destination": "/grading.html"
     },
     {
+      "source": "/aboutus",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/aboutus.html",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/about-us",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/makhanam",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/makhanam.html",
+      "destination": "/aboutus.html"
+    },
+    {
       "source": "/sizeguide.html",
-      "destination": "/SizeCaliperGuide.html"
+      "destination": "/aboutus.html"
     },
     {
       "source": "/sizeguide",
-      "destination": "/SizeCaliperGuide.html"
+      "destination": "/aboutus.html"
     },
     {
       "source": "/about",
       "destination": "/about.html"
     },
     {
+      "source": "/about.html",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/about-makhana",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/journey",
+      "destination": "/journey.html"
+    },
+    {
+      "source": "/journey.html",
+      "destination": "/journey.html"
+    },
+    {
+      "source": "/ourstory",
+      "destination": "/journey.html"
+    },
+    {
+      "source": "/ourstory.html",
+      "destination": "/journey.html"
+    },
+    {
       "source": "/contact",
       "destination": "/contactus.html"
     },
     {
+      "source": "/contact.html",
+      "destination": "/contactus.html"
+    },
+    {
       "source": "/contactus",
+      "destination": "/contactus.html"
+    },
+    {
+      "source": "/contactus.html",
       "destination": "/contactus.html"
     }
   ]

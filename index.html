@@ -9,10 +9,10 @@
     <meta property="og:title" content="MAKHANAM — Purveyors of Mithila Lotus Seed Heritage">
     <meta property="og:description" content="MAKHANAM brings single-origin, hand-harvested GI-tagged makhana from the sacred wetlands of Bihar, elevated with artisanal botanicals and ancient roasting techniques.">
 
-    <!-- Google Fonts: Spectral (Serif) & Bricolage Grotesque (Sans) -->
+    <!-- Google Fonts: Montserrat (Heavy Display), Spectral (Serif) & Bricolage Grotesque (Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:wght@800;900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +37,8 @@
                 },
                 fontFamily: {
                     serif: ['Spectral', 'Georgia', 'serif'],
-                    sans:  ['Bricolage Grotesque', 'sans-serif']
+                    sans:  ['Bricolage Grotesque', 'sans-serif'],
+                    display: ['Montserrat', 'Bricolage Grotesque', 'sans-serif']
                 },
                 animation: {
                     'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -114,6 +115,13 @@ html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.hero-brand-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
 /* ---------- Premium Transitions & Brightness ---------- */
@@ -216,14 +224,18 @@ img {
     box-shadow: 0 12px 34px -12px rgba(201, 169, 97, 0.75); /* brand-gold */
 }
 
-/* ---------- Mobile Optimizations ---------- */
-@media (max-width: 640px) {
-    .hero-overlay {
-        background:
-            linear-gradient(to top,
-                rgba(11, 22, 16, 0.70) 0%,
-                rgba(18, 36, 27, 0.35) 45%,
-                rgba(18, 36, 27, 0.15) 100%);
+/* ---------- Mobile Optimizations (Filter removed in Mobile View) ---------- */
+@media (max-width: 768px) {
+    .hero-overlay,
+    .hero-vignette {
+        display: none !important;
+        background: none !important;
+        opacity: 0 !important;
+    }
+    .hero-video,
+    picture img {
+        filter: none !important;
+        -webkit-filter: none !important;
     }
     .tap-target { min-height: 44px; }
     .glass-dark, .glass-light {
@@ -549,14 +561,6 @@ img {
 }
 
 @media (max-width: 640px) {
-    .hero-overlay {
-        background:
-            linear-gradient(180deg,
-                rgba(11, 22, 16, 0.65) 0%,
-                rgba(18, 36, 27, 0.20) 30%,
-                rgba(18, 36, 27, 0.05) 55%,
-                rgba(11, 22, 16, 0.70) 100%);
-    }
     .hero-feature-card {
         padding: 9px 4px;
         gap: 5px;
@@ -698,7 +702,7 @@ img {
             <!-- Desktop Nav Links -->
             <nav class="desktop-nav hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.18em] font-bold text-[#F1F6F2]">
                 <a href="index.html" class="nav-item text-brand-gold font-semibold">Home</a>
-                <a href="sizeguide.html" class="nav-item hover:text-brand-gold transition-colors">About Us</a>
+                <a href="aboutus.html" class="nav-item hover:text-brand-gold transition-colors">About Us</a>
                 <a href="about.html" class="nav-item hover:text-brand-gold transition-colors">About Makhana</a>
                 <a href="grading.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
                 <a href="journey.html" class="nav-item hover:text-brand-gold transition-colors">Journey</a>
@@ -737,7 +741,7 @@ img {
                         <span>Home</span>
                         <i class="fa-solid fa-chevron-right text-[9px] text-[#C9A961]"></i>
                     </a>
-                    <a href="sizeguide.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
+                    <a href="aboutus.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>About Us</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
@@ -786,35 +790,35 @@ img {
 
     <!-- HERO -->
     <section class="relative min-h-[92vh] sm:min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark text-brand-cream">
-        <!-- Responsive Background: mobile-hero.jpeg on mobile, main.jpeg on desktop -->
+        <!-- Responsive Background: mobile-hero.jpeg on mobile, main.jpeg on desktop (Filter removed in mobile view) -->
         <picture class="absolute inset-0 w-full h-full z-0 pointer-events-none">
             <source media="(max-width: 768px)" srcset="mobile-hero.jpeg">
             <img src="main.jpeg"
                 alt="Makhana Heritage background"
-                class="hero-video w-full h-full object-cover object-center opacity-100"
+                class="hero-video w-full h-full object-cover object-center opacity-100 !filter-none"
                 loading="eager">
         </picture>
-        <div class="hero-overlay absolute inset-0 z-10 pointer-events-none"></div>
-        <div class="hero-vignette absolute inset-0 z-10 pointer-events-none"></div>
+        <div class="hero-overlay hidden md:block absolute inset-0 z-10 pointer-events-none"></div>
+        <div class="hero-vignette hidden md:block absolute inset-0 z-10 pointer-events-none"></div>
 
         <div class="relative z-25 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:py-20 lg:py-28 flex flex-col items-center text-center sm:items-start sm:text-left w-full justify-between min-h-[88vh] sm:min-h-0">
             <!-- Top Header & Hero Text -->
             <div class="w-full flex flex-col items-center text-center sm:items-start sm:text-left">
-                <div class="mb-2 sm:mb-3 text-brand-gold tracking-[0.24em] sm:tracking-[0.3em] uppercase text-[10px] sm:text-xs font-semibold">
+                <div class="mb-2 sm:mb-3 text-brand-gold tracking-[0.24em] sm:tracking-[0.3em] uppercase text-[10px] sm:text-xs font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                     Purveyors of Mithila Heritage
                 </div>
 
-                <h1 class="font-serif text-[44px] xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-normal sm:font-light leading-[1.04] tracking-tight text-white sm:text-gold-gradient mb-2.5 sm:mb-5 max-w-4xl">
-                    Makhanam
+                <h1 class="hero-brand-title font-display text-[48px] xs:text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black leading-none tracking-tight text-white mb-2.5 sm:mb-5 max-w-4xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)] select-text">
+                    MAKHANAM
                 </h1>
 
-                <p class="font-sans text-[10.5px] xs:text-[11.5px] sm:text-sm lg:text-base text-brand-cream/95 font-bold sm:font-semibold tracking-[0.18em] sm:tracking-[0.25em] uppercase mb-6 sm:mb-8 max-w-xl">
+                <p class="font-sans text-[10.5px] xs:text-[11.5px] sm:text-sm lg:text-base text-brand-cream/95 font-bold sm:font-semibold tracking-[0.18em] sm:tracking-[0.25em] uppercase mb-6 sm:mb-8 max-w-xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
                     Premium Raw Makhana For Wholesalers
                 </p>
 
                 <!-- Hero Action CTAs (Mobile Ergonomic & Centered) -->
                 <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto max-w-[275px] sm:max-w-none mx-auto sm:mx-0 mb-6 sm:mb-8">
-                    <a href="sizeguide.html" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#E5B869] text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
+                    <a href="aboutus.html" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#E5B869] text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
                         <span>About Us</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
@@ -910,7 +914,7 @@ img {
                     <h4 class="font-serif text-sm tracking-widest text-brand-gold uppercase">Explore</h4>
                     <ul class="space-y-2 text-xs text-brand-cream/70 font-light">
                         <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
-                        <li><a href="sizeguide.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                        <li><a href="aboutus.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
                         <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Makhana</a></li>
                         <li><a href="grading.html" class="hover:text-brand-gold transition-colors">Grading Specifications</a></li>
                         <li><a href="journey.html" class="hover:text-brand-gold transition-colors">Journey</a></li>

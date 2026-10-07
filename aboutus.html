@@ -7,10 +7,10 @@
     <title>About Us — Vision, Mission & Leadership | MAKHANAM</title>
     <meta name="description" content="MAKHANAM is a premier B2B processor and exporter of raw Makhana (Foxnut). Rooted in Mithila, Bihar, built for dependable global supply chains.">
 
-    <!-- Google Fonts: Spectral & Bricolage Grotesque -->
+    <!-- Google Fonts: Spectral, Bricolage Grotesque & Caveat (Handwritten) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Caveat:wght@400..700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -38,7 +38,8 @@
                     },
                     fontFamily: {
                         serif: ['Spectral', 'Georgia', 'serif'],
-                        sans:  ['Bricolage Grotesque', 'sans-serif']
+                        sans:  ['Bricolage Grotesque', 'sans-serif'],
+                        handwriting: ['Caveat', 'cursive', 'sans-serif']
                     }
                 }
             }
@@ -71,6 +72,10 @@
         ::selection {
             background: rgba(201, 169, 97, 0.25);
             color: var(--dark);
+        }
+
+        .font-handwriting {
+            font-family: 'Caveat', cursive, sans-serif;
         }
 
         /* Unified Luxury Brand Scrollbar */
@@ -444,6 +449,163 @@
             border-radius: 9999px;
         }
 
+        /* ==========================================================================
+           VISION SECTION - INTERACTIVE LUXURY STYLES
+           ========================================================================== */
+        .font-handwriting {
+            font-family: 'Caveat', cursive, sans-serif !important;
+            font-feature-settings: "liga" on, "clig" on;
+        }
+
+        .vision-handwritten-title {
+            font-family: 'Caveat', cursive, sans-serif !important;
+            font-weight: 600;
+            line-height: 1.25;
+            letter-spacing: 0.015em;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF9E6 25%, #E8CD84 55%, #FAFCFA 75%, #C9A961 100%);
+            background-size: 220% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShimmerText 8s ease infinite;
+            filter: drop-shadow(0 4px 24px rgba(201, 169, 97, 0.35));
+        }
+        @keyframes goldShimmerText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .vision-mesh-glow {
+            background: radial-gradient(circle at 50% 45%, rgba(201, 169, 97, 0.28) 0%, rgba(232, 205, 132, 0.12) 40%, transparent 70%);
+            animation: visionGlowPulse 6s ease-in-out infinite alternate;
+        }
+        @keyframes visionGlowPulse {
+            0% { transform: scale(0.9) translateY(0); opacity: 0.65; }
+            100% { transform: scale(1.15) translateY(-10px); opacity: 0.95; }
+        }
+
+        .vision-floating-seed {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, #E8CD84, #A68740);
+            box-shadow: 0 0 14px rgba(232, 205, 132, 0.75);
+            opacity: 0.35;
+            pointer-events: none;
+            animation: visionFloat 7s ease-in-out infinite;
+        }
+        @keyframes visionFloat {
+            0%, 100% { transform: translateY(0) scale(0.9); opacity: 0.25; }
+            50% { transform: translateY(-24px) scale(1.2); opacity: 0.7; }
+        }
+
+        .vision-quote-card {
+            background: rgba(18, 36, 27, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(201, 169, 97, 0.4);
+            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.65), 0 0 40px rgba(201, 169, 97, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .vision-quote-card:hover {
+            border-color: rgba(232, 205, 132, 0.75);
+            box-shadow: 0 35px 80px -8px rgba(0, 0, 0, 0.75), 0 0 50px rgba(201, 169, 97, 0.32), inset 0 0 25px rgba(232, 205, 132, 0.12);
+        }
+
+        .vision-pillar-card {
+            background: rgba(18, 36, 27, 0.8);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(201, 169, 97, 0.28);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+        .vision-pillar-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(201, 169, 97, 0.25), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .vision-pillar-card:hover::before,
+        .vision-pillar-card.active::before {
+            opacity: 1;
+        }
+        .vision-pillar-card:hover,
+        .vision-pillar-card.active {
+            transform: translateY(-8px);
+            border-color: #E8CD84;
+            background: rgba(24, 46, 34, 0.94);
+            box-shadow: 0 20px 45px -6px rgba(0, 0, 0, 0.7), 0 0 35px rgba(201, 169, 97, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
+        .vision-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10.5px;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            background: rgba(201, 169, 97, 0.15);
+            border: 1px solid rgba(201, 169, 97, 0.35);
+            color: #E8CD84;
+            transition: all 0.3s ease;
+        }
+        .vision-pillar-card:hover .vision-badge-pill,
+        .vision-pillar-card.active .vision-badge-pill {
+            background: rgba(201, 169, 97, 0.32);
+            border-color: #E8CD84;
+            color: #FFF6D6;
+        }
+
+        .vision-tab-btn {
+            transition: all 0.25s ease;
+        }
+        .vision-tab-btn.active {
+            background: rgba(201, 169, 97, 0.25);
+            border-color: #E8CD84;
+            color: #FFF6D6;
+            box-shadow: 0 0 20px rgba(232, 205, 132, 0.35);
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translate(-50%, 0) scale(0.6); opacity: 1; }
+            50% { transform: translate(-50%, -35px) scale(1.2); opacity: 0.95; }
+            100% { transform: translate(-50%, -75px) scale(1); opacity: 0; }
+        }
+        .floating-heart {
+            position: absolute;
+            pointer-events: none;
+            animation: floatHeart 1.3s ease-out forwards;
+            z-index: 50;
+            font-size: 1.1rem;
+        }
+
+        .soundwave-bar {
+            width: 2.5px;
+            background: #E8CD84;
+            border-radius: 9999px;
+            animation: soundWave 1.2s ease-in-out infinite alternate;
+        }
+        .soundwave-bar:nth-child(2) { animation-delay: 0.2s; }
+        .soundwave-bar:nth-child(3) { animation-delay: 0.4s; }
+        .soundwave-bar:nth-child(4) { animation-delay: 0.15s; }
+        .soundwave-bar:nth-child(5) { animation-delay: 0.35s; }
+        @keyframes soundWave {
+            0% { height: 3px; opacity: 0.35; }
+            100% { height: 15px; opacity: 1; }
+        }
+
         /* Footer */
         .site-footer {
             background: #0B1610;
@@ -624,9 +786,9 @@
             <!-- Desktop Nav Links -->
             <nav class="desktop-nav hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.18em] font-bold text-[#F1F6F2]">
                 <a href="index.html" class="nav-item hover:text-brand-gold transition-colors">Home</a>
-                <a href="sizeguide.html" class="nav-item text-brand-gold font-semibold">About Us</a>
+                <a href="aboutus.html" class="nav-item text-brand-gold font-semibold">About Us</a>
                 <a href="about.html" class="nav-item hover:text-brand-gold transition-colors">About Makhana</a>
-                <a href="SizeCaliperGuide.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
+                <a href="grading.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
                 <a href="journey.html" class="nav-item hover:text-brand-gold transition-colors">Journey</a>
                 <a href="contactus.html" class="nav-item hover:text-brand-gold transition-colors">Contact</a>
             </nav>
@@ -663,7 +825,7 @@
                         <span>Home</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
-                    <a href="sizeguide.html" class="flex items-center justify-between py-2.5 text-[#E8CD84] font-semibold border-l-2 border-[#C9A961] pl-3 -ml-3 bg-brand-gold/10 rounded-r-lg">
+                    <a href="aboutus.html" class="flex items-center justify-between py-2.5 text-[#E8CD84] font-semibold border-l-2 border-[#C9A961] pl-3 -ml-3 bg-brand-gold/10 rounded-r-lg">
                         <span>About Us</span>
                         <i class="fa-solid fa-chevron-right text-[9px] text-[#C9A961]"></i>
                     </a>
@@ -671,7 +833,7 @@
                         <span>About Makhana</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
-                    <a href="SizeCaliperGuide.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
+                    <a href="grading.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Grading Guide</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
@@ -804,127 +966,283 @@
         </section>
 
         <!-- ==========================================================================
-             3. VISION SECTION (Full-Width Immersive Photograph)
+             3. VISION SECTION (Ultra-Luxury Interactive Experience)
              ========================================================================== -->
-        <section class="relative py-28 sm:py-36 bg-[#0B1610] text-[#F1F6F2] overflow-hidden">
-            <!-- Full-width photograph -->
-            <img src="wetland.jpeg" alt="Vast makhana wetland sunrise landscape in Bihar" class="absolute inset-0 w-full h-full object-cover object-center opacity-30 scale-105" onerror="this.src='main.jpeg'">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#0B1610] via-[#12241B]/85 to-[#0B1610]"></div>
+        <section class="relative py-24 sm:py-32 lg:py-36 bg-[#0B1610] text-[#F1F6F2] overflow-hidden" id="our-vision-section">
+            <!-- Interactive Stardust & Golden Bioluminescent Particle Canvas -->
+            <canvas id="vision-particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
-            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-12 reveal">
-                <div class="space-y-4">
-                    <span class="text-xs font-mono font-bold tracking-[0.28em] text-[#C9A961] uppercase">
-                        Our Vision
-                    </span>
-                    <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-light text-[#FAFCFA] max-w-3xl mx-auto leading-snug">
-                        “To make Mithila's finest makhana a <span class="gold-gradient-text italic font-normal">trusted choice for the world</span>.”
-                    </h2>
+            <!-- Full-width atmospheric background photograph with cinematic depth -->
+            <img src="wetland.jpeg" alt="Vast makhana wetland sunrise landscape in Bihar" class="absolute inset-0 w-full h-full object-cover object-center opacity-20 scale-105 pointer-events-none transition-transform duration-1000 ease-out" id="vision-bg-img" onerror="this.src='main.jpeg'">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0B1610] via-[#12241B]/95 to-[#0B1610] pointer-events-none"></div>
+
+            <!-- Radiant Golden Atmospheric Ambient Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[450px] sm:h-[650px] vision-mesh-glow rounded-full pointer-events-none"></div>
+
+            <!-- Floating Golden Seed Particles -->
+            <div class="vision-floating-seed top-16 left-[10%]" style="animation-delay: 0s;"></div>
+            <div class="vision-floating-seed top-28 right-[12%]" style="animation-delay: 2.2s; width: 6px; height: 6px;"></div>
+            <div class="vision-floating-seed bottom-20 left-[15%]" style="animation-delay: 4.1s; width: 10px; height: 10px;"></div>
+            <div class="vision-floating-seed bottom-28 right-[18%]" style="animation-delay: 1.5s;"></div>
+
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-10 sm:space-y-14 reveal">
+                
+                <!-- Centerpiece Vision Quote Card with Glassmorphic Luxury Halo -->
+                <div class="vision-quote-card rounded-3xl p-7 sm:p-12 lg:p-16 relative overflow-hidden group border border-[#C9A961]/40 shadow-2xl">
+                    <!-- Top golden jewel beam highlight -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-[3px] bg-gradient-to-r from-transparent via-[#E8CD84] to-transparent"></div>
+
+                    <!-- Watermark Antique Quote Glyphs in Backdrop -->
+                    <div class="absolute -top-10 left-4 sm:left-8 text-8xl sm:text-[11rem] font-serif text-[#C9A961]/10 select-none pointer-events-none italic leading-none">“</div>
+                    <div class="absolute -bottom-14 right-4 sm:right-8 text-8xl sm:text-[11rem] font-serif text-[#C9A961]/10 select-none pointer-events-none italic leading-none">”</div>
+
+                    <div class="relative z-10 space-y-7 sm:space-y-8">
+                        <!-- North Star Pill Badge -->
+                        <div class="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-brand-gold/70 bg-[#12241B]/90 backdrop-blur-md text-[#E8CD84] text-[11px] sm:text-xs uppercase tracking-[0.28em] font-semibold shadow-lg">
+                            <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+                            <i class="fa-solid fa-compass text-[10px]"></i>
+                            <span>Our Vision • Guiding Purpose</span>
+                        </div>
+
+                        <!-- Handwritten Hero Quote with Fluid Master-Calligraphy Styling -->
+                        <div class="px-2 sm:px-6">
+                            <h2 class="vision-handwritten-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FAFCFA] max-w-4xl mx-auto leading-relaxed sm:leading-[1.28] tracking-wide transition-all drop-shadow-[0_8px_32px_rgba(201,169,97,0.35)] select-text">
+                                “To bring the goodness of <span class="text-[#E8CD84] font-bold inline-block hover:scale-105 transition-transform duration-300 cursor-default underline decoration-[#C9A961]/50 decoration-wavy underline-offset-8">Makhanam</span> to every corner of the world, inspiring <span class="text-[#E8CD84] font-bold inline-block hover:scale-105 transition-transform duration-300 cursor-default underline decoration-[#C9A961]/50 decoration-wavy underline-offset-8">healthy, happy living</span> in every home.”
+                            </h2>
+                        </div>
+
+                        <!-- Golden Quill Emblem & Decorative Ribbon Divider -->
+                        <div class="flex items-center justify-center gap-4 pt-1">
+                            <span class="w-16 sm:w-32 h-px bg-gradient-to-r from-transparent via-[#C9A961] to-transparent"></span>
+                            <div class="w-7 h-7 rounded-full border border-[#C9A961]/60 bg-[#12241B] flex items-center justify-center text-[#E8CD84] text-xs shadow-md" title="Mithila Harvest Quill">
+                                <i class="fa-solid fa-feather-pointed"></i>
+                            </div>
+                            <span class="w-16 sm:w-32 h-px bg-gradient-to-r from-transparent via-[#C9A961] to-transparent"></span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- 3 Visual Pillars -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 max-w-4xl mx-auto">
-                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 hover:border-[#C9A961]/70 backdrop-blur-md text-left transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-2xl border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328] group-hover:scale-110 group-hover:border-[#E8CD84] group-hover:text-[#FFF2C6] group-hover:shadow-[0_0_20px_rgba(201,169,97,0.45)] transition-all duration-300">
-                            <i class="fa-solid fa-gem text-base group-hover:rotate-12 transition-transform duration-300"></i>
+                <!-- 3 Clean Vision Pillars: Quality • Origin • Global -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4 text-left max-w-5xl mx-auto">
+                    <!-- Pillar 1: Quality -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#12241B]/85 border border-[#C9A961]/30 hover:border-[#E8CD84]/60 transition-all duration-300 group hover:-translate-y-1.5 shadow-xl relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-mono tracking-widest text-[#E8CD84] uppercase font-bold">01 • Pillar</span>
+                            <div class="w-8 h-8 rounded-full bg-[#C9A961]/15 flex items-center justify-center text-[#C9A961] group-hover:text-[#E8CD84] transition-colors">
+                                <i class="fa-solid fa-gem text-xs"></i>
+                            </div>
                         </div>
-                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2 group-hover:text-[#E8CD84] transition-colors">Quality</h3>
-                        <p class="text-xs text-[#F1F6F2]/75 font-light leading-relaxed">
+                        <h3 class="font-serif text-2xl text-[#FAFCFA] font-bold group-hover:text-[#E8CD84] transition-colors">
+                            Quality
+                        </h3>
+                        <div class="text-xs font-semibold text-[#E8CD84] mt-1 tracking-wide">
                             Consistent, premium raw material.
+                        </div>
+                        <p class="text-xs sm:text-sm text-[#F1F6F2]/75 font-light leading-relaxed mt-3">
+                            Calibrated with millimeter precision from 3 to 7+ Suta. Uniform natural density, zero hollow popping, and lab-tested moisture retention strictly below 10%.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 hover:border-[#C9A961]/70 backdrop-blur-md text-left transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-2xl border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328] group-hover:scale-110 group-hover:border-[#E8CD84] group-hover:text-[#FFF2C6] group-hover:shadow-[0_0_20px_rgba(201,169,97,0.45)] transition-all duration-300">
-                            <i class="fa-solid fa-water text-base group-hover:scale-110 transition-transform duration-300"></i>
+                    <!-- Pillar 2: Origin -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#12241B]/85 border border-[#C9A961]/30 hover:border-[#E8CD84]/60 transition-all duration-300 group hover:-translate-y-1.5 shadow-xl relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-mono tracking-widest text-[#E8CD84] uppercase font-bold">02 • Pillar</span>
+                            <div class="w-8 h-8 rounded-full bg-[#C9A961]/15 flex items-center justify-center text-[#C9A961] group-hover:text-[#E8CD84] transition-colors">
+                                <i class="fa-solid fa-seedling text-xs"></i>
+                            </div>
                         </div>
-                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2 group-hover:text-[#E8CD84] transition-colors">Origin</h3>
-                        <p class="text-xs text-[#F1F6F2]/75 font-light leading-relaxed">
+                        <h3 class="font-serif text-2xl text-[#FAFCFA] font-bold group-hover:text-[#E8CD84] transition-colors">
+                            Origin
+                        </h3>
+                        <div class="text-xs font-semibold text-[#E8CD84] mt-1 tracking-wide">
                             Authentic Mithila sourcing.
+                        </div>
+                        <p class="text-xs sm:text-sm text-[#F1F6F2]/75 font-light leading-relaxed mt-3">
+                            Nurtured in sacred northern Bihar wetland ecosystems by generational Mallah harvesting families with pure natural pond waters and GI-tagged origin authenticity.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-[#12241B]/80 border border-[#C9A961]/25 hover:border-[#C9A961]/70 backdrop-blur-md text-left transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-2xl border border-[#C9A961]/40 flex items-center justify-center text-[#E8CD84] mb-4 bg-[#1E3328] group-hover:scale-110 group-hover:border-[#E8CD84] group-hover:text-[#FFF2C6] group-hover:shadow-[0_0_20px_rgba(201,169,97,0.45)] transition-all duration-300">
-                            <i class="fa-solid fa-earth-americas text-base group-hover:rotate-45 transition-transform duration-500"></i>
+                    <!-- Pillar 3: Global -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#12241B]/85 border border-[#C9A961]/30 hover:border-[#E8CD84]/60 transition-all duration-300 group hover:-translate-y-1.5 shadow-xl relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-mono tracking-widest text-[#E8CD84] uppercase font-bold">03 • Pillar</span>
+                            <div class="w-8 h-8 rounded-full bg-[#C9A961]/15 flex items-center justify-center text-[#C9A961] group-hover:text-[#E8CD84] transition-colors">
+                                <i class="fa-solid fa-globe text-xs"></i>
+                            </div>
                         </div>
-                        <h3 class="font-serif text-xl text-[#FAFCFA] tracking-wider uppercase mb-2 group-hover:text-[#E8CD84] transition-colors">Global</h3>
-                        <p class="text-xs text-[#F1F6F2]/75 font-light leading-relaxed">
+                        <h3 class="font-serif text-2xl text-[#FAFCFA] font-bold group-hover:text-[#E8CD84] transition-colors">
+                            Global
+                        </h3>
+                        <div class="text-xs font-semibold text-[#E8CD84] mt-1 tracking-wide">
                             Built for international markets.
+                        </div>
+                        <p class="text-xs sm:text-sm text-[#F1F6F2]/75 font-light leading-relaxed mt-3">
+                            Strict multilayer hermetic moisture-lock export packing, container stuffing verification, and predictable pre-scheduled dispatch timelines to ports worldwide.
                         </p>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <!-- ==========================================================================
-             4. MISSION SECTION (4 Visual Photo Cards)
+             4. MISSION SECTION (Stop Migration, Women Empowerment, Honest Farmer Price)
              ========================================================================== -->
-        <section class="py-20 sm:py-28 bg-[#F1F6F2]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 reveal">
-                <!-- Heading & Main Statement -->
-                <div class="text-center max-w-3xl mx-auto space-y-4">
-                    <span class="text-xs font-mono font-bold tracking-[0.28em] text-[#A68740] uppercase">
-                        Our Mission
-                    </span>
-                    <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-light text-[#12241B] leading-snug">
-                        To connect farmers, quality and global buyers through a <span class="italic text-[#385A48]">dependable supply chain</span>.
+        <section class="py-24 sm:py-32 bg-[#F6F8F6] border-y border-[#C9A961]/25 relative overflow-hidden" id="our-mission-section">
+            <!-- Subtle background decorative accents -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#E8CD84]/10 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#385A48]/10 blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 reveal relative z-10">
+                
+                <!-- Heading & Main Mission Statement -->
+                <div class="text-center max-w-4xl mx-auto space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C9A961]/40 bg-[#FAFCFA] shadow-sm text-xs font-mono font-bold tracking-[0.28em] text-[#A68740] uppercase">
+                        <i class="fa-solid fa-seedling text-[11px] text-[#385A48]"></i>
+                        <span>Our Mission • Purpose in Bihar</span>
+                    </div>
+
+                    <h2 class="font-serif text-2xl sm:text-4xl lg:text-[2.65rem] font-light text-[#12241B] leading-snug sm:leading-[1.3] tracking-wide">
+                        “To stop migration by creating <span class="italic font-normal text-[#385A48] underline decoration-[#C9A961]/50 decoration-wavy underline-offset-8">meaningful jobs right here in Bihar</span>—empowering women to become financially independent and ensuring our farmers get the <span class="text-[#A68740] font-normal italic">honest price they truly deserve</span>.”
                     </h2>
-                </div>
 
-                <!-- 4 Visual Cards with Relevant Photography -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- CARD 1: SOURCE -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#FAFCFA] border border-[#C9A961]/30 shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="wetland.jpeg" alt="Direct regional sourcing in Bihar wetlands" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/70 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#0B1610]/80 text-[#E8CD84] text-[10px] font-mono tracking-widest uppercase">Stage 01</span>
+                    <!-- Decorative Golden Ribbon Divider -->
+                    <div class="flex items-center justify-center gap-4 pt-2">
+                        <span class="w-16 sm:w-28 h-px bg-gradient-to-r from-transparent to-[#C9A961]/70"></span>
+                        <div class="w-6 h-6 rounded-full border border-[#C9A961]/50 bg-[#FAFCFA] flex items-center justify-center text-[#A68740] text-[10px] shadow-sm">
+                            <i class="fa-solid fa-heart"></i>
                         </div>
-                        <div class="p-5">
-                            <h3 class="font-serif text-xl text-[#12241B] font-bold tracking-wide uppercase">Source</h3>
-                            <p class="text-xs text-[#385A48] mt-1 font-medium">Direct regional sourcing</p>
-                        </div>
-                    </div>
-
-                    <!-- CARD 2: SELECT -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#FAFCFA] border border-[#C9A961]/30 shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="4_suta.jpg" alt="Careful grading & quality control" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='5suta.jpeg'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/70 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#0B1610]/80 text-[#E8CD84] text-[10px] font-mono tracking-widest uppercase">Stage 02</span>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-serif text-xl text-[#12241B] font-bold tracking-wide uppercase">Select</h3>
-                            <p class="text-xs text-[#385A48] mt-1 font-medium">Careful grading &amp; quality control</p>
-                        </div>
-                    </div>
-
-                    <!-- CARD 3: PROCESS -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#FAFCFA] border border-[#C9A961]/30 shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="popping.jpeg" alt="Clean consistent makhana roasting and popping preparation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/70 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#0B1610]/80 text-[#E8CD84] text-[10px] font-mono tracking-widest uppercase">Stage 03</span>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-serif text-xl text-[#12241B] font-bold tracking-wide uppercase">Process</h3>
-                            <p class="text-xs text-[#385A48] mt-1 font-medium">Clean, consistent preparation</p>
-                        </div>
-                    </div>
-
-                    <!-- CARD 4: DELIVER -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#FAFCFA] border border-[#C9A961]/30 shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="WhatsApp Image 2026-09-24 at 8.30.26 AM.jpeg" alt="Reliable B2B makhana supply dispatch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='3suta.jpeg'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/70 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#0B1610]/80 text-[#E8CD84] text-[10px] font-mono tracking-widest uppercase">Stage 04</span>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-serif text-xl text-[#12241B] font-bold tracking-wide uppercase">Deliver</h3>
-                            <p class="text-xs text-[#385A48] mt-1 font-medium">Reliable B2B supply</p>
-                        </div>
+                        <span class="w-16 sm:w-28 h-px bg-gradient-to-l from-transparent to-[#C9A961]/70"></span>
                     </div>
                 </div>
+
+                <!-- 3 Pillars of Impact (Stop Migration, Women Empowerment, Honest Price) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+                    
+                    <!-- PILLAR 1: STOP MIGRATION -->
+                    <div class="group rounded-3xl overflow-hidden bg-[#FAFCFA] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="h-56 sm:h-64 overflow-hidden relative">
+                                <img src="harvest.jpeg" alt="Local Bihar farmers working in Mithila wetlands" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" onerror="this.src='story.jpeg'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/85 via-[#0B1610]/20 to-transparent"></div>
+                                <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#12241B]/90 backdrop-blur-md border border-[#C9A961]/40 text-[#E8CD84] text-[10px] font-mono tracking-widest uppercase">
+                                    <span>Pillar 01</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4 right-4 text-[#FAFCFA]">
+                                    <span class="text-[11px] font-mono tracking-widest uppercase text-[#E8CD84]">Rooted in Bihar</span>
+                                    <h3 class="font-serif text-2xl text-[#FAFCFA] font-light leading-tight">Stop Migration</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 sm:p-7 space-y-3">
+                                <h4 class="font-serif text-lg text-[#12241B] font-semibold">Creating Meaningful Jobs at Home</h4>
+                                <p class="text-sm text-[#12241B]/75 font-light leading-relaxed">
+                                    Generations of skilled Bihar harvesters have faced distress migration for low-wage factory labor in distant metros. We establish modern, village-level grading hubs right in Purnia so families stay together and build stable careers on native soil.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-3 border-t border-[#12241B]/10 flex items-center justify-between">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#385A48]">
+                                <i class="fa-solid fa-people-roof text-xs text-[#A68740]"></i> Family Preservation
+                            </span>
+                            <span class="text-[10px] font-mono uppercase tracking-wider text-[#A68740] font-bold">100% Bihar Jobs</span>
+                        </div>
+                    </div>
+
+                    <!-- PILLAR 2: EMPOWERING WOMEN -->
+                    <div class="group rounded-3xl overflow-hidden bg-[#FAFCFA] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="h-56 sm:h-64 overflow-hidden relative">
+                                <img src="story.jpeg" alt="Hygienic makhana processing and grading team" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" onerror="this.src='popping.jpeg'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/85 via-[#0B1610]/20 to-transparent"></div>
+                                <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#12241B]/90 backdrop-blur-md border border-[#C9A961]/40 text-[#E8CD84] text-[10px] font-mono tracking-widest uppercase">
+                                    <span>Pillar 02</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4 right-4 text-[#FAFCFA]">
+                                    <span class="text-[11px] font-mono tracking-widest uppercase text-[#E8CD84]">Dignity & Equity</span>
+                                    <h3 class="font-serif text-2xl text-[#FAFCFA] font-light leading-tight">Empowering Women</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 sm:p-7 space-y-3">
+                                <h4 class="font-serif text-lg text-[#12241B] font-semibold">Financial Independence</h4>
+                                <p class="text-sm text-[#12241B]/75 font-light leading-relaxed">
+                                    Rural women lead our precision caliper sorting, grading, and food-grade packaging operations. Dignified, safe employment with transparent daily compensation transforms households, funds children’s education, and sparks female leadership.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-3 border-t border-[#12241B]/10 flex items-center justify-between">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#385A48]">
+                                <i class="fa-solid fa-hand-holding-dollar text-xs text-[#A68740]"></i> Direct Equal Pay
+                            </span>
+                            <span class="text-[10px] font-mono uppercase tracking-wider text-[#A68740] font-bold">Women-Led Teams</span>
+                        </div>
+                    </div>
+
+                    <!-- PILLAR 3: HONEST FARMER PRICE -->
+                    <div class="group rounded-3xl overflow-hidden bg-[#FAFCFA] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="h-56 sm:h-64 overflow-hidden relative">
+                                <img src="wetland.jpeg" alt="Pristine Mithila wetland makhana pond" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" onerror="this.src='founder.jpeg'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/85 via-[#0B1610]/20 to-transparent"></div>
+                                <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#12241B]/90 backdrop-blur-md border border-[#C9A961]/40 text-[#E8CD84] text-[10px] font-mono tracking-widest uppercase">
+                                    <span>Pillar 03</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4 right-4 text-[#FAFCFA]">
+                                    <span class="text-[11px] font-mono tracking-widest uppercase text-[#E8CD84]">Fair Trade Reality</span>
+                                    <h3 class="font-serif text-2xl text-[#FAFCFA] font-light leading-tight">Honest Price</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 sm:p-7 space-y-3">
+                                <h4 class="font-serif text-lg text-[#12241B] font-semibold">Honoring Farmer Sweat</h4>
+                                <p class="text-sm text-[#12241B]/75 font-light leading-relaxed">
+                                    Harvesting raw makhana from muddy wetland beds is backbreaking, courageous labor. We eliminate predatory middleman cuts, providing prompt farmgate settlements and guaranteed fair prices that reward genuine agricultural effort.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-3 border-t border-[#12241B]/10 flex items-center justify-between">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#385A48]">
+                                <i class="fa-solid fa-handshake-simple text-xs text-[#A68740]"></i> Zero Middlemen
+                            </span>
+                            <span class="text-[10px] font-mono uppercase tracking-wider text-[#A68740] font-bold">Direct Farmgate</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Community Impact Pledge Banner -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-[#12241B] text-[#F1F6F2] border border-[#C9A961]/40 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mt-8 -mr-8 w-48 h-48 bg-[#C9A961]/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+                        <div class="space-y-2 max-w-2xl">
+                            <div class="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[#E8CD84] uppercase">
+                                <i class="fa-solid fa-shield-heart"></i>
+                                <span>The Makhanam Grassroots Pledge</span>
+                            </div>
+                            <h4 class="font-serif text-xl sm:text-2xl text-[#FAFCFA] font-light">
+                                Every container, sack, and shipment protects a Bihar family’s dignity.
+                            </h4>
+                            <p class="text-xs sm:text-sm text-[#F1F6F2]/75 font-light leading-relaxed">
+                                When global brands and wholesalers partner with Makhanam, they aren't just buying premium caliber Foxnut—they are directly funding fair farmgate prosperity and keeping native families together in Bihar.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap sm:flex-nowrap gap-3 shrink-0">
+                            <div class="px-4 py-3 rounded-2xl bg-[#0B1610]/80 border border-[#C9A961]/30 text-center min-w-[120px]">
+                                <div class="font-serif text-2xl font-bold text-[#E8CD84]">100%</div>
+                                <div class="text-[10px] font-mono text-[#F1F6F2]/70 uppercase tracking-wider">Direct Farmgate</div>
+                            </div>
+                            <div class="px-4 py-3 rounded-2xl bg-[#0B1610]/80 border border-[#C9A961]/30 text-center min-w-[120px]">
+                                <div class="font-serif text-2xl font-bold text-[#E8CD84]">0%</div>
+                                <div class="text-[10px] font-mono text-[#F1F6F2]/70 uppercase tracking-wider">Broker Dilution</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1070,7 +1388,7 @@
                         <div class="p-6 sm:p-8 space-y-6 flex-1 flex flex-col justify-between">
                             <div class="space-y-4">
                                 <p class="text-sm sm:text-base text-[#12241B]/85 font-light leading-relaxed">
-                                    Anchoring Makhanam to the soil of Mithila, fostering fair farmgate partnerships with native harvesters and upholding sacred agricultural purity.
+                                    By working hand-in-hand with local farmers and removing middlemen, Keshav Yadav makes sure Bihar’s purest, farm-fresh Makhana reaches your table with complete honesty, fair prices, and love.
                                 </p>
 
                                 <div class="space-y-3 pt-2">
@@ -1115,7 +1433,7 @@
                         <div class="p-6 sm:p-8 space-y-6 flex-1 flex flex-col justify-between">
                             <div class="space-y-4">
                                 <p class="text-sm sm:text-base text-[#12241B]/85 font-light leading-relaxed">
-                                    Scaling Makhanam into a dependable international B2B powerhouse with millimeter-precise grading, low-moisture packing, and seamless export logistics.
+                                   Every single bite must be 100% pure. Our CEO leads with a promise of spotless hygiene, top-notch quality checks, and crisp packaging so only the finest makhana reaches your family.
                                 </p>
 
                                 <div class="space-y-3 pt-2">
@@ -1160,15 +1478,15 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                     
-                    <!-- 1. Premium Quality, Better Rate -->
-                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                    <!-- 1. Premium Quality -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
                         <div class="space-y-5">
                             <div class="flex items-center justify-between">
                                 <div class="why-icon-wrapper">
                                     <div class="why-icon-halo"></div>
-                                    <div class="why-icon-box" title="Premium Quality, Better Rate">
+                                    <div class="why-icon-box" title="Premium Quality">
                                         <i class="fa-solid fa-gem text-xl why-icon-gem"></i>
                                     </div>
                                 </div>
@@ -1177,42 +1495,10 @@
 
                             <div class="space-y-2">
                                 <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
-                                    Premium Quality, Better Rate.
+                                    Premium Quality
                                 </h3>
                                 <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
-                                    Direct farmgate processing in native Mithila wetlands cuts out unnecessary middlemen, providing you with top caliper grades at highly competitive wholesale rates.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
-                            <span class="flex items-center gap-2">
-                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
-                                <span>Direct Source Pricing</span>
-                            </span>
-                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">15–20% Advantage</span>
-                        </div>
-                    </div>
-
-                    <!-- 2. We Deliver What We Promise -->
-                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
-                        <div class="space-y-5">
-                            <div class="flex items-center justify-between">
-                                <div class="why-icon-wrapper">
-                                    <div class="why-icon-halo"></div>
-                                    <div class="why-icon-box" title="We Deliver What We Promise">
-                                        <i class="fa-solid fa-handshake-simple text-xl why-icon-handshake"></i>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">02</span>
-                            </div>
-
-                            <div class="space-y-2">
-                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
-                                    We Deliver What We Promise.
-                                </h3>
-                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
-                                    Strict millimeter grading, moisture control below 10%, and sample-matching batch consistency across every domestic sack and export container.
+                                    Hand-harvested, GI-tagged lotus seeds calibrated with vernier precision from 3 to 7+ Suta. Pristine natural whiteness, uniform density, and moisture kept strictly below 10%.
                                 </p>
                             </div>
                         </div>
@@ -1222,17 +1508,81 @@
                                 <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
                                 <span>100% Caliper Verified</span>
                             </span>
-                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Contract Fidelity</span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">GI-Tagged Purity</span>
                         </div>
                     </div>
 
-                    <!-- 3. Guaranteed Timely Delivery -->
-                    <div class="p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                    <!-- 2. Reasonable Price -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
                         <div class="space-y-5">
                             <div class="flex items-center justify-between">
                                 <div class="why-icon-wrapper">
                                     <div class="why-icon-halo"></div>
-                                    <div class="why-icon-box" title="Guaranteed Timely Delivery">
+                                    <div class="why-icon-box" title="Reasonable Price">
+                                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">02</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Reasonable Price
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Our direct wetland-to-facility model bypasses multiple layers of mandi brokers and traders, transferring 15–20% wholesale margin advantage straight to your supply chain.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>Direct Farmgate Rate</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">15–20% Advantage</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Strict Hygiene standards -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Strict Hygiene standards">
+                                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">03</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Strict Hygiene standards
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Processed in sanitized food-grade environments adhering to rigorous FSSAI standards. Multi-stage sorting, clean air drying, and hermetic packaging ensure zero contamination.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>FSSAI Compliant</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Food-Grade Clean</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Timely Delivery -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Timely Delivery">
                                         <div class="speed-lines">
                                             <span class="speed-line"></span>
                                             <span class="speed-line"></span>
@@ -1241,15 +1591,15 @@
                                         <i class="fa-solid fa-truck-fast text-xl why-icon-truck"></i>
                                     </div>
                                 </div>
-                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">03</span>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">04</span>
                             </div>
 
                             <div class="space-y-2">
                                 <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
-                                    Guaranteed Timely Delivery.
+                                    Timely Delivery
                                 </h3>
                                 <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
-                                    Pre-scheduled dispatch timelines, dedicated freight coordination, and seamless domestic &amp; global export execution to keep your supply chain uninterrupted.
+                                    Pre-scheduled dispatch timelines, dedicated freight coordination via NH-31 &amp; NH-27, and seamless export FOB/CIF execution to keep your production and retail stock uninterrupted.
                                 </p>
                             </div>
                         </div>
@@ -1260,6 +1610,70 @@
                                 <span>On-Schedule Dispatch</span>
                             </span>
                             <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Zero Downtime</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Direct Sourcing from farm -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Direct Sourcing from farm">
+                                        <i class="fa-solid fa-seedling text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">05</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Direct Sourcing from farm
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Harvested fresh from indigenous pond clusters across Mithila's pristine wetland belt. We maintain end-to-end batch traceability from certified farmer ponds to final dispatch sacks.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>100% Wetland Traceable</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Farmgate Fresh</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Empowering Local Livelihoods -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Empowering Local Livelihoods">
+                                        <i class="fa-solid fa-people-roof text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">06</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Empowering Local Livelihoods
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Championing fair wages, prompt settlement, and economic security for Mallah harvester families and women grading artisans who have nurtured this heritage for generations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>Fair Harvester Pay</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Community First</span>
                         </div>
                     </div>
 
@@ -1477,10 +1891,10 @@
                     <h4 class="footer-title">Explore</h4>
                     <ul class="footer-nav">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="sizeguide.html">About Us</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
                         <li><a href="about.html">About Makhana</a></li>
                         <li><a href="journey.html">Journey</a></li>
-                        <li><a href="SizeCaliperGuide.html">Grading Specifications</a></li>
+                        <li><a href="grading.html">Grading Specifications</a></li>
                         <li><a href="contactus.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -1584,6 +1998,90 @@
         }, { threshold: 0.12 });
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==========================================
+        // Ultra-Luxury Interactive Vision Experience
+        // ==========================================
+        (function initVisionInteractivity() {
+            // 1. Bioluminescent Golden Particles Canvas
+            const canvas = document.getElementById('vision-particles-canvas');
+            const section = document.getElementById('our-vision-section');
+            if (canvas && section) {
+                const ctx = canvas.getContext('2d');
+                let width = canvas.width = section.offsetWidth;
+                let height = canvas.height = section.offsetHeight;
+
+                let mouse = { x: width / 2, y: height / 2, active: false };
+
+                const resizeCanvas = () => {
+                    width = canvas.width = section.offsetWidth;
+                    height = canvas.height = section.offsetHeight;
+                };
+                window.addEventListener('resize', resizeCanvas);
+
+                section.addEventListener('mousemove', (e) => {
+                    const rect = section.getBoundingClientRect();
+                    mouse.x = e.clientX - rect.left;
+                    mouse.y = e.clientY - rect.top;
+                    mouse.active = true;
+                });
+                section.addEventListener('mouseleave', () => {
+                    mouse.active = false;
+                });
+
+                // Generate golden stardust particles
+                const particleCount = window.innerWidth < 768 ? 24 : 45;
+                const particles = Array.from({ length: particleCount }, () => ({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 2 + 0.8,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: -Math.random() * 0.5 - 0.15,
+                    alpha: Math.random() * 0.6 + 0.2,
+                    pulse: Math.random() * 0.02 + 0.01,
+                    goldHue: Math.random() > 0.5 ? '#E8CD84' : '#C9A961'
+                }));
+
+                function animateParticles() {
+                    ctx.clearRect(0, 0, width, height);
+
+                    particles.forEach(p => {
+                        p.y += p.vy;
+                        p.x += p.vx;
+                        p.alpha += Math.sin(Date.now() * 0.002 + p.x) * p.pulse * 0.1;
+
+                        // Wrap edges
+                        if (p.y < 0) p.y = height;
+                        if (p.x < 0) p.x = width;
+                        if (p.x > width) p.x = 0;
+
+                        // Gentle mouse attraction / repulsion
+                        if (mouse.active) {
+                            const dx = mouse.x - p.x;
+                            const dy = mouse.y - p.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < 140) {
+                                p.x += (dx / dist) * 0.4;
+                                p.y += (dy / dist) * 0.4;
+                            }
+                        }
+
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = p.goldHue;
+                        ctx.globalAlpha = Math.max(0.1, Math.min(0.85, p.alpha));
+                        ctx.shadowBlur = 10;
+                        ctx.shadowColor = '#E8CD84';
+                        ctx.fill();
+                    });
+
+                    ctx.globalAlpha = 1;
+                    ctx.shadowBlur = 0;
+                    requestAnimationFrame(animateParticles);
+                }
+                requestAnimationFrame(animateParticles);
+            }
+        })();
     </script>
 
     <!-- Floating WhatsApp Bulk Order Widget -->
