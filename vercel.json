@@ -4,12 +4,16 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/grading",
+      "destination": "/grading.html"
+    },
+    {
       "source": "/sizecaliperguide.html",
-      "destination": "/SizeCaliperGuide.html"
+      "destination": "/grading.html"
     },
     {
       "source": "/sizecaliperguide",
-      "destination": "/SizeCaliperGuide.html"
+      "destination": "/grading.html"
     },
     {
       "source": "/sizeguide.html",

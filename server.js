@@ -308,8 +308,12 @@ app.post(['/api/contact', '/api/rfq', '/api/send-rfq'], async (req, res) => {
 });
 
 // Case-insensitive / alias routing for HTML files
+app.get(['/grading', '/grading.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'grading.html'));
+});
+
 app.get(['/SizeCalliperGuide.html', '/sizecalliperguide.html', '/sizecalliperguide'], (req, res) => {
-  res.redirect('/SizeCaliperGuide.html');
+  res.redirect('/grading.html');
 });
 
 app.get('/sizecaliperguide.html', (req, res) => {
