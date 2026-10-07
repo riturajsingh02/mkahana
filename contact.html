@@ -433,6 +433,13 @@
 
 <body>
 
+    <!-- Google Maps Platform Quota Exceeded In-App Banner -->
+    <div id="gmp-quota-banner" class="hidden bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2.5 text-xs md:text-sm text-center sticky top-0 z-50 shadow-sm">
+        <span>
+            Google Maps Platform quota reached. If you are the app owner, visit <a href="https://developers.google.com/maps/ai/ai-studio?utm_campaign=gmp_mcp_codeassist_v1_aistudio#quota_exceeded_errors" target="_blank" rel="noopener noreferrer" class="underline font-semibold text-amber-950 hover:text-amber-800">maps developer site</a> for instructions to update your account.
+        </span>
+    </div>
+
     <!-- Professional Announcement Bar -->
     <div class="makhanam-announcement-bar">
         <div class="announcement-slider-wrap">
@@ -548,7 +555,7 @@
                 <a href="index.html" class="nav-item hover:text-brand-gold transition-colors">Home</a>
                 <a href="sizeguide.html" class="nav-item hover:text-brand-gold transition-colors">About Us</a>
                 <a href="about.html" class="nav-item hover:text-brand-gold transition-colors">About Makhana</a>
-                <a href="SizeCaliperGuide.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
+                <a href="grading.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
                 <a href="journey.html" class="nav-item hover:text-brand-gold transition-colors">Journey</a>
                 <a href="contactus.html" class="nav-item text-brand-gold font-semibold">Contact</a>
             </nav>
@@ -594,7 +601,7 @@
                         <span>About Makhana</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
-                    <a href="SizeCaliperGuide.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
+                    <a href="grading.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Grading Guide</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
@@ -710,6 +717,209 @@
                         </div>
                         <div class="font-serif text-xl text-brand-dark mt-1">
                             New Delhi, India
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GOOGLE MAPS LOCATION SECTION -->
+        <section id="facility-location" class="py-16 sm:py-20 lg:py-24 bg-brand-cream/60 border-t border-b border-brand-cocoa/15 relative overflow-hidden">
+            <!-- Background accent glow -->
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-10 w-80 h-80 bg-brand-dark/5 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Section Header -->
+                <div class="max-w-3xl mb-10 sm:mb-14 reveal">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-dark/5 border border-brand-earth/20 text-brand-earth text-[10px] sm:text-xs uppercase tracking-[0.22em] font-semibold mb-4">
+                        <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                        <span>Mithila Origin • Direct Facility Coordinates</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-brand-dark leading-[1.08]">
+                        Visit Our Central Processing <span class="italic text-brand-earth font-normal">&amp; Dispatch Hub</span>
+                    </h2>
+                    <p class="text-brand-dark/75 text-sm sm:text-base leading-relaxed mt-4 max-w-2xl">
+                        Located directly on Milky Road in Purnia, Bihar — the heart of India's GI-tagged Makhana wetland belt. Coordinates, live interactive routing, and on-site buyer dispatch inspection facilities below.
+                    </p>
+                </div>
+
+                <!-- Grid: Left Facility Card + Right Interactive Map Container -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+                    
+                    <!-- Left: Facility Details & Action Card -->
+                    <div class="lg:col-span-5 flex flex-col justify-between bg-brand-ivory rounded-3xl p-6 sm:p-8 border border-brand-earth/20 shadow-xl reveal">
+                        <div>
+                            <!-- Facility Name & Status Badge -->
+                            <div class="flex items-start justify-between gap-4 pb-5 border-b border-brand-earth/15">
+                                <div>
+                                    <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                                        Active Processing Facility
+                                    </span>
+                                    <h3 class="font-serif text-2xl sm:text-3xl text-brand-dark font-medium mt-2 leading-tight">
+                                        Makhanam
+                                    </h3>
+                                    <p class="text-xs uppercase tracking-[0.16em] text-brand-terracotta font-semibold mt-1">
+                                        Makhana Wholesaler &amp; Distributor
+                                    </p>
+                                </div>
+                                <div class="w-12 h-12 rounded-2xl bg-brand-dark text-brand-gold flex items-center justify-center shrink-0 shadow-md">
+                                    <i class="fa-solid fa-seedling text-lg"></i>
+                                </div>
+                            </div>
+
+                            <!-- Address and Coordinates Details -->
+                            <div class="mt-6 space-y-4">
+                                <div class="flex items-start gap-3.5">
+                                    <div class="w-8 h-8 rounded-lg bg-brand-cream text-brand-earth flex items-center justify-center shrink-0 mt-0.5 border border-brand-earth/15">
+                                        <i class="fa-solid fa-map-pin text-sm text-brand-goldDeep"></i>
+                                    </div>
+                                    <div class="text-xs sm:text-sm">
+                                        <p class="font-semibold text-brand-dark">Facility Address</p>
+                                        <p class="text-brand-dark/75 mt-0.5 leading-relaxed font-sans">
+                                            Nekawat Tola, Milky Road, opposite Mafa Petrol Pump, Purnia, Maranga, Bihar 854303, India
+                                        </p>
+                                        <span class="inline-block mt-1 font-mono text-[11px] text-brand-earth bg-brand-cream/80 px-2 py-0.5 rounded border border-brand-earth/15">
+                                            Plus Code: PFJ7+7P Purnia, Bihar
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3.5">
+                                    <div class="w-8 h-8 rounded-lg bg-brand-cream text-brand-earth flex items-center justify-center shrink-0 mt-0.5 border border-brand-earth/15">
+                                        <i class="fa-solid fa-compass text-sm text-brand-goldDeep"></i>
+                                    </div>
+                                    <div class="text-xs sm:text-sm">
+                                        <p class="font-semibold text-brand-dark">Exact Geolocation</p>
+                                        <p class="font-mono text-xs text-brand-dark/80 mt-0.5">
+                                            Latitude 25.7307° N • Longitude 87.4644° E
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3.5">
+                                    <div class="w-8 h-8 rounded-lg bg-brand-cream text-brand-earth flex items-center justify-center shrink-0 mt-0.5 border border-brand-earth/15">
+                                        <i class="fa-solid fa-clock text-sm text-brand-goldDeep"></i>
+                                    </div>
+                                    <div class="text-xs sm:text-sm">
+                                        <p class="font-semibold text-brand-dark">Operating &amp; Dispatch Hours</p>
+                                        <p class="text-brand-dark/75 mt-0.5">
+                                            Monday – Saturday: 8:00 AM – 7:30 PM IST<br>
+                                            <span class="text-[11px] text-brand-earth font-medium">B2B Sample Inspection by Prior Appointment</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3.5">
+                                    <div class="w-8 h-8 rounded-lg bg-brand-cream text-brand-earth flex items-center justify-center shrink-0 mt-0.5 border border-brand-earth/15">
+                                        <i class="fa-solid fa-phone text-sm text-brand-goldDeep"></i>
+                                    </div>
+                                    <div class="text-xs sm:text-sm">
+                                        <p class="font-semibold text-brand-dark">Facility Desk / Dispatch</p>
+                                        <p class="text-brand-dark/75 mt-0.5 font-mono">
+                                            <a href="tel:+918340493639" class="hover:text-brand-goldDeep font-semibold text-brand-dark underline decoration-brand-gold/50">+91 83404 93639</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="mt-8 pt-6 border-t border-brand-earth/15 space-y-2.5">
+                            <a href="https://maps.app.goo.gl/GnTnHv3ucswADDEUA"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="w-full flex items-center justify-center gap-2.5 py-3.5 px-5 rounded-2xl bg-brand-dark text-brand-ivory hover:bg-brand-cocoa active:scale-[0.99] transition-all text-xs uppercase tracking-[0.16em] font-bold shadow-md group">
+                                <i class="fa-solid fa-diamond-turn-right text-brand-gold group-hover:scale-110 transition-transform"></i>
+                                <span>Open in Google Maps</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-brand-ivory/50"></i>
+                            </a>
+
+                            <div class="grid grid-cols-2 gap-2.5">
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=25.7307073,87.4643731"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-brand-earth/30 bg-brand-cream/60 hover:bg-brand-cream text-brand-dark text-[11px] font-semibold transition-colors text-center">
+                                    <i class="fa-solid fa-route text-brand-goldDeep"></i>
+                                    <span>Get Directions</span>
+                                </a>
+                                <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20I%20would%20like%20to%20visit%20your%20Purnia%20processing%20facility%20for%20a%20quality%20inspection."
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-emerald-500/30 bg-emerald-50 hover:bg-emerald-100/70 text-emerald-950 text-[11px] font-semibold transition-colors text-center">
+                                    <i class="fa-brands fa-whatsapp text-emerald-600"></i>
+                                    <span>Schedule Visit</span>
+                                </a>
+                            </div>
+
+                            <!-- Map quick interactivity controls -->
+                            <div class="pt-2 flex items-center justify-between text-[11px] text-brand-dark/70">
+                                <span class="font-medium">Map View:</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button type="button" id="map-btn-center" class="px-2.5 py-1 rounded-lg bg-brand-cream hover:bg-brand-cocoa hover:text-brand-ivory border border-brand-earth/20 transition-all font-sans text-[11px]">
+                                        <i class="fa-solid fa-crosshairs text-[10px] mr-1"></i> Center
+                                    </button>
+                                    <button type="button" id="map-btn-type" class="px-2.5 py-1 rounded-lg bg-brand-cream hover:bg-brand-cocoa hover:text-brand-ivory border border-brand-earth/20 transition-all font-sans text-[11px]">
+                                        <i class="fa-solid fa-layer-group text-[10px] mr-1"></i> Satellite
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Large Interactive Map Viewport -->
+                    <div class="lg:col-span-7 flex flex-col reveal">
+                        <div class="w-full h-[460px] sm:h-[520px] lg:h-full min-h-[460px] rounded-3xl overflow-hidden border border-brand-earth/25 shadow-2xl relative bg-brand-charcoal">
+                            <!-- Live Interactive Google Maps Container -->
+                            <div id="makhanam-google-map" class="w-full h-full" style="min-height: 460px;">
+                                <!-- Instant Fallback / Initial Embed Frame -->
+                                <iframe
+                                    id="makhanam-map-iframe"
+                                    title="Makhanam Facility Location in Purnia Bihar"
+                                    src="https://maps.google.com/maps?q=25.7307073,87.4643731+(Makhanam%20Makhana%20Wholesaler%20%26%20Distributor)&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near"
+                                    class="w-full h-full border-0"
+                                    loading="lazy"
+                                    allowfullscreen
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+
+                            <!-- Floating Map Badge Overlay (Top Left) -->
+                            <div class="absolute top-4 left-4 z-10 pointer-events-none">
+                                <div class="glass-dark px-3 py-2 rounded-xl text-brand-ivory shadow-lg border border-brand-gold/30 flex items-center gap-2.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-ping"></span>
+                                    <div>
+                                        <p class="text-[10px] uppercase tracking-wider font-bold text-brand-gold leading-none">Purnia Facility Hub</p>
+                                        <p class="text-[11px] text-brand-cream/90 font-mono mt-0.5">25.7307° N, 87.4644° E</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Map Quick Link (Bottom Right) -->
+                            <div class="absolute bottom-4 right-4 z-10">
+                                <a href="https://maps.app.goo.gl/GnTnHv3ucswADDEUA"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-dark/90 hover:bg-brand-dark text-brand-gold border border-brand-gold/40 text-xs font-semibold shadow-lg backdrop-blur-md transition-all hover:scale-105">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                    <span>View on Google Maps</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Logistics Footnote beneath map -->
+                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 px-2 text-xs text-brand-dark/70">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-truck-fast text-brand-goldDeep"></i>
+                                <span>Connected directly via NH-31 &amp; NH-27 freight corridors to Kolkata Port and Patna</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-shield-halved text-emerald-700"></i>
+                                <span>Lab moisture check &amp; container stuffing verification on-site</span>
+                            </div>
                         </div>
                     </div>
 
@@ -986,7 +1196,7 @@
                         <li><a href="sizeguide.html">About Us</a></li>
                         <li><a href="about.html">About Makhana</a></li>
                         <li><a href="journey.html">Journey</a></li>
-                        <li><a href="SizeCaliperGuide.html">Grading Specifications</a></li>
+                        <li><a href="grading.html">Grading Specifications</a></li>
                         <li><a href="contactus.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -1204,6 +1414,156 @@
                 }
             });
         }
+
+        // ==========================================
+        // Google Maps Platform Integration (Purnia Facility Hub)
+        // ==========================================
+        (function() {
+            // Two-Tier In-App Quota Defense
+            window.gm_authFailure = () => {
+                window.dispatchEvent(new CustomEvent('gmp-quota-exceeded'));
+            };
+            const origError = console.error;
+            console.error = (...args) => {
+                origError.apply(console, args);
+                const msg = args.map((a) => String(a)).join(' ');
+                if (msg.includes('OverQuotaMapError') || msg.includes('QuotaExceededError')) {
+                    window.dispatchEvent(new CustomEvent('gmp-quota-exceeded'));
+                }
+            };
+            window.addEventListener('gmp-quota-exceeded', () => {
+                const banner = document.getElementById('gmp-quota-banner');
+                if (banner) banner.classList.remove('hidden');
+            });
+
+            async function initMakhanamMap() {
+                try {
+                    const res = await fetch('/api/config/maps');
+                    if (!res.ok) return;
+                    const data = await res.json();
+                    const apiKey = data.apiKey;
+                    if (!apiKey) return;
+
+                    // Bootstrap official dynamic loader for Google Maps JavaScript API
+                    ((g) => {
+                        var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+                        b[c] = b[c] || {};
+                        var d = b[c].maps || (b[c].maps = {}), r = new Set(), e = new URLSearchParams(), u = () => h || (h = new Promise(async (f, n) => {
+                            await (a = m.createElement("script"));
+                            e.set("libraries", [...r] + "");
+                            for (k in g) e.set(k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()), g[k]);
+                            e.set("callback", c + ".maps." + q);
+                            a.src = `https://maps.googleapis.com/maps/api/js?` + e;
+                            d[q] = f;
+                            a.onerror = () => h = n(Error(p + " could not load."));
+                            a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                            m.head.append(a);
+                        }));
+                        d[l] ? console.warn(p + " only loads once. Ignore:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n));
+                    })({
+                        key: apiKey,
+                        v: "weekly"
+                    });
+
+                    const { Map } = await google.maps.importLibrary("maps");
+                    const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+
+                    const facilityPos = { lat: 25.7307073, lng: 87.4643731 };
+                    const mapElement = document.getElementById('makhanam-google-map');
+                    if (!mapElement) return;
+
+                    // Replace initial iframe fallback with high-performance vector map
+                    mapElement.innerHTML = '';
+
+                    const map = new Map(mapElement, {
+                        center: facilityPos,
+                        zoom: 16,
+                        mapId: "DEMO_MAP_ID",
+                        internalUsageAttributionIds: ['gmp_mcp_codeassist_v1_aistudio'],
+                        mapTypeControl: true,
+                        mapTypeControlOptions: {
+                            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                            position: google.maps.ControlPosition.TOP_RIGHT
+                        },
+                        streetViewControl: true,
+                        fullscreenControl: true,
+                        zoomControl: true,
+                        gestureHandling: 'cooperative'
+                    });
+
+                    const pin = new PinElement({
+                        background: "#C9A961",
+                        borderColor: "#0B1610",
+                        glyphColor: "#0B1610",
+                        scale: 1.3
+                    });
+
+                    const marker = new AdvancedMarkerElement({
+                        map,
+                        position: facilityPos,
+                        title: "Makhanam | Makhana Wholesaler & Distributor",
+                        content: pin.element
+                    });
+
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: `
+                            <div style="font-family: 'Bricolage Grotesque', sans-serif; padding: 4px; max-width: 270px; color: #12241B;">
+                                <div style="font-size: 10px; font-weight: 700; color: #C37A58; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px;">
+                                    Mithila Processing Hub
+                                </div>
+                                <h4 style="font-family: 'Spectral', serif; font-size: 17px; font-weight: 600; margin: 0 0 4px 0; color: #12241B;">
+                                    Makhanam
+                                </h4>
+                                <p style="font-size: 11px; line-height: 1.4; margin: 0 0 8px 0; color: #385A48;">
+                                    Milky Road, opposite Mafa Petrol Pump, Purnia, Maranga, Bihar 854303
+                                </p>
+                                <div style="display: flex; gap: 6px;">
+                                    <a href="https://maps.app.goo.gl/GnTnHv3ucswADDEUA" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #12241B; color: #C9A961; padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; text-decoration: none;">
+                                        Open in Maps ↗
+                                    </a>
+                                    <a href="tel:+918340493639" style="display: inline-block; background: #F1F6F2; color: #12241B; border: 1px solid #385A48; padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; text-decoration: none;">
+                                        Call Facility
+                                    </a>
+                                </div>
+                            </div>
+                        `
+                    });
+
+                    marker.addListener("click", () => {
+                        infoWindow.open({ anchor: marker, map });
+                    });
+
+                    // Initial info window prompt for user convenience
+                    infoWindow.open({ anchor: marker, map });
+
+                    const centerBtn = document.getElementById('map-btn-center');
+                    if (centerBtn) {
+                        centerBtn.addEventListener('click', () => {
+                            map.panTo(facilityPos);
+                            map.setZoom(16);
+                        });
+                    }
+
+                    const typeBtn = document.getElementById('map-btn-type');
+                    let isSat = false;
+                    if (typeBtn) {
+                        typeBtn.addEventListener('click', () => {
+                            isSat = !isSat;
+                            map.setMapTypeId(isSat ? 'hybrid' : 'roadmap');
+                            typeBtn.innerHTML = isSat ? '<i class="fa-solid fa-map text-[10px] mr-1"></i> Roadmap' : '<i class="fa-solid fa-layer-group text-[10px] mr-1"></i> Satellite';
+                        });
+                    }
+                } catch (err) {
+                    console.error('Google Maps init notice:', err);
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMakhanamMap);
+            } else {
+                initMakhanamMap();
+            }
+        })();
     </script>
 
     <!-- Floating WhatsApp Order Widget (Mobile Compact Circle / Desktop Luxury Pill) -->

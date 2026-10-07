@@ -307,6 +307,24 @@ app.post(['/api/contact', '/api/rfq', '/api/send-rfq'], async (req, res) => {
   }
 });
 
+// Google Maps API key configuration endpoint
+app.get('/api/config/maps', (req, res) => {
+  const apiKey = process.env.VITE_GOOGLE_MAPS_API_KEY || process.env.GOOGLE_MAPS_API_KEY || '';
+  res.json({
+    apiKey,
+    facility: {
+      name: 'Makhanam | Makhana Wholesaler & Distributor',
+      address: 'Nekawat Tola, Milky Road, opposite Mafa Petrol Pump, Purnia, Maranga, Bihar 854303, India',
+      lat: 25.7307073,
+      lng: 87.4643731,
+      placeId: 'ChIJG3xiuD3_7zkR1lIXBxd1Kis',
+      mapsUrl: 'https://maps.app.goo.gl/GnTnHv3ucswADDEUA',
+      phone: '+91 83404 93639',
+      email: 'KeshavKaushikExports@gmail.com'
+    }
+  });
+});
+
 // Case-insensitive / alias routing for HTML files
 app.get(['/grading', '/grading.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'grading.html'));
