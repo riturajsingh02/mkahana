@@ -54,6 +54,19 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="story.css">
     <style>
+        .main-header {
+            background: #12241B !important;
+            border-top: 1px solid rgba(201, 169, 97, 0.35) !important;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.35) !important;
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled,
+        .main-header.is-scrolled {
+            background: #0B1610 !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+
         .font-handwriting {
             font-family: 'Caveat', cursive, sans-serif !important;
             font-feature-settings: "liga" on, "clig" on;

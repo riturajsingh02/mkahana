@@ -65,13 +65,18 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    font-family: 'Manrope', sans-serif;
 }
 
 body {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Manrope', sans-serif;
     color: var(--ink);
     background: var(--brand-ivory);
-    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {

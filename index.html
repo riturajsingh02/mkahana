@@ -99,6 +99,18 @@ html {
     -webkit-backdrop-filter: blur(18px) saturate(140%);
     border: 1px solid rgba(201, 169, 97, 0.25);          /* = brand-gold */
 }
+
+.main-header {
+    background: #12241B !important;
+    border-top: 1px solid rgba(201, 169, 97, 0.35) !important;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.35) !important;
+    transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+    background: #0B1610 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
 .glass-light {
     background: rgba(250, 252, 250, 0.92);               /* = brand-ivory forest */
     backdrop-filter: blur(18px) saturate(130%);
@@ -1749,6 +1761,18 @@ document.addEventListener('keydown', function (event) {
 
     document.body.style.overflow = '';
 
+});
+
+// Sticky Header scroll elevation (matches contactus.html)
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('siteHeader');
+    if (header) {
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
 });
 
 

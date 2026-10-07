@@ -137,16 +137,16 @@ a {
     top: 0;
     z-index: 40;
     width: 100%;
-    background: #27372E !important;
-    border-top: 1px solid rgba(201, 169, 97, 0.45) !important;
-    border-bottom: 1px solid rgba(201, 169, 97, 0.45) !important;
+    background: #12241B !important;
+    border-top: 1px solid rgba(201, 169, 97, 0.35) !important;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.35) !important;
     color: var(--ivory);
     transition: all 0.3s ease;
 }
 
 .main-header.scrolled {
-    background: #1F2E26 !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    background: #0B1610 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .header-container {
