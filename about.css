@@ -2868,13 +2868,15 @@ a {
 
 .footer-contact li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 }
 
 .footer-contact i {
     color: var(--gold);
     width: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
 }
 
 .footer-contact a:hover {
