@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#241C17">
-    <title>Journey & Heritage | Makhanam — From Mithilanchal to the World</title>
-    <meta name="description" content="Discover the journey of MAKHANAM: rooted in Bihar's makhana-growing wetlands, connecting traditional harvesting knowledge with dependable B2B wholesale supply worldwide.">
+    <title>Why Makhanam? | Premium Raw Makhana Sourcing & Heritage</title>
+    <meta name="description" content="Discover Why Makhanam: rooted in Bihar's makhana-growing wetlands, connecting traditional harvesting knowledge with dependable B2B wholesale supply worldwide.">
 
     <!-- OpenGraph & Twitter Meta Tags -->
-    <meta property="og:title" content="Journey & Heritage | Makhanam — From Mithilanchal to the World">
+    <meta property="og:title" content="Why Makhanam? | Premium Raw Makhana Sourcing & Heritage">
     <meta property="og:description" content="MAKHANAM is rooted in Bihar's makhana-growing regions, connecting traditional knowledge with modern standards of sourcing, grading and supply.">
     <meta property="og:image" content="founder.jpeg">
     <meta property="og:type" content="website">
@@ -87,6 +87,292 @@
         ::-webkit-scrollbar-thumb:hover { background: #E8CD84; }
         ::-webkit-scrollbar-thumb:active { background: #C37A58; }
         ::-webkit-scrollbar-corner { background: #0B1610; }
+
+        /* Smooth Icon Animations */
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3.5px); }
+        }
+        @keyframes iconPulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(232, 205, 132, 0.3)); }
+            50% { transform: scale(1.15); filter: drop-shadow(0 0 7px rgba(232, 205, 132, 0.75)); }
+        }
+        @keyframes iconRadar {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.12) rotate(8deg); }
+        }
+        @keyframes iconGlobeSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .icon-anim-float { display: inline-block; animation: iconFloat 2.6s ease-in-out infinite; }
+        .icon-anim-pulse { display: inline-block; animation: iconPulseGlow 2.2s ease-in-out infinite; }
+        .icon-anim-radar { display: inline-block; animation: iconRadar 3.2s ease-in-out infinite; }
+        .icon-anim-spin { display: inline-block; animation: iconGlobeSpin 16s linear infinite; }
+
+        /* Perfectly Aligned Hero Badges Grid */
+        .story-hero-badges {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 14px 18px !important;
+            max-width: 780px !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+            align-items: stretch !important;
+        }
+
+        .why-hero-pill {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 10px !important;
+            padding: 12px 20px !important;
+            border-radius: 9999px !important;
+            background: rgba(18, 36, 27, 0.8) !important;
+            border: 1px solid rgba(201, 169, 97, 0.35) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            color: #F1F6F2 !important;
+            font-size: 13.5px !important;
+            font-weight: 500 !important;
+            letter-spacing: 0.02em !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            text-align: center !important;
+        }
+
+        .why-hero-pill:hover {
+            border-color: #E8CD84 !important;
+            background: rgba(28, 48, 37, 0.95) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(201, 169, 97, 0.25) !important;
+        }
+
+        .why-hero-pill-sub {
+            font-size: 12px !important;
+            color: #C9A961 !important;
+            font-weight: 400 !important;
+            letter-spacing: 0.03em !important;
+        }
+
+        @media (max-width: 680px) {
+            .story-hero-badges {
+                grid-template-columns: 1fr !important;
+                max-width: 380px !important;
+                gap: 10px !important;
+            }
+            .why-hero-pill {
+                padding: 11px 16px !important;
+                font-size: 12.5px !important;
+            }
+        }
+
+        /* Enhanced Hero Typography */
+        .story-hero-heading {
+            font-family: 'Spectral', Georgia, serif !important;
+            font-size: clamp(2.8rem, 6.2vw, 5.2rem) !important;
+            font-weight: 300 !important;
+            line-height: 1.1 !important;
+            letter-spacing: -0.015em !important;
+            margin-bottom: 22px !important;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        /* ==========================================================================
+           WHY US - ICON EFFECTS & ANIMATIONS (Exact match to aboutus.html)
+           ========================================================================== */
+        .why-icon-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-icon-halo {
+            position: absolute;
+            inset: -6px;
+            border-radius: 1.25rem;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.4) 0%, rgba(201, 169, 97, 0.1) 50%, transparent 75%);
+            opacity: 0.55;
+            animation: whyIconBreathe 3.5s ease-in-out infinite;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        @keyframes whyIconBreathe {
+            0%, 100% {
+                transform: scale(0.95);
+                opacity: 0.35;
+            }
+            50% {
+                transform: scale(1.18);
+                opacity: 0.8;
+            }
+        }
+
+        .why-icon-box {
+            position: relative;
+            width: 3.75rem;
+            height: 3.75rem;
+            border-radius: 1.125rem;
+            background: radial-gradient(circle at 35% 30%, #1E382B, #12241B 75%);
+            border: 1px solid rgba(201, 169, 97, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8CD84;
+            box-shadow: 0 4px 16px rgba(18, 36, 27, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Light sweep shimmer effect across icon container */
+        .why-icon-box::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -160%;
+            width: 220%;
+            height: 220%;
+            background: linear-gradient(
+                115deg,
+                transparent 20%,
+                rgba(232, 205, 132, 0.25) 45%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(232, 205, 132, 0.25) 55%,
+                transparent 80%
+            );
+            transform: rotate(25deg);
+            transition: left 0.75s ease;
+            pointer-events: none;
+        }
+
+        .group:hover .why-icon-box,
+        .why-icon-box:hover {
+            transform: translateY(-5px) scale(1.1);
+            border-color: #E8CD84;
+            box-shadow: 0 14px 28px -4px rgba(201, 169, 97, 0.48), 0 0 0 1px rgba(232, 205, 132, 0.4), inset 0 0 16px rgba(232, 205, 132, 0.3);
+            color: #FFFFFF;
+        }
+
+        .group:hover .why-icon-box::after,
+        .why-icon-box:hover::after {
+            left: 160%;
+        }
+
+        .group:hover .why-icon-halo,
+        .why-icon-box:hover ~ .why-icon-halo {
+            opacity: 1;
+            transform: scale(1.3);
+            background: radial-gradient(circle, rgba(232, 205, 132, 0.7) 0%, rgba(201, 169, 97, 0.3) 50%, transparent 80%);
+            animation-duration: 1.8s;
+        }
+
+        /* 01. Gem Sparkle Animation */
+        .why-icon-gem {
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+        }
+        .group:hover .why-icon-gem,
+        .why-icon-box:hover .why-icon-gem {
+            animation: gemSparkle 1.4s ease-in-out infinite alternate;
+            color: #FFF6D6;
+            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
+        }
+        @keyframes gemSparkle {
+            0% {
+                transform: scale(1.15) rotate(0deg);
+            }
+            33% {
+                transform: scale(1.28) rotate(-12deg);
+            }
+            66% {
+                transform: scale(1.22) rotate(8deg);
+            }
+            100% {
+                transform: scale(1.32) rotate(-4deg);
+            }
+        }
+
+        /* 04. Truck Dispatch Animation */
+        .why-icon-truck {
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+        }
+        .group:hover .why-icon-truck,
+        .why-icon-box:hover .why-icon-truck {
+            animation: truckDispatch 0.9s ease-in-out infinite alternate;
+            color: #FFF6D6;
+            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
+        }
+        @keyframes truckDispatch {
+            0% {
+                transform: translateX(-2px) scale(1.15) skewX(0deg);
+            }
+            100% {
+                transform: translateX(5px) scale(1.24) skewX(-8deg);
+            }
+        }
+
+        /* Speed line trails */
+        .speed-lines {
+            position: absolute;
+            left: 7px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .speed-line {
+            height: 2px;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, transparent, rgba(232, 205, 132, 0.85));
+            animation: speedLinePulse 0.6s infinite alternate;
+        }
+        .speed-line:nth-child(1) { width: 14px; animation-delay: 0.1s; }
+        .speed-line:nth-child(2) { width: 20px; animation-delay: 0.25s; }
+        .speed-line:nth-child(3) { width: 12px; animation-delay: 0.05s; }
+        @keyframes speedLinePulse {
+            0% { opacity: 0.4; transform: scaleX(0.7); }
+            100% { opacity: 1; transform: scaleX(1.1); }
+        }
+        .group:hover .speed-lines,
+        .why-icon-box:hover .speed-lines {
+            opacity: 1;
+        }
+
+        /* Checkmark Interactive Pill Badge */
+        .check-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 9999px;
+            background: rgba(18, 36, 27, 0.08);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            color: #A68740;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .group:hover .check-pill {
+            background: #12241B;
+            border-color: #E8CD84;
+            color: #E8CD84;
+            transform: scale(1.18);
+            box-shadow: 0 3px 10px rgba(201, 169, 97, 0.35);
+        }
+        .group:hover .check-pill i {
+            transform: scale(1.15) rotate(6deg);
+        }
     </style>
 </head>
 
@@ -213,8 +499,8 @@
                 <a href="index.html" class="nav-item hover:text-brand-gold transition-colors">Home</a>
                 <a href="aboutus.html" class="nav-item hover:text-brand-gold transition-colors">About Us</a>
                 <a href="about.html" class="nav-item hover:text-brand-gold transition-colors">About Makhana</a>
+                <a href="why.html" class="nav-item text-brand-gold font-semibold">Why Makhanam?</a>
                 <a href="grading.html" class="nav-item hover:text-brand-gold transition-colors">Grading</a>
-                <a href="journey.html" class="nav-item text-brand-gold font-semibold">Journey</a>
                 <a href="contactus.html" class="nav-item hover:text-brand-gold transition-colors">Contact</a>
             </nav>
         </div>
@@ -258,13 +544,13 @@
                         <span>About Makhana</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
                     </a>
+                    <a href="why.html" class="flex items-center justify-between py-2.5 text-[#E8CD84] font-semibold border-l-2 border-[#C9A961] pl-3 -ml-3 bg-brand-gold/10 rounded-r-lg">
+                        <span>Why Makhanam?</span>
+                        <i class="fa-solid fa-chevron-right text-[9px] text-[#C9A961]"></i>
+                    </a>
                     <a href="grading.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Grading Guide</span>
                         <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>
-                    </a>
-                    <a href="journey.html" class="flex items-center justify-between py-2.5 text-[#E8CD84] font-semibold border-l-2 border-[#C9A961] pl-3 -ml-3 bg-brand-gold/10 rounded-r-lg">
-                        <span>Journey</span>
-                        <i class="fa-solid fa-chevron-right text-[9px] text-[#C9A961]"></i>
                     </a>
                     <a href="contactus.html" class="flex items-center justify-between py-2.5 text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors pl-1">
                         <span>Contact</span>
@@ -306,34 +592,256 @@
             <div class="story-hero-container reveal">
                 <div class="hero-tag">
                     <span class="tag-dot"></span>
-                    <span>OUR JOURNEY &amp; HERITAGE</span>
+                    <span>WHY MAKHANAM? • B2B VALUE &amp; HERITAGE</span>
                 </div>
 
                 <h1 class="story-hero-heading font-serif">
-                    From Mithilanchal to the world.
+                    <span class="block text-[#FAFCFA] font-light tracking-tight">From Mithilanchal</span>
+                    <span class="gold-gradient-text italic font-normal block mt-1.5 sm:mt-2">to the World.</span>
                 </h1>
 
                 <p class="story-hero-copy">
-                    MAKHANAM is rooted in Bihar's makhana-growing regions, connecting generational harvesting wisdom with modern standards of sourcing, precision grading and international B2B wholesale supply.
+                    Direct processing at origin for food brands, roasters, and wholesale importers worldwide.
                 </p>
 
                 <div class="story-hero-badges">
-                    <div class="hero-pill">
-                        <i class="fa-solid fa-water"></i>
-                        <span>Freshwater Wetlands</span>
+                    <div class="why-hero-pill">
+                        <i class="fa-solid fa-seedling text-brand-gold icon-anim-float text-sm"></i>
+                        <span>Direct Farmgate <span class="why-hero-pill-sub">• Zero Middlemen</span></span>
                     </div>
-                    <div class="hero-pill">
-                        <i class="fa-solid fa-seedling"></i>
-                        <span>Generational Cultivation</span>
+                    <div class="why-hero-pill">
+                        <i class="fa-solid fa-shield-heart text-brand-gold icon-anim-pulse text-sm"></i>
+                        <span>Pure &amp; Unbleached <span class="why-hero-pill-sub">• Chemical-Free</span></span>
                     </div>
-                    <div class="hero-pill">
-                        <i class="fa-solid fa-sliders"></i>
-                        <span>Precision Size Sizing</span>
+                    <div class="why-hero-pill">
+                        <i class="fa-solid fa-bullseye text-brand-gold icon-anim-radar text-sm"></i>
+                        <span>Calibrated Consistency <span class="why-hero-pill-sub">• Uniform Batches</span></span>
                     </div>
-                    <div class="hero-pill">
-                        <i class="fa-solid fa-globe"></i>
-                        <span>Dependable B2B Supply</span>
+                    <div class="why-hero-pill">
+                        <i class="fa-solid fa-earth-americas text-brand-gold icon-anim-spin text-sm"></i>
+                        <span>Global Export Ready <span class="why-hero-pill-sub">• Barrier Sealed</span></span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             WHY US? SECTION (The Makhanam Advantage)
+             ========================================================================== -->
+        <section class="py-20 sm:py-28 bg-[#FAFCFA] border-b border-[#12241B]/10 relative overflow-hidden" id="why-us">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 reveal">
+                
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <span class="text-xs font-mono font-bold tracking-[0.28em] text-[#A68740] uppercase">
+                        The Makhanam Advantage
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#12241B]">
+                        Why Us?
+                    </h2>
+                    <p class="text-xs sm:text-sm text-[#385A48] font-light mt-2 max-w-md mx-auto">
+                        Delivering unmatched reliability, purity, and value for domestic and global B2B partnerships.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- 1. Premium Quality -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Premium Quality">
+                                        <i class="fa-solid fa-gem text-xl why-icon-gem"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">01</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Premium Quality
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Hand-harvested, GI-tagged lotus seeds calibrated with vernier precision from 3 to 7+ Suta. Pristine natural whiteness, uniform density, and moisture kept strictly below 10%.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>100% Caliper Verified</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">GI-Tagged Purity</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Reasonable Price -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Reasonable Price">
+                                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">02</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Reasonable Price
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Our direct wetland-to-facility model bypasses multiple layers of mandi brokers and traders, transferring 15–20% wholesale margin advantage straight to your supply chain.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>Direct Farmgate Rate</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">15–20% Advantage</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Strict Hygiene standards -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Strict Hygiene standards">
+                                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">03</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Strict Hygiene standards
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Processed in sanitized food-grade environments adhering to rigorous FSSAI standards. Multi-stage sorting, clean air drying, and hermetic packaging ensure zero contamination.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>FSSAI Compliant</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Food-Grade Clean</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Timely Delivery -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Timely Delivery">
+                                        <div class="speed-lines">
+                                            <span class="speed-line"></span>
+                                            <span class="speed-line"></span>
+                                            <span class="speed-line"></span>
+                                        </div>
+                                        <i class="fa-solid fa-truck-fast text-xl why-icon-truck"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">04</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Timely Delivery
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Pre-scheduled dispatch timelines, dedicated freight coordination via NH-31 &amp; NH-27, and seamless export FOB/CIF execution to keep your production and retail stock uninterrupted.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>On-Schedule Dispatch</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Zero Downtime</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Direct Sourcing from farm -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Direct Sourcing from farm">
+                                        <i class="fa-solid fa-seedling text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">05</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Direct Sourcing from farm
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Harvested fresh from indigenous pond clusters across Mithila's pristine wetland belt. We maintain end-to-end batch traceability from certified farmer ponds to final dispatch sacks.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>100% Wetland Traceable</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Farmgate Fresh</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Empowering Local Livelihoods -->
+                    <div class="p-7 sm:p-8 rounded-3xl bg-[#F1F6F2] border border-[#C9A961]/35 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="why-icon-wrapper">
+                                    <div class="why-icon-halo"></div>
+                                    <div class="why-icon-box" title="Empowering Local Livelihoods">
+                                        <i class="fa-solid fa-people-roof text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-[#A68740] group-hover:text-[#C9A961] tracking-widest uppercase transition-colors">06</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-2xl text-[#12241B] group-hover:text-[#0B1610] font-bold tracking-tight transition-colors">
+                                    Empowering Local Livelihoods
+                                </h3>
+                                <p class="text-xs sm:text-sm text-[#385A48] font-light leading-relaxed">
+                                    Championing fair wages, prompt settlement, and economic security for Mallah harvester families and women grading artisans who have nurtured this heritage for generations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-[#12241B]/10 flex items-center justify-between text-xs font-mono text-[#A68740] font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="check-pill"><i class="fa-solid fa-check text-[10px]"></i></span>
+                                <span>Fair Harvester Pay</span>
+                            </span>
+                            <span class="text-[10px] text-[#A68740]/70 group-hover:text-[#A68740] uppercase tracking-wider font-sans font-bold">Community First</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -475,69 +983,7 @@
             </div>
         </section>
 
-        <!-- 6. OUR JOURNEY (Visual Editorial Timeline) -->
-        <section class="timeline-section" id="timeline">
-            <div class="site-container">
-                <div class="section-head-center reveal">
-                    <span class="section-eyebrow">EVOLUTION</span>
-                    <h2 class="editorial-title">
-                        The MAKHANAM <span class="italic text-terracotta">journey.</span>
-                    </h2>
-                </div>
 
-                <div class="timeline-row">
-                    <!-- Step 1 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>The Beginning</h4>
-                        <p>The idea behind MAKHANAM: connecting Bihar's authentic makhana directly to commercial markets nationwide.</p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Building Network</h4>
-                        <p>Developing close, fair partnerships within the local harvesting and farming ecosystem of Mithila.</p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Establishing Standards</h4>
-                        <p>Creating standardized caliper grading (4 to 7+ Suta), moisture benchmarks, and strict sorting.</p>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Building Supply</h4>
-                        <p>Supplying commercial food brands, snack manufacturers, bulk traders, and institutional exporters.</p>
-                    </div>
-
-                    <!-- Step 5 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Looking Ahead</h4>
-                        <p>Scaling modern processing capacity and taking Mithila's superfood heritage to international destinations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. OUR VISION (Dark Section) -->
-        <section class="vision-section">
-            <div class="site-container">
-                <div class="vision-box reveal">
-                    <span class="section-eyebrow text-gold">OUR VISION</span>
-                    <h2 class="editorial-title text-cream">
-                        From Mithilanchal to the world.
-                    </h2>
-                    <p class="vision-quote font-handwriting text-3xl sm:text-5xl text-cream font-normal leading-relaxed drop-shadow-[0_4px_20px_rgba(201,169,97,0.3)]">
-                        “To bring the goodness of <span class="text-gold-bright font-bold underline decoration-brand-gold/40 underline-offset-4">Makhanam</span> to every corner of the world, inspiring <span class="text-gold-bright font-bold underline decoration-brand-gold/40 underline-offset-4">healthy, happy living</span> in every home.”
-                    </p>
-                </div>
-            </div>
-        </section>
 
         <!-- 8. FINAL CTA (B2B Informational) -->
         <section class="story-cta-section">
@@ -583,10 +1029,10 @@
                         <span class="footer-brand-name">Makhanam</span>
                     </div>
                     <p class="footer-desc">
-                        MAKHANAM is rooted in Bihar's makhana-growing regions, connecting traditional knowledge with modern standards of sourcing, grading and supply for commercial partners.
+                         Makhanam, based in Bihar, is a dedicated specialist in premium raw Makhana (Foxnut) processing.
                     </p>
                     <div class="footer-origin-tag">
-                        PREMIUM RAW MAKHANA • BIHAR, INDIA
+                        YOUR TRUST  •  OUR COMMITMENT
                     </div>
                 </div>
 
@@ -597,7 +1043,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="aboutus.html">About Us</a></li>
                         <li><a href="about.html">About Makhana</a></li>
-                        <li><a href="journey.html">Journey</a></li>
+                        <li><a href="why.html">Why Makhanam?</a></li>
                         <li><a href="grading.html">Grading Specifications</a></li>
                         <li><a href="contactus.html">Contact Us</a></li>
                     </ul>
@@ -607,7 +1053,7 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Contact</h4>
                     <ul class="footer-contact">
-                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 shrink-0"></i> <span>Nekawat Tola, Milky Road, opposite Mafa Petrol Pump, Purnia, Maranga, Bihar 854303, India</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 shrink-0"></i> <span>Nekawat Tola, Milky Road, opposite Mafa Petrol Pump, Maranga, Purnia, Bihar 854303, India</span></li>
                         <li>
                             <i class="fa-solid fa-phone"></i>
                             <a href="tel:+918340493639">+91 83404 93639</a>

@@ -64,20 +64,32 @@
       "destination": "/about.html"
     },
     {
+      "source": "/why",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/why.html",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/why-makhanam",
+      "destination": "/why.html"
+    },
+    {
       "source": "/journey",
-      "destination": "/journey.html"
+      "destination": "/why.html"
     },
     {
       "source": "/journey.html",
-      "destination": "/journey.html"
+      "destination": "/why.html"
     },
     {
       "source": "/ourstory",
-      "destination": "/journey.html"
+      "destination": "/why.html"
     },
     {
       "source": "/ourstory.html",
-      "destination": "/journey.html"
+      "destination": "/why.html"
     },
     {
       "source": "/contact",

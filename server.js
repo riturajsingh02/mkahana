@@ -338,8 +338,8 @@ app.get(['/about', '/about.html', '/about-makhana', '/about-makhanam', '/about-m
   res.sendFile(path.join(__dirname, 'about.html'));
 });
 
-app.get(['/journey', '/journey.html', '/ourstory', '/ourstory.html', '/our-story', '/story'], (req, res) => {
-  res.sendFile(path.join(__dirname, 'journey.html'));
+app.get(['/why', '/why.html', '/why-makhanam', '/why-makhanam.html', '/journey', '/journey.html', '/ourstory', '/ourstory.html', '/our-story', '/story'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'why.html'));
 });
 
 app.get(['/contact', '/contact.html', '/contactus', '/contactus.html'], (req, res) => {
