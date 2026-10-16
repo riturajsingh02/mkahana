@@ -2202,6 +2202,9 @@ a {
         animation: flowPulseDown 2s ease-in-out infinite;
         display: flex !important;
     }
+    .roadmap-flow-arrow i::before {
+        content: "\f063" !important;
+    }
     .roadmap-node:last-child .roadmap-flow-arrow {
         display: none !important;
     }
@@ -3240,6 +3243,35 @@ a {
         flex-direction: column;
         align-items: flex-start;
         padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-container {
+        padding: 0 16px !important;
+        width: 100% !important;
+    }
+    .hero-badges-row {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    .nutrition-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .grading-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .districts-showcase-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .district-filter-tabs {
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
