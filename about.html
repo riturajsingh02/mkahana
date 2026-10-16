@@ -43,7 +43,7 @@
     </script>
 
     <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="about.css">
@@ -295,9 +295,14 @@
             <div class="hero-vignette"></div>
 
             <div class="hero-container reveal">
-                <div class="hero-tag">
-                    <span class="tag-dot"></span>
-                    <span>ABOUT MAKHANAM • BIHAR, INDIA</span>
+                <!-- GI Tag Highlight Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0B1610]/85 border border-[#C9A961]/60 shadow-2xl mb-6 backdrop-blur-md">
+                    <div class="w-6 h-6 rounded-full bg-[#C9A961]/25 border border-[#E8CD84] flex items-center justify-center text-[#E8CD84] text-xs shrink-0 shadow-sm">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <span class="font-mono text-xs font-bold tracking-[0.2em] text-[#E8CD84] uppercase">
+                        Official GI Certified Mithila Makhana
+                    </span>
                 </div>
 
                 <h1 class="hero-heading">
@@ -509,16 +514,58 @@
                     </div>
                 </div>
 
-                <!-- 4-Column Bottom Key Metrics Strip -->
-                <div class="nutrition-stats-strip reveal">
-                    <!-- Metric 1: Calcium -->
-                    <div class="nutrition-stat-col">
-                        <i class="fa-solid fa-bone nutrition-stat-icon"></i>
-                        <div class="nutrition-stat-val">60mg+</div>
-                        <div class="nutrition-stat-title">CALCIUM</div>
-                        <div class="nutrition-stat-desc">Bone &amp; Joint Strength</div>
+                <!-- Nutritional Profile Table (Per 100g) -->
+                <div class="nutrition-profile-card reveal">
+                    <div class="nutrition-profile-header">
+                        <span class="nutrition-profile-subtitle">LAB VERIFIED COMPOSITION</span>
+                        <h3 class="nutrition-profile-title">Nutritional Profile (Per 100g)</h3>
                     </div>
+                    <div class="nutrition-profile-grid">
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Calories</div>
+                            <div class="nutrition-nutrient-value">347 – 356 kcal</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Carbohydrates</div>
+                            <div class="nutrition-nutrient-value">76.9 g</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Protein</div>
+                            <div class="nutrition-nutrient-value">9.7 g</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Dietary Fiber</div>
+                            <div class="nutrition-nutrient-value">14.5 g</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Fat</div>
+                            <div class="nutrition-nutrient-value">0.1 g</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Calcium</div>
+                            <div class="nutrition-nutrient-value">60 mg</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Magnesium</div>
+                            <div class="nutrition-nutrient-value">67 – 96 mg</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Potassium</div>
+                            <div class="nutrition-nutrient-value">500 mg</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Phosphorus</div>
+                            <div class="nutrition-nutrient-value">188 – 350 mg</div>
+                        </div>
+                        <div class="nutrition-nutrient-item">
+                            <div class="nutrition-nutrient-label">Iron</div>
+                            <div class="nutrition-nutrient-value">1.4 – 2.6 mg</div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- 3-Column Bottom Key Metrics Strip -->
+                <div class="nutrition-stats-strip reveal">
                     <!-- Metric 2: Glycemic Index -->
                     <div class="nutrition-stat-col">
                         <i class="fa-solid fa-chart-line nutrition-stat-icon"></i>
@@ -551,7 +598,7 @@
             <div class="site-container">
                 <!-- Section Header -->
                 <div class="district-head-center reveal">
-                    <span class="section-eyebrow">GEOGRAPHIC TERROIR • 85%+ GLOBAL SUPPLY</span>
+                    <span class="section-eyebrow">PLACE OF ORIGIN • 85%+ GLOBAL SUPPLY</span>
                     <h2 class="editorial-title">
                         Where is it grown? <span class="italic text-terracotta">The Bihar Wetland Belts.</span>
                     </h2>
@@ -1174,58 +1221,6 @@
             </div>
         </section>
 
-        <!-- OUR JOURNEY (Visual Editorial Timeline) -->
-        <section class="timeline-section" id="milestones">
-            <div class="site-container">
-                <div class="section-head-center reveal">
-                    <span class="section-eyebrow">OUR JOURNEY &amp; EVOLUTION</span>
-                    <h2 class="editorial-title">
-                        The MAKHANAM <span class="italic text-terracotta">journey.</span>
-                    </h2>
-                    <p style="color: var(--earth); font-size: 16px;">
-                        Tracing our path from local Mithila wetland harvests to trusted global B2B wholesale distribution.
-                    </p>
-                </div>
-
-                <div class="timeline-row">
-                    <!-- Step 1 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>The Beginning</h4>
-                        <p>The idea behind MAKHANAM: connecting Bihar's authentic makhana directly to wider commercial markets.</p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Building Network</h4>
-                        <p>Developing close partnerships within the local Mallah harvesting communities and wetland growers.</p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Establishing Standards</h4>
-                        <p>Creating standardized 3 to 7 Suta grading, calibrated sieving, and moisture-controlled packaging.</p>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Building Supply</h4>
-                        <p>Supplying commercial food enterprises, FMCG snack brands, distributors, and institutional buyers.</p>
-                    </div>
-
-                    <!-- Step 5 -->
-                    <div class="timeline-step reveal">
-                        <div class="timeline-step-dot"></div>
-                        <h4>Looking Ahead</h4>
-                        <p>Taking Bihar's GI-tagged makhana heritage to broader domestic and international export destinations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- CINEMATIC VIDEO DOCUMENTARY SECTION (VERTICAL 9:16 PORTRAIT THEATER) -->
         <section class="cinematic-video-section" id="harvest-film">
             <div class="video-ambient-glow"></div>
@@ -1255,10 +1250,17 @@
                     <!-- Right: Editorial Narrative & Process Breakdown -->
                     <div class="video-editorial-col reveal">
                         <div>
-                            <span class="section-eyebrow text-gold"><i class="fa-solid fa-certificate"></i> GEOGRAPHICAL INDICATION (GI TAG)</span>
-                            <h2 class="editorial-title text-cream">
+                            <div class="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#0B1610] border border-[#C9A961]/60 shadow-xl mb-4">
+                                <div class="w-10 h-10 rounded-lg bg-[#C9A961]/25 border border-[#E8CD84] flex items-center justify-center text-[#E8CD84] text-xl shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <span class="font-mono text-xs sm:text-sm font-bold tracking-[0.25em] text-[#E8CD84] uppercase">
+                                    GEOGRAPHICAL INDICATION (GI TAG)
+                                </span>
+                            </div>
+                            <h3 class="editorial-title text-cream" style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; margin-bottom: 20px;">
                                 Certified <span class="italic text-gold-bright">Mithila Makhana</span>
-                            </h2>
+                            </h3>
                             <p class="text-cream-muted" style="font-size: 15.5px; line-height: 1.7; margin-bottom: 24px;">
                                 Mithila Makhana holds official Government of India Geographical Indication (GI) certification, legally recognizing Northern Bihar's unique aquatic terroir, generational seed craftsmanship, and pristine nutritional density that cannot be replicated anywhere else in the world.
                             </p>
@@ -1308,74 +1310,14 @@
 
 
 
-        <!-- VISUAL GRADING & CALIPER SHOWCASE -->
-        <section class="grading-showcase-section">
+        <!-- SUTA CALIPER GUIDE LINK -->
+        <section class="grading-showcase-section" style="padding: 60px 0;">
             <div class="site-container">
-                <div class="section-head-center reveal">
-                    <span class="section-eyebrow">STANDARDIZED EXPORT SIZES</span>
-                    <h2 class="editorial-title">
-                        Visual Suta <span class="italic text-earth">Grading Calipers</span>
-                    </h2>
-                    <p style="color: var(--earth); font-size: 16px;">
-                        Standardized millimeter sizing ensures reliable portion control, puff volume, and pricing transparency.
-                    </p>
-                </div>
-
-                <div class="grading-grid">
-                    <!-- Grade 1: 6+ Suta -->
-                    <div class="grade-card reveal">
-                        <div class="grade-img-box">
-                            <img src="6+.jpeg" alt="6+ Suta Super Jumbo Makhana">
-                            <span class="grade-tag">6+ SUTA</span>
-                        </div>
-                        <div class="grade-body">
-                            <span class="grade-eyebrow">SUPER JUMBO</span>
-                            <h3 class="grade-title">6+ Suta</h3>
-                            <p class="grade-desc">Characterized by significant puff volume and a pristine white bloom. Favored for premium retail snack lines, gourmet roasting, and luxury gift hampers.</p>
-                        </div>
-                    </div>
-
-                    <!-- Grade 2: 5 Suta -->
-                    <div class="grade-card reveal">
-                        <div class="grade-img-box">
-                            <img src="5suta.jpeg" alt="5 Suta Royal Makhana">
-                            <span class="grade-tag">5 SUTA</span>
-                        </div>
-                        <div class="grade-body">
-                            <span class="grade-eyebrow">ROYAL GRADE</span>
-                            <h3 class="grade-title">5 Suta</h3>
-                            <p class="grade-desc">Well-rounded grains with strong crisp density. Provides an ideal balance of visual presentation and consistent volume for branded consumer packages.</p>
-                        </div>
-                    </div>
-
-                    <!-- Grade 3: 4 Suta -->
-                    <div class="grade-card reveal">
-                        <div class="grade-img-box">
-                            <img src="4 suta.jpeg" alt="4 Suta Classic Makhana">
-                            <span class="grade-tag">4 SUTA</span>
-                        </div>
-                        <div class="grade-body">
-                            <span class="grade-eyebrow">CLASSIC GRADE</span>
-                            <h3 class="grade-title">4 Suta</h3>
-                            <p class="grade-desc">A dependable commercial grade offering excellent crunch and uniform seasoning absorption. Well-suited for everyday snack blends and trail mixes.</p>
-                        </div>
-                    </div>
-
-                    <!-- Grade 4: 3 Suta -->
-                    <div class="grade-card reveal">
-                        <div class="grade-img-box">
-                            <img src="3suta.jpeg" alt="3 Suta Pearl Makhana">
-                            <span class="grade-tag">3 SUTA</span>
-                        </div>
-                        <div class="grade-body">
-                            <span class="grade-eyebrow">PEARL GRADE</span>
-                            <h3 class="grade-title">3 Suta</h3>
-                            <p class="grade-desc">Uniform smaller grains designed for high-efficiency confectionery, multi-ingredient breakfast blends, and institutional food applications.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 40px;" class="reveal">
+                <div class="reveal" style="background: linear-gradient(135deg, rgba(92, 66, 50, 0.08) 0%, rgba(201, 169, 97, 0.12) 100%); border: 1px solid rgba(201, 169, 97, 0.35); border-radius: 1.5rem; padding: 45px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                    <span class="section-eyebrow" style="margin-bottom: 8px; display: inline-block;">CALIBRATION STANDARDS</span>
+                    <h3 class="editorial-title" style="font-size: 1.85rem; margin-bottom: 22px;">
+                        Explore Our Precision <span class="italic text-earth">Suta Grading Specs</span>
+                    </h3>
                     <a href="grading.html" class="btn-shimmer" style="display: inline-flex;">
                         <i class="fa-solid fa-ruler-combined"></i>
                         <span>Explore Full Suta Caliper Guide</span>
@@ -1474,6 +1416,26 @@
                     </p>
                     <div class="footer-origin-tag">
                         YOUR TRUST  •  OUR COMMITMENT
+                    </div>
+                    <!-- Follow Us Social Links -->
+                    <div class="footer-social-wrap">
+                        <span class="footer-social-title">Follow Us</span>
+                        <div class="footer-social-links">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on X">
+                                <svg class="w-[17px] h-[17px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 

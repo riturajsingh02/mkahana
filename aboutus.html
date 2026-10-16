@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Manrope:wght@400;500;600;700;800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -536,17 +536,189 @@
             transform: scale(1.15) rotate(6deg);
         }
 
-        /* Horizontal Journey Scrollbar */
-        .journey-scroll::-webkit-scrollbar {
-            height: 6px;
+        /* ==========================================================================
+           FROM POND TO PARTNER - ZERO-SCROLL INTERACTIVE SHOWCASE
+           ========================================================================== */
+        .stage-showcase-container {
+            background: linear-gradient(165deg, rgba(14, 28, 20, 0.95) 0%, rgba(9, 18, 13, 0.98) 100%);
+            border: 1px solid rgba(201, 169, 97, 0.35);
+            border-radius: 1.75rem;
+            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(201, 169, 97, 0.12);
+            position: relative;
+            overflow: hidden;
         }
-        .journey-scroll::-webkit-scrollbar-track {
-            background: rgba(18, 36, 27, 0.5);
+
+        .stage-tab-btn {
+            position: relative;
+            padding: 0.55rem 0.9rem;
             border-radius: 9999px;
+            font-size: 11px;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(241, 246, 242, 0.65);
+            background: rgba(18, 36, 27, 0.65);
+            border: 1px solid rgba(201, 169, 97, 0.25);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            white-space: nowrap;
         }
-        .journey-scroll::-webkit-scrollbar-thumb {
-            background: #C9A961;
+
+        .stage-tab-btn:hover {
+            color: #FFF6D6;
+            border-color: rgba(232, 205, 132, 0.6);
+            background: rgba(201, 169, 97, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .stage-tab-btn.active {
+            color: #12241B !important;
+            background: linear-gradient(135deg, #FFF0C2 0%, #E8CD84 50%, #C9A961 100%) !important;
+            border-color: #E8CD84 !important;
+            box-shadow: 0 0 20px rgba(232, 205, 132, 0.45);
+            transform: scale(1.03);
+        }
+
+        /* Slide Media Crossfade Transitions */
+        .stage-slide-media {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .stage-slide-media.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        @keyframes stageContentFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stage-content-pane {
+            display: none;
+            animation: stageContentFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .stage-content-pane.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Large Punchy Bullet Points (Points Only, Big Font Size) */
+        .stage-point-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #FAFCFA;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @media (min-width: 640px) {
+            .stage-point-item {
+                font-size: 1.35rem;
+                gap: 1.25rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .stage-point-item {
+                font-size: 1.55rem;
+                line-height: 1.3;
+            }
+        }
+        .stage-point-item:hover {
+            transform: translateX(6px);
+            color: #FFF6D6;
+        }
+        .stage-point-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 9999px;
+            background: rgba(201, 169, 97, 0.2);
+            border: 1.5px solid rgba(232, 205, 132, 0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8CD84;
+            font-size: 16px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 16px rgba(201, 169, 97, 0.25);
+            transition: all 0.25s ease;
+        }
+        @media (min-width: 640px) {
+            .stage-point-icon {
+                width: 46px;
+                height: 46px;
+                font-size: 18px;
+            }
+        }
+        .stage-point-item:hover .stage-point-icon {
+            background: rgba(232, 205, 132, 0.38);
+            border-color: #FFF0C2;
+            transform: scale(1.12);
+            color: #FFFFFF;
+            box-shadow: 0 0 22px rgba(232, 205, 132, 0.55);
+        }
+
+        /* Miniature Clickable Preview Thumbnails */
+        .stage-thumb-card {
+            border-radius: 0.85rem;
+            background: rgba(11, 22, 16, 0.85);
+            border: 1.5px solid rgba(201, 169, 97, 0.22);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stage-thumb-card:hover {
+            border-color: rgba(232, 205, 132, 0.65);
+            transform: translateY(-2px);
+            background: rgba(18, 36, 27, 0.95);
+        }
+
+        .stage-thumb-card.active {
+            border-color: #E8CD84;
+            box-shadow: 0 0 16px rgba(232, 205, 132, 0.45);
+            background: rgba(24, 46, 34, 0.98);
+        }
+
+        .stage-thumb-card.active img {
+            filter: contrast(1.15) brightness(1.05);
+            transform: scale(1.08);
+        }
+
+        /* Interactive Step Progress Bar */
+        .stage-progress-track {
+            height: 3px;
+            background: rgba(201, 169, 97, 0.2);
+            border-radius: 9999px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stage-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #C9A961, #E8CD84);
+            width: 0%;
+            border-radius: 9999px;
+            transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* ==========================================================================
@@ -573,6 +745,62 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        /* Vision Underline Words - Perfectly Visible at rest & on Mouse Hover */
+        .vision-underline-word {
+            display: inline-block;
+            position: relative;
+            font-weight: 700;
+            color: #E8CD84 !important;
+            -webkit-text-fill-color: #E8CD84 !important;
+            text-fill-color: #E8CD84 !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+            text-decoration: underline !important;
+            text-decoration-color: rgba(201, 169, 97, 0.7) !important;
+            text-decoration-style: wavy !important;
+            text-underline-offset: 8px !important;
+            cursor: pointer;
+            isolation: isolate;
+            transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        -webkit-text-fill-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        text-decoration-color 0.3s ease,
+                        text-shadow 0.3s ease,
+                        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .vision-underline-word:hover,
+        .vision-underline-word:focus,
+        .vision-underline-word:active {
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+            text-fill-color: #FFFFFF !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+            text-decoration-color: #E8CD84 !important;
+            text-underline-offset: 10px !important;
+            transform: translateY(-2px);
+            text-shadow: 0 0 16px rgba(232, 205, 132, 0.95), 0 0 32px rgba(201, 169, 97, 0.8), 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        /* Prevent parent text-fill clipping from hiding nested spans */
+        .vision-handwritten-title span {
+            -webkit-text-fill-color: #E8CD84 !important;
+            color: #E8CD84 !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+        }
+        .vision-handwritten-title span:hover {
+            -webkit-text-fill-color: #FFFFFF !important;
+            color: #FFFFFF !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+            text-shadow: 0 0 16px rgba(232, 205, 132, 0.95), 0 0 32px rgba(201, 169, 97, 0.8) !important;
         }
 
         .vision-mesh-glow {
@@ -614,47 +842,135 @@
             box-shadow: 0 35px 80px -8px rgba(0, 0, 0, 0.75), 0 0 50px rgba(201, 169, 97, 0.32), inset 0 0 25px rgba(232, 205, 132, 0.12);
         }
 
+        /* ==========================================================================
+           3 VISION PILLARS - INTERACTIVE LOGO PICTURE EMBLEMS & MEMORY CHIPS
+           ========================================================================== */
         .vision-pillar-card {
-            background: rgba(18, 36, 27, 0.8);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(201, 169, 97, 0.28);
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(165deg, rgba(18, 36, 27, 0.92) 0%, rgba(11, 22, 16, 0.96) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(201, 169, 97, 0.32);
+            border-radius: 1.75rem;
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.55), 0 0 25px rgba(201, 169, 97, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             cursor: pointer;
-            transform-style: preserve-3d;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
         .vision-pillar-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            border-radius: 1.5rem;
-            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(201, 169, 97, 0.25), transparent 50%);
+            border-radius: 1.75rem;
+            background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(201, 169, 97, 0.22), transparent 60%);
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.3s ease;
             pointer-events: none;
+            z-index: 1;
         }
+
         .vision-pillar-card:hover::before,
         .vision-pillar-card.active::before {
             opacity: 1;
         }
+
         .vision-pillar-card:hover,
         .vision-pillar-card.active {
             transform: translateY(-8px);
+            border-color: rgba(232, 205, 132, 0.85);
+            background: linear-gradient(165deg, rgba(22, 44, 33, 0.95) 0%, rgba(13, 27, 20, 0.98) 100%);
+            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(201, 169, 97, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+        }
+
+        /* Interactive Circular Logo Picture Frame */
+        .pillar-logo-frame {
+            position: relative;
+            width: 96px;
+            height: 96px;
+            margin: 0.5rem auto 1.25rem auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 35% 35%, rgba(201, 169, 97, 0.3), rgba(11, 22, 16, 0.95));
+            border: 2px solid rgba(201, 169, 97, 0.6);
+            box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.6), 0 0 22px rgba(201, 169, 97, 0.22), inset 0 0 15px rgba(232, 205, 132, 0.2);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .vision-pillar-card:hover .pillar-logo-frame {
             border-color: #E8CD84;
-            background: rgba(24, 46, 34, 0.94);
-            box-shadow: 0 20px 45px -6px rgba(0, 0, 0, 0.7), 0 0 35px rgba(201, 169, 97, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.8), 0 0 35px rgba(232, 205, 132, 0.5), inset 0 0 22px rgba(232, 205, 132, 0.35);
+        }
+
+        .pillar-logo-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(201, 169, 97, 0.4);
+            pointer-events: none;
+            transition: all 0.6s ease;
+        }
+
+        .vision-pillar-card:hover .pillar-logo-ring {
+            border-color: rgba(232, 205, 132, 0.85);
+            transform: rotate(60deg);
+        }
+
+        /* Easy-to-remember Interactive Key Feature Chips */
+        .pillar-memory-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.28rem 0.6rem;
+            border-radius: 9999px;
+            background: rgba(201, 169, 97, 0.12);
+            border: 1px solid rgba(201, 169, 97, 0.28);
+            color: #F1F6F2;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.015em;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .pillar-memory-chip i {
+            color: #E8CD84;
+            font-size: 10px;
+            transition: transform 0.25s ease;
+        }
+
+        .vision-pillar-card:hover .pillar-memory-chip {
+            background: rgba(201, 169, 97, 0.18);
+            border-color: rgba(232, 205, 132, 0.45);
+        }
+
+        .pillar-memory-chip:hover {
+            background: rgba(232, 205, 132, 0.3) !important;
+            border-color: #E8CD84 !important;
+            color: #FFFFFF !important;
+            transform: translateY(-2px);
+            box-shadow: 0 0 14px rgba(232, 205, 132, 0.45);
+        }
+
+        .pillar-memory-chip:hover i {
+            transform: scale(1.3) rotate(6deg);
         }
 
         .vision-badge-pill {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 10.5px;
+            font-size: 10px;
             font-family: 'Bricolage Grotesque', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            padding: 4px 10px;
+            letter-spacing: 0.14em;
+            padding: 3px 9px;
             border-radius: 9999px;
             background: rgba(201, 169, 97, 0.15);
             border: 1px solid rgba(201, 169, 97, 0.35);
@@ -771,6 +1087,79 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
         }
+
+        /* Follow Us & Social Links (Professional & Prominent) */
+        .footer-social-wrap {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-social-title {
+            font-family: 'Spectral', Georgia, serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            color: #E8CD84;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-title::after {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1.5px;
+            background: linear-gradient(90deg, #E8CD84, transparent);
+            border-radius: 2px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(201, 169, 97, 0.45);
+            background: #182B21;
+            color: #E8CD84;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        .footer-social-btn:hover {
+            color: #FFDF78;
+            border-color: #FFDF78;
+            background: radial-gradient(circle at 40% 30%, #2E523E, #14281E);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 16px rgba(201, 169, 97, 0.5);
+        }
+
+        .footer-social-btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .footer-social-btn svg {
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
         .footer-col {
             display: flex;
             flex-direction: column;
@@ -806,18 +1195,26 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             font-size: 13px;
-            color: rgba(241, 246, 242, 0.8);
+            color: rgba(241, 246, 242, 0.85);
         }
         .footer-contact li {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .footer-contact i {
             color: #C9A961;
-            width: 16px;
+            font-size: 17px;
+            width: 22px;
+            flex-shrink: 0;
+            text-align: center;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .footer-contact li:hover i {
+            color: #FFDF78;
+            transform: scale(1.15);
         }
         .footer-contact a {
             color: inherit;
@@ -974,62 +1371,7 @@
 
     <main>
         <!-- ==========================================================================
-             OUR STORY — VISUAL STORYTELLING (Split Screen)
-             ========================================================================== -->
-        <section class="py-20 sm:py-28 bg-[#FAFCFA] border-b border-[#12241B]/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                    
-                    <!-- LEFT: Large Authentic Image of Farmer / Cultivation Pond -->
-                    <div class="lg:col-span-6 reveal">
-                        <div class="relative group rounded-2xl overflow-hidden shadow-2xl border border-[#C9A961]/30">
-                            <img src="harvest.jpeg" alt="Traditional Makhana Harvesting in Mithila pond" class="w-full h-[420px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out" onerror="this.src='story.jpeg'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610]/80 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-[#F1F6F2]">
-                                <span class="text-xs uppercase tracking-[0.2em] font-mono text-[#E8CD84]">Native Wetland Harvest</span>
-                                <span class="text-xs text-[#FAFCFA]/80">Mithila, Bihar</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RIGHT: Story & 3 Visual Facts -->
-                    <div class="lg:col-span-6 space-y-8 reveal">
-                        <div class="space-y-4">
-                            <div class="text-xs font-mono font-bold tracking-[0.28em] text-[#A68740] uppercase">
-                                Our Story
-                            </div>
-                            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#12241B] leading-tight">
-                                Born in Mithila.<br>
-                                <span class="italic text-[#385A48] font-normal">Built around quality.</span>
-                            </h1>
-                            <p class="text-base sm:text-lg text-[#12241B]/80 font-light leading-relaxed pt-2">
-                                MAKHANAM connects traditional makhana cultivation with modern B2B supply.
-                            </p>
-                        </div>
-
-                        <!-- 3 Small Visual Facts -->
-                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-[#12241B]/10">
-                            <div class="p-4 rounded-xl bg-[#F1F6F2] border border-[#C9A961]/25">
-                                <div class="font-serif text-xl sm:text-2xl text-[#12241B] font-bold">MITHILA</div>
-                                <div class="text-xs text-[#385A48] font-medium mt-1">Our roots</div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-[#F1F6F2] border border-[#C9A961]/25">
-                                <div class="font-serif text-xl sm:text-2xl text-[#12241B] font-bold">BIHAR</div>
-                                <div class="text-xs text-[#385A48] font-medium mt-1">Our source</div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-[#F1F6F2] border border-[#C9A961]/25">
-                                <div class="font-serif text-xl sm:text-2xl text-[#12241B] font-bold">GLOBAL</div>
-                                <div class="text-xs text-[#385A48] font-medium mt-1">Our ambition</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             3. VISION SECTION (Ultra-Luxury Interactive Experience)
+             VISION SECTION (Ultra-Luxury Interactive Experience)
              ========================================================================== -->
         <section class="relative py-24 sm:py-32 lg:py-36 bg-[#0B1610] text-[#F1F6F2] overflow-hidden" id="our-vision-section">
             <!-- Interactive Stardust & Golden Bioluminescent Particle Canvas -->
@@ -1055,10 +1397,6 @@
                     <!-- Top golden jewel beam highlight -->
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-[3px] bg-gradient-to-r from-transparent via-[#E8CD84] to-transparent"></div>
 
-                    <!-- Watermark Antique Quote Glyphs in Backdrop -->
-                    <div class="absolute -top-10 left-4 sm:left-8 text-8xl sm:text-[11rem] font-serif text-[#C9A961]/10 select-none pointer-events-none italic leading-none">“</div>
-                    <div class="absolute -bottom-14 right-4 sm:right-8 text-8xl sm:text-[11rem] font-serif text-[#C9A961]/10 select-none pointer-events-none italic leading-none">”</div>
-
                     <div class="relative z-10 space-y-7 sm:space-y-8">
                         <!-- North Star Pill Badge -->
                         <div class="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-brand-gold/70 bg-[#12241B]/90 backdrop-blur-md text-[#E8CD84] text-[11px] sm:text-xs uppercase tracking-[0.28em] font-semibold shadow-lg">
@@ -1070,7 +1408,7 @@
                         <!-- Handwritten Hero Quote with Fluid Master-Calligraphy Styling -->
                         <div class="px-2 sm:px-6">
                             <h2 class="vision-handwritten-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FAFCFA] max-w-4xl mx-auto leading-relaxed sm:leading-[1.28] tracking-wide transition-all drop-shadow-[0_8px_32px_rgba(201,169,97,0.35)] select-text">
-                                “To bring the goodness of <span class="text-[#E8CD84] font-bold inline-block hover:scale-105 transition-transform duration-300 cursor-default underline decoration-[#C9A961]/50 decoration-wavy underline-offset-8">Makhanam</span> to every corner of the world, inspiring <span class="text-[#E8CD84] font-bold inline-block hover:scale-105 transition-transform duration-300 cursor-default underline decoration-[#C9A961]/50 decoration-wavy underline-offset-8">healthy, happy living</span> in every home.”
+                                “To bring the goodness of <span class="vision-underline-word" title="Makhanam">Makhanam</span> to every corner of the world, inspiring <span class="vision-underline-word" title="Healthy, Happy Living">healthy, happy living</span> in every home.”
                             </h2>
                         </div>
 
@@ -1085,65 +1423,7 @@
                     </div>
                 </div>
 
-                <!-- 3 Clean Vision Pillars: Quality • Origin • Global -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4 text-left max-w-5xl mx-auto">
-                    <!-- Pillar 1: Quality -->
-                    <div class="p-7 sm:p-8 rounded-3xl bg-[#12241B]/85 border border-[#C9A961]/30 hover:border-[#E8CD84]/60 transition-all duration-300 group hover:-translate-y-1.5 shadow-xl relative overflow-hidden">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-[10px] font-mono tracking-widest text-[#E8CD84] uppercase font-bold">01 • Pillar</span>
-                            <div class="w-8 h-8 rounded-full bg-[#C9A961]/15 flex items-center justify-center text-[#C9A961] group-hover:text-[#E8CD84] transition-colors">
-                                <i class="fa-solid fa-gem text-xs"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-2xl text-[#FAFCFA] font-bold group-hover:text-[#E8CD84] transition-colors">
-                            Quality
-                        </h3>
-                        <div class="text-xs font-semibold text-[#E8CD84] mt-1 tracking-wide">
-                            Consistent, premium raw material.
-                        </div>
-                        <p class="text-xs sm:text-sm text-[#F1F6F2]/75 font-light leading-relaxed mt-3">
-                            Calibrated with millimeter precision from 3 to 7+ Suta. Uniform natural density, zero hollow popping, and lab-tested moisture retention strictly below 10%.
-                        </p>
-                    </div>
 
-                    <!-- Pillar 2: Origin -->
-                    <div class="p-7 sm:p-8 rounded-3xl bg-[#12241B]/85 border border-[#C9A961]/30 hover:border-[#E8CD84]/60 transition-all duration-300 group hover:-translate-y-1.5 shadow-xl relative overflow-hidden">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-[10px] font-mono tracking-widest text-[#E8CD84] uppercase font-bold">02 • Pillar</span>
-                            <div class="w-8 h-8 rounded-full bg-[#C9A961]/15 flex items-center justify-center text-[#C9A961] group-hover:text-[#E8CD84] transition-colors">
-                                <i class="fa-solid fa-seedling text-xs"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-2xl text-[#FAFCFA] font-bold group-hover:text-[#E8CD84] transition-colors">
-                            Origin
-                        </h3>
-                        <div class="text-xs font-semibold text-[#E8CD84] mt-1 tracking-wide">
-                            Authentic Mithila sourcing.
-                        </div>
-                        <p class="text-xs sm:text-sm text-[#F1F6F2]/75 font-light leading-relaxed mt-3">
-                            Nurtured in sacred northern Bihar wetland ecosystems by generational Mallah harvesting families with pure natural pond waters and GI-tagged origin authenticity.
-                        </p>
-                    </div>
-
-                    <!-- Pillar 3: Global -->
-                    <div class="p-7 sm:p-8 rounded-3xl bg-[#12241B]/85 border border-[#C9A961]/30 hover:border-[#E8CD84]/60 transition-all duration-300 group hover:-translate-y-1.5 shadow-xl relative overflow-hidden">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-[10px] font-mono tracking-widest text-[#E8CD84] uppercase font-bold">03 • Pillar</span>
-                            <div class="w-8 h-8 rounded-full bg-[#C9A961]/15 flex items-center justify-center text-[#C9A961] group-hover:text-[#E8CD84] transition-colors">
-                                <i class="fa-solid fa-globe text-xs"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-2xl text-[#FAFCFA] font-bold group-hover:text-[#E8CD84] transition-colors">
-                            Global
-                        </h3>
-                        <div class="text-xs font-semibold text-[#E8CD84] mt-1 tracking-wide">
-                            Built for international markets.
-                        </div>
-                        <p class="text-xs sm:text-sm text-[#F1F6F2]/75 font-light leading-relaxed mt-3">
-                            Strict multilayer hermetic moisture-lock export packing, container stuffing verification, and predictable pre-scheduled dispatch timelines to ports worldwide.
-                        </p>
-                    </div>
-                </div>
 
             </div>
         </section>
@@ -1310,101 +1590,392 @@
         </section>
 
         <!-- ==========================================================================
-             5. “FROM POND TO PARTNER” VISUAL JOURNEY (Horizontal Storytelling)
+             5. “FROM POND TO PARTNER” VISUAL JOURNEY (Zero-Scroll Interactive Showcase)
              ========================================================================== -->
-        <section class="py-20 sm:py-28 bg-[#12241B] text-[#F1F6F2] overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 reveal">
+        <section class="py-16 sm:py-24 bg-[#12241B] text-[#F1F6F2] overflow-hidden" id="journey-showcase-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 reveal">
                 
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#C9A961]/20 pb-6">
+                <!-- Section Header with Stage Counter & Autoplay Controls -->
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#C9A961]/25 pb-5">
                     <div>
-                        <span class="text-xs font-mono font-bold tracking-[0.28em] text-[#C9A961] uppercase">
-                            Visual Supply Chain
-                        </span>
-                        <h2 class="font-serif text-3xl sm:text-4xl text-[#FAFCFA] font-light mt-2">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B1610] border border-[#C9A961]/40 text-[#E8CD84] text-[10.5px] font-mono font-bold tracking-[0.25em] uppercase mb-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-ping"></span>
+                            <span>Visual Supply Chain • 6 Key Milestones</span>
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#FAFCFA] font-light">
                             From Pond to Partner
                         </h2>
                     </div>
-                    <div class="text-xs font-mono tracking-widest text-[#E8CD84]/80 uppercase">
-                        POND → HARVEST → PROCESS → GRADE → PACK → PARTNER
+
+                    <!-- Stage Tracker -->
+                    <div class="flex items-center gap-3">
+                        <div class="text-xs font-mono tracking-widest text-[#E8CD84] uppercase bg-[#0B1610]/80 px-4 py-2 rounded-full border border-[#C9A961]/35 flex items-center gap-2 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-[#E8CD84]"></span>
+                            <span>STAGE <strong id="current-stage-index" class="text-white font-bold">01</strong> / 06</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Horizontal scroll cards -->
-                <div class="journey-scroll flex gap-6 overflow-x-auto pb-6 pt-2 snap-x">
+                <!-- 6 Interactive Step Navigation Tabs (Zero Scroll, Clickable) -->
+                <div class="flex items-center gap-2 overflow-x-auto sm:overflow-visible pb-1 sm:pb-0 scrollbar-none justify-start sm:justify-between" id="stage-tabs-list">
+                    <button class="stage-tab-btn active flex items-center gap-2" data-stage="0">
+                        <span class="font-mono text-[10px]">01</span>
+                        <span>Pond</span>
+                    </button>
+                    <button class="stage-tab-btn flex items-center gap-2" data-stage="1">
+                        <span class="font-mono text-[10px]">02</span>
+                        <span>Harvest</span>
+                    </button>
+                    <button class="stage-tab-btn flex items-center gap-2" data-stage="2">
+                        <span class="font-mono text-[10px]">03</span>
+                        <span>Process</span>
+                    </button>
+                    <button class="stage-tab-btn flex items-center gap-2" data-stage="3">
+                        <span class="font-mono text-[10px]">04</span>
+                        <span>Grade</span>
+                    </button>
+                    <button class="stage-tab-btn flex items-center gap-2" data-stage="4">
+                        <span class="font-mono text-[10px]">05</span>
+                        <span>Pack</span>
+                    </button>
+                    <button class="stage-tab-btn flex items-center gap-2" data-stage="5">
+                        <span class="font-mono text-[10px]">06</span>
+                        <span>Partner</span>
+                    </button>
+                </div>
+
+                <!-- Centerpiece Interactive Showcase Bento Card -->
+                <div class="stage-showcase-container grid grid-cols-1 lg:grid-cols-12 min-h-[460px] lg:min-h-[440px]">
                     
-                    <!-- STAGE 1: POND -->
-                    <div class="min-w-[280px] sm:min-w-[320px] rounded-2xl bg-[#0B1610] border border-[#C9A961]/25 overflow-hidden snap-start flex-shrink-0 group">
-                        <div class="h-44 overflow-hidden relative">
-                            <img src="wetland.jpeg" alt="Pond" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 px-2.5 py-1 bg-[#12241B]/90 rounded-md text-[10px] font-mono text-[#E8CD84]">01</div>
+                    <!-- Left: Cinematic Media Viewport (7 cols) -->
+                    <div class="lg:col-span-7 relative min-h-[260px] sm:min-h-[320px] lg:min-h-full overflow-hidden bg-[#0B1610]" id="stage-media-container">
+                        <!-- Stage 1 Slide: Pond -->
+                        <div class="stage-slide-media active" data-slide="0">
+                            <img src="wetland.jpeg" alt="Stage 1: Pond - Native Mithila wetlands" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B1610]/80"></div>
                         </div>
-                        <div class="p-5">
-                            <h4 class="font-serif text-lg text-[#FAFCFA] tracking-wider uppercase font-bold">Pond</h4>
-                            <p class="text-xs text-[#C9A961] mt-1">Native Mithila wetlands</p>
+                        <!-- Stage 2 Slide: Harvest -->
+                        <div class="stage-slide-media" data-slide="1">
+                            <img src="harvest.jpeg" alt="Stage 2: Harvest - Skilled traditional water retrieval" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B1610]/80"></div>
                         </div>
+                        <!-- Stage 3 Slide: Process -->
+                        <div class="stage-slide-media" data-slide="2">
+                            <img src="popping.jpeg" alt="Stage 3: Process - Clean sun-cure & master popping" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B1610]/80"></div>
+                        </div>
+                        <!-- Stage 4 Slide: Grade -->
+                        <div class="stage-slide-media" data-slide="3">
+                            <img src="5suta.jpeg" alt="Stage 4: Grade - Suta caliper precision sorting" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B1610]/80"></div>
+                        </div>
+                        <!-- Stage 5 Slide: Pack -->
+                        <div class="stage-slide-media" data-slide="4">
+                            <img src="WhatsApp Image 2026-09-24 at 8.30.26 AM.jpeg" alt="Stage 5: Pack - Moisture-barrier export sacks" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B1610]/80"></div>
+                        </div>
+                        <!-- Stage 6 Slide: Partner -->
+                        <div class="stage-slide-media" data-slide="5">
+                            <img src="WhatsApp Image 2026-09-24 at 8.30.27 AM.jpeg" alt="Stage 6: Partner - Direct global B2B delivery" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1610] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B1610]/80"></div>
+                        </div>
+
+                        <!-- Top Floating Stage Category Tag -->
+                        <div class="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#12241B]/90 border border-[#E8CD84]/60 text-[#E8CD84] text-[11px] font-mono font-bold tracking-wider backdrop-blur-md shadow-lg">
+                            <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+                            <span id="stage-floating-category">AQUATIC ORIGIN</span>
+                        </div>
+
+                        <!-- Quick On-Image Navigation Chevrons -->
+                        <button id="stage-prev-btn" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#12241B]/80 hover:bg-[#12241B] border border-[#C9A961]/50 hover:border-[#E8CD84] text-[#E8CD84] flex items-center justify-center text-sm shadow-xl transition-all active:scale-95" aria-label="Previous stage">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button id="stage-next-btn" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#12241B]/80 hover:bg-[#12241B] border border-[#C9A961]/50 hover:border-[#E8CD84] text-[#E8CD84] flex items-center justify-center text-sm shadow-xl transition-all active:scale-95" aria-label="Next stage">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
 
-                    <!-- STAGE 2: HARVEST -->
-                    <div class="min-w-[280px] sm:min-w-[320px] rounded-2xl bg-[#0B1610] border border-[#C9A961]/25 overflow-hidden snap-start flex-shrink-0 group">
-                        <div class="h-44 overflow-hidden relative">
-                            <img src="harvest.jpeg" alt="Harvest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 px-2.5 py-1 bg-[#12241B]/90 rounded-md text-[10px] font-mono text-[#E8CD84]">02</div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-serif text-lg text-[#FAFCFA] tracking-wider uppercase font-bold">Harvest</h4>
-                            <p class="text-xs text-[#C9A961] mt-1">Skilled traditional water retrieval</p>
-                        </div>
-                    </div>
+                    <!-- Right: Narrative & Quality Assurance Panel (5 cols) -->
+                    <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between relative bg-gradient-to-b from-[#12241B] to-[#0B1610]">
+                        
+                        <!-- Dynamic Stage Content Panes -->
+                        <div id="stage-panes-wrapper" class="flex-1 flex flex-col justify-between">
+                            
+                            <!-- PANE 1: POND -->
+                            <div class="stage-content-pane active h-full space-y-6" data-pane="0">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C9A961]/15 text-[#E8CD84] border border-[#C9A961]/35">
+                                            Stage 01 • Wetland Terroir
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif text-3xl sm:text-5xl text-[#FAFCFA] font-bold tracking-tight">
+                                        Pond
+                                    </h3>
+                                </div>
 
-                    <!-- STAGE 3: PROCESS -->
-                    <div class="min-w-[280px] sm:min-w-[320px] rounded-2xl bg-[#0B1610] border border-[#C9A961]/25 overflow-hidden snap-start flex-shrink-0 group">
-                        <div class="h-44 overflow-hidden relative">
-                            <img src="popping.jpeg" alt="Process" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 px-2.5 py-1 bg-[#12241B]/90 rounded-md text-[10px] font-mono text-[#E8CD84]">03</div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-serif text-lg text-[#FAFCFA] tracking-wider uppercase font-bold">Process</h4>
-                            <p class="text-xs text-[#C9A961] mt-1">Clean sun-cure &amp; pop</p>
-                        </div>
-                    </div>
+                                <div class="space-y-4 sm:space-y-6 py-4 border-t border-[#C9A961]/25">
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-water"></i></div>
+                                        <span>100% Natural Bihar Freshwater Wetlands</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-leaf"></i></div>
+                                        <span>Zero Chemical or Synthetic Inputs</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-certificate"></i></div>
+                                        <span>GI-Tagged Mithila Provenance</span>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <!-- STAGE 4: GRADE -->
-                    <div class="min-w-[280px] sm:min-w-[320px] rounded-2xl bg-[#0B1610] border border-[#C9A961]/25 overflow-hidden snap-start flex-shrink-0 group">
-                        <div class="h-44 overflow-hidden relative">
-                            <img src="5suta.jpeg" alt="Grade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 px-2.5 py-1 bg-[#12241B]/90 rounded-md text-[10px] font-mono text-[#E8CD84]">04</div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-serif text-lg text-[#FAFCFA] tracking-wider uppercase font-bold">Grade</h4>
-                            <p class="text-xs text-[#C9A961] mt-1">Suta caliper precision sorting</p>
-                        </div>
-                    </div>
+                            <!-- PANE 2: HARVEST -->
+                            <div class="stage-content-pane h-full space-y-6" data-pane="1">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C9A961]/15 text-[#E8CD84] border border-[#C9A961]/35">
+                                            Stage 02 • Generational Craft
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif text-3xl sm:text-5xl text-[#FAFCFA] font-bold tracking-tight">
+                                        Harvest
+                                    </h3>
+                                </div>
 
-                    <!-- STAGE 5: PACK -->
-                    <div class="min-w-[280px] sm:min-w-[320px] rounded-2xl bg-[#0B1610] border border-[#C9A961]/25 overflow-hidden snap-start flex-shrink-0 group">
-                        <div class="h-44 overflow-hidden relative">
-                            <img src="WhatsApp Image 2026-09-24 at 8.30.26 AM.jpeg" alt="Pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 px-2.5 py-1 bg-[#12241B]/90 rounded-md text-[10px] font-mono text-[#E8CD84]">05</div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-serif text-lg text-[#FAFCFA] tracking-wider uppercase font-bold">Pack</h4>
-                            <p class="text-xs text-[#C9A961] mt-1">Moisture-barrier export sacks</p>
-                        </div>
-                    </div>
+                                <div class="space-y-4 sm:space-y-6 py-4 border-t border-[#C9A961]/25">
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-hands-holding"></i></div>
+                                        <span>Generational Mallah Harvesters</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                        <span>Traditional Dawn Canoe Retrieval</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                        <span>Zero Pond Root Bed Disturbance</span>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <!-- STAGE 6: PARTNER -->
-                    <div class="min-w-[280px] sm:min-w-[320px] rounded-2xl bg-[#0B1610] border border-[#C9A961]/25 overflow-hidden snap-start flex-shrink-0 group">
-                        <div class="h-44 overflow-hidden relative">
-                            <img src="WhatsApp Image 2026-09-24 at 8.30.27 AM.jpeg" alt="Partner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 px-2.5 py-1 bg-[#12241B]/90 rounded-md text-[10px] font-mono text-[#E8CD84]">06</div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-serif text-lg text-[#FAFCFA] tracking-wider uppercase font-bold">Partner</h4>
-                            <p class="text-xs text-[#C9A961] mt-1">Direct global B2B delivery</p>
-                        </div>
-                    </div>
+                            <!-- PANE 3: PROCESS -->
+                            <div class="stage-content-pane h-full space-y-6" data-pane="2">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C9A961]/15 text-[#E8CD84] border border-[#C9A961]/35">
+                                            Stage 03 • Artisanal Popping
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif text-3xl sm:text-5xl text-[#FAFCFA] font-bold tracking-tight">
+                                        Process
+                                    </h3>
+                                </div>
 
+                                <div class="space-y-4 sm:space-y-6 py-4 border-t border-[#C9A961]/25">
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-sun"></i></div>
+                                        <span>Hygienic Raised Sun-Drying</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-fire"></i></div>
+                                        <span>Even Cast-Iron Pan Roasting</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-hammer"></i></div>
+                                        <span>Instant Wooden Mallet Crisp Pop</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PANE 4: GRADE -->
+                            <div class="stage-content-pane h-full space-y-6" data-pane="3">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C9A961]/15 text-[#E8CD84] border border-[#C9A961]/35">
+                                            Stage 04 • Precision Grading
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif text-3xl sm:text-5xl text-[#FAFCFA] font-bold tracking-tight">
+                                        Grade
+                                    </h3>
+                                </div>
+
+                                <div class="space-y-4 sm:space-y-6 py-4 border-t border-[#C9A961]/25">
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                                        <span>Millimeter Suta Sizing (3 to 7+)</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+                                        <span>Lab Moisture Strictly Below 10%</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-gem"></i></div>
+                                        <span>Zero Hollow, 100% Solid Density</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PANE 5: PACK -->
+                            <div class="stage-content-pane h-full space-y-6" data-pane="4">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C9A961]/15 text-[#E8CD84] border border-[#C9A961]/35">
+                                            Stage 05 • Export Barrier
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif text-3xl sm:text-5xl text-[#FAFCFA] font-bold tracking-tight">
+                                        Pack
+                                    </h3>
+                                </div>
+
+                                <div class="space-y-4 sm:space-y-6 py-4 border-t border-[#C9A961]/25">
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-box-archive"></i></div>
+                                        <span>Multi-Layer Hermetic Export Sacks</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-lock"></i></div>
+                                        <span>Airtight Double Industrial Stitched Sealing</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-tags"></i></div>
+                                        <span>Custom OEM & Bulk Private Labeling</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PANE 6: PARTNER -->
+                            <div class="stage-content-pane h-full space-y-6" data-pane="5">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C9A961]/15 text-[#E8CD84] border border-[#C9A961]/35">
+                                            Stage 06 • Global Logistics
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif text-3xl sm:text-5xl text-[#FAFCFA] font-bold tracking-tight">
+                                        Partner
+                                    </h3>
+                                </div>
+
+                                <div class="space-y-4 sm:space-y-6 py-4 border-t border-[#C9A961]/25">
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                                        <span>Pre-Dispatch Stuffing Audit Verification</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-ship"></i></div>
+                                        <span>Scheduled Freight to 50+ Countries</span>
+                                    </div>
+                                    <div class="stage-point-item">
+                                        <div class="stage-point-icon"><i class="fa-solid fa-handshake"></i></div>
+                                        <span>Direct Farmgate Wholesale Pricing</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Progress Bar & Stage Action Footer -->
+                        <div class="pt-4 mt-2">
+                            <!-- Animated Autoplay Progress Track -->
+                            <div class="stage-progress-track mb-4">
+                                <div id="stage-progress-bar" class="stage-progress-fill"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <button id="stage-prev-bottom" class="px-4 py-2 rounded-full border border-[#C9A961]/40 hover:border-[#E8CD84] bg-[#0B1610] text-[#E8CD84] text-xs font-mono font-semibold flex items-center gap-2 transition-all hover:-translate-x-1 active:scale-95">
+                                    <i class="fa-solid fa-arrow-left text-[10px]"></i> Previous
+                                </button>
+                                
+                                <div class="flex items-center gap-1.5" id="stage-dots">
+                                    <span class="w-2 h-2 rounded-full bg-[#E8CD84] transition-all duration-300"></span>
+                                    <span class="w-2 h-2 rounded-full bg-[#C9A961]/30 transition-all duration-300"></span>
+                                    <span class="w-2 h-2 rounded-full bg-[#C9A961]/30 transition-all duration-300"></span>
+                                    <span class="w-2 h-2 rounded-full bg-[#C9A961]/30 transition-all duration-300"></span>
+                                    <span class="w-2 h-2 rounded-full bg-[#C9A961]/30 transition-all duration-300"></span>
+                                    <span class="w-2 h-2 rounded-full bg-[#C9A961]/30 transition-all duration-300"></span>
+                                </div>
+
+                                <button id="stage-next-bottom" class="px-5 py-2 rounded-full bg-[#E5B869] hover:bg-[#E8CD84] text-[#0B1610] text-xs font-mono font-bold flex items-center gap-2 transition-all hover:translate-x-1 shadow-md active:scale-95">
+                                    Next Stage <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <!-- 6 Interactive Thumbnail Cards (Zero-Scroll Instant Switcher) -->
+                <div class="grid grid-cols-3 sm:grid-cols-6 gap-2.5 sm:gap-3 pt-2" id="stage-thumbs-grid">
+                    <!-- Thumb 1 -->
+                    <div class="stage-thumb-card active p-2 flex items-center gap-2 sm:flex-col sm:text-center" data-thumb="0">
+                        <div class="w-10 h-10 sm:w-full sm:h-16 rounded-lg overflow-hidden shrink-0">
+                            <img src="wetland.jpeg" alt="Pond thumbnail" class="w-full h-full object-cover transition-transform duration-300" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-[9px] font-mono text-[#E8CD84] font-bold">01</div>
+                            <div class="text-xs font-serif text-[#FAFCFA] font-bold truncate">Pond</div>
+                        </div>
+                    </div>
+
+                    <!-- Thumb 2 -->
+                    <div class="stage-thumb-card p-2 flex items-center gap-2 sm:flex-col sm:text-center" data-thumb="1">
+                        <div class="w-10 h-10 sm:w-full sm:h-16 rounded-lg overflow-hidden shrink-0">
+                            <img src="harvest.jpeg" alt="Harvest thumbnail" class="w-full h-full object-cover transition-transform duration-300" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-[9px] font-mono text-[#E8CD84] font-bold">02</div>
+                            <div class="text-xs font-serif text-[#FAFCFA] font-bold truncate">Harvest</div>
+                        </div>
+                    </div>
+
+                    <!-- Thumb 3 -->
+                    <div class="stage-thumb-card p-2 flex items-center gap-2 sm:flex-col sm:text-center" data-thumb="2">
+                        <div class="w-10 h-10 sm:w-full sm:h-16 rounded-lg overflow-hidden shrink-0">
+                            <img src="popping.jpeg" alt="Process thumbnail" class="w-full h-full object-cover transition-transform duration-300" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-[9px] font-mono text-[#E8CD84] font-bold">03</div>
+                            <div class="text-xs font-serif text-[#FAFCFA] font-bold truncate">Process</div>
+                        </div>
+                    </div>
+
+                    <!-- Thumb 4 -->
+                    <div class="stage-thumb-card p-2 flex items-center gap-2 sm:flex-col sm:text-center" data-thumb="3">
+                        <div class="w-10 h-10 sm:w-full sm:h-16 rounded-lg overflow-hidden shrink-0">
+                            <img src="5suta.jpeg" alt="Grade thumbnail" class="w-full h-full object-cover transition-transform duration-300" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-[9px] font-mono text-[#E8CD84] font-bold">04</div>
+                            <div class="text-xs font-serif text-[#FAFCFA] font-bold truncate">Grade</div>
+                        </div>
+                    </div>
+
+                    <!-- Thumb 5 -->
+                    <div class="stage-thumb-card p-2 flex items-center gap-2 sm:flex-col sm:text-center" data-thumb="4">
+                        <div class="w-10 h-10 sm:w-full sm:h-16 rounded-lg overflow-hidden shrink-0">
+                            <img src="WhatsApp Image 2026-09-24 at 8.30.26 AM.jpeg" alt="Pack thumbnail" class="w-full h-full object-cover transition-transform duration-300" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-[9px] font-mono text-[#E8CD84] font-bold">05</div>
+                            <div class="text-xs font-serif text-[#FAFCFA] font-bold truncate">Pack</div>
+                        </div>
+                    </div>
+
+                    <!-- Thumb 6 -->
+                    <div class="stage-thumb-card p-2 flex items-center gap-2 sm:flex-col sm:text-center" data-thumb="5">
+                        <div class="w-10 h-10 sm:w-full sm:h-16 rounded-lg overflow-hidden shrink-0">
+                            <img src="WhatsApp Image 2026-09-24 at 8.30.27 AM.jpeg" alt="Partner thumbnail" class="w-full h-full object-cover transition-transform duration-300" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-[9px] font-mono text-[#E8CD84] font-bold">06</div>
+                            <div class="text-xs font-serif text-[#FAFCFA] font-bold truncate">Partner</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1670,6 +2241,26 @@
                     <div class="footer-origin-tag">
                         YOUR TRUST  •  OUR COMMITMENT
                     </div>
+                    <!-- Follow Us Social Links -->
+                    <div class="footer-social-wrap">
+                        <span class="footer-social-title">Follow Us</span>
+                        <div class="footer-social-links">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on X">
+                                <svg class="w-[17px] h-[17px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Explore Links -->
@@ -1867,6 +2458,164 @@
                 }
                 requestAnimationFrame(animateParticles);
             }
+        })();
+
+        // ==========================================
+        // From Pond to Partner - Interactive Zero-Scroll Showcase (User-Controlled, No Automatic Scrolling)
+        // ==========================================
+        (function initPondToPartnerShowcase() {
+            const section = document.getElementById('journey-showcase-section');
+            if (!section) return;
+
+            const categoryLabels = [
+                'AQUATIC ORIGIN',
+                'GENERATIONAL CRAFT',
+                'ARTISANAL POPPING',
+                'PRECISION GRADING',
+                'EXPORT BARRIER',
+                'GLOBAL LOGISTICS'
+            ];
+
+            let currentStage = 0;
+            const totalStages = 6;
+
+            const tabBtns = section.querySelectorAll('.stage-tab-btn');
+            const mediaSlides = section.querySelectorAll('.stage-slide-media');
+            const contentPanes = section.querySelectorAll('.stage-content-pane');
+            const thumbCards = section.querySelectorAll('.stage-thumb-card');
+            const dots = section.querySelectorAll('#stage-dots span');
+            const indexEl = document.getElementById('current-stage-index');
+            const categoryEl = document.getElementById('stage-floating-category');
+            const progressBar = document.getElementById('stage-progress-bar');
+            const prevBtns = [document.getElementById('stage-prev-btn'), document.getElementById('stage-prev-bottom')];
+            const nextBtns = [document.getElementById('stage-next-btn'), document.getElementById('stage-next-bottom')];
+
+            function goToStage(idx) {
+                currentStage = (idx + totalStages) % totalStages;
+
+                // 1. Update Tabs (without automatic scrollIntoView)
+                tabBtns.forEach((btn, i) => {
+                    if (i === currentStage) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                // 2. Update Media Slides (Crossfade)
+                mediaSlides.forEach((slide, i) => {
+                    if (i === currentStage) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // 3. Update Content Panes
+                contentPanes.forEach((pane, i) => {
+                    if (i === currentStage) {
+                        pane.classList.add('active');
+                    } else {
+                        pane.classList.remove('active');
+                    }
+                });
+
+                // 4. Update Thumbnails
+                thumbCards.forEach((thumb, i) => {
+                    if (i === currentStage) {
+                        thumb.classList.add('active');
+                    } else {
+                        thumb.classList.remove('active');
+                    }
+                });
+
+                // 5. Update Dots
+                dots.forEach((dot, i) => {
+                    if (i === currentStage) {
+                        dot.className = 'w-4 h-2 rounded-full bg-[#E8CD84] transition-all duration-300';
+                    } else {
+                        dot.className = 'w-2 h-2 rounded-full bg-[#C9A961]/30 transition-all duration-300';
+                    }
+                });
+
+                // 6. Update Texts
+                if (indexEl) indexEl.textContent = String(currentStage + 1).padStart(2, '0');
+                if (categoryEl) categoryEl.textContent = categoryLabels[currentStage] || 'SUPPLY CHAIN';
+
+                // 7. Update Step Progress Bar smoothly based on active stage
+                if (progressBar) {
+                    const pct = (currentStage / (totalStages - 1)) * 100;
+                    progressBar.style.width = pct + '%';
+                }
+            }
+
+            // Bind Tab Click
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const st = parseInt(btn.getAttribute('data-stage'), 10);
+                    goToStage(st);
+                });
+            });
+
+            // Bind Thumbnail Click
+            thumbCards.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    const st = parseInt(thumb.getAttribute('data-thumb'), 10);
+                    goToStage(st);
+                });
+            });
+
+            // Next & Prev buttons
+            nextBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        goToStage(currentStage + 1);
+                    });
+                }
+            });
+
+            prevBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        goToStage(currentStage - 1);
+                    });
+                }
+            });
+
+            // Touch Swipe Support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            section.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            section.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 45) {
+                    if (diff > 0) {
+                        goToStage(currentStage + 1);
+                    } else {
+                        goToStage(currentStage - 1);
+                    }
+                }
+            }, { passive: true });
+
+            // Keyboard navigation when section is in view
+            window.addEventListener('keydown', (e) => {
+                const rect = section.getBoundingClientRect();
+                const inView = rect.top < window.innerHeight && rect.bottom > 0;
+                if (!inView) return;
+
+                if (e.key === 'ArrowRight') {
+                    goToStage(currentStage + 1);
+                } else if (e.key === 'ArrowLeft') {
+                    goToStage(currentStage - 1);
+                }
+            });
+
+            // Initialize directly without automatic scrolling or timers
+            goToStage(0);
         })();
     </script>
 

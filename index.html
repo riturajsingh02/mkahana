@@ -57,7 +57,7 @@
 </script>
 
     <!-- FontAwesome for refined UI icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Custom Styles -->
     <style>
@@ -377,10 +377,10 @@ img {
 }
 
 .hero-feature-icon-wrap {
-    width: 44px;
-    height: 44px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 1.5px solid rgba(201, 169, 97, 0.65);
+    border: 1.5px solid rgba(201, 169, 97, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -391,7 +391,11 @@ img {
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(201, 169, 97, 0.25);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45), inset 0 0 12px rgba(201, 169, 97, 0.28);
+}
+
+.hero-feature-icon-wrap i {
+    font-size: 24px !important;
 }
 
 /* Light sweep shimmer effect across icon container */
@@ -421,7 +425,7 @@ img {
 .hero-feature-card.is-active .hero-feature-icon-wrap,
 .hero-feature-icon-wrap:hover,
 .hero-feature-icon-wrap:active {
-    transform: scale(1.22);
+    transform: scale(1.2);
     border-color: #FFDF78 !important;
     background: radial-gradient(circle at 40% 30%, rgba(44, 80, 60, 0.98), rgba(14, 28, 21, 0.98)) !important;
     color: #FFDF78 !important;
@@ -441,7 +445,7 @@ img {
 /* Base icon styles - Pure Radiant Gold */
 .hero-feature-icon-wrap i {
     color: #E8CD84 !important;
-    font-size: 19px;
+    font-size: 24px !important;
     line-height: 1;
     transform-origin: center center;
     transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -579,13 +583,13 @@ img {
 }
 
 .hero-feature-label {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #F1F6F2;
     transition: color 0.3s ease;
-    line-height: 1.25;
+    line-height: 1.3;
     text-align: center;
 }
 
@@ -597,9 +601,9 @@ img {
 }
 
 .hero-feature-sub {
-    font-size: 8.5px;
+    font-size: 10px;
     letter-spacing: 0.12em;
-    color: rgba(201, 169, 97, 0.9);
+    color: rgba(201, 169, 97, 0.95);
     text-transform: uppercase;
     font-weight: 600;
     max-height: 0;
@@ -616,16 +620,16 @@ img {
 .hero-feature-card:active .hero-feature-sub,
 .hero-feature-card.touch-active .hero-feature-sub,
 .hero-feature-card.is-active .hero-feature-sub {
-    max-height: 20px;
+    max-height: 22px;
     opacity: 1;
     transform: translateY(0);
-    margin-top: 1px;
+    margin-top: 2px;
 }
 
 @media (max-width: 640px) {
     .hero-feature-card {
-        padding: 9px 4px;
-        gap: 5px;
+        padding: 10px 5px;
+        gap: 6px;
         border-radius: 14px;
         background: rgba(14, 28, 20, 0.88);
         border: 1px solid rgba(201, 169, 97, 0.35);
@@ -633,19 +637,20 @@ img {
         height: 100%;
     }
     .hero-feature-icon-wrap {
-        width: 36px;
-        height: 36px;
+        width: 44px;
+        height: 44px;
         margin: 0 auto;
     }
     .hero-feature-icon-wrap i {
-        font-size: 15px;
+        font-size: 20px !important;
     }
     .hero-feature-label {
-        font-size: 8px;
-        letter-spacing: 0.06em;
-        line-height: 1.18;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        line-height: 1.25;
         width: 100%;
         text-align: center;
+        font-weight: 700;
     }
     .hero-feature-sub {
         display: none !important;
@@ -710,6 +715,247 @@ img {
     .announcement-slide-item {
         font-size: 10px;
         letter-spacing: 0.12em;
+    }
+}
+
+/* ==========================================================================
+   FOOTER (Matched to contactus.html Forest Green Luxury Layout & Size)
+   ========================================================================== */
+.site-footer {
+    background: #0B1610;
+    color: #F1F6F2;
+    border-top: 1px solid rgba(201, 169, 97, 0.22);
+    padding: 64px 0 36px;
+}
+
+.site-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+}
+
+.footer-brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo-wrap .brand-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #C9A961;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1E2B24;
+    color: #C9A961;
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.footer-brand-name {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 26px;
+    letter-spacing: 0.14em;
+    color: #F1F6F2;
+    text-transform: uppercase;
+}
+
+.footer-desc {
+    font-size: 13.5px;
+    color: rgba(241, 246, 242, 0.75);
+    line-height: 1.7;
+    max-width: 420px;
+}
+
+.footer-origin-tag {
+    display: inline-block;
+    color: #C9A961;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/* Follow Us & Social Links (Professional & Prominent) */
+.footer-social-wrap {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-social-title {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #E8CD84;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-social-title::after {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1.5px;
+    background: linear-gradient(90deg, #E8CD84, transparent);
+    border-radius: 2px;
+}
+
+.footer-social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(201, 169, 97, 0.45);
+    background: #182B21;
+    color: #E8CD84;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.footer-social-btn:hover {
+    color: #FFDF78;
+    border-color: #FFDF78;
+    background: radial-gradient(circle at 40% 30%, #2E523E, #14281E);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 16px rgba(201, 169, 97, 0.5);
+}
+
+.footer-social-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.footer-social-btn svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-title {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 18px;
+    color: #E8CD84;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav a {
+    font-size: 13px;
+    color: rgba(241, 246, 242, 0.75);
+    transition: color 0.2s ease;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: #C9A961;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 13px;
+    color: rgba(241, 246, 242, 0.85);
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-contact i {
+    color: #C9A961;
+    font-size: 17px;
+    width: 22px;
+    flex-shrink: 0;
+    text-align: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-contact li:hover i {
+    color: #FFDF78;
+    transform: scale(1.15);
+}
+
+.footer-contact a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+    color: #C9A961;
+}
+
+.footer-bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 28px;
+    font-size: 12px;
+    color: rgba(241, 246, 242, 0.55);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
     }
 }
 </style>
@@ -887,13 +1133,13 @@ img {
 
                 <!-- Hero Action CTAs (Mobile Ergonomic & Centered) -->
                 <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto max-w-[275px] sm:max-w-none mx-auto sm:mx-0 mb-6 sm:mb-8">
-                    <a href="aboutus.html" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#E5B869] text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
+                    <a href="aboutus.html" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#E5B869] text-brand-dark hover:bg-brand-gold-bright transition-all text-xs uppercase tracking-[0.18em] font-bold text-center shadow-lg active:scale-95 flex items-center justify-center gap-2.5 min-h-[46px]">
                         <span>About Us</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
                     </a>
-                    <a href="contactus.html#rfq" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-brand-gold/80 bg-brand-dark/50 backdrop-blur-sm text-brand-cream hover:bg-brand-gold/15 transition-all text-xs uppercase tracking-[0.18em] font-bold text-center active:scale-95 flex items-center justify-center gap-2 min-h-[46px]">
+                    <a href="contactus.html#rfq" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-brand-gold/80 bg-brand-dark/50 backdrop-blur-sm text-brand-cream hover:bg-brand-gold/15 transition-all text-xs uppercase tracking-[0.18em] font-bold text-center active:scale-95 flex items-center justify-center gap-2.5 min-h-[46px]">
                         <span>Wholesale Enquiry</span>
-                        <i class="fa-solid fa-envelope text-xs text-brand-gold"></i>
+                        <i class="fa-solid fa-envelope text-sm text-brand-gold"></i>
                     </a>
                 </div>
             </div>
@@ -906,7 +1152,7 @@ img {
                 <!-- Feature 1 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="100% Natural Makhana">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-leaf text-base hero-icon-leaf"></i>
+                        <i class="fa-solid fa-leaf text-xl sm:text-2xl hero-icon-leaf"></i>
                     </div>
                     <div class="hero-feature-label">100% Natural</div>
                     <div class="hero-feature-sub">Pure & Unpolished</div>
@@ -915,7 +1161,7 @@ img {
                 <!-- Feature 2 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Rich Nutrition Makhana">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-seedling text-base hero-icon-seedling"></i>
+                        <i class="fa-solid fa-seedling text-xl sm:text-2xl hero-icon-seedling"></i>
                     </div>
                     <div class="hero-feature-label">Rich in Nutrition</div>
                     <div class="hero-feature-sub">Protein & Calcium</div>
@@ -924,7 +1170,7 @@ img {
                 <!-- Feature 3 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="No Additives in Makhanam">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-shield-halved text-base hero-icon-shield"></i>
+                        <i class="fa-solid fa-shield-halved text-xl sm:text-2xl hero-icon-shield"></i>
                     </div>
                     <div class="hero-feature-label">No Additives</div>
                     <div class="hero-feature-sub">Zero Preservatives</div>
@@ -933,7 +1179,7 @@ img {
                 <!-- Feature 4 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Gluten Free Superfood">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-wheat-awn text-base hero-icon-wheat"></i>
+                        <i class="fa-solid fa-wheat-awn text-xl sm:text-2xl hero-icon-wheat"></i>
                     </div>
                     <div class="hero-feature-label">Gluten Free</div>
                     <div class="hero-feature-sub">Naturally Clean</div>
@@ -942,7 +1188,7 @@ img {
                 <!-- Feature 5 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Export Grade Makhana">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-globe text-base hero-icon-globe"></i>
+                        <i class="fa-solid fa-globe text-xl sm:text-2xl hero-icon-globe"></i>
                     </div>
                     <div class="hero-feature-label">Export Quality</div>
                     <div class="hero-feature-sub">3–7 Suta Calibrated</div>
@@ -951,7 +1197,7 @@ img {
                 <!-- Feature 6 -->
                 <div class="hero-feature-card group" tabindex="0" role="button" aria-label="Low Calorie Healthy Snack">
                     <div class="hero-feature-icon-wrap">
-                        <i class="fa-solid fa-droplet text-base hero-icon-droplet"></i>
+                        <i class="fa-solid fa-droplet text-xl sm:text-2xl hero-icon-droplet"></i>
                     </div>
                     <div class="hero-feature-label">Low Calorie</div>
                     <div class="hero-feature-sub">Zero Trans Fat</div>
@@ -960,52 +1206,85 @@ img {
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-brand-charcoal text-brand-cream border-t border-brand-gold/20 pt-14 sm:pt-16 pb-10 sm:pb-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-brand-cream/10">
-                <div class="sm:col-span-2 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full border border-brand-gold/40 flex items-center justify-center bg-brand-dark">
-                            <span class="text-brand-gold text-xs font-serif font-bold">GA</span>
+    <!-- Footer matching contactus.html Forest Green Luxury Layout -->
+    <footer class="site-footer">
+        <div class="site-container">
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-brand-col">
+                    <div class="footer-logo-wrap">
+                        <div class="brand-badge">
+                            <span>GA</span>
                         </div>
-                        <span class="font-serif text-2xl tracking-[0.12em] font-light text-brand-cream uppercase">Makhanam</span>
+                        <span class="footer-brand-name">Makhanam</span>
                     </div>
-                    <p class="text-xs text-brand-cream/70 max-w-md leading-relaxed font-light">
-                        Makhanam, based in Bihar, is a dedicated specialist in premium raw Makhana (Foxnut) processing.
+                    <p class="footer-desc">
+                         Makhanam, based in Bihar, is a dedicated specialist in premium raw Makhana (Foxnut) processing.
                     </p>
-                    <div class="pt-2 text-[11px] font-mono text-brand-gold uppercase tracking-wider">
+                    <div class="footer-origin-tag">
                         YOUR TRUST  •  OUR COMMITMENT
+                    </div>
+                    <!-- Follow Us Social Links -->
+                    <div class="footer-social-wrap">
+                        <span class="footer-social-title">Follow Us</span>
+                        <div class="footer-social-links">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on X">
+                                <svg class="w-[17px] h-[17px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="space-y-3">
-                    <h4 class="font-serif text-sm tracking-widest text-brand-gold uppercase">Explore</h4>
-                    <ul class="space-y-2 text-xs text-brand-cream/70 font-light">
-                        <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
-                        <li><a href="aboutus.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
-                        <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Makhana</a></li>
-                        <li><a href="why.html" class="hover:text-brand-gold transition-colors">Why Makhanam?</a></li>
-                        <li><a href="grading.html" class="hover:text-brand-gold transition-colors">Grading Specifications</a></li>
-                        <li><a href="contactus.html" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
+                <!-- Explore Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html" class="text-brand-gold font-semibold">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="about.html">About Makhana</a></li>
+                        <li><a href="why.html">Why Makhanam?</a></li>
+                        <li><a href="grading.html">Grading Specifications</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
                     </ul>
                 </div>
 
-                <div class="space-y-3">
-                    <h4 class="font-serif text-sm tracking-widest text-brand-gold uppercase">Contact</h4>
-                    <ul class="space-y-2 text-xs text-brand-cream/70 font-light">
-                        <li class="flex items-start"><i class="fa-solid fa-location-dot text-brand-gold mr-2 mt-0.5 shrink-0"></i> <span>Nekawat Tola, Milky Road, opposite Mafa Petrol Pump, Maranga, Purnia, Bihar 854303, India</span></li>
-                        <li><a href="tel:+918340493639" class="hover:text-brand-gold"><i class="fa-solid fa-phone text-brand-gold mr-1.5"></i> +91 83404 93639</a></li>
-                        <li><a href="https://wa.me/918340493639" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-brand-gold hover:text-brand-gold-bright" aria-label="WhatsApp bulk enquiry"><i class="fa-brands fa-whatsapp"></i> WhatsApp Bulk Enquiry</a></li>
-                        <li><a href="mailto:KeshavKaushikExports@gmail.com" class="hover:text-brand-gold break-all"><i class="fa-solid fa-envelope text-brand-gold mr-1.5"></i> KeshavKaushikExports@gmail.com</a></li>
-                        <li class="pt-1"><span class="text-brand-gold/80 font-mono text-[11px]">GSTIN: </span><span class="font-mono text-brand-cream font-semibold">10AZBPY2685B1ZL</span></li>
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 shrink-0"></i> <span>Nekawat Tola, Milky Road, opposite Mafa Petrol Pump, Maranga, Purnia, Bihar 854303, India</span></li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+918340493639">+91 83404 93639</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/918340493639?text=Hi%20%2CI%20am%20Interested%20in%20Wholesale%20Makhana%20Supply." target="_blank" rel="noopener noreferrer">WhatsApp Bulk Enquiry</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:KeshavKaushikExports@gmail.com">KeshavKaushikExports@gmail.com</a>
+                        </li>
+                        <li>GSTIN: 10AZBPY2685B1ZL</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brand-cream/50 font-sans gap-3 text-center sm:text-left">
+            <!-- Sub Footer -->
+            <div class="footer-bottom-bar">
                 <div>&copy; 2026 Makhanam. All rights reserved.</div>
-                <div>Premium Raw Makhana Processing • Manufacturer for Wholesalers</div>
+                <div>Premium Raw Makhana Processing • Direct Manufacturer for Wholesalers</div>
             </div>
         </div>
     </footer>
