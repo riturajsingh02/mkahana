@@ -225,20 +225,21 @@ a {
 .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 34px;
+    gap: 32px;
     margin-left: auto;
 }
 
 .desktop-nav .nav-item {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 11.5px;
+    font-size: clamp(10.5px, 1.1vw, 12px);
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #F1F6F2;
     text-decoration: none;
     transition: color 0.25s ease;
     padding: 6px 0;
+    white-space: nowrap;
 }
 
 .desktop-nav .nav-item:hover {

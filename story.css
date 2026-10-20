@@ -334,23 +334,33 @@ a {
 .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 32px;
+    margin-left: auto;
 }
 
-.nav-item {
-    font-size: 11.5px;
-    text-transform: uppercase;
+.desktop-nav .nav-item,
+.desktop-nav a {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(10.5px, 1.1vw, 12px);
+    font-weight: 700;
     letter-spacing: 0.16em;
-    font-weight: 500;
-    color: rgba(243, 233, 213, 0.88);
-    position: relative;
+    text-transform: uppercase;
+    color: #F1F6F2;
+    text-decoration: none;
+    transition: color 0.25s ease;
     padding: 6px 0;
-    transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
-.nav-item:hover,
-.nav-item.active {
-    color: var(--gold);
+.desktop-nav .nav-item:hover,
+.desktop-nav a:hover {
+    color: #E8CD84;
+}
+
+.desktop-nav .nav-item.active,
+.desktop-nav .nav-item.text-brand-gold,
+.desktop-nav a.active {
+    color: #C9A961;
 }
 
 .nav-item.active::after {
