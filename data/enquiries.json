@@ -1,16 +1,1 @@
-[
-  {
-    "id": "1792485321200",
-    "timestamp": "2026-10-20T08:35:21.200Z",
-    "fullName": "Test",
-    "companyName": "",
-    "email": "test@example.com",
-    "phone": "1234567890",
-    "inquiry": "B2B Wholesale / Export RFQ",
-    "grade": "",
-    "port": "",
-    "message": "Test message",
-    "sourcePage": "Website",
-    "ip": "127.0.0.1"
-  }
-]
+[]

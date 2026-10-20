@@ -1,152 +1,4 @@
-
-    <!-- Professional Announcement Bar -->
-    <div class="makhanam-announcement-bar">
-        <div class="announcement-slider-wrap">
-            <div class="announcement-slide-item active" data-index="0">
-                <i class="fa-solid fa-truck-fast"></i>
-                <span>Free Shipping Above 100 kg</span>
-            </div>
-            <div class="announcement-slide-item" data-index="1">
-                <i class="fa-solid fa-seedling"></i>
-                <span>Wholesale Makhana Supplier</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const slides = document.querySelectorAll('.announcement-slide-item');
-            if (slides.length > 1) {
-                let current = 0;
-                setInterval(() => {
-                    slides[current].classList.remove('active');
-                    current = (current + 1) % slides.length;
-                    slides[current].classList.add('active');
-                }, 3800);
-            }
-        });
-    </script>
-
-    <!-- Professional Unified Navigation Header -->
-    <header class="sticky top-0 z-40 w-full transition-all duration-300 bg-[#12241B]/95 backdrop-blur-xl border-b border-[#C9A961]/35 shadow-xl text-[#F1F6F2]" id="siteHeader">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
-            <!-- Left: Brand Logo -->
-            <div class="flex items-center gap-3 min-w-0">
-                <button onclick="toggleMobileNav()" aria-label="Open Navigation Menu" class="lg:hidden p-2 text-[#E8CD84] hover:text-[#FFDF78] focus:outline-none flex items-center justify-center shrink-0 rounded-lg bg-[#0B1610]/50 border border-[#C9A961]/30" style="min-width: 44px; min-height: 44px;">
-                    <i class="fa-solid fa-bars-staggered text-lg"></i>
-                </button>
-
-                <a href="index.html" class="flex items-center group min-w-0" aria-label="Makhanam Home">
-                    <img src="logo_makhana.png" alt="Makhanam Logo" class="h-12 sm:h-16 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-                </a>
-            </div>
-
-            <!-- Right: Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center space-x-6 text-xs uppercase tracking-[0.16em] font-bold">
-                <a href="index.html" class="text-[#E8CD84] font-semibold transition-colors py-2 relative group">
-                    <span>Home</span>
-                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#C9A961]"></span>
-                </a>
-                <a href="aboutus.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
-                    <span>About Us</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="about.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
-                    <span>About Makhana</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="why.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
-                    <span>Why Makhanam?</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="grading.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
-                    <span>Grading</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="contactus.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
-                    <span>Contact</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Professional Mobile Navigation Drawer (Slides from Left) -->
-    <div id="mobile-nav-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0" aria-hidden="true">
-        <!-- Backdrop -->
-        <div class="absolute inset-0 bg-[#0B1610]/85 backdrop-blur-md" onclick="toggleMobileNav()"></div>
-
-        <!-- Panel -->
-        <div id="mobile-menu-content" class="absolute top-0 left-0 bottom-0 w-[88%] max-w-[340px] bg-[#0B1610] text-[#F1F6F2] border-r border-[#C9A961]/30 p-6 flex flex-col justify-between transform -translate-x-full transition-transform duration-300 ease-out pointer-events-auto shadow-2xl overflow-y-auto">
-            <div>
-                <!-- Top Header -->
-                <div class="flex items-center justify-between pb-5 mb-6 border-b border-[#C9A961]/25">
-                    <img src="logo_makhana.png" alt="Makhanam Logo" class="h-16 w-auto object-contain">
-                    <button onclick="toggleMobileNav()" class="p-2 text-[#C9A961] hover:text-[#E8CD84] focus:outline-none flex items-center justify-center rounded-lg bg-[#12241B] border border-[#C9A961]/30" aria-label="Close Menu" style="min-width: 44px; min-height: 44px;">
-                        <i class="fa-solid fa-xmark text-lg"></i>
-                    </button>
-                </div>
-
-                <!-- Links -->
-                <nav class="flex flex-col space-y-2 text-xs uppercase tracking-[0.18em] font-semibold">
-                    <a href="index.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#E8CD84] font-bold bg-[#12241B] border-l-2 border-[#C9A961]">
-                        <span>Home</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] text-[#C9A961]"></i>
-                    </a>
-                    <a href="aboutus.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
-                        <span>About Us</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
-                    </a>
-                    <a href="about.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
-                        <span>About Makhana</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
-                    </a>
-                    <a href="why.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
-                        <span>Why Makhanam?</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
-                    </a>
-                    <a href="grading.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
-                        <span>Grading Guide</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
-                    </a>
-                    <a href="contactus.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
-                        <span>Contact</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
-                    </a>
-                </nav>
-            </div>
-
-            <!-- Bottom CTA -->
-            <div class="pt-6 mt-6 border-t border-[#C9A961]/25 space-y-3">
-                <a href="https://wa.me/918340493639?text=Hi%20%2CI%20am%20Interested%20in%20Wholesale%20Makhana%20Supply." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] text-[#0A3018] font-bold text-xs uppercase tracking-wider shadow-md">
-                    <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>WhatsApp Bulk Enquiry</span>
-                </a>
-                <a href="tel:+918340493639" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-[#C9A961]/40 text-[#C9A961] hover:bg-[#C9A961]/10 font-semibold text-xs uppercase tracking-wider">
-                    <i class="fa-solid fa-phone text-xs"></i>
-                    <span>Call +91 83404 93639</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toggle Mobile Nav Script -->
-    <script>
-        function toggleMobileNav() {
-            const drawer = document.getElementById('mobile-nav-drawer');
-            const panel = document.getElementById('mobile-menu-content');
-            if (!drawer || !panel) return;
-            if (drawer.classList.contains('opacity-0')) {
-                drawer.classList.remove('opacity-0', 'pointer-events-none');
-                panel.classList.remove('-translate-x-full');
-                document.body.style.overflow = 'hidden';
-            } else {
-                drawer.classList.add('opacity-0', 'pointer-events-none');
-                panel.classList.add('-translate-x-full');
-                document.body.style.overflow = '';
-            }
-        }
-    </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -293,7 +145,499 @@
         }
 
         /* Announcement Bar */
-        .
+        .makhanam-announcement-bar {
+            background: #0B1610;
+            color: #F1F6F2;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+            padding: 10px 16px;
+            text-align: center;
+            position: relative;
+            z-index: 50;
+            overflow: hidden;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .announcement-slider-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 20px;
+            margin: 0 auto;
+        }
+        .announcement-slide-item {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #E8CD84;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .announcement-slide-item.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .announcement-slide-item i {
+            color: #C9A961;
+            font-size: 13px;
+        }
+        @media (max-width: 640px) {
+            .makhanam-announcement-bar {
+                padding: 8px 12px;
+                height: 36px;
+            }
+            .announcement-slide-item {
+                font-size: 10px;
+                letter-spacing: 0.12em;
+            }
+        }
+
+        /* Reveal on scroll */
+        .reveal-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-fade.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Grade card interactive hover and selection */
+        .grade-hero-card {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .grade-hero-card:hover {
+            transform: translateY(-4px);
+            border-color: #E8CD84;
+            box-shadow: 0 16px 32px -8px rgba(201, 169, 97, 0.28);
+        }
+        .grade-hero-card.active {
+            border-color: #E8CD84;
+            background: radial-gradient(circle at 50% 0%, rgba(42, 66, 52, 0.95), rgba(11, 22, 16, 0.98));
+            box-shadow: 0 0 0 2px #C9A961, 0 16px 36px -6px rgba(201, 169, 97, 0.4);
+        }
+
+        /* Hide scrollbars for horizontal tracks */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Caliper visual tick animation */
+        .caliper-tick-glow {
+            box-shadow: 0 0 12px rgba(232, 205, 132, 0.6);
+        }
+
+        /* ==========================================================================
+           FOOTER (Matched to contactus.html Forest Green Luxury Layout & Size)
+           ========================================================================== */
+        .site-footer {
+            background: #0B1610;
+            color: #F1F6F2;
+            border-top: 1px solid rgba(201, 169, 97, 0.22);
+            padding: 64px 0 36px;
+        }
+
+        .site-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+        }
+
+        .footer-brand-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo-wrap .brand-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #C9A961;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1E2B24;
+            color: #C9A961;
+            font-family: 'Spectral', Georgia, serif;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .footer-brand-name {
+            font-family: 'Spectral', Georgia, serif;
+            font-size: 26px;
+            letter-spacing: 0.14em;
+            color: #F1F6F2;
+            text-transform: uppercase;
+        }
+
+        .footer-desc {
+            font-size: 13.5px;
+            color: rgba(241, 246, 242, 0.75);
+            line-height: 1.7;
+            max-width: 420px;
+        }
+
+        .footer-origin-tag {
+            display: inline-block;
+            color: #C9A961;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* Follow Us & Social Links (Professional & Prominent) */
+        .footer-social-wrap {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-social-title {
+            font-family: 'Spectral', Georgia, serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            color: #E8CD84;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-title::after {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1.5px;
+            background: linear-gradient(90deg, #E8CD84, transparent);
+            border-radius: 2px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(201, 169, 97, 0.45);
+            background: #182B21;
+            color: #E8CD84;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        .footer-social-btn:hover {
+            color: #FFDF78;
+            border-color: #FFDF78;
+            background: radial-gradient(circle at 40% 30%, #2E523E, #14281E);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 16px rgba(201, 169, 97, 0.5);
+        }
+
+        .footer-social-btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .footer-social-btn svg {
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .footer-title {
+            font-family: 'Spectral', Georgia, serif;
+            font-size: 18px;
+            color: #E8CD84;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav a {
+            font-size: 13px;
+            color: rgba(241, 246, 242, 0.75);
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover {
+            color: #C9A961;
+        }
+
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 13px;
+            color: rgba(241, 246, 242, 0.85);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-contact i {
+            color: #C9A961;
+            font-size: 17px;
+            width: 22px;
+            flex-shrink: 0;
+            text-align: center;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .footer-contact li:hover i {
+            color: #FFDF78;
+            transform: scale(1.15);
+        }
+
+        .footer-contact a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover {
+            color: #C9A961;
+        }
+
+        .footer-bottom-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 28px;
+            font-size: 12px;
+            color: rgba(241, 246, 242, 0.55);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-brand-ivory text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-brand-dark overflow-x-hidden">
+
+    <!-- Professional Announcement Bar (Identical to index.html) -->
+    <div class="makhanam-announcement-bar">
+        <div class="announcement-slider-wrap">
+            <div class="announcement-slide-item active" data-index="0">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Free Shipping Above 100 kg</span>
+            </div>
+            <div class="announcement-slide-item" data-index="1">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Wholesale Makhana Supplier</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.announcement-slide-item');
+            if (slides.length > 1) {
+                let current = 0;
+                setInterval(() => {
+                    slides[current].classList.remove('active');
+                    current = (current + 1) % slides.length;
+                    slides[current].classList.add('active');
+                }, 3800);
+            }
+        });
+    </script>
+
+    <!-- Professional Unified Navigation Header -->
+    <header class="sticky top-0 z-40 w-full transition-all duration-300 bg-[#12241B]/95 backdrop-blur-xl border-b border-[#C9A961]/35 shadow-xl text-[#F1F6F2]" id="siteHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Left: Brand Logo -->
+            <div class="flex items-center gap-3 min-w-0">
+                <button onclick="toggleMobileNav()" aria-label="Open Navigation Menu" class="lg:hidden p-2 text-[#E8CD84] hover:text-[#FFDF78] focus:outline-none flex items-center justify-center shrink-0 rounded-lg bg-[#0B1610]/50 border border-[#C9A961]/30" style="min-width: 44px; min-height: 44px;">
+                    <i class="fa-solid fa-bars-staggered text-lg"></i>
+                </button>
+
+                <a href="index.html" class="flex items-center group min-w-0" aria-label="Makhanam Home">
+                    <img src="logo_makhana.png" alt="Makhanam Logo" class="h-12 sm:h-16 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                </a>
+            </div>
+
+            <!-- Right: Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-6 text-xs uppercase tracking-[0.16em] font-bold">
+                <a href="index.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
+                    <span>Home</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="aboutus.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
+                    <span>About Us</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="about.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
+                    <span>About Makhana</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="why.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
+                    <span>Why Makhanam?</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="grading.html" class="text-[#E8CD84] font-semibold transition-colors py-2 relative group">
+                    <span>Grading</span>
+                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#C9A961]"></span>
+                </a>
+                <a href="contactus.html" class="text-[#F1F6F2]/90 hover:text-[#E8CD84] transition-colors py-2 relative group">
+                    <span>Contact</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9A961] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Professional Mobile Navigation Drawer (Slides from Left) -->
+    <div id="mobile-nav-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0" aria-hidden="true">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-[#0B1610]/85 backdrop-blur-md" onclick="toggleMobileNav()"></div>
+
+        <!-- Panel -->
+        <div id="mobile-menu-content" class="absolute top-0 left-0 bottom-0 w-[88%] max-w-[340px] bg-[#0B1610] text-[#F1F6F2] border-r border-[#C9A961]/30 p-6 flex flex-col justify-between transform -translate-x-full transition-transform duration-300 ease-out pointer-events-auto shadow-2xl overflow-y-auto">
+            <div>
+                <!-- Top Header -->
+                <div class="flex items-center justify-between pb-5 mb-6 border-b border-[#C9A961]/25">
+                    <img src="logo_makhana.png" alt="Makhanam Logo" class="h-16 w-auto object-contain">
+                    <button onclick="toggleMobileNav()" class="p-2 text-[#C9A961] hover:text-[#E8CD84] focus:outline-none flex items-center justify-center rounded-lg bg-[#12241B] border border-[#C9A961]/30" aria-label="Close Menu" style="min-width: 44px; min-height: 44px;">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Links -->
+                <nav class="flex flex-col space-y-2 text-xs uppercase tracking-[0.18em] font-semibold">
+                    <a href="index.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+                    </a>
+                    <a href="aboutus.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
+                        <span>About Us</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+                    </a>
+                    <a href="about.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
+                        <span>About Makhana</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+                    </a>
+                    <a href="why.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
+                        <span>Why Makhanam?</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+                    </a>
+                    <a href="grading.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#E8CD84] font-bold bg-[#12241B] border-l-2 border-[#C9A961]">
+                        <span>Grading Guide</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-[#C9A961]"></i>
+                    </a>
+                    <a href="contactus.html" class="flex items-center justify-between py-3 px-4 rounded-xl text-[#F1F6F2]/90 hover:text-[#E8CD84] hover:bg-[#12241B]/50 transition-colors">
+                        <span>Contact</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="pt-6 mt-6 border-t border-[#C9A961]/25 space-y-3">
+                <a href="https://wa.me/918340493639?text=Hi%20%2CI%20am%20Interested%20in%20Wholesale%20Makhana%20Supply." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] text-[#0A3018] font-bold text-xs uppercase tracking-wider shadow-md">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>WhatsApp Bulk Enquiry</span>
+                </a>
+                <a href="tel:+918340493639" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-[#C9A961]/40 text-[#C9A961] hover:bg-[#C9A961]/10 font-semibold text-xs uppercase tracking-wider">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>Call +91 83404 93639</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toggle Mobile Nav Script -->
+    <script>
+        function toggleMobileNav() {
+            const drawer = document.getElementById('mobile-nav-drawer');
+            const panel = document.getElementById('mobile-menu-content');
+            if (!drawer || !panel) return;
+            if (drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('-translate-x-full');
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                panel.classList.add('-translate-x-full');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
 
     <!-- HERO SECTION WITH RICH ATMOSPHERIC PHOTOGRAPHIC BACKGROUND -->
     <section class="relative min-h-[85vh] sm:min-h-[80vh] flex flex-col justify-between pt-12 pb-16 sm:pt-16 sm:pb-20 overflow-hidden border-b border-brand-gold/30">
