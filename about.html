@@ -75,28 +75,7 @@
             transition: background-color 0.2s ease;
         }
         ::-webkit-scrollbar-thumb:hover { background: #E8CD84; }
-        ::-webkit-scrollbar-thumb:active { background: #C37A58; }
-        ::-webkit-scrollbar-corner { background: #0B1610; }
-    </style>
-</head>
-
-<body class="bg-brand-ivory text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-brand-dark overflow-x-hidden">
-
-    <!-- Professional Announcement Bar -->
-    <div class="makhanam-announcement-bar">
-        <div class="announcement-slider-wrap">
-            <div class="announcement-slide-item active" data-index="0">
-                <i class="fa-solid fa-truck-fast"></i>
-                <span>Free Shipping Above 100 kg</span>
-            </div>
-            <div class="announcement-slide-item" data-index="1">
-                <i class="fa-solid fa-seedling"></i>
-                <span>Wholesale Makhana Supplier</span>
-            </div>
-        </div>
-    </div>
-
-    <style>
+        /* ---------- Professional Announcement Bar Slider ---------- */
         .makhanam-announcement-bar {
             background: #0B1610;
             color: #F1F6F2;
@@ -110,13 +89,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 11.5px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 600;
         }
         .announcement-slider-wrap {
             position: relative;
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             height: 20px;
-            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .announcement-slide-item {
             position: absolute;
@@ -124,16 +109,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 11.5px;
-            font-weight: 600;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #E8CD84;
+            gap: 8px;
             opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform: translateY(8px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
             pointer-events: none;
             white-space: nowrap;
         }
@@ -146,12 +125,6 @@
             color: #C9A961;
             font-size: 13px;
         }
-        .glass-dark {
-            background: rgba(18, 36, 27, 0.88);
-            backdrop-filter: blur(18px) saturate(140%);
-            -webkit-backdrop-filter: blur(18px) saturate(140%);
-            border-bottom: 1px solid rgba(201, 169, 97, 0.25);
-        }
         @media (max-width: 640px) {
             .makhanam-announcement-bar {
                 padding: 8px 12px;
@@ -162,7 +135,31 @@
                 letter-spacing: 0.12em;
             }
         }
+
+        /* Reveal state guarantees */
+        .reveal.is-visible,
+        .reveal.active {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
     </style>
+</head>
+
+<body class="bg-brand-ivory text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-brand-dark overflow-x-hidden">
+    <!-- Professional Announcement Bar -->
+    <div class="makhanam-announcement-bar">
+        <div class="announcement-slider-wrap">
+            <div class="announcement-slide-item active" data-index="0">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Free Shipping Above 100 kg</span>
+            </div>
+            <div class="announcement-slide-item" data-index="1">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Wholesale Makhana Supplier</span>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -287,12 +284,15 @@
             const drawer = document.getElementById('mobile-nav-drawer');
             const panel = document.getElementById('mobile-menu-content');
             if (!drawer || !panel) return;
-            if (drawer.classList.contains('opacity-0')) {
+            const isClosed = drawer.classList.contains('pointer-events-none') || drawer.classList.contains('opacity-0');
+            if (isClosed) {
                 drawer.classList.remove('opacity-0', 'pointer-events-none');
+                drawer.classList.add('opacity-100');
                 panel.classList.remove('-translate-x-full');
                 document.body.style.overflow = 'hidden';
             } else {
                 drawer.classList.add('opacity-0', 'pointer-events-none');
+                drawer.classList.remove('opacity-100');
                 panel.classList.add('-translate-x-full');
                 document.body.style.overflow = '';
             }
@@ -1433,7 +1433,7 @@
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Facebook">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
+                            <a href="https://www.instagram.com/makhanam7?utm_source=qr&srtk=MWRpdncwZWo1YWo1Yg%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on YouTube">
@@ -1556,13 +1556,20 @@
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+                    entry.target.classList.add('active', 'is-visible');
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12 });
+        }, { threshold: 0.05 });
 
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        document.querySelectorAll('.reveal, .reveal-fade').forEach(el => revealObserver.observe(el));
+
+        // Safety fallback to guarantee all sections stay visible
+        setTimeout(() => {
+            document.querySelectorAll('.reveal, .reveal-fade').forEach(el => {
+                el.classList.add('active', 'is-visible');
+            });
+        }, 250);
 
         // ======================================================================
         // CINEMATIC VERTICAL VIDEO CONTINUOUS AUTOPLAY

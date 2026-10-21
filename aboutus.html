@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -216,7 +217,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
         }
 
-        /* Announcement Bar */
+        /* ---------- Professional Announcement Bar Slider ---------- */
         .makhanam-announcement-bar {
             background: #0B1610;
             color: #F1F6F2;
@@ -245,7 +246,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-family: 'Bricolage Grotesque', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-size: 11.5px;
             font-weight: 600;
             letter-spacing: 0.16em;
@@ -266,774 +267,263 @@
             color: #C9A961;
             font-size: 13px;
         }
-
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Gold Gradient Text */
-        .gold-gradient-text {
-            background: linear-gradient(110deg, #F1F6F2 20%, #E8CD84 60%, #C9A961 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @media (max-width: 640px) {
+            .makhanam-announcement-bar {
+                padding: 8px 12px;
+                height: 36px;
+            }
+            .announcement-slide-item {
+                font-size: 10px;
+                letter-spacing: 0.12em;
+            }
         }
 
-        .gold-accent-text {
-            background: linear-gradient(110deg, #C9A961, #E8CD84);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Buttons */
-        .btn-shimmer {
-            background: linear-gradient(110deg, #C9A961, #E8CD84, #C9A961);
-            background-size: 200% 100%;
-            transition: 0.35s ease;
-        }
-        .btn-shimmer:hover {
-            background-position: 100% 0;
-            box-shadow: 0 12px 30px rgba(201, 169, 97, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline-gold {
-            border: 1px solid rgba(201, 169, 97, 0.5);
-            color: #F1F6F2;
-            transition: all 0.3s ease;
-        }
-        .btn-outline-gold:hover {
-            background: rgba(201, 169, 97, 0.12);
-            border-color: #E8CD84;
-            color: #E8CD84;
-            transform: translateY(-2px);
+        /* Reveal state guarantees */
+        .reveal.is-visible,
+        .reveal.active,
+        .reveal-fade.is-visible,
+        .reveal-fade.active {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
         }
 
         /* ==========================================================================
-           WHY US - ICON EFFECTS & ANIMATIONS
+           BRAND BUTTON SYSTEM (Golden Shimmer & Luxury Emerald Outline)
            ========================================================================== */
-        .why-icon-wrapper {
-            position: relative;
+        @keyframes btnShimmerAnim {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .btn-shimmer {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .why-icon-halo {
-            position: absolute;
-            inset: -6px;
-            border-radius: 1.25rem;
-            background: radial-gradient(circle, rgba(201, 169, 97, 0.4) 0%, rgba(201, 169, 97, 0.1) 50%, transparent 75%);
-            opacity: 0.55;
-            animation: whyIconBreathe 3.5s ease-in-out infinite;
-            pointer-events: none;
-            transition: all 0.4s ease;
-        }
-
-        @keyframes whyIconBreathe {
-            0%, 100% {
-                transform: scale(0.95);
-                opacity: 0.35;
-            }
-            50% {
-                transform: scale(1.18);
-                opacity: 0.8;
-            }
-        }
-
-        .why-icon-box {
-            position: relative;
-            width: 3.75rem;
-            height: 3.75rem;
-            border-radius: 1.125rem;
-            background: radial-gradient(circle at 35% 30%, #1E382B, #12241B 75%);
-            border: 1px solid rgba(201, 169, 97, 0.45);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #E8CD84;
-            box-shadow: 0 4px 16px rgba(18, 36, 27, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        /* Light sweep shimmer effect across icon container */
-        .why-icon-box::after {
-            content: '';
-            position: absolute;
-            top: -60%;
-            left: -160%;
-            width: 220%;
-            height: 220%;
-            background: linear-gradient(
-                115deg,
-                transparent 20%,
-                rgba(232, 205, 132, 0.25) 45%,
-                rgba(255, 255, 255, 0.6) 50%,
-                rgba(232, 205, 132, 0.25) 55%,
-                transparent 80%
-            );
-            transform: rotate(25deg);
-            transition: left 0.75s ease;
-            pointer-events: none;
-        }
-
-        .group:hover .why-icon-box,
-        .why-icon-box:hover {
-            transform: translateY(-5px) scale(1.1);
-            border-color: #E8CD84;
-            box-shadow: 0 14px 28px -4px rgba(201, 169, 97, 0.48), 0 0 0 1px rgba(232, 205, 132, 0.4), inset 0 0 16px rgba(232, 205, 132, 0.3);
-            color: #FFFFFF;
-        }
-
-        .group:hover .why-icon-box::after,
-        .why-icon-box:hover::after {
-            left: 160%;
-        }
-
-        .group:hover .why-icon-halo,
-        .why-icon-box:hover ~ .why-icon-halo {
-            opacity: 1;
-            transform: scale(1.3);
-            background: radial-gradient(circle, rgba(232, 205, 132, 0.7) 0%, rgba(201, 169, 97, 0.3) 50%, transparent 80%);
-            animation-duration: 1.8s;
-        }
-
-        /* 01. Gem Sparkle Animation */
-        .why-icon-gem {
-            display: inline-block;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
-        }
-        .group:hover .why-icon-gem,
-        .why-icon-box:hover .why-icon-gem {
-            animation: gemSparkle 1.4s ease-in-out infinite alternate;
-            color: #FFF6D6;
-            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
-        }
-        @keyframes gemSparkle {
-            0% {
-                transform: scale(1.15) rotate(0deg);
-            }
-            33% {
-                transform: scale(1.28) rotate(-12deg);
-            }
-            66% {
-                transform: scale(1.22) rotate(8deg);
-            }
-            100% {
-                transform: scale(1.32) rotate(-4deg);
-            }
-        }
-
-        /* 02. Handshake Clasp Animation */
-        .why-icon-handshake {
-            display: inline-block;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
-        }
-        .group:hover .why-icon-handshake,
-        .why-icon-box:hover .why-icon-handshake {
-            animation: handshakeTrust 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
-            color: #FFF6D6;
-            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
-        }
-        @keyframes handshakeTrust {
-            0%, 100% {
-                transform: scale(1.15) rotate(0deg);
-            }
-            20% {
-                transform: scale(1.3) rotate(-10deg);
-            }
-            45% {
-                transform: scale(1.2) rotate(8deg);
-            }
-            70% {
-                transform: scale(1.28) rotate(-4deg);
-            }
-        }
-
-        /* 03. Truck Dispatch Animation */
-        .why-icon-truck {
-            display: inline-block;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
-        }
-        .group:hover .why-icon-truck,
-        .why-icon-box:hover .why-icon-truck {
-            animation: truckDispatch 0.9s ease-in-out infinite alternate;
-            color: #FFF6D6;
-            filter: drop-shadow(0 0 8px rgba(232, 205, 132, 0.95)) drop-shadow(0 0 16px rgba(201, 169, 97, 0.7));
-        }
-        @keyframes truckDispatch {
-            0% {
-                transform: translateX(-2px) scale(1.15) skewX(0deg);
-            }
-            100% {
-                transform: translateX(5px) scale(1.24) skewX(-8deg);
-            }
-        }
-
-        /* Speed line trails */
-        .speed-lines {
-            position: absolute;
-            left: 7px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        .speed-line {
-            height: 2px;
+            gap: 10px;
+            background: linear-gradient(110deg, #C9A961 0%, #FFF0C2 40%, #E8CD84 60%, #C9A961 100%);
+            background-size: 200% 100%;
+            color: #0B1610 !important;
+            font-size: 12.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-weight: 800;
             border-radius: 9999px;
-            background: linear-gradient(90deg, transparent, rgba(232, 205, 132, 0.85));
-            animation: speedLinePulse 0.6s infinite alternate;
-        }
-        .speed-line:nth-child(1) { width: 14px; animation-delay: 0.1s; }
-        .speed-line:nth-child(2) { width: 20px; animation-delay: 0.25s; }
-        .speed-line:nth-child(3) { width: 12px; animation-delay: 0.05s; }
-        @keyframes speedLinePulse {
-            0% { opacity: 0.4; transform: scaleX(0.7); }
-            100% { opacity: 1; transform: scaleX(1.1); }
-        }
-        .group:hover .speed-lines,
-        .why-icon-box:hover .speed-lines {
-            opacity: 1;
+            border: 1px solid rgba(255, 240, 194, 0.4);
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
         }
 
-        /* Checkmark Interactive Pill Badge */
-        .check-pill {
+        .btn-shimmer:hover {
+            animation: btnShimmerAnim 1.6s linear infinite;
+            background-position: 100% 0;
+            color: #0B1610 !important;
+            box-shadow: 0 14px 36px rgba(232, 205, 132, 0.65), 0 0 20px rgba(201, 169, 97, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-shimmer:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .btn-outline-gold,
+        .btn-outline {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 22px;
-            height: 22px;
+            gap: 10px;
             border-radius: 9999px;
-            background: rgba(18, 36, 27, 0.08);
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            color: #A68740;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1.5px solid rgba(201, 169, 97, 0.65);
+            background: rgba(18, 36, 27, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #FAFCFA !important;
+            font-size: 12.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
         }
-        .group:hover .check-pill {
-            background: #12241B;
-            border-color: #E8CD84;
-            color: #E8CD84;
-            transform: scale(1.18);
-            box-shadow: 0 3px 10px rgba(201, 169, 97, 0.35);
+
+        .btn-outline-gold:hover,
+        .btn-outline:hover {
+            border-color: #25D366;
+            background: rgba(37, 211, 102, 0.18);
+            color: #FFFFFF !important;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.32), 0 0 16px rgba(37, 211, 102, 0.2);
+            transform: translateY(-2px);
         }
-        .group:hover .check-pill i {
-            transform: scale(1.15) rotate(6deg);
+
+        .btn-outline-gold:active,
+        .btn-outline:active {
+            transform: translateY(0) scale(0.98);
         }
 
         /* ==========================================================================
-           FROM POND TO PARTNER - ZERO-SCROLL INTERACTIVE SHOWCASE
+           5. FROM POND TO PARTNER - ZERO-SCROLL SHOWCASE STYLES
            ========================================================================== */
         .stage-showcase-container {
-            background: linear-gradient(165deg, rgba(14, 28, 20, 0.95) 0%, rgba(9, 18, 13, 0.98) 100%);
+            background: #0B1610;
+            border-radius: 18px;
             border: 1px solid rgba(201, 169, 97, 0.35);
-            border-radius: 1.75rem;
-            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(201, 169, 97, 0.12);
-            position: relative;
             overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
         }
 
         .stage-tab-btn {
-            position: relative;
-            padding: 0.55rem 0.9rem;
+            padding: 8px 18px;
             border-radius: 9999px;
-            font-size: 11px;
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.12em;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: rgba(241, 246, 242, 0.65);
-            background: rgba(18, 36, 27, 0.65);
+            background: #0B1610;
+            color: rgba(241, 246, 242, 0.7);
             border: 1px solid rgba(201, 169, 97, 0.25);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
             cursor: pointer;
             white-space: nowrap;
         }
 
         .stage-tab-btn:hover {
-            color: #FFF6D6;
-            border-color: rgba(232, 205, 132, 0.6);
-            background: rgba(201, 169, 97, 0.18);
-            transform: translateY(-1px);
+            color: #E8CD84;
+            border-color: rgba(201, 169, 97, 0.6);
+            background: #182B21;
         }
 
         .stage-tab-btn.active {
-            color: #12241B !important;
-            background: linear-gradient(135deg, #FFF0C2 0%, #E8CD84 50%, #C9A961 100%) !important;
-            border-color: #E8CD84 !important;
-            box-shadow: 0 0 20px rgba(232, 205, 132, 0.45);
-            transform: scale(1.03);
+            background: #1E3328;
+            color: #E8CD84;
+            border-color: #C9A961;
+            box-shadow: 0 0 16px rgba(201, 169, 97, 0.25);
         }
 
-        /* Slide Media Crossfade Transitions */
         .stage-slide-media {
             position: absolute;
             inset: 0;
+            width: 100%;
+            height: 100%;
             opacity: 0;
-            transform: scale(1.05);
-            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
             pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: scale(1.02);
         }
 
         .stage-slide-media.active {
             opacity: 1;
-            transform: scale(1);
             pointer-events: auto;
+            transform: scale(1);
         }
 
-        @keyframes stageContentFadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .stage-slide-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .stage-content-pane {
             display: none;
-            animation: stageContentFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .stage-content-pane.active {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            animation: stageFadeIn 0.35s ease forwards;
         }
 
-        /* Large Punchy Bullet Points (Points Only, Big Font Size) */
+        @keyframes stageFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .stage-point-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #FAFCFA;
-            line-height: 1.35;
-            letter-spacing: -0.01em;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            gap: 12px;
+            font-size: 13.5px;
+            color: rgba(241, 246, 242, 0.9);
+            font-weight: 500;
         }
-        @media (min-width: 640px) {
-            .stage-point-item {
-                font-size: 1.35rem;
-                gap: 1.25rem;
-            }
-        }
-        @media (min-width: 1024px) {
-            .stage-point-item {
-                font-size: 1.55rem;
-                line-height: 1.3;
-            }
-        }
-        .stage-point-item:hover {
-            transform: translateX(6px);
-            color: #FFF6D6;
-        }
+
         .stage-point-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 9999px;
-            background: rgba(201, 169, 97, 0.2);
-            border: 1.5px solid rgba(232, 205, 132, 0.65);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(201, 169, 97, 0.12);
+            border: 1px solid rgba(201, 169, 97, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #E8CD84;
-            font-size: 16px;
+            font-size: 13px;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 16px rgba(201, 169, 97, 0.25);
-            transition: all 0.25s ease;
-        }
-        @media (min-width: 640px) {
-            .stage-point-icon {
-                width: 46px;
-                height: 46px;
-                font-size: 18px;
-            }
-        }
-        .stage-point-item:hover .stage-point-icon {
-            background: rgba(232, 205, 132, 0.38);
-            border-color: #FFF0C2;
-            transform: scale(1.12);
-            color: #FFFFFF;
-            box-shadow: 0 0 22px rgba(232, 205, 132, 0.55);
         }
 
-        /* Miniature Clickable Preview Thumbnails */
-        .stage-thumb-card {
-            border-radius: 0.85rem;
-            background: rgba(11, 22, 16, 0.85);
-            border: 1.5px solid rgba(201, 169, 97, 0.22);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .stage-thumb-card:hover {
-            border-color: rgba(232, 205, 132, 0.65);
-            transform: translateY(-2px);
-            background: rgba(18, 36, 27, 0.95);
-        }
-
-        .stage-thumb-card.active {
-            border-color: #E8CD84;
-            box-shadow: 0 0 16px rgba(232, 205, 132, 0.45);
-            background: rgba(24, 46, 34, 0.98);
-        }
-
-        .stage-thumb-card.active img {
-            filter: contrast(1.15) brightness(1.05);
-            transform: scale(1.08);
-        }
-
-        /* Interactive Step Progress Bar */
         .stage-progress-track {
-            height: 3px;
+            width: 100%;
+            height: 4px;
             background: rgba(201, 169, 97, 0.2);
             border-radius: 9999px;
             overflow: hidden;
-            position: relative;
         }
 
         .stage-progress-fill {
             height: 100%;
+            width: 16.66%;
             background: linear-gradient(90deg, #C9A961, #E8CD84);
-            width: 0%;
             border-radius: 9999px;
-            transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ==========================================================================
-           VISION SECTION - INTERACTIVE LUXURY STYLES
-           ========================================================================== */
-        .font-handwriting {
-            font-family: 'Caveat', cursive, sans-serif !important;
-            font-feature-settings: "liga" on, "clig" on;
-        }
-
-        .vision-handwritten-title {
-            font-family: 'Caveat', cursive, sans-serif !important;
-            font-weight: 600;
-            line-height: 1.25;
-            letter-spacing: 0.015em;
-            background: linear-gradient(135deg, #FFFFFF 0%, #FFF9E6 25%, #E8CD84 55%, #FAFCFA 75%, #C9A961 100%);
-            background-size: 220% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: goldShimmerText 8s ease infinite;
-            filter: drop-shadow(0 4px 24px rgba(201, 169, 97, 0.35));
-        }
-        @keyframes goldShimmerText {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Vision Underline Words - Perfectly Visible at rest & on Mouse Hover */
-        .vision-underline-word {
-            display: inline-block;
-            position: relative;
-            font-weight: 700;
-            color: #E8CD84 !important;
-            -webkit-text-fill-color: #E8CD84 !important;
-            text-fill-color: #E8CD84 !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            background-clip: unset !important;
-            text-decoration: underline !important;
-            text-decoration-color: rgba(201, 169, 97, 0.7) !important;
-            text-decoration-style: wavy !important;
-            text-underline-offset: 8px !important;
+        .stage-thumb-card {
+            background: #0B1610;
+            border: 1px solid rgba(201, 169, 97, 0.25);
+            border-radius: 12px;
             cursor: pointer;
-            isolation: isolate;
-            transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        -webkit-text-fill-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        text-decoration-color 0.3s ease,
-                        text-shadow 0.3s ease,
-                        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .vision-underline-word:hover,
-        .vision-underline-word:focus,
-        .vision-underline-word:active {
-            color: #FFFFFF !important;
-            -webkit-text-fill-color: #FFFFFF !important;
-            text-fill-color: #FFFFFF !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            background-clip: unset !important;
-            text-decoration-color: #E8CD84 !important;
-            text-underline-offset: 10px !important;
-            transform: translateY(-2px);
-            text-shadow: 0 0 16px rgba(232, 205, 132, 0.95), 0 0 32px rgba(201, 169, 97, 0.8), 0 4px 14px rgba(0, 0, 0, 0.6) !important;
-        }
-
-        /* Prevent parent text-fill clipping from hiding nested spans */
-        .vision-handwritten-title span {
-            -webkit-text-fill-color: #E8CD84 !important;
-            color: #E8CD84 !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            background-clip: unset !important;
-        }
-        .vision-handwritten-title span:hover {
-            -webkit-text-fill-color: #FFFFFF !important;
-            color: #FFFFFF !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            background-clip: unset !important;
-            text-shadow: 0 0 16px rgba(232, 205, 132, 0.95), 0 0 32px rgba(201, 169, 97, 0.8) !important;
-        }
-
-        .vision-mesh-glow {
-            background: radial-gradient(circle at 50% 45%, rgba(201, 169, 97, 0.28) 0%, rgba(232, 205, 132, 0.12) 40%, transparent 70%);
-            animation: visionGlowPulse 6s ease-in-out infinite alternate;
-        }
-        @keyframes visionGlowPulse {
-            0% { transform: scale(0.9) translateY(0); opacity: 0.65; }
-            100% { transform: scale(1.15) translateY(-10px); opacity: 0.95; }
-        }
-
-        .vision-floating-seed {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 9999px;
-            background: radial-gradient(circle, #E8CD84, #A68740);
-            box-shadow: 0 0 14px rgba(232, 205, 132, 0.75);
-            opacity: 0.35;
-            pointer-events: none;
-            animation: visionFloat 7s ease-in-out infinite;
-        }
-        @keyframes visionFloat {
-            0%, 100% { transform: translateY(0) scale(0.9); opacity: 0.25; }
-            50% { transform: translateY(-24px) scale(1.2); opacity: 0.7; }
-        }
-
-        .vision-quote-card {
-            background: rgba(18, 36, 27, 0.88);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(201, 169, 97, 0.4);
-            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.65), 0 0 40px rgba(201, 169, 97, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
-        .vision-quote-card:hover {
-            border-color: rgba(232, 205, 132, 0.75);
-            box-shadow: 0 35px 80px -8px rgba(0, 0, 0, 0.75), 0 0 50px rgba(201, 169, 97, 0.32), inset 0 0 25px rgba(232, 205, 132, 0.12);
-        }
-
-        /* ==========================================================================
-           3 VISION PILLARS - INTERACTIVE LOGO PICTURE EMBLEMS & MEMORY CHIPS
-           ========================================================================== */
-        .vision-pillar-card {
-            background: linear-gradient(165deg, rgba(18, 36, 27, 0.92) 0%, rgba(11, 22, 16, 0.96) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(201, 169, 97, 0.32);
-            border-radius: 1.75rem;
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.55), 0 0 25px rgba(201, 169, 97, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .vision-pillar-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 1.75rem;
-            background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(201, 169, 97, 0.22), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .vision-pillar-card:hover::before,
-        .vision-pillar-card.active::before {
-            opacity: 1;
-        }
-
-        .vision-pillar-card:hover,
-        .vision-pillar-card.active {
-            transform: translateY(-8px);
-            border-color: rgba(232, 205, 132, 0.85);
-            background: linear-gradient(165deg, rgba(22, 44, 33, 0.95) 0%, rgba(13, 27, 20, 0.98) 100%);
-            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(201, 169, 97, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-        }
-
-        /* Interactive Circular Logo Picture Frame */
-        .pillar-logo-frame {
-            position: relative;
-            width: 96px;
-            height: 96px;
-            margin: 0.5rem auto 1.25rem auto;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at 35% 35%, rgba(201, 169, 97, 0.3), rgba(11, 22, 16, 0.95));
-            border: 2px solid rgba(201, 169, 97, 0.6);
-            box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.6), 0 0 22px rgba(201, 169, 97, 0.22), inset 0 0 15px rgba(232, 205, 132, 0.2);
-            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .vision-pillar-card:hover .pillar-logo-frame {
-            border-color: #E8CD84;
-            transform: scale(1.08) translateY(-2px);
-            box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.8), 0 0 35px rgba(232, 205, 132, 0.5), inset 0 0 22px rgba(232, 205, 132, 0.35);
-        }
-
-        .pillar-logo-ring {
-            position: absolute;
-            inset: -6px;
-            border-radius: 50%;
-            border: 1.5px dashed rgba(201, 169, 97, 0.4);
-            pointer-events: none;
-            transition: all 0.6s ease;
-        }
-
-        .vision-pillar-card:hover .pillar-logo-ring {
-            border-color: rgba(232, 205, 132, 0.85);
-            transform: rotate(60deg);
-        }
-
-        /* Easy-to-remember Interactive Key Feature Chips */
-        .pillar-memory-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.28rem 0.6rem;
-            border-radius: 9999px;
-            background: rgba(201, 169, 97, 0.12);
-            border: 1px solid rgba(201, 169, 97, 0.28);
-            color: #F1F6F2;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.015em;
-            transition: all 0.25s ease;
-            cursor: pointer;
-        }
-
-        .pillar-memory-chip i {
-            color: #E8CD84;
-            font-size: 10px;
-            transition: transform 0.25s ease;
-        }
-
-        .vision-pillar-card:hover .pillar-memory-chip {
-            background: rgba(201, 169, 97, 0.18);
-            border-color: rgba(232, 205, 132, 0.45);
-        }
-
-        .pillar-memory-chip:hover {
-            background: rgba(232, 205, 132, 0.3) !important;
-            border-color: #E8CD84 !important;
-            color: #FFFFFF !important;
-            transform: translateY(-2px);
-            box-shadow: 0 0 14px rgba(232, 205, 132, 0.45);
-        }
-
-        .pillar-memory-chip:hover i {
-            transform: scale(1.3) rotate(6deg);
-        }
-
-        .vision-badge-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 10px;
-            font-family: 'Bricolage Grotesque', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            padding: 3px 9px;
-            border-radius: 9999px;
-            background: rgba(201, 169, 97, 0.15);
-            border: 1px solid rgba(201, 169, 97, 0.35);
-            color: #E8CD84;
             transition: all 0.3s ease;
+            user-select: none;
         }
-        .vision-pillar-card:hover .vision-badge-pill,
-        .vision-pillar-card.active .vision-badge-pill {
-            background: rgba(201, 169, 97, 0.32);
+
+        .stage-thumb-card:hover {
+            border-color: rgba(201, 169, 97, 0.6);
+            transform: translateY(-2px);
+            background: #182B21;
+        }
+
+        .stage-thumb-card.active {
             border-color: #E8CD84;
-            color: #FFF6D6;
+            background: #1A3125;
+            box-shadow: 0 4px 18px rgba(201, 169, 97, 0.25);
         }
 
-        .vision-tab-btn {
-            transition: all 0.25s ease;
-        }
-        .vision-tab-btn.active {
-            background: rgba(201, 169, 97, 0.25);
-            border-color: #E8CD84;
-            color: #FFF6D6;
-            box-shadow: 0 0 20px rgba(232, 205, 132, 0.35);
-        }
-
-        @keyframes floatHeart {
-            0% { transform: translate(-50%, 0) scale(0.6); opacity: 1; }
-            50% { transform: translate(-50%, -35px) scale(1.2); opacity: 0.95; }
-            100% { transform: translate(-50%, -75px) scale(1); opacity: 0; }
-        }
-        .floating-heart {
-            position: absolute;
-            pointer-events: none;
-            animation: floatHeart 1.3s ease-out forwards;
-            z-index: 50;
-            font-size: 1.1rem;
-        }
-
-        .soundwave-bar {
-            width: 2.5px;
-            background: #E8CD84;
-            border-radius: 9999px;
-            animation: soundWave 1.2s ease-in-out infinite alternate;
-        }
-        .soundwave-bar:nth-child(2) { animation-delay: 0.2s; }
-        .soundwave-bar:nth-child(3) { animation-delay: 0.4s; }
-        .soundwave-bar:nth-child(4) { animation-delay: 0.15s; }
-        .soundwave-bar:nth-child(5) { animation-delay: 0.35s; }
-        @keyframes soundWave {
-            0% { height: 3px; opacity: 0.35; }
-            100% { height: 15px; opacity: 1; }
-        }
-
-        /* Footer */
+        /* ==========================================================================
+           FOOTER (Unified Forest Green Luxury Layout)
+           ========================================================================== */
         .site-footer {
             background: #0B1610;
             color: #F1F6F2;
             border-top: 1px solid rgba(201, 169, 97, 0.22);
             padding: 64px 0 36px;
         }
+
         .site-container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
+
         .footer-grid {
             display: grid;
             grid-template-columns: 1.4fr 0.8fr 1fr;
@@ -1041,44 +531,26 @@
             padding-bottom: 48px;
             border-bottom: 1px solid rgba(201, 169, 97, 0.15);
         }
+
         .footer-brand-col {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
+
         .footer-logo-wrap {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-        .footer-logo-wrap .brand-badge {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid #C9A961;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #1E2B24;
-            color: #C9A961;
-            font-family: 'Spectral', Georgia, serif;
-            font-weight: 700;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-        .footer-brand-name {
-            font-family: 'Spectral', Georgia, serif;
-            font-size: 26px;
-            letter-spacing: 0.14em;
-            color: #F1F6F2;
-            text-transform: uppercase;
-        }
+
         .footer-desc {
             font-size: 13.5px;
             color: rgba(241, 246, 242, 0.75);
             line-height: 1.7;
             max-width: 420px;
         }
+
         .footer-origin-tag {
             display: inline-block;
             color: #C9A961;
@@ -1088,7 +560,6 @@
             text-transform: uppercase;
         }
 
-        /* Follow Us & Social Links (Professional & Prominent) */
         .footer-social-wrap {
             margin-top: 8px;
             display: flex;
@@ -1165,6 +636,7 @@
             flex-direction: column;
             gap: 18px;
         }
+
         .footer-title {
             font-family: 'Spectral', Georgia, serif;
             font-size: 18px;
@@ -1172,6 +644,7 @@
             letter-spacing: 0.12em;
             text-transform: uppercase;
         }
+
         .footer-nav {
             list-style: none;
             padding: 0;
@@ -1180,15 +653,18 @@
             flex-direction: column;
             gap: 10px;
         }
+
         .footer-nav a {
             font-size: 13px;
             color: rgba(241, 246, 242, 0.75);
             transition: color 0.2s ease;
             text-decoration: none;
         }
+
         .footer-nav a:hover {
             color: #C9A961;
         }
+
         .footer-contact {
             list-style: none;
             padding: 0;
@@ -1199,11 +675,13 @@
             font-size: 13px;
             color: rgba(241, 246, 242, 0.85);
         }
+
         .footer-contact li {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .footer-contact i {
             color: #C9A961;
             font-size: 17px;
@@ -1212,18 +690,22 @@
             text-align: center;
             transition: color 0.2s ease, transform 0.2s ease;
         }
+
         .footer-contact li:hover i {
             color: #FFDF78;
             transform: scale(1.15);
         }
+
         .footer-contact a {
             color: inherit;
             text-decoration: none;
             transition: color 0.2s;
         }
+
         .footer-contact a:hover {
             color: #C9A961;
         }
+
         .footer-bottom-bar {
             display: flex;
             align-items: center;
@@ -1244,7 +726,7 @@
     </style>
 </head>
 
-<body class="bg-[#FAFCFA] text-[#12241B]">
+<body class="bg-brand-ivory text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-brand-dark overflow-x-hidden">
 
     <!-- Professional Announcement Bar -->
     <div class="makhanam-announcement-bar">
@@ -1259,6 +741,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.announcement-slide-item');
+            if (slides.length > 1) {
+                let current = 0;
+                setInterval(() => {
+                    slides[current].classList.remove('active');
+                    current = (current + 1) % slides.length;
+                    slides[current].classList.add('active');
+                }, 3800);
+            }
+        });
+    </script>
 
     <!-- Professional Unified Navigation Header -->
     <header class="sticky top-0 z-40 w-full transition-all duration-300 bg-[#12241B]/95 backdrop-blur-xl border-b border-[#C9A961]/35 shadow-xl text-[#F1F6F2]" id="siteHeader">
@@ -1369,12 +865,15 @@
             const drawer = document.getElementById('mobile-nav-drawer');
             const panel = document.getElementById('mobile-menu-content');
             if (!drawer || !panel) return;
-            if (drawer.classList.contains('opacity-0')) {
+            const isClosed = drawer.classList.contains('pointer-events-none') || drawer.classList.contains('opacity-0');
+            if (isClosed) {
                 drawer.classList.remove('opacity-0', 'pointer-events-none');
+                drawer.classList.add('opacity-100');
                 panel.classList.remove('-translate-x-full');
                 document.body.style.overflow = 'hidden';
             } else {
                 drawer.classList.add('opacity-0', 'pointer-events-none');
+                drawer.classList.remove('opacity-100');
                 panel.classList.add('-translate-x-full');
                 document.body.style.overflow = '';
             }
@@ -1660,7 +1159,7 @@
                 <div class="stage-showcase-container grid grid-cols-1 lg:grid-cols-12 min-h-[460px] lg:min-h-[440px]">
                     
                     <!-- Left: Cinematic Media Viewport (7 cols) -->
-                    <div class="lg:col-span-7 relative min-h-[260px] sm:min-h-[320px] lg:min-h-full overflow-hidden bg-[#0B1610]" id="stage-media-container">
+                    <div class="lg:col-span-7 relative h-[280px] sm:h-[360px] lg:h-full min-h-[280px] sm:min-h-[360px] overflow-hidden bg-[#0B1610]" id="stage-media-container">
                         <!-- Stage 1 Slide: Pond -->
                         <div class="stage-slide-media active" data-slide="0">
                             <img src="pond.jpeg" alt="Stage 1: Pond - Native Mithila wetlands" class="w-full h-full object-cover" referrerPolicy="no-referrer">
@@ -2221,13 +1720,13 @@
                 </div>
 
                 <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <a href="contactus.html#rfq" class="btn-shimmer px-8 py-4 rounded-xl text-[#0B1610] font-bold text-xs uppercase tracking-widest shadow-xl flex items-center gap-2.5">
-                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <a href="contactus.html#rfq" class="btn-shimmer px-8 py-4 rounded-full text-[#0B1610] font-extrabold text-xs uppercase tracking-[0.18em] shadow-[0_8px_25px_rgba(201,169,97,0.4)] hover:shadow-[0_14px_35px_rgba(232,205,132,0.6)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 flex items-center gap-2.5 group">
+                        <i class="fa-solid fa-paper-plane text-xs text-[#0B1610] group-hover:translate-x-0.5 transition-transform"></i>
                         <span>Request an RFQ</span>
                     </a>
                     
-                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20we%20are%20interested%20in%20becoming%20a%20B2B%20supply%20partner." target="_blank" rel="noopener noreferrer" class="btn-outline-gold px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center gap-2.5">
-                        <i class="fa-brands fa-whatsapp text-sm text-[#25D366]"></i>
+                    <a href="https://wa.me/918340493639?text=Hello%20Makhanam%2C%20we%20are%20interested%20in%20becoming%20a%20B2B%20supply%20partner." target="_blank" rel="noopener noreferrer" class="btn-outline-gold px-8 py-4 rounded-full text-[#FAFCFA] font-bold text-xs uppercase tracking-[0.18em] border-2 border-[#C9A961]/70 hover:border-[#25D366] bg-[#12241B]/90 hover:bg-[#1A3827] shadow-[0_6px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 flex items-center gap-2.5 group">
+                        <i class="fa-brands fa-whatsapp text-base text-[#25D366] group-hover:scale-110 transition-transform"></i>
                         <span>Become a Partner</span>
                     </a>
                 </div>
@@ -2257,7 +1756,7 @@
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Facebook">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
+                            <a href="https://www.instagram.com/makhanam7?utm_source=qr&srtk=MWRpdncwZWo1YWo1Yg%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on YouTube">
@@ -2377,13 +1876,20 @@
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+                    entry.target.classList.add('active', 'is-visible');
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12 });
+        }, { threshold: 0.05 });
 
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        document.querySelectorAll('.reveal, .reveal-fade').forEach(el => revealObserver.observe(el));
+
+        // Safety fallback to guarantee all sections stay visible
+        setTimeout(() => {
+            document.querySelectorAll('.reveal, .reveal-fade').forEach(el => {
+                el.classList.add('active', 'is-visible');
+            });
+        }, 250);
 
         // ==========================================
         // Ultra-Luxury Interactive Vision Experience
@@ -2553,7 +2059,7 @@
 
                 // 7. Update Step Progress Bar smoothly based on active stage
                 if (progressBar) {
-                    const pct = (currentStage / (totalStages - 1)) * 100;
+                    const pct = ((currentStage + 1) / totalStages) * 100;
                     progressBar.style.width = pct + '%';
                 }
             }

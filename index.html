@@ -958,6 +958,388 @@ img {
         gap: 36px;
     }
 }
+
+/* ==========================================================================
+   MAKHANA PAYMENT TERMS SECTION (Prefixed: makhana-payment-)
+   ========================================================================== */
+.makhana-payment-section {
+    background: #0B1610;
+    color: #F1F6F2;
+    border-top: 1px solid rgba(201, 169, 97, 0.35);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.25);
+    padding: 72px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.makhana-payment-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    pointer-events: none;
+    background: radial-gradient(#C9A961 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.makhana-payment-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.makhana-payment-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+}
+
+.makhana-payment-badge-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201, 169, 97, 0.12);
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+}
+
+.makhana-payment-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #E8CD84;
+}
+
+.makhana-payment-badge-text {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #E8CD84;
+}
+
+.makhana-payment-title {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #FAFCFA;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+}
+
+.makhana-payment-subtitle {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(241, 246, 242, 0.78);
+    font-weight: 500;
+}
+
+.makhana-payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.makhana-payment-card {
+    background: rgba(18, 36, 27, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 20px;
+    padding: 36px 32px;
+    position: relative;
+    box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(201, 169, 97, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.makhana-payment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle at 100% 0%, rgba(201, 169, 97, 0.12), transparent 70%);
+    pointer-events: none;
+}
+
+.makhana-payment-card:hover {
+    transform: translateY(-5px);
+    border-color: #E8CD84;
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 24px rgba(201, 169, 97, 0.25);
+}
+
+.makhana-payment-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+}
+
+.makhana-payment-card-tier {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FAFCFA;
+    letter-spacing: 0.02em;
+}
+
+.makhana-payment-card-tag {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #E8CD84;
+    background: rgba(201, 169, 97, 0.15);
+    border: 1px solid rgba(201, 169, 97, 0.45);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.makhana-payment-ratio-block {
+    background: rgba(11, 22, 16, 0.85);
+    border: 1px solid rgba(201, 169, 97, 0.25);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.makhana-payment-ratio-text {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 34px;
+    font-weight: 800;
+    color: #E8CD84;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.makhana-payment-bar-wrap {
+    height: 8px;
+    background: rgba(241, 246, 242, 0.15);
+    border-radius: 9999px;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.makhana-payment-bar-30 {
+    width: 30%;
+    background: linear-gradient(90deg, #C9A961, #E8CD84);
+}
+
+.makhana-payment-bar-70 {
+    width: 70%;
+    background: #385A48;
+}
+
+.makhana-payment-bar-50a {
+    width: 50%;
+    background: linear-gradient(90deg, #C9A961, #E8CD84);
+}
+
+.makhana-payment-bar-50b {
+    width: 50%;
+    background: #385A48;
+}
+
+.makhana-payment-bar-legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(241, 246, 242, 0.7);
+}
+
+.makhana-payment-terms-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.makhana-payment-term-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(11, 22, 16, 0.55);
+    border: 1px solid rgba(201, 169, 97, 0.18);
+}
+
+.makhana-payment-term-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(201, 169, 97, 0.18);
+    border: 1px solid rgba(201, 169, 97, 0.5);
+    color: #E8CD84;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.makhana-payment-term-text {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #F1F6F2;
+    line-height: 1.4;
+}
+
+.makhana-payment-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 48px auto;
+    position: relative;
+    max-width: 480px;
+}
+
+.makhana-payment-divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.4), transparent);
+}
+
+.makhana-payment-divider-ornament {
+    padding: 0 16px;
+    color: #C9A961;
+    font-size: 14px;
+}
+
+.makhana-payment-dispatch-box {
+    background: rgba(18, 36, 27, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(201, 169, 97, 0.4);
+    border-radius: 18px;
+    padding: 28px 36px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.makhana-payment-dispatch-icon-wrap {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: #0B1610;
+    border: 1.5px solid #C9A961;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E8CD84;
+    font-size: 24px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.makhana-payment-dispatch-content {
+    flex-grow: 1;
+}
+
+.makhana-payment-dispatch-title {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #FAFCFA;
+    letter-spacing: 0.01em;
+    margin-bottom: 6px;
+}
+
+.makhana-payment-dispatch-desc {
+    font-size: 14.5px;
+    color: rgba(241, 246, 242, 0.82);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.makhana-payment-dispatch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    background: rgba(201, 169, 97, 0.12);
+    border: 1px solid rgba(201, 169, 97, 0.45);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #E8CD84;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .makhana-payment-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .makhana-payment-dispatch-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 18px;
+    }
+    .makhana-payment-dispatch-badge {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .makhana-payment-section {
+        padding: 50px 0 60px;
+    }
+    .makhana-payment-title {
+        font-size: 28px;
+    }
+    .makhana-payment-subtitle {
+        font-size: 14px;
+    }
+    .makhana-payment-card {
+        padding: 24px 20px;
+    }
+    .makhana-payment-card-tier {
+        font-size: 20px;
+    }
+    .makhana-payment-ratio-text {
+        font-size: 28px;
+    }
+    .makhana-payment-dispatch-box {
+        padding: 20px 16px;
+    }
+    .makhana-payment-dispatch-title {
+        font-size: 19px;
+    }
+    .makhana-payment-dispatch-desc {
+        font-size: 13.5px;
+    }
+}
 </style>
  
 </head>
@@ -1101,12 +1483,15 @@ img {
             const drawer = document.getElementById('mobile-nav-drawer');
             const panel = document.getElementById('mobile-menu-content');
             if (!drawer || !panel) return;
-            if (drawer.classList.contains('opacity-0')) {
+            const isClosed = drawer.classList.contains('pointer-events-none') || drawer.classList.contains('opacity-0');
+            if (isClosed) {
                 drawer.classList.remove('opacity-0', 'pointer-events-none');
+                drawer.classList.add('opacity-100');
                 panel.classList.remove('-translate-x-full');
                 document.body.style.overflow = 'hidden';
             } else {
                 drawer.classList.add('opacity-0', 'pointer-events-none');
+                drawer.classList.remove('opacity-100');
                 panel.classList.add('-translate-x-full');
                 document.body.style.overflow = '';
             }
@@ -1219,6 +1604,112 @@ img {
         </div>
     </section>
 
+    <!-- ==========================================================================
+         PAYMENT TERMS SECTION (Bulk Order Conditions)
+         ========================================================================== -->
+    <section class="makhana-payment-section" id="payment-terms" aria-labelledby="payment-terms-heading">
+        <div class="makhana-payment-container">
+            <!-- Header -->
+            <div class="makhana-payment-header">
+                <div class="makhana-payment-badge-wrap">
+                    <span class="makhana-payment-badge-dot"></span>
+                    <span class="makhana-payment-badge-text">Export & Bulk Order Policy</span>
+                </div>
+                <h2 id="payment-terms-heading" class="makhana-payment-title">Payment Terms</h2>
+                <p class="makhana-payment-subtitle">Transparent payment conditions for bulk Makhana orders.</p>
+            </div>
+
+            <!-- Two Payment Slabs -->
+            <div class="makhana-payment-grid">
+                <!-- Slab 1: Below 500 KG -->
+                <div class="makhana-payment-card">
+                    <div class="makhana-payment-card-top">
+                        <h3 class="makhana-payment-card-tier">Below 500 KG</h3>
+                        <span class="makhana-payment-card-tag">Standard Bulk</span>
+                    </div>
+
+                    <div class="makhana-payment-ratio-block">
+                        <div class="makhana-payment-ratio-text">30% / 70%</div>
+                        <div class="makhana-payment-bar-wrap" role="progressbar" aria-label="30% Advance and 70% After Dispatch" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                            <div class="makhana-payment-bar-30"></div>
+                            <div class="makhana-payment-bar-70"></div>
+                        </div>
+                        <div class="makhana-payment-bar-legend">
+                            <span>30% Advance</span>
+                            <span>70% Dispatch</span>
+                        </div>
+                    </div>
+
+                    <ul class="makhana-payment-terms-list">
+                        <li class="makhana-payment-term-item">
+                            <span class="makhana-payment-term-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="makhana-payment-term-text">30% advance payment</span>
+                        </li>
+                        <li class="makhana-payment-term-item">
+                            <span class="makhana-payment-term-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="makhana-payment-term-text">70% immediately after dispatch</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Slab 2: 500 KG & Above -->
+                <div class="makhana-payment-card">
+                    <div class="makhana-payment-card-top">
+                        <h3 class="makhana-payment-card-tier">500 KG & Above</h3>
+                        <span class="makhana-payment-card-tag">High Volume</span>
+                    </div>
+
+                    <div class="makhana-payment-ratio-block">
+                        <div class="makhana-payment-ratio-text">50% / 50%</div>
+                        <div class="makhana-payment-bar-wrap" role="progressbar" aria-label="50% Advance and 50% After Dispatch" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <div class="makhana-payment-bar-50a"></div>
+                            <div class="makhana-payment-bar-50b"></div>
+                        </div>
+                        <div class="makhana-payment-bar-legend">
+                            <span>50% Advance</span>
+                            <span>50% Dispatch</span>
+                        </div>
+                    </div>
+
+                    <ul class="makhana-payment-terms-list">
+                        <li class="makhana-payment-term-item">
+                            <span class="makhana-payment-term-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="makhana-payment-term-text">50% advance payment</span>
+                        </li>
+                        <li class="makhana-payment-term-item">
+                            <span class="makhana-payment-term-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="makhana-payment-term-text">50% immediately after dispatch</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Subtle Divider -->
+            <div class="makhana-payment-divider">
+                <span class="makhana-payment-divider-line"></span>
+                <span class="makhana-payment-divider-ornament">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </span>
+                <span class="makhana-payment-divider-line"></span>
+            </div>
+
+            <!-- Digital Dispatch Documents Area -->
+            <div class="makhana-payment-dispatch-box">
+                <div class="makhana-payment-dispatch-icon-wrap">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+                <div class="makhana-payment-dispatch-content">
+                    <h4 class="makhana-payment-dispatch-title">Digital Dispatch Documents</h4>
+                    <p class="makhana-payment-dispatch-desc">Dispatch documents will be shared digitally with the buyer.</p>
+                </div>
+                <div class="makhana-payment-dispatch-badge">
+                    <i class="fa-solid fa-shield-halved text-[#C9A961]"></i>
+                    <span>Secure Verification</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer matching contactus.html Forest Green Luxury Layout -->
     <footer class="site-footer">
         <div class="site-container">
@@ -1241,7 +1732,7 @@ img {
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Facebook">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
+                            <a href="https://www.instagram.com/makhanam7?utm_source=qr&srtk=MWRpdncwZWo1YWo1Yg%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Makhanam on YouTube">
@@ -1966,62 +2457,8 @@ function renderGrading() {
 
 
 /* =========================================================
-   10. MOBILE NAVIGATION
+   10. MOBILE NAVIGATION (Managed above)
 ========================================================= */
-
-function toggleMobileNav() {
-
-    const drawer =
-        document.getElementById('mobile-nav-drawer');
-
-    const content =
-        document.getElementById('mobile-menu-content');
-
-
-    if (!drawer || !content) {
-        return;
-    }
-
-
-    const isOpen =
-        drawer.classList.contains('opacity-100');
-
-
-    if (!isOpen) {
-
-        drawer.classList.remove(
-            'pointer-events-none',
-            'opacity-0'
-        );
-
-        drawer.classList.add('opacity-100');
-
-        content.classList.remove(
-            '-translate-x-full'
-        );
-
-        document.body.style.overflow = 'hidden';
-
-    } else {
-
-        drawer.classList.add(
-            'pointer-events-none',
-            'opacity-0'
-        );
-
-        drawer.classList.remove(
-            'opacity-100'
-        );
-
-        content.classList.add(
-            '-translate-x-full'
-        );
-
-        document.body.style.overflow = '';
-
-    }
-
-}
 
 
 /* =========================================================
@@ -2313,15 +2750,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                entry.target.classList.add('active', 'is-visible');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 });
 
-    document.querySelectorAll('.reveal, .reveal-fade, section > div').forEach(el => {
-        el.classList.add('reveal-fade');
+    document.querySelectorAll('.reveal, .reveal-fade').forEach(el => {
         observer.observe(el);
     });
+
+    // Safety timeout to ensure content is always visible regardless of iframe or scroll behavior
+    setTimeout(() => {
+        document.querySelectorAll('.reveal, .reveal-fade').forEach(el => {
+            el.classList.add('active', 'is-visible');
+        });
+    }, 250);
 
     // Touch, hover, and click animation handler for Hero feature cards
     const heroCards = document.querySelectorAll('.hero-feature-card');
@@ -2331,27 +2774,16 @@ document.addEventListener('DOMContentLoaded', () => {
         function triggerActive() {
             heroCards.forEach(c => {
                 if (c !== card) {
-                    c.classList.remove('touch-active');
-                    c.classList.remove('is-active');
+                    c.classList.remove('touch-active', 'is-active');
                 }
             });
-            card.classList.add('touch-active');
-            card.classList.add('is-active');
+            card.classList.toggle('touch-active');
+            card.classList.toggle('is-active');
             clearTimeout(touchTimeout);
             touchTimeout = setTimeout(() => {
-                card.classList.remove('touch-active');
-                card.classList.remove('is-active');
-            }, 2500);
+                card.classList.remove('touch-active', 'is-active');
+            }, 3000);
         }
-
-        // Touch events for mobile/tablet
-        card.addEventListener('touchstart', function() {
-            triggerActive();
-        }, { passive: true });
-
-        card.addEventListener('pointerdown', function() {
-            triggerActive();
-        });
 
         // Click / tap
         card.addEventListener('click', function() {
@@ -2365,8 +2797,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         card.addEventListener('mouseleave', function() {
             clearTimeout(touchTimeout);
-            card.classList.remove('is-active');
-            card.classList.remove('touch-active');
+            card.classList.remove('is-active', 'touch-active');
         });
     });
 
