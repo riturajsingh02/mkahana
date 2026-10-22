@@ -1397,33 +1397,33 @@
 
                     <!-- FORM -->
                     <div class="lg:col-span-7 reveal">
-                        <form id="rfqForm"
+                        <form action="https://formspree.io/f/xgaogjyd" method="POST"
                               class="bg-brand-ivory rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-9 text-brand-dark shadow-2xl">
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
 
                                 <div>
                                     <label for="fullName" class="block text-[10px] uppercase tracking-[0.16em] font-semibold text-brand-earth mb-2">
-                                        Full Name *
+                                        Contact Name *
                                     </label>
                                     <input id="fullName" name="fullName" type="text" required
-                                           class="contact-input" placeholder="Your name">
+                                           class="contact-input" placeholder="Name / Procurement">
                                 </div>
 
                                 <div>
                                     <label for="companyName" class="block text-[10px] uppercase tracking-[0.16em] font-semibold text-brand-earth mb-2">
-                                        Company Name
+                                        Company Name *
                                     </label>
-                                    <input id="companyName" name="companyName" type="text"
+                                    <input id="companyName" name="companyName" type="text" required
                                            class="contact-input" placeholder="Company / Brand">
                                 </div>
 
                                 <div>
                                     <label for="email" class="block text-[10px] uppercase tracking-[0.16em] font-semibold text-brand-earth mb-2">
-                                        Email *
+                                        Email Address *
                                     </label>
                                     <input id="email" name="email" type="email" required
-                                           class="contact-input" placeholder="you@company.com">
+                                           class="contact-input" placeholder="email@company.com">
                                 </div>
 
                                 <div>
@@ -1431,65 +1431,55 @@
                                         Phone / WhatsApp *
                                     </label>
                                     <input id="phone" name="phone" type="tel" required
-                                           class="contact-input" placeholder="+91">
+                                           class="contact-input" placeholder="+91 / International number">
                                 </div>
 
-                                <div>
-                                    <label for="inquiry" class="block text-[10px] uppercase tracking-[0.16em] font-semibold text-brand-earth mb-2">
-                                        Inquiry Type *
-                                    </label>
-                                    <select id="inquiry" name="inquiry" required class="contact-input">
-                                        <option value="">Select inquiry</option>
-                                        <option>Domestic Wholesale (India)</option>
-                                        <option>International Export (FOB/CIF)</option>
-                                        <option>Private Label / OEM</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-
-                                <div>
+                                <div class="sm:col-span-2">
                                     <label for="grade" class="block text-[10px] uppercase tracking-[0.16em] font-semibold text-brand-earth mb-2">
-                                        Interested Suta Grade
+                                        Target Grade *
                                     </label>
-                                    <select id="grade" name="grade" class="contact-input">
-                                        <option>All Suta Grades Pricing &amp; Specifications</option>
-                                        <option>7 Suta (Super Jumbo) &gt; 21 mm</option>
-                                        <option>6+ Suta (Jumbo) 19 – 26 mm</option>
-                                        <option>5 Suta (Royal) 15.9 – 19.0 mm</option>
-                                        <option>4 Suta (Classic) 12.7 – 15.8 mm</option>
-                                        <option>3 Suta (Pearl) 9 – 12.7 mm</option>
+                                    <select id="grade" name="grade" required class="contact-input">
+                                        <option value="">Select Target Grade</option>
+                                        <option>Grade 6+ Suta (Jumbo 19 – 26mm)</option>
+                                        <option>Grade 7 Suta (Super Jumbo > 21mm)</option>
+                                        <option>Grade 5 Suta (Royal 15.9 – 19.0mm)</option>
+                                        <option>Grade 4 Suta (Classic 12.7 – 15.8mm)</option>
+                                        <option>Grade 3 Suta (Pearl 9 – 12.7mm)</option>
                                         <option>All Grades Sample Pack</option>
                                     </select>
                                 </div>
 
                                 <div class="sm:col-span-2">
+                                    <label for="destination" class="block text-[10px] uppercase tracking-[0.16em] font-semibold text-brand-earth mb-2">
+                                        Destination Port
+                                    </label>
+                                    <input id="destination" name="destination" type="text"
+                                           class="contact-input" placeholder="FOB India / CIF Destination Port">
+                                </div>
+
+                                <div class="sm:col-span-2">
                                     <label for="message" class="block text-[10px] uppercase tracking-[0.16em] font-semibold text-brand-earth mb-2">
-                                        Message / Volume Required *
+                                        Volume &amp; Requirements *
                                     </label>
                                     <textarea id="message" name="message" required
                                               class="contact-input"
-                                              placeholder="Required volume in Metric Tons, preferred Suta grade, packaging specifications, or destination port..."></textarea>
+                                              placeholder="Tonnage required (e.g. 5 MT or 40ft HC), bag packaging, or sample kit request."></textarea>
                                 </div>
 
                             </div>
 
                             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6">
                                 <p class="text-[10px] sm:text-xs text-brand-dark/50 leading-relaxed">
-                                    Please provide accurate business contact details so the export desk can respond.
+                                    Dispatched directly to KeshavKaushikExports@gmail.com and WhatsApp for rapid pricing.
                                 </p>
 
                                 <button type="submit"
                                         class="tap-target w-full sm:w-auto inline-flex items-center justify-center gap-2
                                                px-7 py-3.5 rounded-full btn-shimmer text-brand-dark
                                                text-[10px] uppercase tracking-[0.18em] font-bold">
-                                    Submit RFQ
+                                    Submit Quotation Request
                                     <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                 </button>
-                            </div>
-
-                            <div id="formMessage"
-                                 class="hidden mt-5 rounded-xl border border-brand-gold/30 bg-brand-gold/10
-                                        px-4 py-3 text-sm text-brand-dark">
                             </div>
                         </form>
                     </div>

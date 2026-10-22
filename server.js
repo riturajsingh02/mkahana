@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const TARGET_EMAIL = process.env.NOTIFICATION_EMAIL || 'KeshavKaushikExports@gmail.com';
 
 // Parse incoming JSON and form data
@@ -351,6 +351,14 @@ app.get(['/', '/index', '/index.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`MAKHANAM server is running on http://0.0.0.0:${PORT} (Notification Email: ${TARGET_EMAIL})`);
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.log(`Port ${PORT} is already in use, assuming server is already running.`);
+  } else {
+    throw err;
+  }
 });
