@@ -1532,6 +1532,41 @@
                                     btnIcon.className = 'fa-solid fa-arrow-right text-[10px]';
                                 });
                             });
+
+                            // Auto-fill form from URL query parameters (e.g., from Container Load Calculator)
+                            window.addEventListener('DOMContentLoaded', () => {
+                                const urlParams = new URLSearchParams(window.location.search);
+                                const gradeParam = urlParams.get('grade');
+                                const messageParam = urlParams.get('message');
+                                const destParam = urlParams.get('destination');
+
+                                if (gradeParam) {
+                                    const gradeSelect = document.getElementById('grade');
+                                    if (gradeSelect) {
+                                        // Match options by partial text
+                                        for (let opt of gradeSelect.options) {
+                                            if (opt.text.toLowerCase().includes(gradeParam.toLowerCase()) || gradeParam.toLowerCase().includes(opt.value.toLowerCase())) {
+                                                gradeSelect.value = opt.value;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (messageParam) {
+                                    const messageField = document.getElementById('message');
+                                    if (messageField) {
+                                        messageField.value = messageParam;
+                                    }
+                                }
+
+                                if (destParam) {
+                                    const destField = document.getElementById('destination');
+                                    if (destField) {
+                                        destField.value = destParam;
+                                    }
+                                }
+                            });
                         </script>
                     </div>
                 </div>

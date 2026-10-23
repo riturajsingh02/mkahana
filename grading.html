@@ -1664,15 +1664,22 @@
         const bags = document.getElementById('res-bags')?.textContent || '';
         const weight = document.getElementById('res-weight')?.textContent || '';
 
-        const msgBox = document.getElementById('rfq-message');
-        if (msgBox) {
-            msgBox.value = `Load Configuration: ${cType}, ${bags} (${weight}) of ${gName} packed in ${bType}. Please provide current FOB/CIF rates.`;
-        }
+        const configMessage = `Load Configuration: ${cType}, ${bags} (${weight}) of ${gName} packed in ${bType}. Please provide current FOB/CIF rates.`;
 
+        // Check if on-page RFQ section exists; otherwise redirect to contactus.html#rfq
+        const msgBox = document.getElementById('rfq-message');
         const rfqSection = document.getElementById('rfq-section');
-        if (rfqSection) {
+
+        if (msgBox && rfqSection) {
+            msgBox.value = configMessage;
             rfqSection.scrollIntoView({ behavior: 'smooth' });
             showToast('Calculated container volume pre-filled in RFQ!');
+        } else {
+            const params = new URLSearchParams({
+                grade: gName,
+                message: configMessage
+            });
+            window.location.href = `contactus.html?${params.toString()}#rfq`;
         }
     }
 
@@ -1681,14 +1688,20 @@
        ========================================================= */
     function requestQuoteForGrade(gradeIdx) {
         const g = GRADES_DATA[gradeIdx];
+        const gradeText = g ? `${g.suta} (${g.subtitle} ${g.size})` : 'Grade 6+ Suta';
         const gradeSelect = document.getElementById('rfq-grade');
-        if (gradeSelect && g) {
-            gradeSelect.value = `${g.suta} (${g.subtitle} ${g.size})`;
-        }
         const rfqSection = document.getElementById('rfq-section');
-        if (rfqSection) {
+
+        if (gradeSelect && rfqSection) {
+            gradeSelect.value = gradeText;
             rfqSection.scrollIntoView({ behavior: 'smooth' });
-            showToast(`Selected ${g.suta} for quotation`);
+            showToast(`Selected ${g?.suta || 'Grade'} for quotation`);
+        } else {
+            const params = new URLSearchParams({
+                grade: gradeText,
+                message: `Inquiry for bulk supply of ${gradeText}. Please provide price quotation and availability.`
+            });
+            window.location.href = `contactus.html?${params.toString()}#rfq`;
         }
     }
 
